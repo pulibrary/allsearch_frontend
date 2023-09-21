@@ -26,6 +26,7 @@ What heading should be used for the component.
 - [ ] Displays up to three search results. 
 - [ ] Provides a link to see more results in the source user interface.
 - [ ] Displays the number of total results in the source interface. 
+- [ ] Passes WCAG 2.1 Audit
 - [ ] Each Search Result Should display the following
     * Title Field as a link to the record in source service
     * Author or equivalent
