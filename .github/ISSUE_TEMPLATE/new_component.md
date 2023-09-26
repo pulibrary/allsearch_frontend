@@ -1,7 +1,7 @@
 ---
 name: Add a New Bento UI Component
 about: Add a New Search Result Component to UI
-title: 'Add [Name] Component to UI''
+title: 'Add [Name] Component to UI'
 labels: ''
 assignees: ''
 
