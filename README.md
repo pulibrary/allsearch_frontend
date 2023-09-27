@@ -1,7 +1,7 @@
 # Library All Search
 
 Front end for the Library's all search bento-style application. Client of
-https://github.com/pulibrary/allsearch_api. 
+https://github.com/pulibrary/allsearch_api.
 
 ## Dev environment
 
@@ -28,11 +28,14 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
 
 ## Running tests
+
 ### From the command line
+
 - If you want to run the tests and have them immediate exit, run `yarn test --run`
 - If you want to run the tests in ['watch' mode](https://vitest.dev/guide/features.html#watch-mode) (automatically runs tests again when related files are changed), run `yarn test` or `yarn test --watch`
 
 ### Using the Vitest VSCode Plugin
+
 1. Click on the flask icon ('Testing') in the left panel
 1. Click the 'play' button in the left panel to run the tests
 1. Alternately, go to the file of the test you want to run and click the icon to the left of the test to re-run it. If you have not run the test previously, it will be an arrow, if you have run it, it will be a green check if it passed and a red x if it failed on the previous run.

@@ -10,12 +10,15 @@ jobs:
       - checkout
       - node/install:
           install-yarn: true
-          node-version: '18.4'
+          node-version: "18.4"
       - node/install-packages:
           pkg-manager: yarn
       - run:
           command: yarn test
           name: Run yarn tests
+      - run:
+          name: Run eslint and prettier
+          command: yarn lint
 workflows:
   test_my_app:
     jobs:
