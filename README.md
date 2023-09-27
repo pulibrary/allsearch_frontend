@@ -39,3 +39,11 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 1. Click on the flask icon ('Testing') in the left panel
 1. Click the 'play' button in the left panel to run the tests
 1. Alternately, go to the file of the test you want to run and click the icon to the left of the test to re-run it. If you have not run the test previously, it will be an arrow, if you have run it, it will be a green check if it passed and a red x if it failed on the previous run.
+
+## Format files
+
+`yarn lint`
+
+`yarn format`
+
+To fix linting errors: `yarn lint --fix`
