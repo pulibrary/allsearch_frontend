@@ -1,8 +1,7 @@
 ---
 name: Maintenance task
 about: Document some maintenance that needs to be done
-title: ''
+title: ""
 labels: maintenance
-assignees: ''
-
+assignees: ""
 ---
