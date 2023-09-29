@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
 group :development do
- gem "capistrano", require: false
+  gem "ed25519"
+  gem "bcrypt_pbkdf"
+  gem "capistrano", require: false
 end

@@ -1,6 +1,3 @@
-# config valid for current version and patch releases of Capistrano
-lock "~> 3.17.1"
-
 set :branch, ENV['BRANCH'] || 'main'
 
 set :application, "allsearch_frontend"
@@ -13,8 +10,13 @@ set :repo_url, "https://github.com/pulibrary/allsearch_frontend.git"
 set :deploy_to, "/opt/allsearch_frontend"
 
 namespace :deploy do
+  before :updated, 'yarn:install'
+  before :updated, 'yarn:build'
+end
+
+namespace :yarn do
   desc "Run yarn install"
-  task :yarn_install do
+  task :install do
     on roles(:web) do
       within release_path do
         execute("cd #{release_path} && yarn install")
@@ -22,7 +24,7 @@ namespace :deploy do
     end
   end
   desc "Create dist"
-  task :yarn_build do
+  task :build do
     on roles(:web) do
       within release_path do
         execute("cd #{release_path} && yarn build")
