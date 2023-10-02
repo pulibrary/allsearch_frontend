@@ -9,6 +9,9 @@ set :repo_url, "https://github.com/pulibrary/allsearch_frontend.git"
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/opt/allsearch_frontend"
 
+# Default value for :linked_files is []
+append :linked_files, ".env"
+
 namespace :deploy do
   before :updated, 'yarn:install'
   before :updated, 'yarn:build'
