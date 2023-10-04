@@ -12,6 +12,8 @@
     "format": "prettier .  --write"
   },
   "dependencies": {
+    "@honeybadger-io/js": "^6.5.1",
+    "@honeybadger-io/vue": "^6.1.7",
     "vue": "^3.3.4"
   },
   "devDependencies": {
