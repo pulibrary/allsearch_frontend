@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "test": "vitest",
+    "test": "vitest --environment happy-dom",
     "lint": "eslint --fix --ext .ts,.js,.vue --ignore-path .gitignore --fix src",
     "format": "prettier .  --write"
   },
@@ -24,6 +24,7 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-vue": "^9.17.0",
     "eslint-plugin-vuejs-accessibility": "^2.2.0",
+    "happy-dom": "^12.9.0",
     "prettier": "^3.0.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
