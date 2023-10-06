@@ -1,0 +1,28 @@
+@font-face {
+    font-family: pul-icons;
+    src: url(/assets/fonts/icons/pul-icons.woff);
+}
+
+.icon {
+    font-family: pul-icons;
+}
+
+.icon-search::before {
+    content: "\e90b";
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/* Color variables */
+:root {
+    --black: #0e1111;
+    --orange: #e87411;
+}
