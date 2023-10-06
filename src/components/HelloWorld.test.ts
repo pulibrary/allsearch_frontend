@@ -2,7 +2,7 @@
 // Once we have real examples, this can be removed
 import { test, expect } from "vitest";
 
-function sum(a, b) {
+function sum(a: number, b: number) {
   return a + b;
 }
 
