@@ -11,3 +11,8 @@ const props = defineProps({
 const uniqueId = Math.floor(Math.random() * 1_000_000);
 const descriptionId = "online-content-link-description-" + uniqueId;
 </script>
+<style>
+.icon {
+  margin: 3px;
+}
+</style>

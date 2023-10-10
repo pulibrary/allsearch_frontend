@@ -9,13 +9,12 @@ import SearchBar from './components/SearchBar.vue';
     <SearchBar></SearchBar>
     <div class="row">
       <CatalogResults></CatalogResults>
-      <CatalogResults></CatalogResults>
-      <CatalogResults></CatalogResults>
     </div>
   </main>
 </template>
 <style>
   .row {
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
