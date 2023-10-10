@@ -11,8 +11,8 @@
 </search>
 </template>
 <script setup lang="ts">
-    const params = new URLSearchParams(window.location.search)
-    const initialValue = params.get('q')
+    import { SearchTermService } from '../services/SearchTermService';
+    const initialValue = SearchTermService.term();
 </script>
 <style>
   form {
