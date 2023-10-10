@@ -30,6 +30,7 @@ import { Ref, ref } from 'vue';
 import { SearchScope } from '../enums/SearchScope';
 import { SearchService } from '../services/SearchService';
 import { SearchResults } from '../interfaces/SearchResults';
+import { SearchTermService } from '../services/SearchTermService';
 import FormatWithIcon from './FormatWithIcon.vue'
 import PhysicalHoldings from './PhysicalHoldings.vue';
 import OnlineContent from './OnlineContent.vue';
@@ -38,7 +39,7 @@ let results: Ref<SearchResults | null> = ref(null);
 
 async function getResults() {
     const service = new SearchService();
-    results.value = await service.results(SearchScope.Catalog, 'penguins');
+    results.value = await service.results(SearchScope.Catalog, SearchTermService.term() as string);
 }
 
 getResults()
