@@ -11,6 +11,7 @@ export class SearchService {
                     {
                         title: 'Potato',
                         publisher: 'Potato company',
+                        creator: 'Shrek',
                         id: '123',
                         type: 'Book',
                         url: 'https://catalog.princeton.edu/catalog/99125129988006421',
@@ -21,7 +22,10 @@ export class SearchService {
                         id: '456',
                         type: 'Audio',
                         url: 'https://catalog.princeton.edu/catalog/99125192574206421',
-                        other_fields: {}
+                        other_fields: {
+                            library: 'Marquand',
+                            call_number: 'ABC 123'
+                        }
                     }, {
                         title: 'Salmon',
                         id: '789',

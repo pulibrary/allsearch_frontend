@@ -6,8 +6,13 @@
     Lorem ipsum
     <div v-if="results">
         <ol v-if="results.results.length">
-            <li v-for="document in results.results" :key="document.id">
+            <li v-for="document in results.results" :key="document.id" class="document">
                 <h3 :data-id="document.id">{{ document.title }}</h3>
+                <ul>
+                    <li v-if="document.creator">{{ document.creator }}</li>
+                    <li><FormatWithIcon :format="document.type"></FormatWithIcon></li>
+                    <li v-if="document.other_fields.library"><PhysicalHoldings :document="document"></PhysicalHoldings></li>
+                </ul>
             </li>
         </ol>
         <span v-else>
@@ -22,6 +27,8 @@ import { Ref, ref } from 'vue';
 import { SearchScope } from '../enums/SearchScope';
 import { SearchService } from '../services/SearchService';
 import { SearchResults } from '../interfaces/SearchResults';
+import FormatWithIcon from './FormatWithIcon.vue'
+import PhysicalHoldings from './PhysicalHoldings.vue';
 
 let results: Ref<SearchResults | null> = ref(null);
 

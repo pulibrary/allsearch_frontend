@@ -27,7 +27,38 @@ describe('CatalogResults component', () => {
     test('it shows three results', async () => {
         const wrapper = mount(CatalogResults);
         await nextTick();
-        expect(wrapper.findAll('li').length).toEqual(3);
+        expect(wrapper.findAll('li.document').length).toEqual(3);
+    });
+    test('the title is in an h3', async () => {
+        const wrapper = mount(CatalogResults);
+        await nextTick();
+        const titles = wrapper.findAll('h3');
+        expect(titles[0].text()).toEqual('Potato');
+        expect(titles[1].text()).toEqual('Cheese');
+        expect(titles[2].text()).toEqual('Salmon');
+    });
+    test('it shows the author if it exists', async () => {
+        const wrapper = mount(CatalogResults);
+        await nextTick();
+        const results = wrapper.findAll('li.document');
+        expect(results[0].text()).toContain('Shrek');
+    });
+    test('it shows the library and call number if they exist', async () => {
+        const wrapper = mount(CatalogResults);
+        await nextTick();
+        const results = wrapper.findAll('li.document');
+        expect(results[1].text()).toContain('Marquand » ABC 123');
+    });
+    test('it shows the formats and their icons', async () => {
+        const wrapper = mount(CatalogResults);
+        await nextTick();
+        const results = wrapper.findAll('li.document');
+        expect(results[0].text()).toContain('Book');
+        expect(results[0].find('span.icon.icon-book[aria-hidden="true"]').exists()).toBe(true);
+        expect(results[1].text()).toContain('Audio');
+        expect(results[1].find('span.icon.icon-audio[aria-hidden="true"]').exists()).toBe(true);
+        expect(results[2].text()).toContain('Coin');
+        expect(results[2].find('span.icon.icon-coin[aria-hidden="true"]').exists()).toBe(true);
     });
     test('the title h3 contains a data-attribute with the id', async () => {
         const wrapper = mount(CatalogResults);

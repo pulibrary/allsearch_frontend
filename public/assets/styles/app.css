@@ -11,8 +11,16 @@
     content: "\e90b";
 }
 
+.icon-audio::before {
+    content: "\e604";
+}
+
 .icon-book::before {
     content: "\e60b";
+}
+
+.icon-coin::before {
+    content: "\e901";
 }
 
 .visually-hidden {
