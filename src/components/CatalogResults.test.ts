@@ -52,7 +52,7 @@ describe('CatalogResults component', () => {
         const wrapper = mount(CatalogResults);
         await nextTick();
         const results = wrapper.findAll('li.document');
-        expect(results[0].find('a').attributes('href')).toEqual('https://na05.alma.exlibrisgroup.com/view/uresolver/01PRI_INST/openurl?u.ignore_date_coverage=true&portfolio_pid=53763462940006421&Force_direct=true')
+        expect(results[0].find('.access-info a').attributes('href')).toEqual('https://na05.alma.exlibrisgroup.com/view/uresolver/01PRI_INST/openurl?u.ignore_date_coverage=true&portfolio_pid=53763462940006421&Force_direct=true')
     });
     test('it shows the formats and their icons', async () => {
         const wrapper = mount(CatalogResults);
