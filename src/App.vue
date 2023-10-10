@@ -7,6 +7,17 @@ import SearchBar from './components/SearchBar.vue';
   <main>
     <h1>Coming soon</h1>
     <SearchBar></SearchBar>
-    <CatalogResults></CatalogResults>
+    <div class="row">
+      <CatalogResults></CatalogResults>
+      <CatalogResults></CatalogResults>
+      <CatalogResults></CatalogResults>
+    </div>
   </main>
 </template>
+<style>
+  .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+</style>

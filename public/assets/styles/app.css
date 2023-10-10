@@ -3,12 +3,12 @@
     src: url(/assets/fonts/icons/pul-icons.woff);
 }
 
-.icon {
-    font-family: pul-icons;
+.badge {
+    border: 1px solid green;
 }
 
-.icon-search::before {
-    content: "\e90b";
+.icon {
+    font-family: pul-icons;
 }
 
 .icon-audio::before {
@@ -21,6 +21,14 @@
 
 .icon-coin::before {
     content: "\e901";
+}
+
+.icon-newtab::before {
+    content: "\f639";
+}
+
+.icon-search::before {
+    content: "\e90b";
 }
 
 .visually-hidden {

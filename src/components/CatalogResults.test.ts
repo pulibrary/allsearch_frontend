@@ -17,13 +17,6 @@ describe('CatalogResults component', () => {
         const wrapper = mount(CatalogResults);
         expect(wrapper.find('h2 span.icon.icon-book').exists()).toBe(true);
     });
-    test('it has a link to more results', async () => {
-        const wrapper = mount(CatalogResults);
-        await nextTick();
-        const link = wrapper.find('a');
-        expect(link.text()).toEqual('Refine catalog search');
-        expect(link.attributes('href')).toEqual('https://example.com');
-    });
     test('it shows three results', async () => {
         const wrapper = mount(CatalogResults);
         await nextTick();
@@ -49,6 +42,18 @@ describe('CatalogResults component', () => {
         const results = wrapper.findAll('li.document');
         expect(results[1].text()).toContain('Marquand » ABC 123');
     });
+    test('it shows the publisher statement if it exists', async () => {
+        const wrapper = mount(CatalogResults);
+        await nextTick();
+        const results = wrapper.findAll('li.document');
+        expect(results[2].text()).toContain('Boca Raton : CRC Press, [2016]')
+    });
+    test('it shows an Available Online link if resource_url exists', async () => {
+        const wrapper = mount(CatalogResults);
+        await nextTick();
+        const results = wrapper.findAll('li.document');
+        expect(results[0].find('a').attributes('href')).toEqual('https://na05.alma.exlibrisgroup.com/view/uresolver/01PRI_INST/openurl?u.ignore_date_coverage=true&portfolio_pid=53763462940006421&Force_direct=true')
+    });
     test('it shows the formats and their icons', async () => {
         const wrapper = mount(CatalogResults);
         await nextTick();
@@ -68,12 +73,11 @@ describe('CatalogResults component', () => {
         expect(titles[1].attributes('data-id')).toEqual('456');
         expect(titles[2].attributes('data-id')).toEqual('789');
     });
-    test('it contains a second more link, this time with different link text', async () => {
+    test('it contains a link to more results', async () => {
         const wrapper = mount(CatalogResults);
         await nextTick();
-        const link = wrapper.findAll('a')[1];
-        expect(link.text()).toEqual('View all 23182 results');
-        expect(link.attributes('href')).toEqual('https://example.com');
+        const link = wrapper.find('a[href="https://example.com"]');
+        expect(link.text()).toEqual('View and refine 23,182 results');
     });
     // The following mock is not working as expected
     describe.todo('if there are no results', () => {
