@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { describe, test, expect, vi, afterEach, beforeEach } from "vitest";
 import { nextTick } from 'vue';
-import { mount } from "@vue/test-utils";
+import { flushPromises, mount } from "@vue/test-utils";
 import CatalogResults from './CatalogResults.vue';
 import { SearchService } from "../services/SearchService";
 
@@ -80,7 +80,7 @@ describe('CatalogResults component', () => {
         expect(link.text()).toEqual('View and refine 23,182 results');
     });
     // The following mock is not working as expected
-    describe.todo('if there are no results', () => {
+    describe('if there are no results', () => {
         beforeEach(() => {
             const mock = vi.spyOn(SearchService.prototype, 'results');
             mock.mockResolvedValue(
@@ -93,7 +93,8 @@ describe('CatalogResults component', () => {
         });
         test('it shows helpful text', async () => {
             const wrapper = mount(CatalogResults);
-            expect(wrapper.findAll('li').length).toEqual(0);    
+            await flushPromises();
+            expect(wrapper.findAll('li').length).toEqual(0);
             expect(wrapper.text()).toContain('No results found. Search the Catalog');
         });
     });
