@@ -1,6 +1,8 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import HoneybadgerVue from "@honeybadger-io/vue";
+// Example use of Honeybadger: Honeybadger.notify("Testing Honeybadger!");
+// eslint-disable-next-line no-unused-vars
 import Honeybadger from "@honeybadger-io/js";
 
 const app = createApp(App);
@@ -13,5 +15,3 @@ const config = {
 app.use(HoneybadgerVue, config);
 
 app.mount("#app");
-// TODO: Remove this - just for testing Honeybadger install
-Honeybadger.notify("Testing Honeybadger!");
