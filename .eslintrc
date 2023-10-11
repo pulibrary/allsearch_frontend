@@ -6,7 +6,9 @@
     "eslint:recommended",
     "plugin:vue/vue3-recommended",
     "plugin:vuejs-accessibility/recommended",
-    "prettier"
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "@vue/eslint-config-typescript/recommended"
   ],
   "parser": "vue-eslint-parser",
   "parserOptions": {
@@ -15,5 +17,7 @@
   },
   "rules": {
     "vue/require-default-prop": "off"
-  }
+  },
+  "plugins": ["@typescript-eslint"],
+  "root": true
 }

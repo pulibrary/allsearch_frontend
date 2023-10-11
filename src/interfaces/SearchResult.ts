@@ -5,5 +5,5 @@ export interface SearchResult {
     creator?: string
     type?: string
     publisher?: string
-    other_fields: any
+    other_fields: {[key: string]: string}
 }
