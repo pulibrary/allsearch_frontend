@@ -2,7 +2,7 @@
 <section aria-label="Catalog results">
     <h2><span class="icon icon-book" aria-hidden="true"></span>
         Catalog</h2>
-    Lorem ipsum
+    <div class="description">Lorem ipsum</div>
     <div v-if="results">
         <ol v-if="results.results.length">
             <li v-for="document in results.results" :key="document.id" class="document">
