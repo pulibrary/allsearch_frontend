@@ -20,7 +20,7 @@
             No results found. Search the <a href="https://catalog.princeton.edu">Catalog</a>.
         </span>
         <div class="more-container">
-            <a v-if="results" :href="results.more" class="more-link">View and refine {{ results.number.toLocaleString() }} results</a>
+            <a v-if="results?.results?.length" :href="results.more" class="more-link">View and refine {{ results.number.toLocaleString() }} results</a>
         </div>
     </div>
 </section>
