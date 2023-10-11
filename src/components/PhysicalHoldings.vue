@@ -1,4 +1,5 @@
 <template>
+<span v-if="document?.other_fields?.library" class="visually-hidden">Location: </span>
 {{ holdingsDisplay }}
 </template>
 <script setup lang="ts">

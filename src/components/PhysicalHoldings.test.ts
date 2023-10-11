@@ -15,7 +15,7 @@ describe('PhysicalHoldings component', () => {
                 }
             }}
         });
-        expect(wrapper.text()).toEqual('ReCAP » DU110 .G738 1947');
+        expect(wrapper.text()).toEqual('Location:  ReCAP » DU110 .G738 1947');
     });
     test('it shows only the library if no call number is available', async () => {
         const wrapper = mount(PhysicalHoldings, {
@@ -28,7 +28,7 @@ describe('PhysicalHoldings component', () => {
                 }
             }}
         });
-        expect(wrapper.text()).toEqual('ReCAP');
+        expect(wrapper.text()).toEqual('Location:  ReCAP');
     });
     test('it shows nothing if the library is not available', async () => {
         const wrapper = mount(PhysicalHoldings, {

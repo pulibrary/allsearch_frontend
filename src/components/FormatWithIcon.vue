@@ -1,6 +1,6 @@
 <template>
     <span :class="classes" aria-hidden="true"></span>
-    {{ props.format }}
+    <span class="visually-hidden">Format: </span>{{ props.format }}
 </template>
 <script setup lang="ts">
 import {defineProps} from 'vue';
