@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { describe, test, expect, vi, afterEach, beforeEach } from "vitest";
-import { nextTick } from 'vue';
 import { flushPromises, mount } from "@vue/test-utils";
 import CatalogResults from './CatalogResults.vue';
 import { SearchService } from "../services/SearchService";
@@ -19,12 +18,12 @@ describe('CatalogResults component', () => {
     });
     test('it shows three results', async () => {
         const wrapper = mount(CatalogResults);
-        await nextTick();
+        await flushPromises();
         expect(wrapper.findAll('li.document').length).toEqual(3);
     });
     test('the title is in an h3', async () => {
         const wrapper = mount(CatalogResults);
-        await nextTick();
+        await flushPromises();
         const titles = wrapper.findAll('h3');
         expect(titles[0].text()).toEqual('Potato');
         expect(titles[1].text()).toEqual('Cheese');
@@ -32,31 +31,31 @@ describe('CatalogResults component', () => {
     });
     test('it shows the author if it exists', async () => {
         const wrapper = mount(CatalogResults);
-        await nextTick();
+        await flushPromises();
         const results = wrapper.findAll('li.document');
         expect(results[0].text()).toContain('Shrek');
     });
     test('it shows the library and call number if they exist', async () => {
         const wrapper = mount(CatalogResults);
-        await nextTick();
+        await flushPromises();
         const results = wrapper.findAll('li.document');
         expect(results[1].text()).toContain('Marquand » ABC 123');
     });
     test('it shows the publisher statement if it exists', async () => {
         const wrapper = mount(CatalogResults);
-        await nextTick();
+        await flushPromises();
         const results = wrapper.findAll('li.document');
         expect(results[2].text()).toContain('Boca Raton : CRC Press, [2016]')
     });
     test('it shows an Available Online link if resource_url exists', async () => {
         const wrapper = mount(CatalogResults);
-        await nextTick();
+        await flushPromises();
         const results = wrapper.findAll('li.document');
         expect(results[0].find('.access-info a').attributes('href')).toEqual('https://na05.alma.exlibrisgroup.com/view/uresolver/01PRI_INST/openurl?u.ignore_date_coverage=true&portfolio_pid=53763462940006421&Force_direct=true')
     });
     test('it shows the formats and their icons', async () => {
         const wrapper = mount(CatalogResults);
-        await nextTick();
+        await flushPromises();
         const results = wrapper.findAll('li.document');
         expect(results[0].text()).toContain('Book');
         expect(results[0].find('span.icon.icon-book[aria-hidden="true"]').exists()).toBe(true);
@@ -67,7 +66,7 @@ describe('CatalogResults component', () => {
     });
     test('the title h3 contains a data-attribute with the id', async () => {
         const wrapper = mount(CatalogResults);
-        await nextTick();
+        await flushPromises();
         const titles = wrapper.findAll('h3');
         expect(titles[0].attributes('data-id')).toEqual('123');
         expect(titles[1].attributes('data-id')).toEqual('456');
@@ -75,7 +74,7 @@ describe('CatalogResults component', () => {
     });
     test('it contains a link to more results', async () => {
         const wrapper = mount(CatalogResults);
-        await nextTick();
+        await flushPromises();
         const link = wrapper.find('a[href="https://example.com"]');
         expect(link.text()).toEqual('View and refine 23,182 results');
     });
