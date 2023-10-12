@@ -1,8 +1,6 @@
 <template>
 <section aria-label="Catalog results">
-    <h2><span class="icon icon-book" aria-hidden="true"></span>
-        Catalog</h2>
-    <div class="description">Lorem ipsum</div>
+    <TrayTitle heading="Catalog" icon="book" description="Lorem ipsum"></TrayTitle>
     <div v-if="results">
         <ol v-if="results.results.length">
             <li v-for="document in results.results" :key="document.id" class="document">
@@ -19,9 +17,7 @@
         <span v-else>
             No results found. Search the <a href="https://catalog.princeton.edu">Catalog</a>.
         </span>
-        <div class="more-container">
-            <a v-if="results?.results?.length" :href="results.more" class="more-link">View and refine {{ results.number.toLocaleString() }} results</a>
-        </div>
+        <MoreResults v-if="results?.results?.length && results.more" :url="results.more" :result-count="results.number"></MoreResults>
     </div>
 </section>
 </template>
@@ -34,6 +30,8 @@ import { SearchTermService } from '../services/SearchTermService';
 import FormatWithIcon from './FormatWithIcon.vue'
 import PhysicalHoldings from './PhysicalHoldings.vue';
 import OnlineContent from './OnlineContent.vue';
+import TrayTitle from './TrayTitle.vue';
+import MoreResults from './MoreResults.vue';
 
 const results: Ref<SearchResults | null> = ref(null);
 
@@ -69,14 +67,5 @@ li.document:not(:last-child) {
 
 .access-info {
     margin-top: 12px;
-}
-
-.more-container {
-    display: flex;
-    justify-content: flex-end;
-}
-
-a.more-link {
-    color: var(--black);
 }
 </style>
