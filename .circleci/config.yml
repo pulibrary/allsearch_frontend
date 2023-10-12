@@ -22,7 +22,16 @@ jobs:
       - run:
           name: Check types
           command: yarn exec vue-tsc
+  semgrep:
+    docker:
+        - image: returntocorp/semgrep
+    steps:
+      - checkout
+      - run:
+          name: Check code against community-provided semgrep rules
+          command: semgrep ci --config auto
 workflows:
   test_my_app:
     jobs:
       - build-and-test
+      - semgrep
