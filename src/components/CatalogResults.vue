@@ -35,7 +35,7 @@ import FormatWithIcon from './FormatWithIcon.vue'
 import PhysicalHoldings from './PhysicalHoldings.vue';
 import OnlineContent from './OnlineContent.vue';
 
-let results: Ref<SearchResults | null> = ref(null);
+const results: Ref<SearchResults | null> = ref(null);
 
 async function getResults() {
     const service = new SearchService();
