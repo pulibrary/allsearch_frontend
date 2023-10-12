@@ -41,6 +41,10 @@ body {
     content: "\e90b";
 }
 
+.icon-text::before {
+    content: "\ec40";
+}
+
 .visually-hidden {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
