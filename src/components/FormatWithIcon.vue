@@ -5,7 +5,9 @@
 <script setup lang="ts">
 import {defineProps} from 'vue';
 const props = defineProps({
-  format: String
+  format: String,
+  icon: String
 })
-const classes = "icon icon-" + props.format?.toLowerCase();
+const formatIcon = props.icon || props.format?.toLowerCase()
+const classes = "icon icon-" + formatIcon;
 </script>
