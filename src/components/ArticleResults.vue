@@ -7,7 +7,7 @@
                     <h3 :data-id="document.id"><a :href="document.url">{{ document.title }}</a></h3>
                     <ul class="metadata">
                         <li><FormatWithIcon :format="document.type" icon="text"></FormatWithIcon></li>
-                        <li v-if="document.other_fields.fulltext_available"><span class="badge">Full-text available</span></li>
+                        <li v-if="document.other_fields.fulltext_available"><InlineBadge>Full-text available</InlineBadge></li>
                         <li v-if="document.creator"><span class="visually-hidden">Creator: </span>{{ document.creator }}</li>
                         <ArticleCitation :fields="document.other_fields"></ArticleCitation>
                     </ul>
@@ -30,6 +30,8 @@ import { SearchResults } from '../interfaces/SearchResults';
 import { SearchTermService } from '../services/SearchTermService';
 import ArticleCitation from './ArticleCitation.vue';
 import FormatWithIcon from './FormatWithIcon.vue'
+import InlineBadge from './InlineBadge.vue';
+import TrayLayout from './TrayLayout.vue';
 
 
 const results: Ref<SearchResults | null> = ref(null);
