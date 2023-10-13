@@ -2,7 +2,12 @@
 import ArticleResults from './components/ArticleResults.vue';
 import CatalogResults from './components/CatalogResults.vue';
 import SearchBar from './components/SearchBar.vue';
-import AppHeader from './components/AppHeader.vue'
+import AppHeader from './components/AppHeader.vue';
+import { SearchTermService } from './services/SearchTermService';
+const query = SearchTermService.term();
+if (query) {
+  document.title = query + " search results | Princeton University Library";
+}
 </script>
 
 <template>
