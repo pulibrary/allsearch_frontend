@@ -12,3 +12,8 @@ const props = defineProps({
 });
 const iconClass = "icon icon-" + props.icon;
 </script>
+<style>
+h3 a {
+    color: var(--black);
+}
+</style>

@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 export enum SearchScope {
     ArtMuseum = 'artmuseum',
+    Articles = 'article',
     BestBets = 'best-bet',
     Catalog = 'catalog',
     Dpul = 'dpul',
