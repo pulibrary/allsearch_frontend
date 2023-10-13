@@ -1,7 +1,9 @@
 <template>
-    <section aria-label="Articles+ results">
-        <TrayTitle heading="Articles+" icon="text" description="Lorem ipsum"></TrayTitle>
-        <div v-if="results">
+    <TrayLayout label="Articles+ results">
+        <template #title>
+            <TrayTitle heading="Articles+" icon="text" description="Lorem ipsum"></TrayTitle>
+        </template>
+        <template v-if="results" #metadata>
             <ol v-if="results.results.length">
                 <li v-for="document in results.results" :key="document.id" class="document">
                     <h3 :data-id="document.id"><a :href="document.url">{{ document.title }}</a></h3>
@@ -13,12 +15,14 @@
                     </ul>
                 </li>
             </ol>
-            <span v-else>
-                No results found. Search the <a href="https://catalog.princeton.edu">Catalog</a>.
-            </span>
-            <MoreResults v-if="results?.results?.length && results.more" :url="results.more" :result-count="results.number"></MoreResults>
-        </div>
-    </section>
+        </template>
+        <template v-if="!results?.results?.length" #no_results>
+            No results found. Search <a href="https://princeton.summon.serialssolutions.com/">Articles+</a>.
+        </template>
+        <template v-if="results?.results?.length && results.more" #further_actions>
+            <MoreResults :url="results.more" :result-count="results.number"></MoreResults>
+        </template>
+    </TrayLayout>
 </template>
 <script setup lang="ts">
 import { Ref, ref } from 'vue';

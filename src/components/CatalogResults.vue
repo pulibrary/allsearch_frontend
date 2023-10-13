@@ -1,25 +1,29 @@
 <template>
-<section aria-label="Catalog results">
-    <TrayTitle heading="Catalog" icon="book" description="Lorem ipsum"></TrayTitle>
-    <div v-if="results">
-        <ol v-if="results.results.length">
-            <li v-for="document in results.results" :key="document.id" class="document">
-                <h3 :data-id="document.id"><a :href="document.url">{{ document.title }}</a></h3>
-                <ul class="metadata">
-                    <li><FormatWithIcon :format="document.type"></FormatWithIcon></li>
-                    <li v-if="document.creator"><span class="visually-hidden">Creator: </span>{{ document.creator }}</li>
-                    <li v-if="document.publisher"><span class="visually-hidden">Publisher: </span>{{ document.publisher }}</li>
-                    <li v-if="document.other_fields.library" class="access-info"><PhysicalHoldings :document="document"></PhysicalHoldings></li>
-                    <li v-if="document.other_fields.resource_url" class="access-info"><OnlineContent :url="document.other_fields.resource_url"></OnlineContent></li>
-                </ul>
-            </li>
-        </ol>
-        <span v-else>
+    <TrayLayout label="Catalog results">
+        <template #title>
+            <TrayTitle heading="Catalog" icon="book" description="Lorem ipsum"></TrayTitle>
+        </template>
+        <template v-if="results" #metadata>
+            <ol v-if="results.results.length">
+                <li v-for="document in results.results" :key="document.id" class="document">
+                    <h3 :data-id="document.id"><a :href="document.url">{{ document.title }}</a></h3>
+                    <ul class="metadata">
+                        <li><FormatWithIcon :format="document.type"></FormatWithIcon></li>
+                        <li v-if="document.creator"><span class="visually-hidden">Creator: </span>{{ document.creator }}</li>
+                        <li v-if="document.publisher"><span class="visually-hidden">Publisher: </span>{{ document.publisher }}</li>
+                        <li v-if="document.other_fields.library" class="access-info"><PhysicalHoldings :document="document"></PhysicalHoldings></li>
+                        <li v-if="document.other_fields.resource_url" class="access-info"><OnlineContent :url="document.other_fields.resource_url"></OnlineContent></li>
+                    </ul>
+                </li>
+            </ol>
+        </template>
+        <template v-if="!results?.results?.length" #no_results>
             No results found. Search the <a href="https://catalog.princeton.edu">Catalog</a>.
-        </span>
-        <MoreResults v-if="results?.results?.length && results.more" :url="results.more" :result-count="results.number"></MoreResults>
-    </div>
-</section>
+        </template>
+        <template v-if="results?.results?.length && results.more" #further_actions>
+            <MoreResults :url="results.more" :result-count="results.number"></MoreResults>
+        </template>
+    </TrayLayout>
 </template>
 <script setup lang="ts">
 import { Ref, ref } from 'vue';
@@ -32,6 +36,7 @@ import PhysicalHoldings from './PhysicalHoldings.vue';
 import OnlineContent from './OnlineContent.vue';
 import TrayTitle from './TrayTitle.vue';
 import MoreResults from './MoreResults.vue';
+import TrayLayout from './TrayLayout.vue';
 
 const results: Ref<SearchResults | null> = ref(null);
 
@@ -43,14 +48,6 @@ async function getResults() {
 getResults()
 </script>
 <style>
-section {
-    background-color: var(--light-gray);
-    padding: 2px 15px 18px;
-    border: 1px var(--gray) solid;
-}
-h3 a {
-    color: var(--black);
-}
 li.document:not(:last-child) {
     padding-bottom: 20px;
     border-bottom: 2px var(--black) solid;
