@@ -91,6 +91,6 @@ describe('ArticleResults component', () => {
         const wrapper = mount(ArticleResults);
         await flushPromises();
         const results = wrapper.findAll('li.document');
-        expect(results[1].text().replace(/\s+/g, ' ')).toContain('Vol. 10, No. 6, 2016, pp. 5619-5634');
+        expect(results[1].text()).toContain('Vol. 10, No. 6, 2016, pp. 5619-5634');
     });
 });
