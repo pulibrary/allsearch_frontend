@@ -1,6 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@5.1.0
+  ruby: circleci/ruby@2.1.0
 jobs:
   build-and-test:
     working_directory: ~/project
@@ -30,8 +31,23 @@ jobs:
       - run:
           name: Check code against community-provided semgrep rules
           command: semgrep ci --config auto
+  integration-tests:
+    docker:
+      - image: cimg/ruby:3.2.2-browsers
+    parallelism: 1
+    steps:
+      - checkout
+      - ruby/install-deps
+      - node/install:
+          install-yarn: true
+          node-version: "18.8"
+      - node/install-packages:
+          pkg-manager: yarn
+      - ruby/rspec-test
+
 workflows:
   test_my_app:
     jobs:
       - build-and-test
       - semgrep
+      - integration-tests

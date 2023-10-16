@@ -34,6 +34,10 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 - If you want to run the tests and have them immediate exit, run `yarn test --run`
 - If you want to run the tests in ['watch' mode](https://vitest.dev/guide/features.html#watch-mode) (automatically runs tests again when related files are changed), run `yarn test` or `yarn test --watch`
 
+## Integration/e2e tests
+
+To run the rspec integration tests: `bundle exec rspec`
+
 ## Semgrep
 This repository uses [semgrep](https://semgrep.dev/) to:
 
