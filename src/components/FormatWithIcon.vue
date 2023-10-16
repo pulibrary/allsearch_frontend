@@ -1,13 +1,17 @@
 <template>
     <span :class="classes" aria-hidden="true"></span>
-    <span class="visually-hidden">Format: </span>{{ props.format }}
+    <span class="visually-hidden">Format: </span>{{ displayFormat }}
 </template>
 <script setup lang="ts">
 import {defineProps} from 'vue';
 const props = defineProps({
-  format: String,
-  icon: String
-})
-const formatIcon = props.icon || props.format?.toLowerCase()
+  format: {
+    type: String,
+    required: true,
+  },
+  icon: String,
+});
+const formatIcon = props.icon || props.format?.toLowerCase();
 const classes = "icon icon-" + formatIcon;
+const displayFormat = props.format[0].toUpperCase() + props.format?.slice(1);
 </script>
