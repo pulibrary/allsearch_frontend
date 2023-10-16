@@ -1,6 +1,6 @@
-import { SearchResult } from '../interfaces/SearchResult';
+import { Result } from '../interfaces/Result';
 
-export class SearchResultDto implements SearchResult {
+export class SearchResult implements Result {
     title: string
     url: string
     id: string

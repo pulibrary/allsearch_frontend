@@ -5,6 +5,7 @@ import CatalogResults from './CatalogResults.vue';
 import { SearchService } from "../services/SearchService";
 import { Axios } from "axios";
 import SearchServiceFixtures from "../fixtures/SearchServiceFixtures";
+import { SearchResults } from "../models/SearchResults";
 
 describe('CatalogResults component', () => {
     beforeEach(() => {
@@ -92,11 +93,11 @@ describe('CatalogResults component', () => {
         beforeEach(() => {
             const mock = vi.spyOn(SearchService.prototype, 'results');
             mock.mockResolvedValue(
-                {
-                    number: 23_182,
-                    more: 'https://example.com/zero',
-                    records: []
-                }
+                new SearchResults(
+                    23_182,
+                    'https://example.com/zero',
+                    []
+                )
             );
         });
         test('it shows helpful text', async () => {

@@ -1,18 +1,24 @@
-import axios from 'axios';
+import axios, { AxiosInstance } from 'axios';
 import { plainToInstance } from 'class-transformer';
 
-import { SearchResults } from "../interfaces/SearchResults";
-import { SearchResultsDto } from '../models/SearchResultsDto';
+import config from '../config'
+import { Results } from "../interfaces/Results";
+import { SearchResults } from '../models/SearchResults';
 
 export class SearchService {
-    results(service: string, query: string): Promise<SearchResults> {
+    private client: AxiosInstance;
+
+    constructor() {
         const options = {
             method: 'GET',
-            baseURL: 'https://allsearch-api-staging.princeton.edu'
+            baseURL: config.allsearchApiUrl
         };
-        var client = axios.create(options)
+        this.client = axios.create(options);
+    };
 
-        return client.get<SearchResults>(`/search/${service}?query=${query}`)
-            .then(res => plainToInstance(SearchResultsDto, res.data));
-    }
+    public results(service: string, query: string): Promise<Results> {
+        return this.client
+            .get<Results>(`/search/${service}?query=${query}`)
+            .then(res => plainToInstance(SearchResults, res.data));
+    };
 }

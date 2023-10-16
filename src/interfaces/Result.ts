@@ -1,4 +1,4 @@
-export interface SearchResult {
+export interface Result {
     title: string
     url: string
     id: string
