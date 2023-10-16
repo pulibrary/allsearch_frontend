@@ -1,4 +1,4 @@
-export interface SearchResult {
+export interface Result {
     title: string
     url: string
     id: string
@@ -6,5 +6,5 @@ export interface SearchResult {
     description?: string
     type?: string
     publisher?: string
-    other_fields: {[key: string]: string}
+    other_fields?: {[key: string]: string}
 }
