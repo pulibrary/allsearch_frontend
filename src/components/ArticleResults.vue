@@ -8,7 +8,7 @@
                 <li v-for="document in results.records" :key="document.id" class="document">
                     <h3 :data-id="document.id"><a :href="document.url">{{ document.title }}</a></h3>
                     <ul class="metadata">
-                        <li><FormatWithIcon :format="document.type" icon="text"></FormatWithIcon></li>
+                        <li v-if="document.type"><FormatWithIcon :format="document.type" icon="text"></FormatWithIcon></li>
                         <li v-if="document.other_fields?.fulltext_available"><InlineBadge>Full-text available</InlineBadge></li>
                         <li v-if="document.creator"><span class="visually-hidden">Creator: </span>{{ document.creator }}</li>
                         <ArticleCitation :fields="document.other_fields"></ArticleCitation>

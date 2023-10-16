@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import ArticleResults from './components/ArticleResults.vue';
 import CatalogResults from './components/CatalogResults.vue';
+import FindingaidsResults from './components/FindingaidsResults.vue'
 import SearchBar from './components/SearchBar.vue';
 import AppHeader from './components/AppHeader.vue';
 import { SearchTermService } from './services/SearchTermService';
@@ -19,6 +20,9 @@ if (query) {
     <div class="row">
       <CatalogResults></CatalogResults>
       <ArticleResults></ArticleResults>
+    </div>
+    <div class="row">
+      <FindingaidsResults></FindingaidsResults>
     </div>
   </main>
 </template>
