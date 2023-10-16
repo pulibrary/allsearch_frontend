@@ -11,8 +11,8 @@
                         <li><FormatWithIcon :format="document.type"></FormatWithIcon></li>
                         <li v-if="document.creator"><span class="visually-hidden">Creator: </span>{{ document.creator }}</li>
                         <li v-if="document.publisher"><span class="visually-hidden">Publisher: </span>{{ document.publisher }}</li>
-                        <li v-if="document.other_fields.library" class="access-info"><PhysicalHoldings :document="document"></PhysicalHoldings></li>
-                        <li v-if="document.other_fields.resource_url" class="access-info"><OnlineContent :url="document.other_fields.resource_url"></OnlineContent></li>
+                        <li v-if="document.other_fields?.library" class="access-info"><PhysicalHoldings :document="document"></PhysicalHoldings></li>
+                        <li v-if="document.other_fields?.resource_url" class="access-info"><OnlineContent :url="document.other_fields.resource_url"></OnlineContent></li>
                     </ul>
                 </li>
             </ol>
@@ -29,7 +29,7 @@
 import { Ref, ref } from 'vue';
 import { SearchScope } from '../enums/SearchScope';
 import { SearchService } from '../services/SearchService';
-import { SearchResultsDto } from '../models/SearchResults';
+import { SearchResults } from '../models/SearchResults';
 import { SearchTermService } from '../services/SearchTermService';
 import FormatWithIcon from './FormatWithIcon.vue'
 import PhysicalHoldings from './PhysicalHoldings.vue';
@@ -38,9 +38,9 @@ import TrayTitle from './TrayTitle.vue';
 import MoreResults from './MoreResults.vue';
 import TrayLayout from './TrayLayout.vue';
 
-const results: Ref<SearchResultsDto | null> = ref(null);
+const results: Ref<SearchResults | null> = ref(null);
 
-async function getResults(): void {
+async function getResults(): Promise<void> {
     const service = new SearchService();
     results.value = await service.results(SearchScope.Catalog, SearchTermService.term() as string);
 }
