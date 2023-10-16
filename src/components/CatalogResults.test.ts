@@ -3,8 +3,18 @@ import { describe, test, expect, vi, afterEach, beforeEach } from "vitest";
 import { flushPromises, mount } from "@vue/test-utils";
 import CatalogResults from './CatalogResults.vue';
 import { SearchService } from "../services/SearchService";
+import { Axios } from "axios";
+import SearchServiceFixtures from "../fixtures/SearchServiceFixtures";
 
 describe('CatalogResults component', () => {
+    beforeEach(() => {
+        const mock = vi.spyOn(Axios.prototype, 'get');
+        mock.mockResolvedValue(
+            {
+                data: SearchServiceFixtures.results
+            }
+        );
+    });
     afterEach(() => {
         vi.restoreAllMocks()
     })
@@ -78,7 +88,6 @@ describe('CatalogResults component', () => {
         const link = wrapper.find('a[href="https://example.com"]');
         expect(link.text()).toEqual('View and refine 23,182 results');
     });
-    // The following mock is not working as expected
     describe('if there are no results', () => {
         beforeEach(() => {
             const mock = vi.spyOn(SearchService.prototype, 'results');
@@ -86,7 +95,7 @@ describe('CatalogResults component', () => {
                 {
                     number: 23_182,
                     more: 'https://example.com/zero',
-                    results: []
+                    records: []
                 }
             );
         });
