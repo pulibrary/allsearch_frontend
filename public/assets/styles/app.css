@@ -31,6 +31,10 @@ body {
   content: "\f5fa";
 }
 
+.icon-map::before {
+  content: "\e602";
+}
+
 .icon-newtab::before {
   content: "\f639";
 }

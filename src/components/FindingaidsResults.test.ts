@@ -1,4 +1,4 @@
-import { describe, test, expect, beforeEach, vi } from "vitest";
+import { describe, test, expect, afterEach, beforeEach, vi } from "vitest";
 import FindingaidsResults from "./FindingaidsResults.vue";
 import { mount, flushPromises } from "@vue/test-utils";
 import { SearchService } from "../services/SearchService";
@@ -15,7 +15,9 @@ describe("FindingaidsResults component", () => {
       FindingAidsResultsFixtures.testResult3,
     ],
   );
-
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
   beforeEach(() => {
     const mock = vi.spyOn(SearchService.prototype, "results");
     mock.mockResolvedValue(testResults);
