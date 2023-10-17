@@ -2,6 +2,7 @@
 import PulmapResults from "./components/PulMapResults.vue";
 import ArticleResults from "./components/ArticleResults.vue";
 import CatalogResults from "./components/CatalogResults.vue";
+import InitialSearch from "./components/InitialSearch.vue";
 import FindingaidsResults from "./components/FindingaidsResults.vue";
 import SearchBar from "./components/SearchBar.vue";
 import AppHeader from "./components/AppHeader.vue";
@@ -17,17 +18,22 @@ if (query) {
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <AppHeader></AppHeader>
   <main id="main-content" tabindex="-1">
-    <h1>Coming soon</h1>
-    <SearchBar></SearchBar>
-    <div class="row">
-      <CatalogResults></CatalogResults>
-      <ArticleResults></ArticleResults>
+    <div v-if="query">
+      <h1>Coming soon</h1>
+      <SearchBar></SearchBar>
+      <div class="row">
+        <CatalogResults></CatalogResults>
+        <ArticleResults></ArticleResults>
+      </div>
+      <div class="row">
+        <FindingaidsResults></FindingaidsResults>
+      </div>
+      <div class="row">
+        <PulmapResults></PulmapResults>
+      </div>
     </div>
-    <div class="row">
-      <FindingaidsResults></FindingaidsResults>
-    </div>
-    <div class="row">
-      <PulmapResults></PulmapResults>
+    <div v-else>
+      <InitialSearch></InitialSearch>
     </div>
   </main>
 </template>

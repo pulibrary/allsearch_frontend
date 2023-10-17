@@ -17,6 +17,7 @@ RSpec.configure do |config|
   config.before(:suite) do
     $vite_pid = spawn("yarn dev --port 5678")
     Process.detach($vite_pid)
+    sleep 2 # wait for vite to compile everything
   end
   config.after(:suite) do
     Process.kill('TERM', $vite_pid)
