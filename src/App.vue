@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import PulmapResults from "./components/PulMapResults.vue";
 import ArticleResults from "./components/ArticleResults.vue";
 import CatalogResults from "./components/CatalogResults.vue";
 import FindingaidsResults from "./components/FindingaidsResults.vue";
 import SearchBar from "./components/SearchBar.vue";
 import AppHeader from "./components/AppHeader.vue";
 import { SearchTermService } from "./services/SearchTermService";
+
 const query = SearchTermService.term();
 if (query) {
   document.title = query + " search results | Princeton University Library";
@@ -23,6 +25,9 @@ if (query) {
     </div>
     <div class="row">
       <FindingaidsResults></FindingaidsResults>
+    </div>
+    <div class="row">
+      <PulmapResults></PulmapResults>
     </div>
   </main>
 </template>
