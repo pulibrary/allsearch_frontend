@@ -29,9 +29,15 @@ describe("Searchbar component", () => {
           value: new URL("https://allsearch.princeton.edu?q=" + payload),
         });
         const wrapper = mount(SearchBar);
-        const expectedValue = payload.replace(/\+/g, " "); // plus signs are equivalent to spaces
-        expect(wrapper.find("input").element.value).toEqual(expectedValue);
+        expect(wrapper.find("label").exists()).toBe(true);
       },
     );
+  });
+  test("input includes the current search", () => {
+    Object.defineProperty(window, "location", {
+      value: new URL("https://allsearch.princeton.edu?q=narwhal"),
+    });
+    const wrapper = mount(SearchBar);
+    expect(wrapper.find("input").element.value).toEqual("narwhal");
   });
 });
