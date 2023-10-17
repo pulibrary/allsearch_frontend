@@ -46,7 +46,7 @@
     </template>
     <template v-if="!results?.records?.length" #no_results>
       No results found. Search the
-      <a href="https://catalog.princeton.edu">Catalog</a>.
+      <a href="https://maps.princeton.edu">Maps and Geographic Data</a>.
     </template>
     <template v-if="results?.records?.length && results.more" #further_actions>
       <MoreResults

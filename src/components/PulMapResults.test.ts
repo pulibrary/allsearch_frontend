@@ -83,21 +83,21 @@ describe("PulmapResults component", () => {
     );
     expect(link.text()).toEqual("View and refine 134 results");
   });
-  // The following mock is not working as expected
+
   describe("if there are no results", () => {
     beforeEach(() => {
       const mock = vi.spyOn(SearchService.prototype, "results");
-      mock.mockResolvedValue({
-        number: 23_182,
-        more: "https://example.com/zero",
-        results: [],
-      });
+      mock.mockResolvedValue(
+        new SearchResults(0, "https://pulmap.example.com/zero", []),
+      );
     });
     test("it shows helpful text", async () => {
       const wrapper = mount(PulmapResults);
       await flushPromises();
       expect(wrapper.findAll("li").length).toEqual(0);
-      expect(wrapper.text()).toContain("No results found. Search the Catalog");
+      expect(wrapper.text()).toContain(
+        "No results found. Search the Maps and Geographic Data",
+      );
     });
   });
 });
