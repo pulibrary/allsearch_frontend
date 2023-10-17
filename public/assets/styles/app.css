@@ -1,62 +1,62 @@
 @font-face {
-    font-family: pul-icons;
-    src: url(/assets/fonts/icons/pul-icons.woff);
+  font-family: pul-icons;
+  src: url(/assets/fonts/icons/pul-icons.woff);
 }
 
 body {
-    font-family: "franklin-gothic-urw",Helvetica,Arial,sans-serif;
+  font-family: "franklin-gothic-urw", Helvetica, Arial, sans-serif;
 }
 
 .icon {
-    font-family: pul-icons;
+  font-family: pul-icons;
 }
 
 .icon-archives::before {
-    content: "\f5f5";
+  content: "\f5f5";
 }
 
 .icon-audio::before {
-    content: "\e604";
+  content: "\e604";
 }
 
 .icon-book::before {
-    content: "\e60b";
+  content: "\e60b";
 }
 
 .icon-coin::before {
-    content: "\e901";
+  content: "\e901";
 }
 
 .icon-collection::before {
-    content: "\f5fa";
+  content: "\f5fa";
 }
 
 .icon-newtab::before {
-    content: "\f639";
+  content: "\f639";
 }
 
 .icon-search::before {
-    content: "\e90b";
+  content: "\e90b";
 }
 
 .icon-text::before {
-    content: "\ec40";
+  content: "\ec40";
 }
 
 .visually-hidden {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 /* Color variables */
 :root {
-    --black: #0e1111;
-    --orange: #e87411;
-    --gray: rgb(149, 156, 167);
-    --light-gray: rgb(245, 245, 245);
+  --black: #0e1111;
+  --orange: #e87411;
+  --gray: rgb(149, 156, 167);
+  --light-gray: rgb(245, 245, 245);
 }

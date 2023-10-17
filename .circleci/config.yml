@@ -25,7 +25,7 @@ jobs:
           command: yarn exec vue-tsc
   semgrep:
     docker:
-        - image: returntocorp/semgrep
+      - image: returntocorp/semgrep
     steps:
       - checkout
       - run:
