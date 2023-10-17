@@ -1,9 +1,9 @@
 <template>
-    <header></header>
+  <header></header>
 </template>
 <style>
 header {
-    height: 4rem;
-    background-color: var(--orange);
+  height: 4rem;
+  background-color: var(--orange);
 }
 </style>

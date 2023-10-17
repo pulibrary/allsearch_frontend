@@ -39,9 +39,10 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 To run the rspec integration tests: `bundle exec rspec`
 
 ## Semgrep
+
 This repository uses [semgrep](https://semgrep.dev/) to:
 
-* Perform static security analysis
+- Perform static security analysis
 
 To run semgrep locally:
 

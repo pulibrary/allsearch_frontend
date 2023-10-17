@@ -7,7 +7,7 @@ const app = createApp(App);
 
 const honeybadgerConfig = {
   apiKey: config.honeybadgerApiKey,
-  environemnt: config.honeybadgerEnvironment
+  environemnt: config.honeybadgerEnvironment,
 };
 
 app.use(HoneybadgerVue, honeybadgerConfig);

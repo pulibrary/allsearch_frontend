@@ -1,7 +1,7 @@
-import { Result } from "./Result"
+import { Result } from "./Result";
 
 export interface Results {
-    number: number
-    more: string
-    records: Result[]
+  number: number;
+  more: string;
+  records: Result[];
 }

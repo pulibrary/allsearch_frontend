@@ -1,27 +1,27 @@
 <template>
-    <section :aria-label="props.label">
-        <slot name="title"></slot>
-        <slot name="metadata"></slot>
-        <slot name="no_results"></slot>
-        <slot name="further_actions"></slot>
-    </section>
+  <section :aria-label="props.label">
+    <slot name="title"></slot>
+    <slot name="metadata"></slot>
+    <slot name="no_results"></slot>
+    <slot name="further_actions"></slot>
+  </section>
 </template>
 <script setup lang="ts">
-import {defineProps} from 'vue';
+import { defineProps } from "vue";
 const props = defineProps({
   label: {
     type: String,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 </script>
 <style>
 section {
-    background-color: var(--light-gray);
-    padding: 2px 15px 18px;
-    border: 1px var(--gray) solid;
-    min-width: 280px;
-    margin: 10px 4vw;
-    max-width: 20vw;
+  background-color: var(--light-gray);
+  padding: 2px 15px 18px;
+  border: 1px var(--gray) solid;
+  min-width: 280px;
+  margin: 10px 4vw;
+  max-width: 20vw;
 }
 </style>
