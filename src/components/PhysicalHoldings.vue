@@ -5,7 +5,6 @@
   {{ holdingsDisplay }}
 </template>
 <script setup lang="ts">
-import { defineProps } from "vue";
 import { SearchResult } from "../models/SearchResult";
 const props = defineProps<{
   document: SearchResult;

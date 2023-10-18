@@ -6,7 +6,6 @@
   <div class="description">{{ props.description }}</div>
 </template>
 <script setup lang="ts">
-import { defineProps } from "vue";
 const props = defineProps({
   icon: String,
   heading: String,
