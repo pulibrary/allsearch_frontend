@@ -3,7 +3,6 @@
   <span class="visually-hidden">Format: </span>{{ displayFormat }}
 </template>
 <script setup lang="ts">
-import { defineProps } from "vue";
 const props = defineProps({
   format: {
     type: String,

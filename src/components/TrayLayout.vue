@@ -7,7 +7,6 @@
   </section>
 </template>
 <script setup lang="ts">
-import { defineProps } from "vue";
 const props = defineProps({
   label: {
     type: String,
@@ -22,5 +21,6 @@ section {
   border: 1px var(--gray) solid;
   margin: 10px 4vw;
   width: clamp(23vw, 350px, 95vw);
+  flex-direction: column;
 }
 </style>
