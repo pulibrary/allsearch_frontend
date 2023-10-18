@@ -1,12 +1,8 @@
 <script setup lang="ts">
-import PulmapResults from "./components/PulMapResults.vue";
-import ArticleResults from "./components/ArticleResults.vue";
-import CatalogResults from "./components/CatalogResults.vue";
 import InitialSearch from "./components/InitialSearch.vue";
-import FindingaidsResults from "./components/FindingaidsResults.vue";
-import SearchBar from "./components/SearchBar.vue";
 import AppHeader from "./components/AppHeader.vue";
 import { SearchTermService } from "./services/SearchTermService";
+import TrayContainerComponent from "./components/TrayContainer.vue";
 
 const query = SearchTermService.term();
 if (query) {
@@ -19,17 +15,8 @@ if (query) {
   <AppHeader></AppHeader>
   <main id="main-content" tabindex="-1">
     <div v-if="query">
-      <h1>Coming soon</h1>
-      <SearchBar></SearchBar>
       <div class="row">
-        <CatalogResults></CatalogResults>
-        <ArticleResults></ArticleResults>
-      </div>
-      <div class="row">
-        <FindingaidsResults></FindingaidsResults>
-      </div>
-      <div class="row">
-        <PulmapResults></PulmapResults>
+        <TrayContainerComponent></TrayContainerComponent>
       </div>
     </div>
     <div v-else>
@@ -38,12 +25,6 @@ if (query) {
   </main>
 </template>
 <style>
-.row {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
 a.skip-link {
   z-index: 25;
   position: absolute;
