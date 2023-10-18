@@ -20,8 +20,7 @@ section {
   background-color: var(--light-gray);
   padding: 2px 15px 18px;
   border: 1px var(--gray) solid;
-  min-width: 280px;
   margin: 10px 4vw;
-  max-width: 20vw;
+  width: clamp(23vw, 350px, 95vw);
 }
 </style>
