@@ -1,6 +1,10 @@
 export default {
-  Book: 'text',
+  audio: 'audio',
+  archives: 'archives',
+  book: 'book',
+  coin: 'coin',
   collection: 'collection',
-  'Journal Article': 'text',
+  ebook: 'book',
+  'journal article': 'text',
   map: 'map'
 };
