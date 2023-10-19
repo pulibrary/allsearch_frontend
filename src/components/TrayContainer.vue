@@ -53,5 +53,7 @@ const searchService = new SearchService();
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  align-items: flex-start;
+  min-height: 300px;
 }
 </style>
