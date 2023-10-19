@@ -38,7 +38,7 @@
 import { SearchScope } from '../enums/SearchScope';
 import { SearchService } from '../services/SearchService';
 import { SearchTermService } from '../services/SearchTermService';
-import TrayComponent from './Tray.vue';
+import TrayComponent from './SearchTray.vue';
 import SearchBar from './SearchBar.vue';
 import InitialSearch from './InitialSearch.vue';
 

@@ -42,7 +42,7 @@
 import { Ref, ref } from "vue";
 import { SearchResults } from "../models/SearchResults";
 import scopeTitleMap from "../config/ScopeTitleMap";
-import MetadataComponent from "./metadata/Metadata.vue";
+import MetadataComponent from "./metadata/SearchMetadata.vue";
 import TrayLayout from "./TrayLayout.vue";
 import TrayTitle from "./TrayTitle.vue";
 import MoreResults from "./MoreResults.vue";
