@@ -2,7 +2,7 @@
 import InitialSearch from "./components/InitialSearch.vue";
 import AppHeader from "./components/AppHeader.vue";
 import { SearchTermService } from "./services/SearchTermService";
-import TrayContainerComponent from "./components/TrayContainer.vue";
+import TrayContainer from "./components/TrayContainer.vue";
 
 const query = SearchTermService.term();
 if (query) {
@@ -16,7 +16,7 @@ if (query) {
   <main id="main-content" tabindex="-1">
     <div v-if="query">
       <div class="row">
-        <TrayContainerComponent></TrayContainerComponent>
+        <TrayContainer></TrayContainer>
       </div>
     </div>
     <div v-else>

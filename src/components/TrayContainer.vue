@@ -3,30 +3,30 @@
     <h1>Coming soon</h1>
     <SearchBar></SearchBar>
     <div class="row">
-      <TrayComponent
+      <SearchTray
           :scope="SearchScope.Catalog"
           :results-promise="searchService.results(SearchScope.Catalog, query)"
           default-icon="text"
-        ></TrayComponent>
-        <TrayComponent
+        ></SearchTray>
+        <SearchTray
           :scope="SearchScope.Articles"
           :results-promise="searchService.results(SearchScope.Articles, query)"
           default-icon="text"
-        ></TrayComponent>
+        ></SearchTray>
     </div>
     <div class="row">
-      <TrayComponent
+      <SearchTray
           :scope="SearchScope.FindingAids"
           :results-promise="searchService.results(SearchScope.FindingAids, query)"
           default-icon="archives"
-        ></TrayComponent>
+        ></SearchTray>
     </div>
     <div class="row">
-      <TrayComponent
+      <SearchTray
           :scope="SearchScope.PulMap"
           :results-promise="searchService.results(SearchScope.PulMap, query)"
           default-icon="map"
-        ></TrayComponent>
+        ></SearchTray>
     </div>
   </div>
   <div v-else>
@@ -38,7 +38,7 @@
 import { SearchScope } from '../enums/SearchScope';
 import { SearchService } from '../services/SearchService';
 import { SearchTermService } from '../services/SearchTermService';
-import TrayComponent from './SearchTray.vue';
+import SearchTray from './SearchTray.vue';
 import SearchBar from './SearchBar.vue';
 import InitialSearch from './InitialSearch.vue';
 

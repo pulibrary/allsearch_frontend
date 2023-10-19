@@ -6,18 +6,18 @@
       :icon="getIconType(document.type)"
       ></FormatWithIcon>
   </li>
-  <CatalogMetadataComponent v-if="scope === SearchScope.Catalog"
+  <CatalogMetadata v-if="scope === SearchScope.Catalog"
     :document="document"
-  ></CatalogMetadataComponent>
-  <ArticlesMetadataComponent v-if="scope === SearchScope.Articles"
+  ></CatalogMetadata>
+  <ArticlesMetadata v-if="scope === SearchScope.Articles"
     :document="document"
-  ></ArticlesMetadataComponent>
-  <FindingaidesMetadataComponent v-if="scope === SearchScope.FindingAids"
+  ></ArticlesMetadata>
+  <FindingaidsMetadata v-if="scope === SearchScope.FindingAids"
     :document="document"
-  ></FindingaidesMetadataComponent>
-  <PulmapsMetadataComponent
+  ></FindingaidsMetadata>
+  <PulmapsMetadata
     :document="document"
-  ></PulmapsMetadataComponent>
+  ></PulmapsMetadata>
 </ul>
 </template>
 
@@ -27,10 +27,10 @@ import { SearchResult } from "../../models/SearchResult";
 import { SearchScope } from "../../enums/SearchScope";
 import itemTypeMap from "../../config/ItemTypeMap";
 import FormatWithIcon from "../FormatWithIcon.vue";
-import ArticlesMetadataComponent from "./ArticlesMetadata.vue"
-import CatalogMetadataComponent from "./CatalogMetadata.vue";
-import FindingaidesMetadataComponent from "./FindingaidesMetadata.vue";
-import PulmapsMetadataComponent from "./PulmapsMetadata.vue";
+import ArticlesMetadata from "./ArticlesMetadata.vue"
+import CatalogMetadata from "./CatalogMetadata.vue";
+import FindingaidsMetadata from "./FindingaidsMetadata.vue";
+import PulmapsMetadata from "./PulmapsMetadata.vue";
 
 const props = defineProps({
   scope: {

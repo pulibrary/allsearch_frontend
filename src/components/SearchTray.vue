@@ -17,11 +17,11 @@
           <h3 :data-id="document.id">
             <a :href="document.url">{{ document.title }}</a>
           </h3>
-          <MetadataComponent
+          <SearchMetadata
             :scope="props.scope"
             :default-icon="props.defaultIcon"
             :document="document"
-          ></MetadataComponent>
+          ></SearchMetadata>
         </li>
       </ol>
     </template>
@@ -42,7 +42,7 @@
 import { Ref, ref } from "vue";
 import { SearchResults } from "../models/SearchResults";
 import scopeTitleMap from "../config/ScopeTitleMap";
-import MetadataComponent from "./metadata/SearchMetadata.vue";
+import SearchMetadata from "./metadata/SearchMetadata.vue";
 import TrayLayout from "./TrayLayout.vue";
 import TrayTitle from "./TrayTitle.vue";
 import MoreResults from "./MoreResults.vue";
