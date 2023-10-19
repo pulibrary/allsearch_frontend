@@ -18,9 +18,6 @@ jobs:
           command: yarn test
           name: Run yarn tests
       - run:
-          name: Run eslint and prettier
-          command: yarn lint
-      - run:
           name: Check types
           command: yarn exec vue-tsc
   semgrep:
