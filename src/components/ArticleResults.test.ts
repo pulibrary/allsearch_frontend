@@ -4,6 +4,8 @@ import { flushPromises, mount } from "@vue/test-utils";
 import { SearchService } from "../services/SearchService";
 import { SearchResults } from "../models/SearchResults";
 import ArticleResultsFixture from "../fixtures/ArticleResultsFixtures";
+import SearchTray from "./SearchTray.vue";
+import { SearchScope } from "../enums/SearchScope";
 
 describe("ArticleResults component", () => {
   const testResults = new SearchResults(1_000, "https://example.com/articles", [
@@ -16,7 +18,11 @@ describe("ArticleResults component", () => {
     mock.mockResolvedValue(testResults);
   });
   test("it has a heading", () => {
-    const wrapper = mount(ArticleResults);
+    const wrapper = mount(SearchTray, { props: {
+      scope: SearchScope.Articles,
+      resultsPromise: new SearchService().results(SearchScope.Articles, 'robots'),
+      defaultIcon: 'text'
+    }});
     expect(wrapper.find("h2").text()).toEqual("Articles+");
   });
   test("heading has an articles icon", () => {
