@@ -2,7 +2,7 @@
   <TrayLayout label="">
     <template #title>
       <TrayTitle
-        :heading="props.scope ? getScopeTitle(props.scope): ''"
+        :heading="getScopeTitle()"
         :icon="props.defaultIcon"
         description="Lorem ipsum"
       ></TrayTitle>
@@ -27,7 +27,7 @@
     </template>
     <template v-if="!results?.records?.length" #no_results>
       No results found. Search the
-      <a href="https://catalog.princeton.edu">Catalog</a>.
+      <a :href="getScopeUrl()">{{ getScopeTitle() }}</a>.
     </template>
     <template v-if="results?.records?.length && results.more" #further_actions>
       <MoreResults
@@ -42,6 +42,7 @@
 import { Ref, ref } from "vue";
 import { SearchResults } from "../models/SearchResults";
 import scopeTitleMap from "../config/ScopeTitleMap";
+import scopeUrlMap from "../config/ScopeUrlMap";
 import SearchMetadata from "./metadata/SearchMetadata.vue";
 import TrayLayout from "./TrayLayout.vue";
 import TrayTitle from "./TrayTitle.vue";
@@ -65,8 +66,20 @@ async function populateResults(): Promise<void> {
   results.value = await props.resultsPromise;
 };
 
-function getScopeTitle(type: string): string {
-  return scopeTitleMap[type as keyof typeof scopeTitleMap];
+function getScopeTitle(): string {
+  if (props.scope) {
+    return scopeTitleMap[props.scope as keyof typeof scopeTitleMap];
+  } else {
+    return '';
+  }
+};
+
+function getScopeUrl(): string {
+  if (props.scope) {
+    return scopeUrlMap[props.scope as keyof typeof scopeUrlMap];
+  } else {
+    return '';
+  }
 };
 
 populateResults();
