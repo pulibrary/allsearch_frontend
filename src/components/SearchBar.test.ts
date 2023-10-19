@@ -1,20 +1,20 @@
-import { describe, test, expect } from 'vitest'
-import { mount } from '@vue/test-utils'
-import SearchBar from './SearchBar.vue'
+import { describe, test, expect } from 'vitest';
+import { mount } from '@vue/test-utils';
+import SearchBar from './SearchBar.vue';
 
 describe('Searchbar component', () => {
   test('it has a label', () => {
-    const wrapper = mount(SearchBar)
-    expect(wrapper.find('label').exists()).toBe(true)
-  })
+    const wrapper = mount(SearchBar);
+    expect(wrapper.find('label').exists()).toBe(true);
+  });
   test('input includes the current search', () => {
     Object.defineProperty(window, 'location', {
       value: new URL('https://allsearch.princeton.edu?q=narwhal')
-    })
-    const wrapper = mount(SearchBar)
-    expect(wrapper.find('input').element.value).toEqual('narwhal')
-  })
-  ;[
+    });
+    const wrapper = mount(SearchBar);
+    expect(wrapper.find('input').element.value).toEqual('narwhal');
+  });
+  [
     '"><script>alert("bad")</script>',
     '<script src=example.com></script>',
     `javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/"/+/onmouseover=1/+/[*/[]/+alert(1)//'>`,
@@ -27,17 +27,17 @@ describe('Searchbar component', () => {
       () => {
         Object.defineProperty(window, 'location', {
           value: new URL('https://allsearch.princeton.edu?q=' + payload)
-        })
-        const wrapper = mount(SearchBar)
-        expect(wrapper.find('label').exists()).toBe(true)
+        });
+        const wrapper = mount(SearchBar);
+        expect(wrapper.find('label').exists()).toBe(true);
       }
-    )
-  })
+    );
+  });
   test('input includes the current search', () => {
     Object.defineProperty(window, 'location', {
       value: new URL('https://allsearch.princeton.edu?q=narwhal')
-    })
-    const wrapper = mount(SearchBar)
-    expect(wrapper.find('input').element.value).toEqual('narwhal')
-  })
-})
+    });
+    const wrapper = mount(SearchBar);
+    expect(wrapper.find('input').element.value).toEqual('narwhal');
+  });
+});

@@ -40,14 +40,14 @@
 </template>
 
 <script setup lang="ts">
-import { Ref, ref } from 'vue'
-import { SearchResults } from '../models/SearchResults'
-import scopeTitleMap from '../config/ScopeTitleMap'
-import scopeUrlMap from '../config/ScopeUrlMap'
-import SearchMetadata from './metadata/SearchMetadata.vue'
-import TrayLayout from './TrayLayout.vue'
-import TrayTitle from './TrayTitle.vue'
-import MoreResults from './MoreResults.vue'
+import { Ref, ref } from 'vue';
+import { SearchResults } from '../models/SearchResults';
+import scopeTitleMap from '../config/ScopeTitleMap';
+import scopeUrlMap from '../config/ScopeUrlMap';
+import SearchMetadata from './metadata/SearchMetadata.vue';
+import TrayLayout from './TrayLayout.vue';
+import TrayTitle from './TrayTitle.vue';
+import MoreResults from './MoreResults.vue';
 
 const props = defineProps({
   scope: {
@@ -59,31 +59,31 @@ const props = defineProps({
     type: String,
     required: true
   }
-})
+});
 
-const results: Ref<SearchResults | undefined> = ref(undefined)
+const results: Ref<SearchResults | undefined> = ref(undefined);
 
 async function populateResults(): Promise<void> {
-  results.value = await props.resultsPromise
+  results.value = await props.resultsPromise;
 }
 
 function getScopeTitle(): string {
   if (props.scope) {
-    return scopeTitleMap[props.scope as keyof typeof scopeTitleMap]
+    return scopeTitleMap[props.scope as keyof typeof scopeTitleMap];
   } else {
-    return ''
+    return '';
   }
 }
 
 function getScopeUrl(): string {
   if (props.scope) {
-    return scopeUrlMap[props.scope as keyof typeof scopeUrlMap]
+    return scopeUrlMap[props.scope as keyof typeof scopeUrlMap];
   } else {
-    return ''
+    return '';
   }
 }
 
-populateResults()
+populateResults();
 </script>
 
 <style>

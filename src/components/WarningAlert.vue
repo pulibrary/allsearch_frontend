@@ -13,7 +13,7 @@ defineProps({
     type: String,
     required: true
   }
-})
+});
 </script>
 <style scoped>
 .warning-container {
