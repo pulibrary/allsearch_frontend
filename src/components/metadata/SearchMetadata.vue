@@ -6,24 +6,12 @@
         :icon="getIconType(document.type)"
       ></FormatWithIcon>
     </li>
-    <CatalogMetadata
-      v-if="scope === SearchScope.Catalog"
-      :document="document"
-    ></CatalogMetadata>
-    <ArticlesMetadata
-      v-if="scope === SearchScope.Articles"
-      :document="document"
-    ></ArticlesMetadata>
-    <FindingaidsMetadata
-      v-if="scope === SearchScope.FindingAids"
-      :document="document"
-    ></FindingaidsMetadata>
-    <PulmapsMetadata :document="document"></PulmapsMetadata>
+    <component :is="metadataComponent" :document="document"></component>
   </ul>
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue';
+import { type Component, PropType } from 'vue';
 import { SearchResult } from '../../models/SearchResult';
 import { SearchScope } from '../../enums/SearchScope';
 import itemTypeMap from '../../config/ItemTypeMap';
@@ -48,8 +36,25 @@ const props = defineProps({
   }
 });
 
+let metadataComponent: Component;
+
+switch (props.scope) {
+  case SearchScope.Catalog:
+    metadataComponent = CatalogMetadata;
+    break;
+  case SearchScope.Articles:
+    metadataComponent = ArticlesMetadata;
+    break;
+  case SearchScope.FindingAids:
+    metadataComponent = FindingaidsMetadata;
+    break;
+  case SearchScope.PulMap:
+    metadataComponent = PulmapsMetadata;
+    break;
+}
+
 function getIconType(type: string): string {
-  const itemType = itemTypeMap[type as keyof typeof itemTypeMap];
+  const itemType = itemTypeMap[type.toLowerCase() as keyof typeof itemTypeMap];
   return itemType ? itemType : props.defaultIcon;
 }
 </script>

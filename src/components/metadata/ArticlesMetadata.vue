@@ -1,4 +1,7 @@
 <template>
+  <li v-if="document.creator">
+    <span class="visually-hidden">Creator: </span>{{ document.creator }}
+  </li>
   <li v-if="document.other_fields?.fulltext_available">
     <InlineBadge>Full-text available</InlineBadge>
   </li>
