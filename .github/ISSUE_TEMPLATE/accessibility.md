@@ -1,9 +1,9 @@
 ---
 name: Accessibility
 about: Report an accessibility issue
-title: ""
+title: ''
 labels: accessibility general
-assignees: ""
+assignees: ''
 ---
 
 ### Steps to recreate

@@ -1,6 +1,6 @@
 export default {
-    "Book": "text",
-    "collection": "collection",
-    "Journal Article": "text",
-    "map": "map"
-};
+  Book: 'text',
+  collection: 'collection',
+  'Journal Article': 'text',
+  map: 'map'
+}

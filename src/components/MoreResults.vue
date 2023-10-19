@@ -9,13 +9,13 @@
 const props = defineProps({
   url: {
     type: String,
-    required: true,
+    required: true
   },
   resultCount: {
     type: Number,
-    required: true,
-  },
-});
+    required: true
+  }
+})
 </script>
 <style>
 .more-container {

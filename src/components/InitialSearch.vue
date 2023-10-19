@@ -5,7 +5,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import SearchBar from "./SearchBar.vue";
+import SearchBar from './SearchBar.vue'
 </script>
 <style scoped>
 .container {
