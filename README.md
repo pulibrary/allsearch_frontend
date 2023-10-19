@@ -64,3 +64,9 @@ semgrep --config auto . # run rules from the semgrep community
 `yarn format`
 
 To fix linting errors: `yarn lint --fix`
+
+### Git Hook
+
+If changes need to happen in 'simple-git-hooks' 
+1. Make the change in [package.json](https://github.com/pulibrary/allsearch_frontend/blob/main/package.json) 
+2. Then run `yarn simple-git-hooks` to reconfigure the settings.
