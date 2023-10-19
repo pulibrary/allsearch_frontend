@@ -10,8 +10,8 @@ const props = defineProps({
   icon: String,
   heading: String,
   description: String
-})
-const iconClass = 'icon icon-' + props.icon
+});
+const iconClass = 'icon icon-' + props.icon;
 </script>
 <style>
 h3 a {

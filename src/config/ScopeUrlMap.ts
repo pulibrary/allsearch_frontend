@@ -3,4 +3,4 @@ export default {
   article: 'https://princeton.summon.serialssolutions.com',
   findingaids: 'https://findingaids.princeton.edu',
   pulmap: 'https://maps.princeton.edu'
-}
+};

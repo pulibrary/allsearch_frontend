@@ -1,4 +1,4 @@
-import { SearchResult } from '../models/SearchResult'
+import { SearchResult } from '../models/SearchResult';
 
 export default {
   testResult1: new SearchResult(
@@ -40,4 +40,4 @@ export default {
       layer_geom_type: 'Raster'
     }
   )
-}
+};

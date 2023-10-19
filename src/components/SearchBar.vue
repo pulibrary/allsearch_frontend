@@ -24,26 +24,26 @@
   </search>
 </template>
 <script setup lang="ts">
-import { SearchTermService } from '../services/SearchTermService'
-import { ref } from 'vue'
-import WarningAlert from './WarningAlert.vue'
-const query = ref(SearchTermService.term() as string)
-const showValidationError = ref(false)
+import { SearchTermService } from '../services/SearchTermService';
+import { ref } from 'vue';
+import WarningAlert from './WarningAlert.vue';
+const query = ref(SearchTermService.term() as string);
+const showValidationError = ref(false);
 const props = defineProps({
   position: String
-})
+});
 const validateForm = (event: Event) => {
   if (searchIsEmpty()) {
-    event.preventDefault()
-    showValidationError.value = true
+    event.preventDefault();
+    showValidationError.value = true;
   }
-}
+};
 const searchIsEmpty = () => {
   if (query.value?.replace(/\s/g, '')?.length) {
-    return false
+    return false;
   }
-  return true
-}
+  return true;
+};
 </script>
 <style scoped>
 form {

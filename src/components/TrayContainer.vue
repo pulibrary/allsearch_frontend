@@ -35,15 +35,15 @@
 </template>
 
 <script setup lang="ts">
-import { SearchScope } from '../enums/SearchScope'
-import { SearchService } from '../services/SearchService'
-import { SearchTermService } from '../services/SearchTermService'
-import SearchTray from './SearchTray.vue'
-import SearchBar from './SearchBar.vue'
-import InitialSearch from './InitialSearch.vue'
+import { SearchScope } from '../enums/SearchScope';
+import { SearchService } from '../services/SearchService';
+import { SearchTermService } from '../services/SearchTermService';
+import SearchTray from './SearchTray.vue';
+import SearchBar from './SearchBar.vue';
+import InitialSearch from './InitialSearch.vue';
 
-const query = SearchTermService.term()
-const searchService = new SearchService()
+const query = SearchTermService.term();
+const searchService = new SearchService();
 </script>
 
 <style>

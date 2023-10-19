@@ -4,4 +4,4 @@ export default {
     'https://allsearch-api-staging.princeton.edu',
   honeybadgerApiKey: import.meta.env.VITE_HONEYBADGER_API_KEY,
   honeybadgerEnvironment: import.meta.env.VITE_HONEYBADGER_ENV
-}
+};

@@ -3,4 +3,4 @@ export default {
   collection: 'collection',
   'Journal Article': 'text',
   map: 'map'
-}
+};

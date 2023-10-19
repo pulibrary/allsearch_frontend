@@ -1,14 +1,14 @@
-import { Result } from '../interfaces/Result'
+import { Result } from '../interfaces/Result';
 
 export class SearchResult implements Result {
-  title: string
-  url: string
-  id: string
-  creator?: string
-  description?: string
-  type?: string
-  publisher?: string
-  other_fields?: { [key: string]: string }
+  title: string;
+  url: string;
+  id: string;
+  creator?: string;
+  description?: string;
+  type?: string;
+  publisher?: string;
+  other_fields?: { [key: string]: string };
 
   constructor(
     title: string,
@@ -20,14 +20,14 @@ export class SearchResult implements Result {
     publisher?: string,
     other_fields?: { [key: string]: string }
   ) {
-    this.title = title
-    this.url = url
-    this.id = id
-    this.creator = creator
-    this.description = description
-    this.type = type
-    this.publisher = publisher
-    this.other_fields = other_fields
+    this.title = title;
+    this.url = url;
+    this.id = id;
+    this.creator = creator;
+    this.description = description;
+    this.type = type;
+    this.publisher = publisher;
+    this.other_fields = other_fields;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -41,6 +41,6 @@ export class SearchResult implements Result {
       object['type'],
       object['publisher'],
       object['other_fields']
-    )
+    );
   }
 }

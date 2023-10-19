@@ -1,6 +1,6 @@
-import { describe, test, expect } from 'vitest'
-import { mount } from '@vue/test-utils'
-import ArticleCitation from './ArticleCitation.vue'
+import { describe, test, expect } from 'vitest';
+import { mount } from '@vue/test-utils';
+import ArticleCitation from './ArticleCitation.vue';
 
 describe('ArticleHoldings component', () => {
   test('it shows the journal title if available', () => {
@@ -10,11 +10,11 @@ describe('ArticleHoldings component', () => {
           publication_title: 'Journal of Advanced Cats'
         }
       }
-    })
+    });
     expect(wrapper.find('em').text()).toEqual(
       'Contained in: Journal of Advanced Cats'
-    )
-  })
+    );
+  });
   test('it shows a full chronology if all metadata is available', () => {
     const wrapper = mount(ArticleCitation, {
       props: {
@@ -31,7 +31,7 @@ describe('ArticleHoldings component', () => {
           isxn: '1936-0851'
         }
       }
-    })
-    expect(wrapper.text()).toEqual('Vol. 10, No. 6, 2016, pp. 5619-5634')
-  })
-})
+    });
+    expect(wrapper.text()).toEqual('Vol. 10, No. 6, 2016, pp. 5619-5634');
+  });
+});

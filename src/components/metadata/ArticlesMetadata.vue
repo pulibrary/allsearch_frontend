@@ -6,16 +6,16 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue'
-import { SearchResult } from '../../models/SearchResult'
+import { PropType } from 'vue';
+import { SearchResult } from '../../models/SearchResult';
 
-import ArticleCitation from '../ArticleCitation.vue'
-import InlineBadge from '../InlineBadge.vue'
+import ArticleCitation from '../ArticleCitation.vue';
+import InlineBadge from '../InlineBadge.vue';
 
 defineProps({
   document: {
     type: Object as PropType<SearchResult>,
     required: true
   }
-})
+});
 </script>

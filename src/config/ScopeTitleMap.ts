@@ -3,4 +3,4 @@ export default {
   article: 'Articles+',
   findingaids: 'Library Archives',
   pulmap: 'Maps and Geographic Data'
-}
+};

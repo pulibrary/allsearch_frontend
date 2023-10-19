@@ -57,29 +57,29 @@
   </TrayLayout>
 </template>
 <script setup lang="ts">
-import { Ref, ref } from 'vue'
-import { SearchScope } from '../enums/SearchScope'
-import { SearchService } from '../services/SearchService'
-import { SearchResults } from '../models/SearchResults'
-import { SearchTermService } from '../services/SearchTermService'
-import FormatWithIcon from './FormatWithIcon.vue'
-import PhysicalHoldings from './PhysicalHoldings.vue'
-import OnlineContent from './OnlineContent.vue'
-import TrayTitle from './TrayTitle.vue'
-import MoreResults from './MoreResults.vue'
-import TrayLayout from './TrayLayout.vue'
+import { Ref, ref } from 'vue';
+import { SearchScope } from '../enums/SearchScope';
+import { SearchService } from '../services/SearchService';
+import { SearchResults } from '../models/SearchResults';
+import { SearchTermService } from '../services/SearchTermService';
+import FormatWithIcon from './FormatWithIcon.vue';
+import PhysicalHoldings from './PhysicalHoldings.vue';
+import OnlineContent from './OnlineContent.vue';
+import TrayTitle from './TrayTitle.vue';
+import MoreResults from './MoreResults.vue';
+import TrayLayout from './TrayLayout.vue';
 
-const results: Ref<SearchResults | null> = ref(null)
+const results: Ref<SearchResults | null> = ref(null);
 
 async function getResults(): Promise<void> {
-  const service = new SearchService()
+  const service = new SearchService();
   results.value = await service.results(
     SearchScope.PulMap,
     SearchTermService.term() as string
-  )
+  );
 }
 
-getResults()
+getResults();
 </script>
 <style>
 li.document:not(:last-child) {

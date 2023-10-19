@@ -10,13 +10,13 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue'
-import { SearchResult } from '../../models/SearchResult'
+import { PropType } from 'vue';
+import { SearchResult } from '../../models/SearchResult';
 
 defineProps({
   document: {
     type: Object as PropType<SearchResult>,
     required: true
   }
-})
+});
 </script>
