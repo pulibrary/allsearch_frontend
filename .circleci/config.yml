@@ -11,7 +11,7 @@ jobs:
       - checkout
       - node/install:
           install-yarn: true
-          node-version: "18.8"
+          node-version: "18.12"
       - node/install-packages:
           pkg-manager: yarn
       - run:
@@ -40,7 +40,7 @@ jobs:
       - ruby/install-deps
       - node/install:
           install-yarn: true
-          node-version: "18.8"
+          node-version: "18.12"
       - node/install-packages:
           pkg-manager: yarn
       - ruby/rspec-test
