@@ -1,9 +1,9 @@
 ---
 name: Add a New Bento UI Tray
 about: Add a New Search Result Tray to UI
-title: "Add [Name] Tray to UI"
-labels: ""
-assignees: ""
+title: 'Add [Name] Tray to UI'
+labels: ''
+assignees: ''
 ---
 
 ## Description

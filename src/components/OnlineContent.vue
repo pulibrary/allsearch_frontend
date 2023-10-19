@@ -5,12 +5,12 @@
   <span :id="descriptionId" class="visually-hidden">Opens in new tab</span>
 </template>
 <script setup lang="ts">
-import InlineBadge from "./InlineBadge.vue";
+import InlineBadge from './InlineBadge.vue'
 const props = defineProps({
-  url: String,
-});
-const uniqueId = Math.floor(Math.random() * 1_000_000);
-const descriptionId = "online-content-link-description-" + uniqueId;
+  url: String
+})
+const uniqueId = Math.floor(Math.random() * 1_000_000)
+const descriptionId = 'online-content-link-description-' + uniqueId
 </script>
 <style>
 .icon {

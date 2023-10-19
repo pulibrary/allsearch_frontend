@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import InitialSearch from "./components/InitialSearch.vue";
-import AppHeader from "./components/AppHeader.vue";
-import { SearchTermService } from "./services/SearchTermService";
-import TrayContainer from "./components/TrayContainer.vue";
+import InitialSearch from './components/InitialSearch.vue'
+import AppHeader from './components/AppHeader.vue'
+import { SearchTermService } from './services/SearchTermService'
+import TrayContainer from './components/TrayContainer.vue'
 
-const query = SearchTermService.term();
+const query = SearchTermService.term()
 if (query) {
-  document.title = query + " search results | Princeton University Library";
+  document.title = query + ' search results | Princeton University Library'
 }
 </script>
 

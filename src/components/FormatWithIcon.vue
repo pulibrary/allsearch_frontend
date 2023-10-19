@@ -6,11 +6,11 @@
 const props = defineProps({
   format: {
     type: String,
-    required: true,
+    required: true
   },
-  icon: String,
-});
-const formatIcon = props.icon || props.format?.toLowerCase();
-const classes = "icon icon-" + formatIcon;
-const displayFormat = props.format[0].toUpperCase() + props.format?.slice(1);
+  icon: String
+})
+const formatIcon = props.icon || props.format?.toLowerCase()
+const classes = 'icon icon-' + formatIcon
+const displayFormat = props.format[0].toUpperCase() + props.format?.slice(1)
 </script>

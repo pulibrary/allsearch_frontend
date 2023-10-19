@@ -7,13 +7,13 @@
 defineProps({
   shouldDisplayAlert: {
     type: Boolean,
-    required: true,
+    required: true
   },
   alertText: {
     type: String,
-    required: true,
-  },
-});
+    required: true
+  }
+})
 </script>
 <style scoped>
 .warning-container {
