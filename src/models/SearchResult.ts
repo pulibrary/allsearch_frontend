@@ -29,4 +29,18 @@ export class SearchResult implements Result {
     this.publisher = publisher;
     this.other_fields = other_fields;
   }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  static fromObject(object: { [key: string]: any }) {
+    return new SearchResult(
+      object["title"],
+      object["url"],
+      object["id"],
+      object["creator"],
+      object["description"],
+      object["type"],
+      object["publisher"],
+      object["other_fields"],
+    );
+  }
 }

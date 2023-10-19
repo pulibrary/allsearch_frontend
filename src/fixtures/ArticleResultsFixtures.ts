@@ -21,15 +21,16 @@ export default {
       publication_year: "2018",
     },
   ),
-  testResult2: new SearchResult(
-    "Rocket Science at the Nanoscale",
-    "http://princeton.summon.serialssolutions.com/2.0.0/link/0/eLvHCXMwjV3dS8MwED_8eFAfxC90fowKIr5kW9O1TWEMZGyIqA9TQZ9Kkl7YYHTDdq_-7V7WbupkIHkNR_PL5e53ufILQG0pHsjRqNg1JidDRpzHvr7jMpfOSqPJ7NX-Y3T_4Pff_Pfut2z0ci-fu3Wps1Sm41qgLDEW67BptVesYP7TZ20efq0HBkUrmUpl4hMLPZ8_BmxC0tnvhLSCZc6yTW8Pdkua6NwW-7oPa5gewM4P8cBDuG4N2n2KZpg75QF1ZO4Qn3MoYo4zwh5b9UH7CF573ZfOHStfPWDSC_ycecKXgSZgoyRRygi0RY00CmmtrkZtEpP4rm4YGlTPIaUXgSY0qInpqabnnYCTaONFWgUYWXl4gSLkzTCIuEh0QxpUFbiilcelu2bxrBPN3bgEKC4BqsDNHJp4UohfrJ56OYcuJge1XQeZ4nhKtoUNFERMwgocF5gujHGqP6mg4af_-54z2Ca-Etg_tbg4h438Y4oXsGVvQDUSVa4SM-48V2f-8AU4P7bP",
-    "10.1021/acsnano.6b02518",
-    "Li, Jinxing",
-    ".... In particular, micro- and <h>nanoscale rockets</h> (MNRs) offer impressive capabilities, including remarkable speeds, large cargo-towing forces, precise motion controls, and dynamic self-assembly, which have paved the way for designing multifunctional...",
-    "Journal Article",
-    "American Chemical Society",
-    {
+  testResult2: SearchResult.fromObject({
+    title: "Rocket Science at the Nanoscale",
+    creator: "Li, Jinxing",
+    publisher: "American Chemical Society",
+    id: "10.1021/acsnano.6b02518",
+    type: "Journal Article",
+    description:
+      ".... In particular, micro- and <h>nanoscale rockets</h> (MNRs) offer impressive capabilities, including remarkable speeds, large cargo-towing forces, precise motion controls, and dynamic self-assembly, which have paved the way for designing multifunctional...",
+    url: "http://princeton.summon.serialssolutions.com/2.0.0/link/0/eLvHCXMwjV1LS8NAEB58HNSD-ELro0QQ8eC2zSabbKAUpLSIqIeqoKew2QcVSlJMevW3O9ukVSsFyTUM2W8n33yTWb4AXC_wgRiNyl0jYvxOLC9QQn3rstIitmF8iO7u2eCVvfW-TaMXJ_nUbQqZpyLNGkFiZTFfhXXrvGLt8h8_GzPytfkXlINkbJRRTczdfP4EsOVI5r_L0RKNOa01_R3YrkSic1Pu6i6s6HQPtn5YB-7DZXvYGSCX6cKpXk9HFA6qOQf5MssRed1uDjsH8NLvPXdvSfXPAyK8gBXE40wEEmGNlEoSw7VtaYRJNK7VlVoaZRRzZcvghd2cxuLCtQmNlqjzEt_zjsDhUrGIKiWkj4KtJbkbGGbCiLs6DBMW1eACVx5XyZrH0zk0deMKoLgCqAZXM2jicWl9sfzW8xl0MaannTmIVGcTjM0tTaAsCWtwWGI6D0ax-8R2hh7_73lOYBPVSmDPaVF-CmvFx0SfwYb9_ik1CuU66uLuU32aD19mBbVr",
+    other_fields: {
       publication_date: "2016-06-28",
       publication_year: "2016",
       start_page: "5619",
@@ -42,5 +43,5 @@ export default {
       issue: "6",
       isxn: "1936-0851",
     },
-  ),
+  }),
 };
