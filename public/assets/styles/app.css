@@ -31,8 +31,20 @@ body {
   content: '\f5fa';
 }
 
+.icon-digital::before {
+  content: '\e91e';
+}
+
+.icon-manuscript::before {
+  content: '\e603';
+}
+
 .icon-map::before {
   content: '\e602';
+}
+
+.icon-musical-score::before {
+  content: '\e605';
 }
 
 .icon-newtab::before {
@@ -43,8 +55,16 @@ body {
   content: '\e90b';
 }
 
+.icon-senior-thesis::before {
+  content: '\e600';
+}
+
 .icon-text::before {
   content: '\ec40';
+}
+
+.icon-visual-material::before {
+  content: '\e607';
 }
 
 .visually-hidden {
