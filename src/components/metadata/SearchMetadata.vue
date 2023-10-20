@@ -20,6 +20,7 @@ import ArticlesMetadata from './ArticlesMetadata.vue';
 import CatalogMetadata from './CatalogMetadata.vue';
 import FindingaidsMetadata from './FindingaidsMetadata.vue';
 import PulmapsMetadata from './PulmapsMetadata.vue';
+import DpulMetadata from './DpulMetadata.vue';
 
 const props = defineProps({
   scope: {
@@ -44,6 +45,9 @@ switch (props.scope) {
     break;
   case SearchScope.Articles:
     metadataComponent = ArticlesMetadata;
+    break;
+  case SearchScope.Dpul:
+    metadataComponent = DpulMetadata;
     break;
   case SearchScope.FindingAids:
     metadataComponent = FindingaidsMetadata;

@@ -20,6 +20,11 @@
         :results-promise="searchService.results(SearchScope.FindingAids, query)"
         default-icon="archives"
       ></SearchTray>
+      <SearchTray
+        :scope="SearchScope.Dpul"
+        :results-promise="searchService.results(SearchScope.Dpul, query)"
+        default-icon="digital"
+      ></SearchTray>
     </div>
     <div class="row">
       <SearchTray
