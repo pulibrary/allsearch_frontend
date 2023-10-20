@@ -1,6 +1,6 @@
 <template>
   <ul class="metadata">
-    <li v-if="document.type">
+    <li v-if="document.type && shouldShowFormat()">
       <FormatWithIcon
         :format="document.type"
         :icon="getIconType(document.type)"
@@ -17,6 +17,7 @@ import { SearchScope } from '../../enums/SearchScope';
 import itemTypeMap from '../../config/ItemTypeMap';
 import FormatWithIcon from '../FormatWithIcon.vue';
 import ArticlesMetadata from './ArticlesMetadata.vue';
+import ArtMuseumMetadata from './ArtMuseumMetadata.vue';
 import CatalogMetadata from './CatalogMetadata.vue';
 import FindingaidsMetadata from './FindingaidsMetadata.vue';
 import PulmapsMetadata from './PulmapsMetadata.vue';
@@ -46,6 +47,9 @@ switch (props.scope) {
   case SearchScope.Articles:
     metadataComponent = ArticlesMetadata;
     break;
+  case SearchScope.ArtMuseum:
+    metadataComponent = ArtMuseumMetadata;
+    break;
   case SearchScope.Dpul:
     metadataComponent = DpulMetadata;
     break;
@@ -60,5 +64,9 @@ switch (props.scope) {
 function getIconType(type: string): string {
   const itemType = itemTypeMap[type.toLowerCase() as keyof typeof itemTypeMap];
   return itemType ? itemType : props.defaultIcon;
+}
+
+function shouldShowFormat(): boolean {
+  return props.scope !== SearchScope.ArtMuseum;
 }
 </script>

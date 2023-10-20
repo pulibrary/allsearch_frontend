@@ -32,6 +32,11 @@
         :results-promise="searchService.results(SearchScope.PulMap, query)"
         default-icon="map"
       ></SearchTray>
+      <SearchTray
+        :scope="SearchScope.ArtMuseum"
+        :results-promise="searchService.results(SearchScope.ArtMuseum, query)"
+        default-icon="visual-material"
+      ></SearchTray>
     </div>
   </div>
   <div v-else>
