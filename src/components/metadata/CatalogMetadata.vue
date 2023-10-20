@@ -1,10 +1,4 @@
 <template>
-  <li v-if="document.creator">
-    <span class="visually-hidden">Creator: </span>{{ document.creator }}
-  </li>
-  <li v-if="document.publisher">
-    <span class="visually-hidden">Publisher: </span>{{ document.publisher }}
-  </li>
   <li v-if="document.other_fields?.library" class="access-info">
     <PhysicalHoldings :document="document"></PhysicalHoldings>
   </li>

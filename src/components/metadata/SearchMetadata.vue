@@ -1,12 +1,20 @@
 <template>
   <ul class="metadata">
-    <li v-if="document.type && shouldShowFormat()">
+    <li v-if="document.type && basicFieldList.includes('format')">
       <FormatWithIcon
         :format="document.type"
         :icon="getIconType(document.type)"
       ></FormatWithIcon>
     </li>
-    <component :is="metadataComponent" :document="document"></component>
+    <li v-for="field in basicFieldList" :key="field">
+      <span class="visually-hidden">{{ field }}: </span
+      >{{ document[field as keyof SearchResult] }}
+    </li>
+    <component
+      :is="metadataComponent"
+      v-if="metadataComponent"
+      :document="document"
+    ></component>
   </ul>
 </template>
 
@@ -22,6 +30,7 @@ import CatalogMetadata from './CatalogMetadata.vue';
 import FindingaidsMetadata from './FindingaidsMetadata.vue';
 import PulmapsMetadata from './PulmapsMetadata.vue';
 import DpulMetadata from './DpulMetadata.vue';
+import ScopeFieldsMap from '../../config/ScopeFieldsMap';
 
 const props = defineProps({
   scope: {
@@ -61,12 +70,10 @@ switch (props.scope) {
     break;
 }
 
+const basicFieldList = ScopeFieldsMap[props.scope as SearchScope];
+
 function getIconType(type: string): string {
   const itemType = itemTypeMap[type.toLowerCase() as keyof typeof itemTypeMap];
   return itemType ? itemType : props.defaultIcon;
-}
-
-function shouldShowFormat(): boolean {
-  return props.scope !== SearchScope.ArtMuseum;
 }
 </script>

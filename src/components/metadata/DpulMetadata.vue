@@ -1,7 +1,4 @@
 <template>
-  <li v-if="document.creator">
-    <span class="visually-hidden">Creator: </span>{{ document.creator }}
-  </li>
   <li v-if="document?.other_fields?.collection">
     <span class="visually-hidden">Collection: </span
     >{{ document.other_fields.collection }}
