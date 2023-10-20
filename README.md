@@ -5,6 +5,10 @@ https://github.com/pulibrary/allsearch_api.
 
 ## Dev environment
 
+1. `asdf plugin-add nodejs`
+1. `asdf plugin-add ruby`
+1. `asdf plugin-add yarn`
+1. `asdf install`
 1. `yarn install`
 2. `yarn dev`
 
