@@ -67,7 +67,7 @@ input {
 button {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-  padding: 20px;
+  padding: 21.25px 20px 21.25px 20px;
   border: 5px solid var(--black);
   border-left: 0px;
   background-color: var(--orange);
