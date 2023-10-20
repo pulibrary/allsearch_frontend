@@ -38,6 +38,14 @@
         default-icon="visual-material"
       ></SearchTray>
     </div>
+    <div class="row"></div>
+    <div class="row">
+      <SearchTray
+        :scope="SearchScope.LibGuides"
+        :results-promise="searchService.results(SearchScope.LibGuides, query)"
+        default-icon="compass"
+      ></SearchTray>
+    </div>
   </div>
   <div v-else>
     <InitialSearch></InitialSearch>
