@@ -35,6 +35,10 @@ body {
   content: '\efd5';
 }
 
+.icon-databases::before {
+  content: '\ec2b';
+}
+
 .icon-digital::before {
   content: '\e91e';
 }

@@ -5,7 +5,7 @@ const map: { [key in SearchScope]: string[] } = {
   artmuseum: [],
   'best-bet': [],
   catalog: ['format', 'creator', 'publisher'],
-  database: [],
+  database: ['description'],
   dpul: ['format', 'creator'],
   findingaids: ['format'],
   libanswers: [],
