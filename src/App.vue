@@ -25,6 +25,7 @@ if (query) {
   </main>
 </template>
 <style>
+@import '../assets/app.css';
 a.skip-link {
   z-index: 25;
   position: absolute;
