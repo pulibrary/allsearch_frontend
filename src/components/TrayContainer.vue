@@ -3,6 +3,7 @@
     <h1>Coming soon</h1>
     <SearchBar></SearchBar>
     <div class="row">
+      <!-- row 1 -->
       <SearchTray
         :scope="SearchScope.Catalog"
         :results-promise="searchService.results(SearchScope.Catalog, query)"
@@ -15,6 +16,7 @@
       ></SearchTray>
     </div>
     <div class="row">
+      <!-- row 2 -->
       <SearchTray
         :scope="SearchScope.FindingAids"
         :results-promise="searchService.results(SearchScope.FindingAids, query)"
@@ -27,6 +29,7 @@
       ></SearchTray>
     </div>
     <div class="row">
+      <!-- row 3 -->
       <SearchTray
         :scope="SearchScope.PulMap"
         :results-promise="searchService.results(SearchScope.PulMap, query)"
@@ -39,11 +42,21 @@
       ></SearchTray>
     </div>
     <div class="row"></div>
+    <!-- row 4 -->
     <div class="row">
+      <!-- row 5 -->
       <SearchTray
         :scope="SearchScope.LibGuides"
         :results-promise="searchService.results(SearchScope.LibGuides, query)"
         default-icon="compass"
+      ></SearchTray>
+    </div>
+    <div class="row">
+      <!-- row 6 -->
+      <SearchTray
+        :scope="SearchScope.LibAnswers"
+        :results-promise="searchService.results(SearchScope.LibAnswers, query)"
+        default-icon="question"
       ></SearchTray>
     </div>
   </div>
