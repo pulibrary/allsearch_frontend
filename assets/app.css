@@ -19,6 +19,10 @@ body {
   content: '\e604';
 }
 
+.icon-best-bet::before {
+  content: '\f580';
+}
+
 .icon-book::before {
   content: '\e60b';
 }
