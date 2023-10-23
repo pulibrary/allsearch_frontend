@@ -55,6 +55,10 @@ body {
   content: '\f639';
 }
 
+.icon-question::before {
+  content: '\f558';
+}
+
 .icon-search::before {
   content: '\e90b';
 }

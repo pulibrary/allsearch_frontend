@@ -7,8 +7,10 @@
       ></FormatWithIcon>
     </li>
     <li v-for="field in basicFieldList" :key="field">
-      <span class="visually-hidden">{{ field }}: </span
-      >{{ document[field as keyof SearchResult] }}
+      <div v-if="document[field as keyof SearchResult] && field !== 'format'">
+        <span class="visually-hidden">{{ field }}: </span
+        >{{ document[field as keyof SearchResult] }}
+      </div>
     </li>
     <component
       :is="metadataComponent"
