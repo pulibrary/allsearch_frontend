@@ -14,6 +14,9 @@
         :results-promise="searchService.results(SearchScope.Articles, query)"
         default-icon="text"
       ></SearchTray>
+      <BestBetsTray
+        :results-promise="searchService.results(SearchScope.BestBets, query)"
+      ></BestBetsTray>
     </div>
     <div class="row">
       <!-- row 2 -->
@@ -70,6 +73,7 @@ import { SearchScope } from '../enums/SearchScope';
 import { SearchService } from '../services/SearchService';
 import { SearchTermService } from '../services/SearchTermService';
 import SearchTray from './SearchTray.vue';
+import BestBetsTray from './BestBetsTray.vue';
 import SearchBar from './SearchBar.vue';
 import InitialSearch from './InitialSearch.vue';
 
