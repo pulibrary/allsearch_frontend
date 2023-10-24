@@ -30,6 +30,13 @@
         :results-promise="searchService.results(SearchScope.Dpul, query)"
         default-icon="digital"
       ></SearchTray>
+      <SearchTray
+        :scope="SearchScope.LibraryDatabases"
+        :results-promise="
+          searchService.results(SearchScope.LibraryDatabases, query)
+        "
+        default-icon="databases"
+      ></SearchTray>
     </div>
     <div class="row">
       <!-- row 3 -->

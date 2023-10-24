@@ -3,6 +3,7 @@ export default {
   article: 'Articles+',
   artmuseum: 'Art Museum Collections',
   'best-bet': 'Best Bets',
+  database: 'Library Databases',
   dpul: 'Digital PUL',
   findingaids: 'Library Archives',
   libanswers: 'Library FAQ',

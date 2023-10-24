@@ -3,7 +3,7 @@ import { beforeEach, describe, it, expect } from 'vitest';
 import ArtMuseumMetadata from './ArtMuseumMetadata.vue';
 import ArtmuseumResultsFixtures from '../../fixtures/ArtmuseumResultsFixtures';
 
-describe('DpulMetadata', () => {
+describe('ArtMuseumMetadata', () => {
   let wrapper: VueWrapper;
   beforeEach(() => {
     wrapper = mount(ArtMuseumMetadata, {
