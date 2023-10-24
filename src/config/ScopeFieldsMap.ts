@@ -3,12 +3,12 @@ import { SearchScope } from '../enums/SearchScope';
 const map: { [key in SearchScope]: string[] } = {
   article: ['format', 'creator'],
   artmuseum: [],
-  'best-bet': [],
+  'best-bet': ['description'],
   catalog: ['format', 'creator', 'publisher'],
   database: ['description'],
   dpul: ['format', 'creator'],
   findingaids: ['format'],
-  libanswers: [],
+  libanswers: ['creator'],
   libguides: ['description'],
   pulmap: ['format', 'creator', 'publisher']
 };

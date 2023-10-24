@@ -5,6 +5,7 @@ export default {
   database: 'https://libguides.princeton.edu/az.php',
   dpul: 'https://dpul.princeton.edu/',
   findingaids: 'https://findingaids.princeton.edu',
+  libanswers: 'https://faq.library.princeton.edu/search',
   libguides: 'https://libguides.princeton.edu',
   pulmap: 'https://maps.princeton.edu'
 };
