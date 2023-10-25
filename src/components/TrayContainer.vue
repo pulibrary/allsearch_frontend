@@ -5,19 +5,20 @@
       <SearchBar></SearchBar>
       <JumpToSection :trays-to-link="completedTrays"></JumpToSection>
     </nav>
-    <div v-for="row in rows" :key="row[0]" class="row">
-      <template v-for="scope in row" :key="scope">
-        <component
-          :is="trayComponent(scope)"
-          v-if="scope"
-          :scope="scope"
-          :results-promise="searchService.results(scope, query)"
-          @search-data-loaded="handleDataLoaded"
-        >
-        </component>
-        <div v-else></div>
-        <!-- empty grid cell -->
-      </template>
+    <div class="tray-grid">
+      <div v-for="row in rows" :key="row[0]" class="row">
+        <template v-for="scope in row" :key="scope">
+          <component
+            :is="trayComponent(scope)"
+            v-if="scope"
+            :scope="scope"
+            :results-promise="searchService.results(scope, query)"
+            @search-data-loaded="handleDataLoaded"
+          >
+          </component>
+          <div v-else><!-- no tray is configured for this cell --></div>
+        </template>
+      </div>
     </div>
   </div>
   <div v-else>
@@ -66,13 +67,20 @@ function trayComponent(scope: SearchScope): Component {
 </script>
 
 <style scoped>
+.tray-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .row {
-  margin-top: 10px;
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: flex-start;
   min-height: 300px;
+  width: 96vw;
+  gap: 2vw;
 }
 
 nav {

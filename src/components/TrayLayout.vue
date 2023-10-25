@@ -19,8 +19,9 @@ section {
   background-color: var(--light-gray);
   padding: 2px 15px 18px;
   border: 1px var(--gray) solid;
-  margin: 10px 3vw;
-  width: clamp(23vw, 320px, 95vw);
-  flex-direction: column;
+  margin-top: 10px;
+  width: max(calc(30vw - 30px), 360px);
+  overflow-wrap: anywhere;
+  flex-grow: 1;
 }
 </style>
