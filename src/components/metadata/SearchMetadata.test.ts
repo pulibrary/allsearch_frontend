@@ -54,9 +54,10 @@ describe('SearchMetadata', () => {
         }
       });
     });
-    it('includes the description', () => {
+    it('includes the truncated description', () => {
+      console.log(wrapper.text());
       expect(wrapper.text()).toContain(
-        'Also known as Beida fabao, or pkulaw.cn.  Chinese laws, regulations and cases in Chinese (Chinalawinfo) and English/Chinese (Lawinfochina). One concurrent user only. 1949+'
+        'Also known as Beida fabao, or pkulaw.cn.  Chinese laws, regulations and cases in Chinese (Chinalawinfo) and English/Chinese (Lawinfochina). One concurrent…'
       );
     });
   });
