@@ -8,7 +8,7 @@
       ></TrayTitle>
     </template>
     <template v-if="results" #metadata>
-      <ol v-if="results.records.length">
+      <ol v-if="results.records.length" class="documents">
         <li
           v-for="document in results.records"
           :key="document.id"
@@ -87,14 +87,28 @@ populateResults();
 </script>
 
 <style>
+ol.documents {
+  list-style-position: inside;
+  padding-left: 0px;
+}
+
+li.document h3 {
+  display: inline;
+}
+
+li.document {
+  padding-top: 20px;
+}
+
 li.document:not(:last-child) {
   padding-bottom: 20px;
   border-bottom: 2px var(--black) solid;
 }
+
 .metadata {
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 10px 0;
 }
 
 .metadata li {
