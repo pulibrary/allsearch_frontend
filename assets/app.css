@@ -68,6 +68,10 @@ body {
   content: '\f558';
 }
 
+.icon-right::before {
+  content: '\e909';
+}
+
 .icon-search::before {
   content: '\e90b';
 }
