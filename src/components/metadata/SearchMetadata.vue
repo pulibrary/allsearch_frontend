@@ -9,7 +9,11 @@
     <li v-for="field in basicFieldList" :key="field">
       <div v-if="document[field as keyof SearchResult] && field !== 'format'">
         <span class="visually-hidden">{{ field }}: </span
-        >{{ document[field as keyof SearchResult] }}
+        >{{
+          StringService.truncate(
+            document[field as keyof SearchResult] as string
+          )
+        }}
       </div>
     </li>
     <component
@@ -33,6 +37,7 @@ import FindingaidsMetadata from './FindingaidsMetadata.vue';
 import PulmapsMetadata from './PulmapsMetadata.vue';
 import DpulMetadata from './DpulMetadata.vue';
 import ScopeFieldsMap from '../../config/ScopeFieldsMap';
+import { StringService } from '../../services/StringService';
 
 const props = defineProps({
   scope: {
