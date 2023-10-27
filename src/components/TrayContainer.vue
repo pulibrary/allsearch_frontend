@@ -2,72 +2,18 @@
   <div v-if="query">
     <h1>Coming soon</h1>
     <SearchBar></SearchBar>
-    <div class="row">
-      <!-- row 1 -->
-      <SearchTray
-        :scope="SearchScope.Catalog"
-        :results-promise="searchService.results(SearchScope.Catalog, query)"
-        default-icon="text"
-      ></SearchTray>
-      <SearchTray
-        :scope="SearchScope.Articles"
-        :results-promise="searchService.results(SearchScope.Articles, query)"
-        default-icon="text"
-      ></SearchTray>
-      <BestBetsTray
-        :results-promise="searchService.results(SearchScope.BestBets, query)"
-      ></BestBetsTray>
-    </div>
-    <div class="row">
-      <!-- row 2 -->
-      <SearchTray
-        :scope="SearchScope.FindingAids"
-        :results-promise="searchService.results(SearchScope.FindingAids, query)"
+    <JumpToSection :trays-to-link="completedTrays"></JumpToSection>
+    <div v-for="row in rows" :key="row[0]" class="row">
+      <component
+        :is="trayComponent(scope)"
+        v-for="scope in row"
+        :key="scope"
+        :scope="scope"
+        :results-promise="searchService.results(scope, query)"
         default-icon="archives"
-      ></SearchTray>
-      <SearchTray
-        :scope="SearchScope.Dpul"
-        :results-promise="searchService.results(SearchScope.Dpul, query)"
-        default-icon="digital"
-      ></SearchTray>
-      <SearchTray
-        :scope="SearchScope.LibraryDatabases"
-        :results-promise="
-          searchService.results(SearchScope.LibraryDatabases, query)
-        "
-        default-icon="databases"
-      ></SearchTray>
-    </div>
-    <div class="row">
-      <!-- row 3 -->
-      <SearchTray
-        :scope="SearchScope.PulMap"
-        :results-promise="searchService.results(SearchScope.PulMap, query)"
-        default-icon="map"
-      ></SearchTray>
-      <SearchTray
-        :scope="SearchScope.ArtMuseum"
-        :results-promise="searchService.results(SearchScope.ArtMuseum, query)"
-        default-icon="visual-material"
-      ></SearchTray>
-    </div>
-    <div class="row"></div>
-    <!-- row 4 -->
-    <div class="row">
-      <!-- row 5 -->
-      <SearchTray
-        :scope="SearchScope.LibGuides"
-        :results-promise="searchService.results(SearchScope.LibGuides, query)"
-        default-icon="compass"
-      ></SearchTray>
-    </div>
-    <div class="row">
-      <!-- row 6 -->
-      <SearchTray
-        :scope="SearchScope.LibAnswers"
-        :results-promise="searchService.results(SearchScope.LibAnswers, query)"
-        default-icon="question"
-      ></SearchTray>
+        @search-data-loaded="handleDataLoaded"
+      >
+      </component>
     </div>
   </div>
   <div v-else>
@@ -83,9 +29,36 @@ import SearchTray from './SearchTray.vue';
 import BestBetsTray from './BestBetsTray.vue';
 import SearchBar from './SearchBar.vue';
 import InitialSearch from './InitialSearch.vue';
+import JumpToSection from './JumpToSection.vue';
+import { SearchDataLoadSummary } from '../interfaces/SearchDataLoadSummary';
+import { type Component, Ref, ref } from 'vue';
+import { TrayOrder } from '../models/TrayOrder';
 
 const query = SearchTermService.term();
 const searchService = new SearchService();
+const completedTrays: Ref<SearchDataLoadSummary[]> = ref([]);
+
+const trayOrder = new TrayOrder();
+const rows: Ref<SearchScope[][]> = ref(trayOrder.asRows);
+
+function markTrayAsCompleted(summary: SearchDataLoadSummary) {
+  completedTrays.value.push(summary);
+  completedTrays.value.sort((a, b) => {
+    return trayOrder.compareLeftToRight(a.scope, b.scope);
+  });
+}
+function handleDataLoaded(summary: SearchDataLoadSummary) {
+  if (summary.scope === SearchScope.BestBets && summary.results === 0) {
+    trayOrder.removeBestBets();
+    rows.value = trayOrder.asRows;
+  } else {
+    markTrayAsCompleted(summary);
+  }
+}
+
+function trayComponent(scope: SearchScope): Component {
+  return scope === SearchScope.BestBets ? BestBetsTray : SearchTray;
+}
 </script>
 
 <style>

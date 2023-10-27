@@ -1,0 +1,5 @@
+* Get the event listening working again
+* Add an integration test for the skip links
+* Fix the default icon binding
+* SkipToSection component displays one for each of 
+* On that event, add the tray's link to a new component
