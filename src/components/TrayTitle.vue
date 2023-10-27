@@ -6,6 +6,7 @@
   <div class="description">{{ props.description }}</div>
 </template>
 <script setup lang="ts">
+import { IdService } from '../services/IdService';
 const props = defineProps({
   icon: String,
   heading: {
@@ -15,13 +16,7 @@ const props = defineProps({
   description: String
 });
 const iconClass = 'icon icon-' + props.icon;
-const headingId = props.heading
-  .toLowerCase()
-  .trim()
-  .replace(/\s/g, '-')
-  // only ASCII letters, digits, '_', and '-' should be used in an id, per
-  // https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id
-  .replace(/[^\w\d-_]/g, '');
+const headingId = IdService.createDomId(props.heading);
 </script>
 <style>
 h3 a {

@@ -62,9 +62,19 @@ describe('BestBetsTray component', () => {
         }
       });
     });
-    test('there is no content', async () => {
+    test('it displays no content', async () => {
       await flushPromises();
       expect(wrapper.html()).toEqual('<!--v-if-->');
+    });
+    test('it emits an event with 0 results and the dom ID', async () => {
+      await flushPromises();
+      expect(wrapper.emitted().searchDataLoaded.length).toBe(1);
+      expect(wrapper.emitted().searchDataLoaded[0]).toEqual([
+        {
+          results: 0,
+          scope: SearchScope.BestBets
+        }
+      ]);
     });
   });
 });
