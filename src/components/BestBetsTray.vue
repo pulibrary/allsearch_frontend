@@ -37,15 +37,25 @@ import SearchMetadata from './metadata/SearchMetadata.vue';
 import TrayLayout from './TrayLayout.vue';
 import TrayTitle from './TrayTitle.vue';
 import MoreResults from './MoreResults.vue';
+import { SearchDataLoadSummary } from '../interfaces/SearchDataLoadSummary';
+import { SearchScope } from '../enums/SearchScope';
 
 const props = defineProps({
   resultsPromise: Promise<SearchResults>
 });
 
+const emit = defineEmits<{
+  (e: 'searchDataLoaded', payload: SearchDataLoadSummary): void;
+}>();
+
 const results: Ref<SearchResults | undefined> = ref(undefined);
 
 async function populateResults(): Promise<void> {
   results.value = await props.resultsPromise;
+  emit('searchDataLoaded', {
+    scope: SearchScope.BestBets,
+    results: results.value?.records.length
+  });
 }
 
 populateResults();

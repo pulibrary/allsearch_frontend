@@ -40,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-import { Ref, ref } from 'vue';
+import { PropType, Ref, ref } from 'vue';
 import { SearchResults } from '../models/SearchResults';
 import scopeTitleMap from '../config/ScopeTitleMap';
 import scopeUrlMap from '../config/ScopeUrlMap';
@@ -49,19 +49,29 @@ import SearchMetadata from './metadata/SearchMetadata.vue';
 import TrayLayout from './TrayLayout.vue';
 import TrayTitle from './TrayTitle.vue';
 import MoreResults from './MoreResults.vue';
+import { SearchDataLoadSummary } from '../interfaces/SearchDataLoadSummary';
+import { SearchScope } from '../enums/SearchScope';
 
 const props = defineProps({
   scope: {
-    type: String,
+    type: String as PropType<SearchScope>,
     required: true
   },
   resultsPromise: Promise<SearchResults>
 });
 
+const emit = defineEmits<{
+  (e: 'searchDataLoaded', payload: SearchDataLoadSummary): void;
+}>();
+
 const results: Ref<SearchResults | undefined> = ref(undefined);
 
 async function populateResults(): Promise<void> {
   results.value = await props.resultsPromise;
+  emit('searchDataLoaded', {
+    scope: props.scope,
+    results: results.value?.records.length
+  });
 }
 
 function getScopeTitle(): string {
