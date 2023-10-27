@@ -94,6 +94,16 @@ ol.documents {
 
 li.document h3 {
   display: inline;
+  text-underline-offset: 5px;
+}
+
+li.document h3 a {
+  text-decoration-thickness: 2px;
+}
+
+li.document h3 a:focus,
+li.document h3 a:hover {
+  text-decoration-color: var(--orange);
 }
 
 li.document {
