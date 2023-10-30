@@ -23,8 +23,7 @@ describe('SearchTray component with Article flavor', () => {
         resultsPromise: new SearchService().results(
           SearchScope.Articles,
           'robots'
-        ),
-        defaultIcon: 'text'
+        )
       }
     });
   });

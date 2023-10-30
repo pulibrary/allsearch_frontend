@@ -31,8 +31,7 @@ describe('SearchTray component with Findingaids flavor', () => {
         resultsPromise: new SearchService().results(
           SearchScope.FindingAids,
           'my search'
-        ),
-        defaultIcon: 'archives'
+        )
       }
     });
   });
@@ -104,8 +103,7 @@ describe('SearchTray component with Findingaids flavor', () => {
           resultsPromise: new SearchService().results(
             SearchScope.FindingAids,
             'my search'
-          ),
-          defaultIcon: 'archives'
+          )
         }
       });
     });

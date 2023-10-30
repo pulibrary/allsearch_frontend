@@ -3,7 +3,7 @@
     <template #title>
       <TrayTitle
         :heading="getScopeTitle()"
-        :icon="props.defaultIcon"
+        :icon="getScopeIcon()"
         description="Lorem ipsum"
       ></TrayTitle>
     </template>
@@ -19,7 +19,7 @@
           </h3>
           <SearchMetadata
             :scope="props.scope"
-            :default-icon="props.defaultIcon"
+            :default-icon="getScopeIcon()"
             :document="document"
           ></SearchMetadata>
         </li>
@@ -44,6 +44,7 @@ import { Ref, ref } from 'vue';
 import { SearchResults } from '../models/SearchResults';
 import scopeTitleMap from '../config/ScopeTitleMap';
 import scopeUrlMap from '../config/ScopeUrlMap';
+import scopeIconMap from '../config/ScopeIconMap';
 import SearchMetadata from './metadata/SearchMetadata.vue';
 import TrayLayout from './TrayLayout.vue';
 import TrayTitle from './TrayTitle.vue';
@@ -54,11 +55,7 @@ const props = defineProps({
     type: String,
     required: true
   },
-  resultsPromise: Promise<SearchResults>,
-  defaultIcon: {
-    type: String,
-    required: true
-  }
+  resultsPromise: Promise<SearchResults>
 });
 
 const results: Ref<SearchResults | undefined> = ref(undefined);
@@ -78,6 +75,14 @@ function getScopeTitle(): string {
 function getScopeUrl(): string {
   if (props.scope) {
     return scopeUrlMap[props.scope as keyof typeof scopeUrlMap];
+  } else {
+    return '';
+  }
+}
+
+function getScopeIcon(): string {
+  if (props.scope) {
+    return scopeIconMap[props.scope as keyof typeof scopeIconMap];
   } else {
     return '';
   }
