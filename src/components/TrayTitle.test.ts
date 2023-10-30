@@ -12,6 +12,24 @@ describe('TrayTitle component', () => {
     });
     expect(wrapper.find('h2').text()).toEqual('Articles+');
   });
+  test('the heading has an id', () => {
+    const wrapper = mount(TrayTitle, {
+      props: {
+        heading: 'Articles+',
+        icon: 'text'
+      }
+    });
+    expect(wrapper.find('h2').attributes('id')).toEqual('articles');
+  });
+  test('the heading id does not contain whitespace', () => {
+    const wrapper = mount(TrayTitle, {
+      props: {
+        heading: 'Library Databases\t',
+        icon: 'text'
+      }
+    });
+    expect(wrapper.find('h2').attributes('id')).toEqual('library-databases');
+  });
   test('heading has an icon', () => {
     const wrapper = mount(TrayTitle, {
       props: {
@@ -32,6 +50,7 @@ describe('TrayTitle component', () => {
   test('when a description is provided, it adds it', () => {
     const wrapper = mount(TrayTitle, {
       props: {
+        heading: 'my source',
         description: 'The best place to search'
       }
     });

@@ -1,17 +1,22 @@
 <template>
-  <h2>
+  <h2 :id="headingId">
     <span v-if="props.icon" :class="iconClass" aria-hidden="true"></span>
     {{ props.heading }}
   </h2>
   <div class="description">{{ props.description }}</div>
 </template>
 <script setup lang="ts">
+import { IdService } from '../services/IdService';
 const props = defineProps({
   icon: String,
-  heading: String,
+  heading: {
+    type: String,
+    required: true
+  },
   description: String
 });
 const iconClass = 'icon icon-' + props.icon;
+const headingId = IdService.createDomId(props.heading);
 </script>
 <style>
 h3 a {

@@ -2,63 +2,19 @@
   <div v-if="query">
     <h1>Coming soon</h1>
     <SearchBar></SearchBar>
-    <div class="row">
-      <!-- row 1 -->
-      <SearchTray
-        :scope="SearchScope.Catalog"
-        :results-promise="searchService.results(SearchScope.Catalog, query)"
-      ></SearchTray>
-      <SearchTray
-        :scope="SearchScope.Articles"
-        :results-promise="searchService.results(SearchScope.Articles, query)"
-      ></SearchTray>
-      <BestBetsTray
-        :results-promise="searchService.results(SearchScope.BestBets, query)"
-      ></BestBetsTray>
-    </div>
-    <div class="row">
-      <!-- row 2 -->
-      <SearchTray
-        :scope="SearchScope.FindingAids"
-        :results-promise="searchService.results(SearchScope.FindingAids, query)"
-      ></SearchTray>
-      <SearchTray
-        :scope="SearchScope.Dpul"
-        :results-promise="searchService.results(SearchScope.Dpul, query)"
-      ></SearchTray>
-      <SearchTray
-        :scope="SearchScope.LibraryDatabases"
-        :results-promise="
-          searchService.results(SearchScope.LibraryDatabases, query)
-        "
-      ></SearchTray>
-    </div>
-    <div class="row">
-      <!-- row 3 -->
-      <SearchTray
-        :scope="SearchScope.PulMap"
-        :results-promise="searchService.results(SearchScope.PulMap, query)"
-      ></SearchTray>
-      <SearchTray
-        :scope="SearchScope.ArtMuseum"
-        :results-promise="searchService.results(SearchScope.ArtMuseum, query)"
-      ></SearchTray>
-    </div>
-    <div class="row"></div>
-    <!-- row 4 -->
-    <div class="row">
-      <!-- row 5 -->
-      <SearchTray
-        :scope="SearchScope.LibGuides"
-        :results-promise="searchService.results(SearchScope.LibGuides, query)"
-      ></SearchTray>
-    </div>
-    <div class="row">
-      <!-- row 6 -->
-      <SearchTray
-        :scope="SearchScope.LibAnswers"
-        :results-promise="searchService.results(SearchScope.LibAnswers, query)"
-      ></SearchTray>
+    <div v-for="row in rows" :key="row[0]" class="row">
+      <template v-for="scope in row" :key="scope">
+        <component
+          :is="trayComponent(scope)"
+          v-if="scope"
+          :scope="scope"
+          :results-promise="searchService.results(scope, query)"
+          @search-data-loaded="handleDataLoaded"
+        >
+        </component>
+        <div v-else></div>
+        <!-- empty grid cell -->
+      </template>
     </div>
   </div>
   <div v-else>
@@ -74,9 +30,35 @@ import SearchTray from './SearchTray.vue';
 import BestBetsTray from './BestBetsTray.vue';
 import SearchBar from './SearchBar.vue';
 import InitialSearch from './InitialSearch.vue';
+import { SearchDataLoadSummary } from '../interfaces/SearchDataLoadSummary';
+import { type Component, Ref, ref } from 'vue';
+import { TrayOrder } from '../models/TrayOrder';
 
 const query = SearchTermService.term();
 const searchService = new SearchService();
+const completedTrays: Ref<SearchDataLoadSummary[]> = ref([]);
+
+const trayOrder = new TrayOrder();
+const rows: Ref<SearchScope[][]> = ref(trayOrder.asRows);
+
+function markTrayAsCompleted(summary: SearchDataLoadSummary) {
+  completedTrays.value.push(summary);
+  completedTrays.value.sort((a, b) => {
+    return trayOrder.compareLeftToRight(a.scope, b.scope);
+  });
+}
+function handleDataLoaded(summary: SearchDataLoadSummary) {
+  if (summary.scope === SearchScope.BestBets && summary.results === 0) {
+    trayOrder.removeBestBets();
+    rows.value = trayOrder.asRows;
+  } else {
+    markTrayAsCompleted(summary);
+  }
+}
+
+function trayComponent(scope: SearchScope): Component {
+  return scope === SearchScope.BestBets ? BestBetsTray : SearchTray;
+}
 </script>
 
 <style>
