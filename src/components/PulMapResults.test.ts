@@ -30,8 +30,7 @@ describe('PulmapResults component', () => {
         resultsPromise: new SearchService().results(
           SearchScope.PulMap,
           'searching for robots'
-        ),
-        defaultIcon: 'map'
+        )
       }
     });
   });
@@ -103,8 +102,7 @@ describe('PulmapResults component', () => {
           resultsPromise: new SearchService().results(
             SearchScope.PulMap,
             'searching for robots'
-          ),
-          defaultIcon: 'map'
+          )
         }
       });
     });

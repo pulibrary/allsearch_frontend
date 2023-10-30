@@ -7,12 +7,10 @@
       <SearchTray
         :scope="SearchScope.Catalog"
         :results-promise="searchService.results(SearchScope.Catalog, query)"
-        default-icon="text"
       ></SearchTray>
       <SearchTray
         :scope="SearchScope.Articles"
         :results-promise="searchService.results(SearchScope.Articles, query)"
-        default-icon="text"
       ></SearchTray>
       <BestBetsTray
         :results-promise="searchService.results(SearchScope.BestBets, query)"
@@ -23,19 +21,16 @@
       <SearchTray
         :scope="SearchScope.FindingAids"
         :results-promise="searchService.results(SearchScope.FindingAids, query)"
-        default-icon="archives"
       ></SearchTray>
       <SearchTray
         :scope="SearchScope.Dpul"
         :results-promise="searchService.results(SearchScope.Dpul, query)"
-        default-icon="digital"
       ></SearchTray>
       <SearchTray
         :scope="SearchScope.LibraryDatabases"
         :results-promise="
           searchService.results(SearchScope.LibraryDatabases, query)
         "
-        default-icon="databases"
       ></SearchTray>
     </div>
     <div class="row">
@@ -43,12 +38,10 @@
       <SearchTray
         :scope="SearchScope.PulMap"
         :results-promise="searchService.results(SearchScope.PulMap, query)"
-        default-icon="map"
       ></SearchTray>
       <SearchTray
         :scope="SearchScope.ArtMuseum"
         :results-promise="searchService.results(SearchScope.ArtMuseum, query)"
-        default-icon="visual-material"
       ></SearchTray>
     </div>
     <div class="row"></div>
@@ -58,7 +51,6 @@
       <SearchTray
         :scope="SearchScope.LibGuides"
         :results-promise="searchService.results(SearchScope.LibGuides, query)"
-        default-icon="compass"
       ></SearchTray>
     </div>
     <div class="row">
@@ -66,7 +58,6 @@
       <SearchTray
         :scope="SearchScope.LibAnswers"
         :results-promise="searchService.results(SearchScope.LibAnswers, query)"
-        default-icon="question"
       ></SearchTray>
     </div>
   </div>
