@@ -1,7 +1,10 @@
 <template>
   <div v-if="query">
     <h1>Coming soon</h1>
-    <SearchBar></SearchBar>
+    <nav aria-label="search tools">
+      <SearchBar></SearchBar>
+      <JumpToSection :trays-to-link="completedTrays"></JumpToSection>
+    </nav>
     <div v-for="row in rows" :key="row[0]" class="row">
       <template v-for="scope in row" :key="scope">
         <component
@@ -33,6 +36,7 @@ import InitialSearch from './InitialSearch.vue';
 import { SearchDataLoadSummary } from '../interfaces/SearchDataLoadSummary';
 import { type Component, Ref, ref } from 'vue';
 import { TrayOrder } from '../models/TrayOrder';
+import JumpToSection from './JumpToSection.vue';
 
 const query = SearchTermService.term();
 const searchService = new SearchService();
@@ -61,7 +65,7 @@ function trayComponent(scope: SearchScope): Component {
 }
 </script>
 
-<style>
+<style scoped>
 .row {
   margin-top: 10px;
   display: flex;
@@ -69,5 +73,12 @@ function trayComponent(scope: SearchScope): Component {
   flex-wrap: wrap;
   align-items: flex-start;
   min-height: 300px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  flex-wrap: wrap;
 }
 </style>
