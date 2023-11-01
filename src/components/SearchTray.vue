@@ -110,10 +110,11 @@ ol.documents {
 li.document h3 {
   display: inline;
   text-underline-offset: 5px;
+  font-weight: normal;
 }
 
 li.document h3 a {
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: 1px;
 }
 
 li.document h3 a:focus,
@@ -142,5 +143,9 @@ li.document:not(:last-child) {
 
 .access-info {
   margin-top: 12px;
+}
+
+ol li.document::marker {
+  font-size: 1.17em;
 }
 </style>
