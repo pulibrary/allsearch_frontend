@@ -1,7 +1,7 @@
-import { beforeEach, describe, expect, test } from "vitest";
+import { beforeEach, describe, expect, test } from 'vitest';
 import { mount, VueWrapper } from '@vue/test-utils';
-import CatalogMetadata from './CatalogMetadata.vue'
-import CatalogMetadataFixtures from "../../fixtures/CatalogMetadataFixtures";
+import CatalogMetadata from './CatalogMetadata.vue';
+import CatalogMetadataFixtures from '../../fixtures/CatalogMetadataFixtures';
 
 describe('CatalogMetadata', () => {
   let wrapper: VueWrapper;

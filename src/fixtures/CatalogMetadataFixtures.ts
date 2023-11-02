@@ -1,4 +1,4 @@
-import { SearchResult } from "../models/SearchResult";
+import { SearchResult } from '../models/SearchResult';
 
 export default {
   testResult: SearchResult.fromObject({
@@ -14,4 +14,4 @@ export default {
         'https://na05.alma.exlibrisgroup.com/view/uresolver/01PRI_INST/openurl?u.ignore_date_coverage=true&portfolio_pid=53763462940006421&Force_direct=true'
     }
   })
-}
+};
