@@ -10,7 +10,7 @@ https://github.com/pulibrary/allsearch_api.
 1. `asdf plugin-add yarn`
 1. `asdf install`
 1. `yarn install`
-2. `yarn dev`
+1. `yarn dev`
 
 ## Vue 3 + TypeScript + Vite
 
@@ -71,6 +71,7 @@ To fix linting errors: `yarn lint --fix`
 
 ### Git Hook
 
-If changes need to happen in 'simple-git-hooks' 
-1. Make the change in [package.json](https://github.com/pulibrary/allsearch_frontend/blob/main/package.json) 
+If changes need to happen in 'simple-git-hooks'
+
+1. Make the change in [package.json](https://github.com/pulibrary/allsearch_frontend/blob/main/package.json)
 2. Then run `yarn simple-git-hooks` to reconfigure the settings.
