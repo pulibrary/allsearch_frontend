@@ -1,6 +1,5 @@
 <template>
   <div v-if="query">
-    <h1>Coming soon</h1>
     <nav aria-label="search tools">
       <SearchBar></SearchBar>
       <JumpToSection :trays-to-link="completedTrays"></JumpToSection>
