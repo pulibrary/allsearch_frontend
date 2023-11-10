@@ -55,6 +55,23 @@ brew install semgrep
 semgrep --config auto . # run rules from the semgrep community
 ```
 
+## Safedep vet
+
+This repository uses [safedep vet](https://github.com/safedep/vet)
+to check for problems in the js dependencies.  To run it locally:
+
+```
+brew tap safedep/tap
+brew install safedep/tap/vet
+vet auth configure --community
+vet scan -s --lockfiles yarn.lock --filter-suite vet-filter.yml --filter-fail
+```
+
+It will often report back on some things you can do to improve, whether or not
+the check fails our quality gate.  But if it does fail, it will give the message
+"scan failed due to error" as the last line of output.
+
+
 ### Using the Vitest VSCode Plugin
 
 1. Click on the flask icon ('Testing') in the left panel
