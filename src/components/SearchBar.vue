@@ -6,19 +6,20 @@
         alert-text="Please input a search"
       ></WarningAlert>
       <div class="searchbar">
-        <label for="search"
-          >Search
+        <div class="align-searchbar">
           <input
             id="search"
             v-model="query"
             type="text"
             name="q"
             aria-required="true"
+            aria-label="Search"
           />
-        </label>
-        <button type="submit" class="icon icon-search">
-          <span class="visually-hidden">Search</span>
-        </button>
+          <button type="submit">
+            <span class="visually-hidden" style="margin: auto">Search</span>
+            <span class="icon icon-search"></span>
+          </button>
+        </div>
       </div>
     </form>
   </search>
@@ -61,18 +62,24 @@ input {
   border: 5px solid var(--black);
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
-  padding: 20px;
   font-size: 1rem;
+  width: 25vw;
+  min-width: 180px;
 }
 button {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-  padding: 21.25px 20px 21.25px 20px;
   border: 5px solid var(--black);
   border-left: 0px;
   background-color: var(--orange);
   font-size: 1rem;
   margin-top: 0;
   margin-left: 0;
+  width: 51px;
+}
+
+.align-searchbar {
+  display: flex;
+  height: 60px;
 }
 </style>
