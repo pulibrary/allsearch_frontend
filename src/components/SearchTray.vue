@@ -25,7 +25,10 @@
         </li>
       </ol>
     </template>
-    <template v-if="!results?.records?.length" #no_results>
+    <template v-if="!loaded" #loading>
+      <InlineBadge>Loading...</InlineBadge>
+    </template>
+    <template v-if="loaded && !results?.records?.length" #no_results>
       No results found. Search the
       <a :href="getScopeUrl()">{{ getScopeTitle() }}</a
       >.
@@ -51,6 +54,7 @@ import TrayTitle from './TrayTitle.vue';
 import MoreResults from './MoreResults.vue';
 import { SearchDataLoadSummary } from '../interfaces/SearchDataLoadSummary';
 import { SearchScope } from '../enums/SearchScope';
+import InlineBadge from './InlineBadge.vue';
 
 const props = defineProps({
   scope: {
@@ -65,9 +69,11 @@ const emit = defineEmits<{
 }>();
 
 const results: Ref<SearchResults | undefined> = ref(undefined);
+let loaded = false;
 
 async function populateResults(): Promise<void> {
   results.value = await props.resultsPromise;
+  loaded = true;
   emit('searchDataLoaded', {
     scope: props.scope,
     results: results.value?.records.length
