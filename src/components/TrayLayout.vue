@@ -3,6 +3,7 @@
     <slot name="title"></slot>
     <slot name="metadata"></slot>
     <slot name="no_results"></slot>
+    <slot name="loading"></slot>
     <slot name="further_actions"></slot>
   </section>
 </template>
