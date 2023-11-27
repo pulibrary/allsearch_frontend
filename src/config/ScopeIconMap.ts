@@ -11,6 +11,7 @@ const map: { [key in SearchScope]: string } = {
   libanswers: 'question',
   libguides: 'compass',
   pulmap: 'map',
+  staff: 'phone-book',
   website: 'windows'
 };
 export default map;

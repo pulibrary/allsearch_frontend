@@ -34,6 +34,7 @@ import ArticlesMetadata from './ArticlesMetadata.vue';
 import ArtMuseumMetadata from './ArtMuseumMetadata.vue';
 import CatalogMetadata from './CatalogMetadata.vue';
 import FindingaidsMetadata from './FindingaidsMetadata.vue';
+import LibraryStaffMetadata from './LibraryStaffMetadata.vue';
 import PulmapsMetadata from './PulmapsMetadata.vue';
 import DpulMetadata from './DpulMetadata.vue';
 import WebsiteMetadata from './WebsiteMetadata.vue';
@@ -73,6 +74,9 @@ switch (props.scope) {
   case SearchScope.FindingAids:
     metadataComponent = FindingaidsMetadata;
     break;
+  case SearchScope.LibraryStaff:
+    metadataComponent = LibraryStaffMetadata;
+    break;
   case SearchScope.PulMap:
     metadataComponent = PulmapsMetadata;
     break;
@@ -85,6 +89,6 @@ const basicFieldList = ScopeFieldsMap[props.scope as SearchScope];
 
 function getIconType(type: string): string {
   const itemType = itemTypeMap[type.toLowerCase() as keyof typeof itemTypeMap];
-  return itemType ? itemType : props.defaultIcon;
+  return itemType || props.defaultIcon;
 }
 </script>

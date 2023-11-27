@@ -5,6 +5,7 @@ import ArtmuseumResultsFixtures from '../../fixtures/ArtmuseumResultsFixtures';
 import { SearchScope } from '../../enums/SearchScope';
 import LibguidesResultsFixtures from '../../fixtures/LibguidesResultsFixtures';
 import LibraryDatabasesResultsFixtures from '../../fixtures/LibraryDatabasesResultsFixtures';
+import LibraryStaffResultsFixtures from '../../fixtures/LibraryStaffResultsFixtures';
 
 describe('SearchMetadata', () => {
   let wrapper: VueWrapper;
@@ -55,10 +56,24 @@ describe('SearchMetadata', () => {
       });
     });
     it('includes the truncated description', () => {
-      console.log(wrapper.text());
       expect(wrapper.text()).toContain(
         'Also known as Beida fabao, or pkulaw.cn.  Chinese laws, regulations and cases in Chinese (Chinalawinfo) and English/Chinese (Lawinfochina). One concurrent…'
       );
+    });
+  });
+
+  describe('Library staff scope', () => {
+    beforeEach(() => {
+      wrapper = mount(SearchMetadata, {
+        props: {
+          document: LibraryStaffResultsFixtures.testResult1,
+          defaultIcon: 'phone-book',
+          scope: SearchScope.LibraryStaff
+        }
+      });
+    });
+    it('includes the email', () => {
+      expect(wrapper.text()).toContain('nibmus@princeton.edu');
     });
   });
 });
