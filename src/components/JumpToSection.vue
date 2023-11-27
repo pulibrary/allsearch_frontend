@@ -40,7 +40,6 @@ const trayOrder = new TrayOrder();
 </script>
 <style scoped>
 #jump-to-section {
-  border: 1px var(--gray) solid;
   padding: 2px 15px 18px;
 }
 ul {

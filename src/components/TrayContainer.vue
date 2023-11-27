@@ -1,9 +1,11 @@
 <template>
   <div v-if="query">
-    <nav aria-label="search tools">
-      <SearchBar></SearchBar>
-      <JumpToSection :trays-to-link="completedTrays"></JumpToSection>
-    </nav>
+    <div class="header__secondary">
+      <nav aria-label="search tools">
+        <SearchBar></SearchBar>
+        <JumpToSection :trays-to-link="completedTrays"></JumpToSection>
+      </nav>
+    </div>
     <div class="tray-grid">
       <div v-for="row in rows" :key="row[0]" class="row">
         <template v-for="scope in row" :key="scope">
@@ -87,5 +89,10 @@ nav {
   justify-content: space-between;
   padding: 0 30px;
   flex-wrap: wrap;
+}
+.header__secondary {
+  position: relative;
+  background-color: whitesmoke;
+  padding: 15px;
 }
 </style>
