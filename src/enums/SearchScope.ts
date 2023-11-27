@@ -9,5 +9,6 @@ export enum SearchScope {
   LibAnswers = 'libanswers',
   LibGuides = 'libguides',
   LibraryDatabases = 'database',
-  PulMap = 'pulmap'
+  PulMap = 'pulmap',
+  Website = 'website'
 }

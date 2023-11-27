@@ -12,6 +12,7 @@ export class TrayOrder {
       [
         SearchScope.BestBets,
         SearchScope.LibraryDatabases,
+        SearchScope.Website,
         SearchScope.LibGuides,
         SearchScope.LibAnswers
       ]

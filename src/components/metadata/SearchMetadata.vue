@@ -36,6 +36,7 @@ import CatalogMetadata from './CatalogMetadata.vue';
 import FindingaidsMetadata from './FindingaidsMetadata.vue';
 import PulmapsMetadata from './PulmapsMetadata.vue';
 import DpulMetadata from './DpulMetadata.vue';
+import WebsiteMetadata from './WebsiteMetadata.vue';
 import ScopeFieldsMap from '../../config/ScopeFieldsMap';
 import { StringService } from '../../services/StringService';
 
@@ -74,6 +75,9 @@ switch (props.scope) {
     break;
   case SearchScope.PulMap:
     metadataComponent = PulmapsMetadata;
+    break;
+  case SearchScope.Website:
+    metadataComponent = WebsiteMetadata;
     break;
 }
 

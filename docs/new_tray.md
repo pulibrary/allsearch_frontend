@@ -10,4 +10,4 @@
 1. If you need a more complex display of a metadata field, create a new component and
    corresponding test in src/components/metadata. Then reference your new component in the
    switch/case statement in src/components/metadata/SearchMetadata.vue.
-1. Add the tray to the appropriate location in src/components/TrayContainer.vue.
+1. Add the tray to the appropriate location in src/models/TrayOrder.ts.
