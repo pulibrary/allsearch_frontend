@@ -10,6 +10,7 @@ const map: { [key in SearchScope]: string } = {
   findingaids: 'archives',
   libanswers: 'question',
   libguides: 'compass',
-  pulmap: 'map'
+  pulmap: 'map',
+  website: 'windows'
 };
 export default map;

@@ -7,5 +7,6 @@ export default {
   findingaids: 'https://findingaids.princeton.edu',
   libanswers: 'https://faq.library.princeton.edu/search',
   libguides: 'https://libguides.princeton.edu',
-  pulmap: 'https://maps.princeton.edu'
+  pulmap: 'https://maps.princeton.edu',
+  website: 'https://library.psb-prod.princeton.edu/search'
 };

@@ -88,6 +88,10 @@ body {
   content: '\e607';
 }
 
+.icon-windows::before {
+  content: '\f0fd'
+}
+
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
