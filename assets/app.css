@@ -64,6 +64,10 @@ body {
   content: '\f639';
 }
 
+.icon-phone-book::before {
+  content: '\f6a8';
+}
+
 .icon-question::before {
   content: '\f558';
 }

@@ -14,6 +14,7 @@ export class TrayOrder {
         SearchScope.LibraryDatabases,
         SearchScope.Website,
         SearchScope.LibGuides,
+        SearchScope.LibraryStaff,
         SearchScope.LibAnswers
       ]
     ];

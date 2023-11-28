@@ -11,3 +11,13 @@
    corresponding test in src/components/metadata. Then reference your new component in the
    switch/case statement in src/components/metadata/SearchMetadata.vue.
 1. Add the tray to the appropriate location in src/models/TrayOrder.ts.
+    * If you want to do this in a test-driven way, you can:
+        1. Add a new fixture to src/fixtures
+        1. Add a new test file to src/components/metadata, referencing data from your fixture
+        1. Add a new component to src/components/metadata to make your test pass
+        1. Add a failing test to src/components/metadata/SearchMetadata.test.ts for your search scope.
+        1. Add to the switch/case statement to make it pass.
+1. Configure the tray's icon in src/config/ScopeIconMap.ts.  If the icon isn't in
+assets/app.css, add it there. You can find the appropriate value in
+[orangelight](https://github.com/pulibrary/orangelight/blob/main/app/assets/stylesheets/icons/variables.scss).
+1. Add the tray in the correct location in src/models/TrayOrder.ts.

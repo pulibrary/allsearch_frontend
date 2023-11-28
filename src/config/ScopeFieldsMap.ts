@@ -11,6 +11,7 @@ const map: { [key in SearchScope]: string[] } = {
   libanswers: ['creator'],
   libguides: ['description'],
   pulmap: ['format', 'creator', 'publisher'],
+  staff: [],
   website: ['description']
 };
 export default map;
