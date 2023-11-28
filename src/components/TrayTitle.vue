@@ -1,5 +1,5 @@
 <template>
-  <h2 :id="headingId" tabindex="0">
+  <h2 :id="headingId">
     <span v-if="props.icon" :class="iconClass" aria-hidden="true"></span>
     {{ props.heading }}
   </h2>
