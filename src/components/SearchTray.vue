@@ -123,9 +123,15 @@ li.document h3 a {
   text-decoration-thickness: 1px;
 }
 
-li.document h3 a:focus,
+li.document h3 a:focus {
+  outline: none !important;
+  border: 3px solid orange;
+  text-decoration: underline;
+}
+
 li.document h3 a:hover {
-  text-decoration-color: var(--orange);
+  color: var(--orange, 10%);
+  text-decoration: underline;
 }
 
 li.document {
