@@ -110,6 +110,6 @@ body {
 :root {
   --black: #0e1111;
   --orange: #e87411;
-  --gray: rgb(149, 156, 167);
+  --gray: rgb(220,220,220);
   --light-gray: rgb(245, 245, 245);
 }
