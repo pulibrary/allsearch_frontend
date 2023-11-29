@@ -1,6 +1,7 @@
 @font-face {
   font-family: pul-icons;
   src: url(/assets/fonts/icons/pul-icons.woff);
+  font-display: swap;
 }
 
 body {
