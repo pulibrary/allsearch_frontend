@@ -89,6 +89,7 @@ nav {
   justify-content: space-between;
   padding: 0 30px;
   flex-wrap: wrap;
+  min-height: 9em;
 }
 .header__secondary {
   position: relative;
