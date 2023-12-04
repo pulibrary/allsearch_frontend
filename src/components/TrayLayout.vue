@@ -24,5 +24,6 @@ section {
   width: max(calc(30vw - 30px), 360px);
   overflow-wrap: anywhere;
   flex-grow: 1;
+  min-height: 300px;
 }
 </style>
