@@ -28,6 +28,7 @@
       ></MoreResults>
     </template>
   </TrayLayout>
+  <div v-else class="placeholder"></div>
 </template>
 
 <script setup lang="ts">

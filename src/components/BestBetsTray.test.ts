@@ -62,9 +62,9 @@ describe('BestBetsTray component', () => {
         }
       });
     });
-    test('it displays no content', async () => {
+    test('it displays a placeholder', async () => {
       await flushPromises();
-      expect(wrapper.html()).toEqual('<!--v-if-->');
+      expect(wrapper.html()).toEqual('<div class="placeholder"></div>');
     });
     test('it emits an event with 0 results and the dom ID', async () => {
       await flushPromises();
