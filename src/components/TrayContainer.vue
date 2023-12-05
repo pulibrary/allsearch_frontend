@@ -1,7 +1,7 @@
 <template>
   <div v-if="query">
     <div class="header__secondary">
-      <nav aria-label="search tools">
+      <nav aria-label="search tools" class="search-tools">
         <SearchBar></SearchBar>
         <JumpToSection :trays-to-link="completedTrays"></JumpToSection>
       </nav>
@@ -17,7 +17,9 @@
             @search-data-loaded="handleDataLoaded"
           >
           </component>
-          <div v-else><!-- no tray is configured for this cell --></div>
+          <div v-else class="placeholder">
+            <!-- no tray is configured for this cell -->
+          </div>
         </template>
       </div>
     </div>
@@ -56,6 +58,8 @@ function markTrayAsCompleted(summary: SearchDataLoadSummary) {
 function handleDataLoaded(summary: SearchDataLoadSummary) {
   if (summary.scope === SearchScope.BestBets && summary.results === 0) {
     trayOrder.removeBestBets();
+
+    // Reload the rows property, now that best bets has been removed
     rows.value = trayOrder.asRows;
   } else {
     markTrayAsCompleted(summary);
@@ -67,7 +71,7 @@ function trayComponent(scope: SearchScope): Component {
 }
 </script>
 
-<style scoped>
+<style>
 .tray-grid {
   display: flex;
   justify-content: center;
@@ -84,7 +88,14 @@ function trayComponent(scope: SearchScope): Component {
   gap: 2vw;
 }
 
-nav {
+.row > section,
+.row > div.placeholder {
+  width: max(calc(30vw - 30px), 360px);
+  overflow-wrap: anywhere;
+  flex-grow: 1;
+}
+
+nav.search-tools {
   display: flex;
   justify-content: space-between;
   padding: 0 30px;

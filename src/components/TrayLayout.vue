@@ -21,9 +21,6 @@ section {
   padding: 2px 15px 18px;
   border: 1px var(--gray) solid;
   margin-top: 10px;
-  width: max(calc(30vw - 30px), 360px);
-  overflow-wrap: anywhere;
-  flex-grow: 1;
   min-height: 300px;
 }
 </style>
