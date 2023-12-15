@@ -41,6 +41,37 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - ruby/rspec-test
+  dastardly:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: medium # default is large, which is not needed for this job
+    steps:
+      - checkout
+      - node/install:
+          install-yarn: true
+          node-version: '18.12'
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          command: yarn global add wait-on
+      - run:
+          command: yarn dev
+          background: true
+          environment:
+            # Consult the production API, since the staging one is
+            # only available to the Princeton network
+            VITE_ALLSEARCH_API_URL: https://allsearch-api.princeton.edu
+      - run:
+          command: wait-on http://localhost:5173
+      - run: |
+          docker run --user $(id -u) --rm -v $(pwd):/dastardly \
+          --network="host" -e \
+          BURP_START_URL=http://127.0.0.1:5173 -e \
+          BURP_REPORT_FILE_PATH=/dastardly/dastardly-report.xml \
+          public.ecr.aws/portswigger/dastardly:latest
+      - store_test_results:
+          path: dastardly-report.xml
+
 
 workflows:
   test_my_app:
@@ -48,3 +79,4 @@ workflows:
       - build-and-test
       - semgrep
       - integration-tests
+      - dastardly
