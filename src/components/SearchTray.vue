@@ -130,7 +130,7 @@ li.document h3 a:focus {
 }
 
 li.document h3 a:hover {
-  color: var(--orange, 10%);
+  color: var(--orange-50, 10%);
   text-decoration: underline;
 }
 
