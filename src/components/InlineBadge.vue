@@ -9,7 +9,7 @@
   letter-spacing: 0.32px;
   margin: 0.25rem 0.25rem 0.25rem 0;
   border-radius: 3px;
-  border: 1px solid var(--gray);
+  border: 1px solid var(--gray-50);
   display: inline-block;
 }
 </style>

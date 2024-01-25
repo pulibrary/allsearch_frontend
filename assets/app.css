@@ -109,8 +109,25 @@ body {
 
 /* Color variables */
 :root {
-  --black: #0e1111;
-  --orange: #e87411;
-  --gray: rgb(220,220,220);
-  --light-gray: rgb(245, 245, 245);
+  --black: #000;
+  --gray-100: #121212;
+  --gray-90: #212529;
+  --gray-50: #D0D0D0;
+  --gray-20: #EEE;
+  --gray-10: #F7F7F7;
+  --white: #FFF;
+  --orange-50: #E77500;
+  --orange-40: #F58025;
+  --orange-20: #FAE3CC;
+  --orange-10: #FCF1E5;
+  --architecture: #C3D600;
+  --engineering: #3B7CCA;
+  --lewis: #915BAF;
+  --mendel: #DA1884;
+  --special-collections: #000;
+  --east-asian: #1A8648;
+  --firestone: #EE7421;
+  --marquand: #D12A2F;
+  --mudd: #F2A900;
+  --stokes: #C24D01;
 }

@@ -17,9 +17,9 @@ const props = defineProps({
 </script>
 <style>
 section {
-  background-color: var(--light-gray);
+  background-color: var(--gray-10);
   padding: 2px 15px 18px;
-  border: 1px var(--gray) solid;
+  border: 1px var(--gray-50) solid;
   margin-top: 10px;
   min-height: 300px;
 }

@@ -71,7 +71,7 @@ button {
   border-bottom-right-radius: 2px;
   border: 2px solid var(--black);
   border-left: 0px;
-  background-color: var(--orange);
+  background-color: var(--orange-50);
   font-size: 1rem;
   margin-top: 0;
   margin-left: 0;

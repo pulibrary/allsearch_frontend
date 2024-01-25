@@ -37,7 +37,7 @@ a.more-link:focus,
 a.more-link:hover {
   border-radius: 4px;
   color: #fff;
-  background-color: var(--orange);
+  background-color: var(--orange-50);
 }
 
 a.more-link .underline {
