@@ -22,6 +22,5 @@ section {
   border: 2px var(--gray-90) solid;
   margin-top: 10px;
   min-height: 300px;
-  box-shadow: 3px 3px 0 0 var(--gray-90);
 }
 </style>
