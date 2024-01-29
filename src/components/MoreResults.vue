@@ -29,15 +29,17 @@ const props = defineProps({
 a.more-link {
   color: var(--black);
   text-decoration: none;
-  padding: 7px;
-  margin: 12px 0 7px;
+  padding: 14px 24px;
+  margin: 12px 7px auto;
+  border: 2px var(--black) solid;
+  border-radius: 5px;
+  max-width: 50%;
+  text-align: right;
 }
 
 a.more-link:focus,
 a.more-link:hover {
-  border-radius: 4px;
-  color: #fff;
-  background-color: var(--orange-50);
+  box-shadow: 3px 3px 0 0 var(--orange-50);
 }
 
 a.more-link .underline {

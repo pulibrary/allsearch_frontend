@@ -17,10 +17,11 @@ const props = defineProps({
 </script>
 <style>
 section {
-  background-color: var(--gray-10);
+  background-color: var(--white);
   padding: 2px 15px 18px;
-  border: 1px var(--gray-50) solid;
+  border: 2px var(--gray-90) solid;
   margin-top: 10px;
   min-height: 300px;
+  box-shadow: 3px 3px 0 0 var(--gray-90);
 }
 </style>

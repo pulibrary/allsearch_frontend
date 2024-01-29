@@ -22,4 +22,8 @@ const headingId = IdService.createDomId(props.heading);
 h3 a {
   color: var(--black);
 }
+.description {
+  padding: 3px 0 8px;
+  border-bottom: solid 2px var(--gray-50);
+}
 </style>
