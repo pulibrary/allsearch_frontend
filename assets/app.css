@@ -1,3 +1,5 @@
+@import url("https://use.typekit.net/xbi8ees.css");
+
 @font-face {
   font-family: pul-icons;
   src: url(/assets/fonts/icons/pul-icons.woff);
@@ -5,7 +7,7 @@
 }
 
 body {
-  font-family: 'franklin-gothic-urw', Helvetica, Arial, sans-serif;
+  font-family: "franklin-gothic-urw", 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.5rem;
   font-size: 1.125rem;
 }
