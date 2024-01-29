@@ -48,8 +48,24 @@ body {
   content: '\ec2b';
 }
 
+.icon-data-file::before {
+  content: '\e601';
+}
+
 .icon-digital::before {
   content: '\e91e';
+}
+
+.icon-dissertation::before {
+  content: '\e60e';
+}
+
+.icon-film::before {
+  content: '\e920';
+}
+
+.icon-journal::before {
+  content: '\e60c';
 }
 
 .icon-manuscript::before {
@@ -60,8 +76,16 @@ body {
   content: '\e602';
 }
 
+.icon-mixed-material::before {
+  content: '\e60d';
+}
+
 .icon-musical-score::before {
   content: '\e605';
+}
+
+.icon-newspaper::before {
+  content: '\f608';
 }
 
 .icon-newtab::before {
@@ -90,6 +114,10 @@ body {
 
 .icon-text::before {
   content: '\ec40';
+}
+
+.icon-video-projected-medium {
+  content: '\e606';
 }
 
 .icon-visual-material::before {
