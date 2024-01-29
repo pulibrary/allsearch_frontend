@@ -29,9 +29,11 @@
       <InlineBadge>Loading...</InlineBadge>
     </template>
     <template v-if="loaded && !results?.records?.length" #no_results>
-      No results found. Search the
-      <a :href="getScopeUrl()">{{ getScopeTitle() }}</a
-      >.
+      <div class="no-results">
+        No results found. Search the
+        <a :href="getScopeUrl()">{{ getScopeTitle() }}</a
+        >.
+      </div>
     </template>
     <template v-if="results?.records?.length && results.more" #further_actions>
       <MoreResults
@@ -108,19 +110,14 @@ populateResults();
 </script>
 
 <style>
-ol.documents {
-  list-style-position: inside;
-  padding-left: 0px;
-}
-
 li.document h3 {
   display: inline;
   text-underline-offset: 5px;
-  font-weight: normal;
 }
 
 li.document h3 a {
   text-decoration-thickness: 1px;
+  text-decoration-color: var(--gray-50);
 }
 
 li.document h3 a:focus {
@@ -135,12 +132,13 @@ li.document h3 a:hover {
 }
 
 li.document {
-  padding-top: 20px;
+  padding-left: 2em;
+  padding-top: 34px;
 }
 
 li.document:not(:last-child) {
   padding-bottom: 20px;
-  border-bottom: 2px var(--black) solid;
+  border-bottom: 3px var(--orange-50) solid;
 }
 
 .metadata {
@@ -158,6 +156,10 @@ li.document:not(:last-child) {
 }
 
 ol li.document::marker {
-  font-size: 1.17em;
+  font-size: 1.5em;
+}
+
+.no-results {
+  margin-top: 12px;
 }
 </style>

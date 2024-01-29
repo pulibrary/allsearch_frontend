@@ -6,15 +6,11 @@
         :icon="getIconType(document.type)"
       ></FormatWithIcon>
     </li>
-    <li v-for="field in basicFieldList" :key="field">
-      <div v-if="document[field as keyof SearchResult] && field !== 'format'">
-        <span class="visually-hidden">{{ field }}: </span
-        >{{
-          StringService.truncate(
-            document[field as keyof SearchResult] as string
-          )
-        }}
-      </div>
+    <li v-for="field in basicFieldsWithDataList" :key="field">
+      <span class="visually-hidden">{{ field }}: </span
+      >{{
+        StringService.truncate(document[field as keyof SearchResult] as string)
+      }}
     </li>
     <component
       :is="metadataComponent"
@@ -86,6 +82,9 @@ switch (props.scope) {
 }
 
 const basicFieldList = ScopeFieldsMap[props.scope as SearchScope];
+const basicFieldsWithDataList = basicFieldList.filter(field => {
+  return props.document[field as keyof SearchResult];
+});
 
 function getIconType(type: string): string {
   const itemType = itemTypeMap[type.toLowerCase() as keyof typeof itemTypeMap];
