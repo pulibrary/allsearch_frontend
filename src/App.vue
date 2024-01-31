@@ -12,7 +12,6 @@ if (query) {
 
 <template>
   <div class="page-wrap">
-    <a class="skip-link" href="#main-content">Skip to main content</a>
     <AppHeader></AppHeader>
     <main id="main-content" class="main" tabindex="-1">
       <div v-if="query">
@@ -33,8 +32,7 @@ a.skip-link {
   position: absolute;
   top: 5px;
   background: white;
-  padding: 0 8px 8px;
-  border-bottom-right-radius: 3px;
+  padding: 2px 8px 2px;
   color: var(--black);
 }
 
