@@ -11,7 +11,7 @@ if (query) {
 </script>
 
 <template>
-  <div class="pagewrap">
+  <div class="page-wrap">
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <AppHeader></AppHeader>
     <main id="main-content" class="main" tabindex="-1">
