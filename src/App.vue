@@ -11,18 +11,20 @@ if (query) {
 </script>
 
 <template>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <AppHeader></AppHeader>
-  <main id="main-content" tabindex="-1">
-    <div v-if="query">
-      <div class="row">
-        <TrayContainer></TrayContainer>
+  <div class="pagewrap">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <AppHeader></AppHeader>
+    <main id="main-content" class="main" tabindex="-1">
+      <div v-if="query">
+        <div class="row">
+          <TrayContainer></TrayContainer>
+        </div>
       </div>
-    </div>
-    <div v-else>
-      <InitialSearch></InitialSearch>
-    </div>
-  </main>
+      <div v-else>
+        <InitialSearch></InitialSearch>
+      </div>
+    </main>
+  </div>
 </template>
 <style>
 @import '../assets/app.css';
@@ -34,5 +36,15 @@ a.skip-link {
   padding: 0 8px 8px;
   border-bottom-right-radius: 3px;
   color: var(--black);
+}
+
+.page-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex-grow: 1;
 }
 </style>
