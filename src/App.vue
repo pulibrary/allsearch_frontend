@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import InitialSearch from './components/InitialSearch.vue';
 import AppHeader from './components/AppHeader.vue';
+import AppFooter from './components/AppFooter.vue';
 import { SearchTermService } from './services/SearchTermService';
 import TrayContainer from './components/TrayContainer.vue';
 
@@ -23,6 +24,7 @@ if (query) {
         <InitialSearch></InitialSearch>
       </div>
     </main>
+    <AppFooter></AppFooter>
   </div>
 </template>
 <style>
@@ -44,5 +46,6 @@ a.skip-link {
 
 .main {
   flex-grow: 1;
+  padding-bottom: 10em;
 }
 </style>
