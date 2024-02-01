@@ -1,22 +1,18 @@
 <template>
-  <span v-if="document?.other_fields?.library" class="visually-hidden"
-    >Location:
-  </span>
-  {{ holdingsDisplay }}
+  <ul>
+    <li v-for="holding of holdingsDisplays" v-bind:key="holding">
+      <span v-if="holding" class="visually-hidden">Location: </span>
+      {{ holding }}
+    </li>
+  </ul>
 </template>
 <script setup lang="ts">
 import { SearchResult } from '../models/SearchResult';
+import { HoldingsService } from '../services/HoldingsService';
 const props = defineProps<{
   document: SearchResult;
 }>();
-let holdingsDisplay: string;
-if (props.document?.other_fields?.library) {
-  holdingsDisplay = props.document.other_fields.library;
-  if (props.document.other_fields.call_number) {
-    holdingsDisplay = holdingsDisplay.concat(
-      ' » ',
-      props.document.other_fields.call_number
-    );
-  }
-}
+const holdingsDisplays: string[] = HoldingsService.extractHoldingsStatements(
+  props.document
+);
 </script>

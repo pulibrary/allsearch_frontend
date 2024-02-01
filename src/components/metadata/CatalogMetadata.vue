@@ -1,5 +1,5 @@
 <template>
-  <li v-if="document.other_fields?.library" class="access-info">
+  <li v-if="document.other_fields?.first_library" class="access-info">
     <PhysicalHoldings :document="document"></PhysicalHoldings>
   </li>
   <li v-if="document.other_fields?.resource_url" class="access-info">
