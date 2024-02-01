@@ -22,8 +22,8 @@ export default {
         type: 'Audio',
         url: 'https://catalog.princeton.edu/catalog/99125192574206421',
         other_fields: {
-          library: 'Marquand',
-          call_number: 'ABC 123'
+          first_library: 'Marquand',
+          first_call_number: 'ABC 123'
         }
       },
       {
