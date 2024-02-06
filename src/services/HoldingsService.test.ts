@@ -3,8 +3,8 @@ import { Result } from '../interfaces/Result';
 import { HoldingsService } from './HoldingsService';
 
 describe('HoldingsService', () => {
-  describe('extractHoldingsStatements()', () => {
-    it('can extract a single holdings statement', () => {
+  describe('extractHoldingsArray()', () => {
+    it('can extract a holding', () => {
       const document: Result = {
         title: '',
         url: '',
@@ -14,8 +14,8 @@ describe('HoldingsService', () => {
           first_call_number: 'DU110 .G738 1947'
         }
       };
-      const expected = ['ReCAP » DU110 .G738 1947'];
-      expect(HoldingsService.extractHoldingsStatements(document)).toEqual(
+      const expected = 'ReCAP » DU110 .G738 1947';
+      expect(HoldingsService.extractHoldingsArray(document)[0].label()).toEqual(
         expected
       );
     });
