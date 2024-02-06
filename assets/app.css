@@ -172,14 +172,16 @@ h3 {
   --orange-40: #F58025;
   --orange-20: #FAE3CC;
   --orange-10: #FCF1E5;
+  --red: #D12A2F;
+  --green: #1A8648;
   --architecture: #C3D600;
   --engineering: #3B7CCA;
   --lewis: #915BAF;
   --mendel: #DA1884;
   --special-collections: #000;
-  --east-asian: #1A8648;
+  --east-asian: var(--green);
   --firestone: #EE7421;
-  --marquand: #D12A2F;
+  --marquand: var(--red);
   --mudd: #F2A900;
   --stokes: #C24D01;
 }

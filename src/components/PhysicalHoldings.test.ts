@@ -75,4 +75,20 @@ describe('PhysicalHoldings component', () => {
     expect(wrapper.text()).toMatch(/Location:\s*ReCAP/);
     expect(wrapper.text()).toMatch(/Location:\s*Firestone/);
   });
+  test('it shows a green status badge if other_fields has a status to display', () => {
+    wrapper = mount(PhysicalHoldings, {
+      props: {
+        document: {
+          title: '',
+          url: '',
+          id: '',
+          other_fields: {
+            first_library: 'Lewis',
+            first_status: 'Available'
+          }
+        }
+      }
+    });
+    expect(wrapper.find('.badge-green').text()).toMatch(/Available/);
+  });
 });
