@@ -10,7 +10,8 @@ body {
   font-family: "franklin-gothic-urw", 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.5rem;
   font-size: 1.125rem;
-  margin: 0px;
+  padding: 0;
+  border: 0;
 }
 
 .icon {
@@ -137,6 +138,13 @@ body {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,*::before, *::after {
+  box-sizing: inherit;
 }
 
 h2 {
