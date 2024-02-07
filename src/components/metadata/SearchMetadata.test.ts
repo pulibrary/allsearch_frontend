@@ -2,10 +2,9 @@ import { VueWrapper, mount } from '@vue/test-utils';
 import { beforeEach, describe, it, expect } from 'vitest';
 import SearchMetadata from './SearchMetadata.vue';
 import ArtmuseumResultsFixtures from '../../fixtures/ArtmuseumResultsFixtures';
-import { SearchScope } from '../../enums/SearchScope';
 import LibguidesResultsFixtures from '../../fixtures/LibguidesResultsFixtures';
 import LibraryDatabasesResultsFixtures from '../../fixtures/LibraryDatabasesResultsFixtures';
-import LibraryStaffResultsFixtures from '../../fixtures/LibraryStaffResultsFixtures';
+import ScopeFieldsMap from '../../config/ScopeFieldsMap';
 
 describe('SearchMetadata', () => {
   let wrapper: VueWrapper;
@@ -16,7 +15,7 @@ describe('SearchMetadata', () => {
         props: {
           document: ArtmuseumResultsFixtures.testResult1,
           defaultIcon: 'visual-material',
-          scope: SearchScope.ArtMuseum
+          basicFieldList: ScopeFieldsMap['artmuseum']
         }
       });
     });
@@ -31,7 +30,7 @@ describe('SearchMetadata', () => {
         props: {
           document: LibguidesResultsFixtures.testResult1,
           defaultIcon: 'compass',
-          scope: SearchScope.LibGuides
+          basicFieldList: ScopeFieldsMap['libguides']
         }
       });
     });
@@ -51,7 +50,7 @@ describe('SearchMetadata', () => {
         props: {
           document: LibraryDatabasesResultsFixtures.testResult1,
           defaultIcon: 'database',
-          scope: SearchScope.LibraryDatabases
+          basicFieldList: ScopeFieldsMap['database']
         }
       });
     });
@@ -59,21 +58,6 @@ describe('SearchMetadata', () => {
       expect(wrapper.text()).toContain(
         'Also known as Beida fabao, or pkulaw.cn.  Chinese laws, regulations and cases in Chinese (Chinalawinfo) and English/Chinese (Lawinfochina). One concurrent…'
       );
-    });
-  });
-
-  describe('Library staff scope', () => {
-    beforeEach(() => {
-      wrapper = mount(SearchMetadata, {
-        props: {
-          document: LibraryStaffResultsFixtures.testResult1,
-          defaultIcon: 'phone-book',
-          scope: SearchScope.LibraryStaff
-        }
-      });
-    });
-    it('includes the email', () => {
-      expect(wrapper.text()).toContain('nibmus@princeton.edu');
     });
   });
 });

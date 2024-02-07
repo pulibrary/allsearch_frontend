@@ -14,7 +14,7 @@
             <a :href="results.records[0].url">{{ results.records[0].title }}</a>
           </h3>
           <SearchMetadata
-            scope="best-bet"
+            :basic-field-list="ScopeFieldsMap['best-bet']"
             default-icon="best-bet"
             :document="results.records[0]"
           ></SearchMetadata>
@@ -40,6 +40,7 @@ import TrayTitle from './TrayTitle.vue';
 import MoreResults from './MoreResults.vue';
 import { SearchDataLoadSummary } from '../interfaces/SearchDataLoadSummary';
 import { SearchScope } from '../enums/SearchScope';
+import ScopeFieldsMap from '../config/ScopeFieldsMap';
 
 const props = defineProps({
   resultsPromise: Promise<SearchResults>

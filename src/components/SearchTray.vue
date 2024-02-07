@@ -18,10 +18,41 @@
             <a :href="document.url">{{ document.title }}</a>
           </h3>
           <SearchMetadata
-            :scope="props.scope"
+            :basic-field-list="ScopeFieldsMap[props.scope as SearchScope]"
             :default-icon="getScopeIcon()"
             :document="document"
-          ></SearchMetadata>
+          >
+            <template #extra-metadata>
+              <ArticlesMetadata
+                v-if="props.scope == SearchScope.Articles"
+                :document="document"
+              ></ArticlesMetadata>
+              <ArtMuseumMetadata
+                v-if="props.scope == SearchScope.ArtMuseum"
+                :document="document"
+              ></ArtMuseumMetadata>
+              <CatalogMetadata
+                v-if="props.scope == SearchScope.Catalog"
+                :document="document"
+              ></CatalogMetadata>
+              <DpulMetadata
+                v-if="props.scope == SearchScope.Dpul"
+                :document="document"
+              ></DpulMetadata>
+              <FindingaidsMetadata
+                v-if="props.scope == SearchScope.FindingAids"
+                :document="document"
+              ></FindingaidsMetadata>
+              <LibraryStaffMetadata
+                v-if="props.scope == SearchScope.LibraryStaff"
+                :document="document"
+              ></LibraryStaffMetadata>
+              <WebsiteMetadata
+                v-if="props.scope == SearchScope.Website"
+                :document="document"
+              ></WebsiteMetadata>
+            </template>
+          </SearchMetadata>
         </li>
       </ol>
     </template>
@@ -57,6 +88,14 @@ import MoreResults from './MoreResults.vue';
 import { SearchDataLoadSummary } from '../interfaces/SearchDataLoadSummary';
 import { SearchScope } from '../enums/SearchScope';
 import InlineBadge from './InlineBadge.vue';
+import ArticlesMetadata from './metadata/ArticlesMetadata.vue';
+import ArtMuseumMetadata from './metadata/ArtMuseumMetadata.vue';
+import CatalogMetadata from './metadata/CatalogMetadata.vue';
+import FindingaidsMetadata from './metadata/FindingaidsMetadata.vue';
+import LibraryStaffMetadata from './metadata/LibraryStaffMetadata.vue';
+import DpulMetadata from './metadata/DpulMetadata.vue';
+import WebsiteMetadata from './metadata/WebsiteMetadata.vue';
+import ScopeFieldsMap from '../config/ScopeFieldsMap';
 
 const props = defineProps({
   scope: {
