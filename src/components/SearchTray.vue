@@ -33,7 +33,8 @@
               ></ArtMuseumMetadata>
               <CatalogMetadata
                 v-if="props.scope == SearchScope.Catalog"
-                :document="document"
+                :url="document?.other_fields?.resource_url"
+                :holdings="HoldingsService.extractHoldingsArray(document)"
               ></CatalogMetadata>
               <DpulMetadata
                 v-if="props.scope == SearchScope.Dpul"
@@ -96,6 +97,7 @@ import LibraryStaffMetadata from './metadata/LibraryStaffMetadata.vue';
 import DpulMetadata from './metadata/DpulMetadata.vue';
 import WebsiteMetadata from './metadata/WebsiteMetadata.vue';
 import ScopeFieldsMap from '../config/ScopeFieldsMap';
+import { HoldingsService } from '../services/HoldingsService';
 
 const props = defineProps({
   scope: {
