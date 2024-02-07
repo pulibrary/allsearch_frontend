@@ -1,6 +1,6 @@
 <template>
   <ul class="metadata">
-    <li v-if="document.type && basicFieldList.includes('format')">
+    <li v-if="document.type && props.basicFieldList.includes('format')">
       <FormatWithIcon
         :format="document.type"
         :icon="getIconType(document.type)"
@@ -12,34 +12,20 @@
         StringService.truncate(document[field as keyof SearchResult] as string)
       }}
     </li>
-    <component
-      :is="metadataComponent"
-      v-if="metadataComponent"
-      :document="document"
-    ></component>
+    <slot name="extra-metadata"></slot>
   </ul>
 </template>
 
 <script setup lang="ts">
-import { type Component, PropType } from 'vue';
+import { PropType } from 'vue';
 import { SearchResult } from '../../models/SearchResult';
-import { SearchScope } from '../../enums/SearchScope';
 import itemTypeMap from '../../config/ItemTypeMap';
 import FormatWithIcon from '../FormatWithIcon.vue';
-import ArticlesMetadata from './ArticlesMetadata.vue';
-import ArtMuseumMetadata from './ArtMuseumMetadata.vue';
-import CatalogMetadata from './CatalogMetadata.vue';
-import FindingaidsMetadata from './FindingaidsMetadata.vue';
-import LibraryStaffMetadata from './LibraryStaffMetadata.vue';
-import PulmapsMetadata from './PulmapsMetadata.vue';
-import DpulMetadata from './DpulMetadata.vue';
-import WebsiteMetadata from './WebsiteMetadata.vue';
-import ScopeFieldsMap from '../../config/ScopeFieldsMap';
 import { StringService } from '../../services/StringService';
 
 const props = defineProps({
-  scope: {
-    type: String,
+  basicFieldList: {
+    type: Array,
     required: true
   },
   defaultIcon: {
@@ -52,39 +38,9 @@ const props = defineProps({
   }
 });
 
-let metadataComponent: Component;
-
-switch (props.scope) {
-  case SearchScope.Catalog:
-    metadataComponent = CatalogMetadata;
-    break;
-  case SearchScope.Articles:
-    metadataComponent = ArticlesMetadata;
-    break;
-  case SearchScope.ArtMuseum:
-    metadataComponent = ArtMuseumMetadata;
-    break;
-  case SearchScope.Dpul:
-    metadataComponent = DpulMetadata;
-    break;
-  case SearchScope.FindingAids:
-    metadataComponent = FindingaidsMetadata;
-    break;
-  case SearchScope.LibraryStaff:
-    metadataComponent = LibraryStaffMetadata;
-    break;
-  case SearchScope.PulMap:
-    metadataComponent = PulmapsMetadata;
-    break;
-  case SearchScope.Website:
-    metadataComponent = WebsiteMetadata;
-    break;
-}
-
-const basicFieldList = ScopeFieldsMap[props.scope as SearchScope];
-const basicFieldsWithDataList = basicFieldList.filter(field => {
+const basicFieldsWithDataList = props.basicFieldList.filter(field => {
   return props.document[field as keyof SearchResult];
-});
+}) as string[];
 
 function getIconType(type: string): string {
   const itemType = itemTypeMap[type.toLowerCase() as keyof typeof itemTypeMap];
