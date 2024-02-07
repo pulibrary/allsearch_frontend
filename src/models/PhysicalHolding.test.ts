@@ -16,4 +16,15 @@ describe('PhysicalHolding', () => {
       expect(holding.statusColor()).toEqual('gray');
     });
   });
+  describe('barcode property', () => {
+    it('can be accessed publicly', () => {
+      const holding = new PhysicalHolding(
+        'Marquand',
+        'ABC 123',
+        'Unavailable',
+        '1234567890'
+      );
+      expect(holding.barcode).toEqual('1234567890');
+    });
+  });
 });
