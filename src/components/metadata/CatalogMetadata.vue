@@ -1,22 +1,22 @@
 <template>
-  <li v-if="document.other_fields?.first_library" class="access-info">
-    <PhysicalHoldings :document="document"></PhysicalHoldings>
+  <li v-if="holdings.length" class="access-info">
+    <PhysicalHoldings :holdings="holdings"></PhysicalHoldings>
   </li>
-  <li v-if="document.other_fields?.resource_url" class="access-info">
-    <OnlineContent :url="document.other_fields.resource_url"></OnlineContent>
+  <li v-if="url" class="access-info">
+    <OnlineContent :url="url"></OnlineContent>
   </li>
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue';
-import { SearchResult } from '../../models/SearchResult';
-
 import OnlineContent from '../OnlineContent.vue';
 import PhysicalHoldings from '../PhysicalHoldings.vue';
+import { PhysicalHolding } from '../../models/PhysicalHolding';
+import { PropType } from 'vue';
 
 defineProps({
-  document: {
-    type: Object as PropType<SearchResult>,
+  url: String,
+  holdings: {
+    type: Array as PropType<PhysicalHolding[]>,
     required: true
   }
 });

@@ -1,6 +1,7 @@
 import { describe, test, expect, beforeAll } from 'vitest';
 import { VueWrapper, mount } from '@vue/test-utils';
 import PhysicalHoldings from './PhysicalHoldings.vue';
+import { PhysicalHolding } from '../models/PhysicalHolding';
 
 let wrapper: VueWrapper;
 
@@ -9,15 +10,7 @@ describe('PhysicalHoldings component', () => {
     beforeAll(() => {
       wrapper = mount(PhysicalHoldings, {
         props: {
-          document: {
-            title: '',
-            url: '',
-            id: '',
-            other_fields: {
-              first_library: 'ReCAP',
-              first_call_number: 'DU110 .G738 1947'
-            }
-          }
+          holdings: [new PhysicalHolding('ReCAP', 'DU110 .G738 1947')]
         }
       });
     });
@@ -31,29 +24,15 @@ describe('PhysicalHoldings component', () => {
   test('it shows only the library if no call number is available', async () => {
     wrapper = mount(PhysicalHoldings, {
       props: {
-        document: {
-          title: '',
-          url: '',
-          id: '',
-          other_fields: {
-            first_library: 'ReCAP'
-          }
-        }
+        holdings: [new PhysicalHolding('ReCAP')]
       }
     });
     expect(wrapper.text()).toMatch(/Location:\s*ReCAP/);
   });
-  test('it shows nothing if the library is not available', async () => {
+  test('it shows nothing if no holdings are available', async () => {
     wrapper = mount(PhysicalHoldings, {
       props: {
-        document: {
-          title: '',
-          url: '',
-          id: '',
-          other_fields: {
-            first_call_number: 'DU110 .G738 1947'
-          }
-        }
+        holdings: []
       }
     });
     expect(wrapper.text()).toEqual('');
@@ -61,15 +40,10 @@ describe('PhysicalHoldings component', () => {
   test('it shows a second holding if available', () => {
     wrapper = mount(PhysicalHoldings, {
       props: {
-        document: {
-          title: '',
-          url: '',
-          id: '',
-          other_fields: {
-            first_library: 'ReCAP',
-            second_library: 'Firestone'
-          }
-        }
+        holdings: [
+          new PhysicalHolding('ReCAP'),
+          new PhysicalHolding('Firestone')
+        ]
       }
     });
     expect(wrapper.text()).toMatch(/Location:\s*ReCAP/);
@@ -78,15 +52,7 @@ describe('PhysicalHoldings component', () => {
   test('it shows a green status badge if other_fields has a status to display', () => {
     wrapper = mount(PhysicalHoldings, {
       props: {
-        document: {
-          title: '',
-          url: '',
-          id: '',
-          other_fields: {
-            first_library: 'Lewis',
-            first_status: 'Available'
-          }
-        }
+        holdings: [new PhysicalHolding('Stokes', undefined, 'Available')]
       }
     });
     expect(wrapper.find('.badge-green').text()).toMatch(/Available/);
