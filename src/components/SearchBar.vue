@@ -60,15 +60,11 @@ form.centered {
 }
 input {
   border: 2px solid var(--black);
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
   font-size: 1rem;
   width: 25vw;
   min-width: 180px;
 }
 button {
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
   border: 2px solid var(--black);
   border-left: 0px;
   background-color: var(--orange-50);
