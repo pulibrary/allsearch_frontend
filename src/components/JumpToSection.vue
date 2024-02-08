@@ -61,11 +61,6 @@ li {
   }
 }
 
-details {
-  border: none;
-  padding: 0.5em 0.5em 0;
-}
-
 .skip-to-section {
   font-weight: bold;
   margin: -0.5em -0.5em 0;
@@ -74,9 +69,5 @@ details {
 
 .skip-to-section {
   padding: 0.5em;
-}
-
-details[open] summary {
-  margin-bottom: 0.5em;
 }
 </style>
