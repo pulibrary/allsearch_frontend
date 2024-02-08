@@ -2,13 +2,14 @@
   <span :class="badge_class"><slot></slot></span>
 </template>
 <script setup lang="ts">
+import { computed } from 'vue';
 const props = defineProps({
   color: {
     type: String,
     default: 'green'
   }
 });
-const badge_class = `badge badge-${props.color}`;
+const badge_class = computed(() => `badge badge-${props.color}`);
 </script>
 <style>
 .badge {
