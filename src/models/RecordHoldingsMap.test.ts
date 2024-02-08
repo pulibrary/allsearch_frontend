@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { RecordHoldingsMap } from './RecordHoldingsMap';
 import { SearchResults } from './SearchResults';
 import { Axios } from 'axios';
@@ -83,6 +83,12 @@ describe('RecordHoldingsMap', () => {
     });
   });
   describe('updateScsbAvailability()', () => {
+    beforeEach(() => {
+      const mock = vi.spyOn(Axios.prototype, 'get');
+      mock.mockResolvedValue({
+        data: ScsbServiceFixtures.response
+      });
+    });
     it('updates the status from the results of our API call', async () => {
       const results: SearchResults = {
         records: [
@@ -99,10 +105,6 @@ describe('RecordHoldingsMap', () => {
         number: 1,
         more: 'https://search.princeton.edu?query=robots'
       };
-      const mock = vi.spyOn(Axios.prototype, 'get');
-      mock.mockResolvedValue({
-        data: ScsbServiceFixtures.response
-      });
       const holdingsMap = new RecordHoldingsMap(results);
       expect(holdingsMap.getHoldingsByDocumentId('SCSB-123')[0].status).toEqual(
         'Loading...'
@@ -114,9 +116,46 @@ describe('RecordHoldingsMap', () => {
         'Available'
       );
     });
+    it('does not affect non-SCSB items', async () => {
+      const results: SearchResults = {
+        records: [
+          {
+            title: '',
+            url: '',
+            id: '991230421',
+            other_fields: {
+              first_library: 'Marquand',
+              first_barcode: '12345',
+              first_status: 'Available'
+            }
+          },
+          {
+            title: '',
+            url: '',
+            id: 'SCSB-123',
+            other_fields: {
+              first_library: 'ReCAP',
+              first_barcode: 'HN2X2Y'
+            }
+          }
+        ],
+        number: 2,
+        more: 'https://search.princeton.edu?query=robots'
+      };
+      const holdingsMap = new RecordHoldingsMap(results);
+      expect(
+        holdingsMap.getHoldingsByDocumentId('991230421')[0].status
+      ).toEqual('Available');
+
+      await holdingsMap.updateScsbAvailability();
+
+      expect(
+        holdingsMap.getHoldingsByDocumentId('991230421')[0].status
+      ).toEqual('Available');
+    });
   });
-  describe('barcodes()', () => {
-    it('includes barcodes from all holdings', () => {
+  describe('scsbBarcodes()', () => {
+    it('includes barcodes from only SCSB holdings', () => {
       const results: SearchResults = {
         records: [
           {
@@ -138,12 +177,21 @@ describe('RecordHoldingsMap', () => {
               first_library: 'ReCAP',
               first_barcode: 'ABCDEF'
             }
+          },
+          {
+            title: '',
+            url: '',
+            id: '991230421',
+            other_fields: {
+              first_library: 'Marquand',
+              first_barcode: 'not-a-scsb-barcode'
+            }
           }
         ],
         number: 1,
         more: 'https://search.princeton.edu?query=robots'
       };
-      expect(new RecordHoldingsMap(results).barcodes()).toEqual([
+      expect(new RecordHoldingsMap(results).scsbBarcodes()).toEqual([
         '12345',
         '67890',
         'ABCDEF'
