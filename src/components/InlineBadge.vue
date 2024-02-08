@@ -22,7 +22,7 @@ const badge_class = `badge badge-${props.color}`;
 
 .badge-green {
   background: var(--green);
-  color: var(--gray-10);
+  color: var(--white);
 }
 
 .badge-red {
