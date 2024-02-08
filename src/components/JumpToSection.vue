@@ -1,17 +1,15 @@
 <template>
   <div id="jump-to-section">
-    <details :open="shouldShowSkipLinks()">
-      <summary>Skip to section</summary>
-      <ul>
-        <div v-for="column of [0, 1, 2]" :key="column" class="column">
-          <template v-for="scope of trayOrder.order[column]" :key="scope">
-            <li v-if="shouldDisplay(scope)">
-              <a :href="getHref(scope)">{{ ScopeTitleMap[scope] }}</a>
-            </li>
-          </template>
-        </div>
-      </ul>
-    </details>
+    <div class="skip-to-section">Skip to section</div>
+    <ul>
+      <div v-for="column of [0, 1, 2]" :key="column" class="column">
+        <template v-for="scope of trayOrder.order[column]" :key="scope">
+          <li v-if="shouldDisplay(scope)">
+            <a :href="getHref(scope)">{{ ScopeTitleMap[scope] }}</a>
+          </li>
+        </template>
+      </div>
+    </ul>
   </div>
 </template>
 <script setup lang="ts">
@@ -38,9 +36,6 @@ function shouldDisplay(scope: SearchScope): boolean {
   }
   return false;
 }
-function shouldShowSkipLinks(): boolean {
-  return window.matchMedia('(min-width: 1280px)').matches;
-}
 const trayOrder = new TrayOrder();
 </script>
 <style scoped>
@@ -54,26 +49,25 @@ ul {
 }
 li {
   width: 80%;
+  list-style: none;
+  padding-bottom: 8px;
+
+  a:link {
+    color: var(--black);
+  }
+
+  a:visited {
+    color: var(--black);
+  }
 }
 
-details {
-  border: 1px solid #aaa;
-  border-radius: 4px;
-  padding: 0.5em 0.5em 0;
-}
-
-summary {
+.skip-to-section {
   font-weight: bold;
   margin: -0.5em -0.5em 0;
   padding: 0.5em;
 }
 
-details[open] {
+.skip-to-section {
   padding: 0.5em;
-}
-
-details[open] summary {
-  border-bottom: 1px solid #aaa;
-  margin-bottom: 0.5em;
 }
 </style>
