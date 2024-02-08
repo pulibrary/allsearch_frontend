@@ -2,6 +2,7 @@ import { describe, test, expect, beforeAll } from 'vitest';
 import { VueWrapper, mount } from '@vue/test-utils';
 import PhysicalHoldings from './PhysicalHoldings.vue';
 import { PhysicalHolding } from '../models/PhysicalHolding';
+import { nextTick } from 'vue';
 
 let wrapper: VueWrapper;
 
@@ -55,6 +56,19 @@ describe('PhysicalHoldings component', () => {
         holdings: [new PhysicalHolding('Stokes', undefined, 'Available')]
       }
     });
+    expect(wrapper.find('.badge-green').text()).toMatch(/Available/);
+  });
+  test('it updates the color of the badge when the status changes', async () => {
+    const holding = new PhysicalHolding('ReCaP', undefined, 'Loading...');
+    wrapper = mount(PhysicalHoldings, {
+      props: {
+        holdings: [holding]
+      }
+    });
+    expect(wrapper.find('.badge-gray').text()).toMatch(/Loading.../);
+    holding.status = 'Available';
+    wrapper.setProps({ holdings: [holding] });
+    await nextTick();
     expect(wrapper.find('.badge-green').text()).toMatch(/Available/);
   });
 });
