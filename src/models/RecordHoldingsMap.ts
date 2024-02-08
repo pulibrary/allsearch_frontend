@@ -22,7 +22,7 @@ export class RecordHoldingsMap {
   updateScsbAvailability(): Promise<boolean> {
     const bibdata = new BibdataService();
     return bibdata
-      .scsbAvailability(this.barcodes())
+      .scsbAvailability(this.scsbBarcodes())
       .then(results => {
         Object.keys(results).forEach(barcode => {
           Object.keys(this.mapping).forEach(recordId => {
@@ -47,9 +47,12 @@ export class RecordHoldingsMap {
       });
   }
 
-  barcodes(): string[] {
+  scsbBarcodes(): string[] {
     return Object.keys(this.mapping).reduce((barcodeList, documentId) => {
-      return barcodeList.concat(this.barcodesForDocumentId(documentId));
+      if (documentId.startsWith('SCSB-')) {
+        return barcodeList.concat(this.barcodesForDocumentId(documentId));
+      }
+      return barcodeList;
     }, [] as string[]);
   }
 
