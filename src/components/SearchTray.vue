@@ -32,9 +32,9 @@
                 :document="document"
               ></ArtMuseumMetadata>
               <CatalogMetadata
-                v-if="props.scope == SearchScope.Catalog"
-                :url="document?.other_fields?.resource_url"
-                :holdings="HoldingsService.extractHoldingsArray(document)"
+                v-if="props.scope == SearchScope.Catalog && holdings"
+                :url="document.other_fields?.resource_url"
+                :holdings="holdings.getHoldingsByDocumentId(document.id)"
               ></CatalogMetadata>
               <DpulMetadata
                 v-if="props.scope == SearchScope.Dpul"
@@ -97,7 +97,7 @@ import LibraryStaffMetadata from './metadata/LibraryStaffMetadata.vue';
 import DpulMetadata from './metadata/DpulMetadata.vue';
 import WebsiteMetadata from './metadata/WebsiteMetadata.vue';
 import ScopeFieldsMap from '../config/ScopeFieldsMap';
-import { HoldingsService } from '../services/HoldingsService';
+import { RecordHoldingsMap } from '../models/RecordHoldingsMap';
 
 const props = defineProps({
   scope: {
@@ -112,6 +112,7 @@ const emit = defineEmits<{
 }>();
 
 const results: Ref<SearchResults | undefined> = ref(undefined);
+const holdings: Ref<RecordHoldingsMap | undefined> = ref(undefined);
 let loaded = false;
 
 async function populateResults(): Promise<void> {
@@ -121,6 +122,10 @@ async function populateResults(): Promise<void> {
     scope: props.scope,
     results: results.value?.records.length
   });
+  if (props.scope === SearchScope.Catalog) {
+    holdings.value = new RecordHoldingsMap(results.value as SearchResults);
+    await holdings.value.updateScsbAvailability();
+  }
 }
 
 function getScopeTitle(): string {
