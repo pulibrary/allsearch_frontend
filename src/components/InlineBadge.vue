@@ -23,7 +23,7 @@ const badge_class = computed(() => `badge badge-${props.color}`);
 
 .badge-green {
   background: var(--green);
-  color: var(--gray-10);
+  color: var(--white);
 }
 
 .badge-red {
