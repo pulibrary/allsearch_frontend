@@ -79,8 +79,8 @@
       >
         <a href="https://library.princeton.edu">
           <img
-            width="142px"
-            height="40px"
+            width="150px"
+            height="50px"
             alt="Princeton University Logo"
             src="../../public/assets/logo-white.svg"
           />
@@ -94,8 +94,10 @@
 
 <style>
 footer {
+  max-height: 40rem;
   background-color: var(--gray-100);
   color: var(--white);
+  padding: 0;
 }
 
 .footer-main {
@@ -159,5 +161,35 @@ footer {
 
 .subscribe-newsletter {
   font-weight: 100;
+}
+
+@media (min-width: 440px) and (max-width: 820px) {
+  footer {
+    display: flex;
+    padding: 1rem;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .footer-main {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    padding: 3rem 1rem 1rem 1rem;
+    gap: 8%;
+  }
+  .footer-bottom {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 3rem 3rem 1rem 1rem;
+    justify-content: space-between;
+    gap: 7px;
+    align-content: flex-end;
+    align-items: flex-start;
+  }
+  .subscribe-newsletter {
+    padding-top: 2rem;
+  }
 }
 </style>
