@@ -3,7 +3,7 @@
     <PhysicalHoldings :holdings="holdings"></PhysicalHoldings>
   </li>
   <li v-if="url" class="access-info">
-    <OnlineContent :url="url"></OnlineContent>
+    <OnlineContent :url="url" :url-label="urlLabel"></OnlineContent>
   </li>
 </template>
 
@@ -15,6 +15,7 @@ import { PropType } from 'vue';
 
 defineProps({
   url: String,
+  urlLabel: String,
   holdings: {
     type: Array as PropType<PhysicalHolding[]>,
     required: true
