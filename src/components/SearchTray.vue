@@ -34,6 +34,7 @@
               <CatalogMetadata
                 v-if="props.scope == SearchScope.Catalog && holdings"
                 :url="document.other_fields?.resource_url"
+                :url-label="document.other_fields?.resource_url_label"
                 :holdings="holdings.getHoldingsByDocumentId(document.id)"
               ></CatalogMetadata>
               <DpulMetadata

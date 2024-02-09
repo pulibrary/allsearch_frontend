@@ -9,7 +9,8 @@ describe('CatalogMetadata', () => {
     wrapper = mount(CatalogMetadata, {
       props: {
         holdings: [new PhysicalHolding('Firestone', 'ABC 123', 'Available')],
-        url: 'https://na05.alma.exlibrisgroup.com/view/uresolver/01PRI_INST/openurl?u.ignore_date_coverage=true&portfolio_pid=53763462940006421&Force_direct=true'
+        url: 'https://na05.alma.exlibrisgroup.com/view/uresolver/01PRI_INST/openurl?u.ignore_date_coverage=true&portfolio_pid=53763462940006421&Force_direct=true',
+        urlLabel: 'Proquest'
       }
     });
   });
@@ -21,6 +22,7 @@ describe('CatalogMetadata', () => {
 
   test('it shows an Available Online link if resource_url exists', async () => {
     const result = wrapper.findAll('a');
+    expect(result[0].text()).toEqual('Proquest');
     expect(result[0].attributes('href')).toEqual(
       'https://na05.alma.exlibrisgroup.com/view/uresolver/01PRI_INST/openurl?u.ignore_date_coverage=true&portfolio_pid=53763462940006421&Force_direct=true'
     );
