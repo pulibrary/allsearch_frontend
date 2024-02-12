@@ -1,6 +1,6 @@
 <template>
   <li v-if="document.other_fields?.fulltext_available">
-    <InlineBadge>Full-text available</InlineBadge>
+    <InlineBadge color="blue">Full-text available</InlineBadge>
   </li>
   <ArticleCitation :fields="document.other_fields"></ArticleCitation>
 </template>

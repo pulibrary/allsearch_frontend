@@ -21,6 +21,11 @@ const badge_class = computed(() => `badge badge-${props.color}`);
   display: inline-block;
 }
 
+.badge-blue {
+  background: var(--dark-blue);
+  color: var(--white);
+}
+
 .badge-green {
   background: var(--green);
   color: var(--white);
