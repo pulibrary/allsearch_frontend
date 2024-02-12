@@ -1,118 +1,133 @@
 <template>
   <header>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-    <nav>
-      <a class="logo" href="https://library.princeton.edu">
-        <img
-          alt="Princeton University Logo"
-          src="../../public/assets/pul-logo-new.svg"
-        />
-      </a>
-      <ul class="menu-items">
-        <li class="menu-item">
-          <a
-            class="main-menu"
-            href="https://library.psb-prod.princeton.edu/accounts"
-            >Accounts</a
-          >
-        </li>
-        <li class="menu-item">
-          <a
-            class="main-menu"
-            href="https://library.psb-prod.princeton.edu/hours"
-            >Hours</a
-          >
-        </li>
-        <li class="menu-item">
-          <div class="list-wrapper">
-            <ul>
+    <div class="header--primary">
+      <a class="skip-link" href="#main-content">Skip to main content</a>
+      <nav class="navbar">
+        <a class="logo" href="https://library.princeton.edu">
+          <img
+            alt="Princeton University Logo"
+            src="../../public/assets/pul-logo-new.svg"
+          />
+        </a>
+        <div class="menu-items">
+          <ul>
+            <li class="menu-item">
               <a
                 class="main-menu"
-                href="https://library.psb-prod.princeton.edu/help"
-                >Help</a
+                href="https://library.psb-prod.princeton.edu/accounts"
+                >Accounts</a
               >
-              <li>
-                <a
-                  href="https://library.psb-prod.princeton.edu/help/schedule-consultation"
-                  >Schedule a Consultation</a
-                >
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="menu-item">
-          <div class="list-wrapper for-you">
-            <ul>
+            </li>
+            <li class="menu-item">
               <a
                 class="main-menu"
-                href="https://library.psb-prod.princeton.edu/you"
-                >For You</a
+                href="https://library.psb-prod.princeton.edu/hours"
+                >Hours</a
               >
-              <li>
-                <a href="https://library.psb-prod.princeton.edu/you/faculty"
-                  >Faculty</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://library.psb-prod.princeton.edu/you/graduate-students"
-                  >Graduate Students</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://library.psb-prod.princeton.edu/you/undergraduate-students"
-                  >Undergraduate Students</a
-                >
-              </li>
-              <li>
-                <a href="https://library.psb-prod.princeton.edu/you/visitors"
-                  >Visitors</a
-                >
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </nav>
+            </li>
+            <li class="menu-item">
+              <div class="list-wrapper">
+                <ul>
+                  <a
+                    class="main-menu"
+                    href="https://library.psb-prod.princeton.edu/help"
+                    >Help</a
+                  >
+                  <li>
+                    <a
+                      href="https://library.psb-prod.princeton.edu/help/schedule-consultation"
+                      >Schedule a Consultation</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="menu-item">
+              <div class="list-wrapper for-you">
+                <ul>
+                  <a
+                    class="main-menu"
+                    href="https://library.psb-prod.princeton.edu/you"
+                    >For You</a
+                  >
+                  <li>
+                    <a href="https://library.psb-prod.princeton.edu/you/faculty"
+                      >Faculty</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://library.psb-prod.princeton.edu/you/graduate-students"
+                      >Graduate Students</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://library.psb-prod.princeton.edu/you/undergraduate-students"
+                      >Undergraduate Students</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://library.psb-prod.princeton.edu/you/visitors"
+                      >Visitors</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- End of head--primary class -->
   </header>
 </template>
 <style>
 @import '../../assets/app.css';
 
+/* start min-width: 675 */
 header {
-  padding: 10px 24px;
-  height: 7rem;
-  background-color: var(--gray-100);
+  width: 100%;
+  padding: 1rem;
+  height: 8rem;
   margin-bottom: 1em;
+  background-color: var(--gray-100);
   border-bottom: solid var(--orange-50) 3px;
 }
 
-a.skip-link {
+.header--primary {
+  align-content: center;
+  align-items: flex-start;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.header--primary .skip-link {
   z-index: 25;
   position: absolute;
   top: 0px;
   left: 0px;
   background: var(--orange-20);
-  padding: 2px 8px 2px;
   color: var(--black);
+  align-self: flex-start;
 }
 
 .logo {
   display: flex;
+  flex-grow: 0;
   width: 240px;
-  padding: 38px 0px;
 }
 
 .menu-items {
+  display: flex;
   z-index: 50;
-  margin: 16px;
-  position: relative;
+  justify-content: space-between;
+  padding-right: 3rem;
 
   .menu-item {
+    display: flex;
     margin: 16px;
-
-    display: inline-block;
     a {
       font-family: franklin-gothic-urw, 'Helvetica Neue', Arial, sans-serif;
       color: var(--white);
@@ -126,6 +141,8 @@ a.skip-link {
     }
 
     ul {
+      display: flex;
+      flex-grow: 1;
       padding: 0px;
       color: var(--white);
       white-space: nowrap;
@@ -141,7 +158,6 @@ a.skip-link {
           a {
             color: var(--gray-100);
             padding: 4px;
-            display: block;
           }
         }
       }
@@ -153,23 +169,34 @@ a.skip-link {
     }
   }
 }
+
 .list-wrapper {
   position: relative;
+  display: flex;
 
   ul {
-    display: block;
+    display: flex;
+    flex-flow: column wrap;
     position: absolute;
     left: 0px;
   }
 }
 
 .for-you {
-  margin-left: 32px;
-  margin-right: 72px;
+  /* TODO: improve this style. Revisit 'Help' and 'For You'*/
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
-nav {
+.navbar {
   display: flex;
+  flex-grow: 1;
   justify-content: space-between;
+  ul {
+    display: flex;
+  }
 }
+/* end min-width: 675 */
+/* Add media query with rules less than 675px */
+/* test tablet size and mobile size */
 </style>

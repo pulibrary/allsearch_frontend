@@ -29,14 +29,6 @@ if (query) {
 </template>
 <style>
 @import '../assets/app.css';
-a.skip-link {
-  z-index: 25;
-  position: absolute;
-  top: 5px;
-  background: white;
-  padding: 2px 8px 2px;
-  color: var(--black);
-}
 
 .page-wrap {
   display: flex;
