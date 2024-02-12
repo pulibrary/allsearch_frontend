@@ -55,6 +55,7 @@
               ></WebsiteMetadata>
             </template>
           </SearchMetadata>
+          <StackMap></StackMap>
         </li>
       </ol>
     </template>
@@ -99,6 +100,7 @@ import DpulMetadata from './metadata/DpulMetadata.vue';
 import WebsiteMetadata from './metadata/WebsiteMetadata.vue';
 import ScopeFieldsMap from '../config/ScopeFieldsMap';
 import { RecordHoldingsMap } from '../models/RecordHoldingsMap';
+import StackMap from './StackMap.vue';
 
 const props = defineProps({
   scope: {
