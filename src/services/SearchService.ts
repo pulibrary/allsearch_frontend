@@ -19,6 +19,7 @@ export class SearchService {
   public results(service: string, query: string): Promise<Results> {
     return this.client
       .get<Results>(`/search/${service}?query=${query}`)
-      .then(res => plainToInstance(SearchResults, res.data));
+      .then(res => plainToInstance(SearchResults, res.data))
+      .catch(() => new SearchResults(0, '', []));
   }
 }
