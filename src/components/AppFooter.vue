@@ -49,9 +49,8 @@
           >
             <a href="http://www.facebook.com/PULibrary">
               <img
-                alt="Instagram Logo"
+                alt="Facebook Logo"
                 src="../../public/assets/logo-facebook.svg"
-                style="filter: invert(1)"
               />
             </a>
           </div>
