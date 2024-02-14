@@ -11,6 +11,7 @@ https://github.com/pulibrary/allsearch_api.
 1. `asdf install`
 1. `yarn install`
 1. `yarn dev`
+1. Note: In order to see search results you must be on the library VPN.
 
 ## Vue 3 + TypeScript + Vite
 
