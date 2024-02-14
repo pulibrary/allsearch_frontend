@@ -31,9 +31,10 @@
       </div>
       <div class="footer-links">
         <nav role="navigation" aria-label="Subscribe">
-          <div class="subscribe-newsletter">
+          <div class="subscribe-newsletter-title">
             <h2>Subscribe to our Newsletter</h2>
           </div>
+          <SubscribeNewsletter></SubscribeNewsletter>
         </nav>
         <div class="social-icons">
           <div class="logo-x" itemprop="logo" src="http://example.com/logo.svg">
@@ -147,7 +148,10 @@
   </footer>
 </template>
 
-@import '../../assets/app.css';
+<script lang="ts" setup>
+import SubscribeNewsletter from './SubscribeNewsletter.vue';
+import '../../assets/app.css';
+</script>
 
 <style>
 footer {
@@ -216,7 +220,7 @@ footer {
   padding-bottom: 2rem;
 }
 
-.subscribe-newsletter {
+.subscribe-newsletter-title {
   font-weight: 100;
 }
 
@@ -278,7 +282,7 @@ nav {
     align-content: flex-end;
     align-items: flex-start;
   }
-  .subscribe-newsletter {
+  .subscribe-newsletter-title {
     padding-top: 2rem;
   }
 }
