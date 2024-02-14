@@ -26,7 +26,9 @@
         >
           Subscribe
         </button>
-        <div id="describe-mailchimp-form">Opens the form in a new tab</div>
+        <div class="visually-hidden" id="describe-mailchimp-form">
+          Opens the form in a new tab
+        </div>
         <!-- The following input is only to catch bots. User will not see the field -->
         <div style="position: absolute; left: -5000px" aria-hidden="true">
           <input
