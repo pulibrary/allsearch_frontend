@@ -35,6 +35,63 @@
             <h2>Subscribe to our Newsletter</h2>
           </div>
         </nav>
+        <div class="social-icons">
+          <div class="logo-x" itemprop="logo" src="http://example.com/logo.svg">
+            <a href="http://www.facebook.com/PULibrary">
+              <img alt="X Logo" src="../../public/assets/logo-x.svg" />
+            </a>
+          </div>
+          <div
+            class="logo-facebook"
+            itemprop="logo"
+            src="http://example.com/logo.svg"
+          >
+            <a href="http://www.facebook.com/PULibrary">
+              <img
+                alt="Instagram Logo"
+                src="../../public/assets/logo-facebook.svg"
+                style="filter: invert(1)"
+              />
+            </a>
+          </div>
+          <div
+            class="logo-instagram"
+            itemprop="logo"
+            src="http://example.com/logo.svg"
+          >
+            <a href="https://www.instagram.com/PULibrary">
+              <img
+                alt="Instagram Logo"
+                src="../../public/assets/logo-instagram.svg"
+                style="filter: invert(1)"
+              />
+            </a>
+          </div>
+          <div
+            class="logo-depository"
+            itemprop="logo"
+            src="http://example.com/logo.svg"
+          >
+            <a href="http://libguides.princeton.edu/govdocs">
+              <img
+                alt="Depository Logo"
+                src="../../public/assets/logo-depository.png"
+              />
+            </a>
+          </div>
+          <div
+            class="logo-friends"
+            itemprop="logo"
+            src="http://example.com/logo.svg"
+          >
+            <a href="http://library.princeton.edu/about/friends">
+              <img
+                alt="Friends of PUL Logo"
+                src="../../public/assets/logo-friends.svg"
+              />
+            </a>
+          </div>
+        </div>
       </div>
       <div class="footer-links">
         <div class="library-staff">
@@ -97,15 +154,15 @@ footer {
   max-height: 40rem;
   background-color: var(--gray-100);
   color: var(--white);
-  padding: 0;
+  padding: 0rem 3rem 0rem 3rem;
 }
 
 .footer-main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 4%;
-  justify-content: space-evenly;
+  /* gap: 4%; */
+  justify-content: space-between;
   padding: 3rem 0rem 1rem 0rem;
 }
 
@@ -113,8 +170,8 @@ footer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 4%;
-  justify-content: space-evenly;
+  /* gap: 4%; */
+  justify-content: space-between;
   padding: 1rem 0rem;
 }
 
@@ -127,6 +184,7 @@ footer {
 
 .footer-links {
   display: flex;
+  flex-flow: column wrap;
   a {
     text-decoration: none;
     color: white;
@@ -152,7 +210,6 @@ footer {
 
 .footer-organization {
   display: flex;
-  flex-basis: 22%;
 }
 
 .library-logo {
@@ -161,6 +218,39 @@ footer {
 
 .subscribe-newsletter {
   font-weight: 100;
+}
+
+.social-icons {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.logo-x {
+  padding: inherit;
+  padding-left: 0rem;
+}
+
+.logo-facebook {
+  padding: inherit;
+}
+
+.logo-instagram {
+  padding: inherit;
+}
+
+.logo-depository {
+  padding: inherit;
+}
+
+.logo-friends {
+  padding: inherit;
+}
+
+nav {
+  display: flex;
+  align-self: flex-start;
 }
 
 @media (min-width: 440px) and (max-width: 820px) {
