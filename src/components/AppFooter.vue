@@ -150,7 +150,7 @@ import SubscribeNewsletter from './SubscribeNewsletter.vue';
 
 <style>
 footer {
-  max-height: 40rem;
+  max-height: 42rem;
   background-color: var(--gray-100);
   color: var(--white);
   padding: 0rem 3rem 0rem 3rem;
@@ -248,6 +248,7 @@ footer {
 nav {
   display: flex;
   align-self: flex-start;
+  flex-flow: column wrap;
 }
 
 @media (min-width: 440px) and (max-width: 820px) {
