@@ -20,6 +20,11 @@ export class RecordHoldingsMap {
   }
 
   updateScsbAvailability(): Promise<boolean> {
+    if (this.scsbBarcodes().length === 0) {
+      // No need to continue if there are no SCSB
+      // holdings to check
+      return Promise.resolve(true);
+    }
     const bibdata = new BibdataService();
     return bibdata
       .scsbAvailability(this.scsbBarcodes())
