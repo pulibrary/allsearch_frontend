@@ -11,7 +11,7 @@
             <a href="https://library.princeton.edu">
               <img
                 alt="Princeton University Library Logo"
-                src="../../public/assets/pul-logo-new.svg"
+                src="/assets/pul-logo-new.svg"
               />
             </a>
           </div>
@@ -39,7 +39,7 @@
         <div class="social-icons">
           <div class="logo-x" itemprop="logo" src="http://example.com/logo.svg">
             <a href="http://www.facebook.com/PULibrary">
-              <img alt="X Logo" src="../../public/assets/logo-x.svg" />
+              <img alt="X Logo" src="/assets/logo-x.svg" />
             </a>
           </div>
           <div
@@ -48,10 +48,7 @@
             src="http://example.com/logo.svg"
           >
             <a href="http://www.facebook.com/PULibrary">
-              <img
-                alt="Facebook Logo"
-                src="../../public/assets/logo-facebook.svg"
-              />
+              <img alt="Facebook Logo" src="/assets/logo-facebook.svg" />
             </a>
           </div>
           <div
@@ -62,7 +59,7 @@
             <a href="https://www.instagram.com/PULibrary">
               <img
                 alt="Instagram Logo"
-                src="../../public/assets/logo-instagram.svg"
+                src="/assets/logo-instagram.svg"
                 style="filter: invert(1)"
               />
             </a>
@@ -73,10 +70,7 @@
             src="http://example.com/logo.svg"
           >
             <a href="http://libguides.princeton.edu/govdocs">
-              <img
-                alt="Depository Logo"
-                src="../../public/assets/logo-depository.png"
-              />
+              <img alt="Depository Logo" src="/assets/logo-depository.png" />
             </a>
           </div>
           <div
@@ -85,10 +79,7 @@
             src="http://example.com/logo.svg"
           >
             <a href="http://library.princeton.edu/about/friends">
-              <img
-                alt="Friends of PUL Logo"
-                src="../../public/assets/logo-friends.svg"
-              />
+              <img alt="Friends of PUL Logo" src="/assets/logo-friends.svg" />
             </a>
           </div>
         </div>
@@ -139,7 +130,7 @@
             width="150px"
             height="50px"
             alt="Princeton University Logo"
-            src="../../public/assets/logo-white.svg"
+            src="/assets/logo-white.svg"
           />
         </a>
       </div>
