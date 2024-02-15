@@ -1,8 +1,10 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach, MockInstance } from 'vitest';
 import { RecordHoldingsMap } from './RecordHoldingsMap';
 import { SearchResults } from './SearchResults';
 import { Axios } from 'axios';
 import ScsbServiceFixtures from '../fixtures/ScsbServiceFixtures';
+
+let mockAxios: MockInstance;
 
 describe('RecordHoldingsMap', () => {
   it('can extract a holding', () => {
@@ -84,8 +86,8 @@ describe('RecordHoldingsMap', () => {
   });
   describe('updateScsbAvailability()', () => {
     beforeEach(() => {
-      const mock = vi.spyOn(Axios.prototype, 'get');
-      mock.mockResolvedValue({
+      mockAxios = vi.spyOn(Axios.prototype, 'get');
+      mockAxios.mockResolvedValue({
         data: ScsbServiceFixtures.response
       });
     });
@@ -149,6 +151,35 @@ describe('RecordHoldingsMap', () => {
 
       await holdingsMap.updateScsbAvailability();
 
+      expect(
+        holdingsMap.getHoldingsByDocumentId('991230421')[0].status
+      ).toEqual('Available');
+    });
+    it('does not make any HTTP requests if there are no SCSB items', async () => {
+      const results: SearchResults = {
+        records: [
+          {
+            title: '',
+            url: '',
+            id: '991230421',
+            other_fields: {
+              first_library: 'Marquand',
+              first_barcode: '12345',
+              first_status: 'Available'
+            }
+          }
+        ],
+        number: 1,
+        more: 'https://search.princeton.edu?query=robots'
+      };
+      const holdingsMap = new RecordHoldingsMap(results);
+      expect(
+        holdingsMap.getHoldingsByDocumentId('991230421')[0].status
+      ).toEqual('Available');
+
+      await holdingsMap.updateScsbAvailability();
+
+      expect(mockAxios).not.toHaveBeenCalled();
       expect(
         holdingsMap.getHoldingsByDocumentId('991230421')[0].status
       ).toEqual('Available');
