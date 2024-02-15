@@ -4,7 +4,10 @@
       <a class="skip-link" href="#main-content">Skip to main content</a>
       <nav class="navbar">
         <a class="logo" href="https://library.princeton.edu">
-          <img alt="Princeton University Logo" src="/assets/pul-logo-new.svg" />
+          <img
+            alt="Princeton University Logo"
+            src="/assets/logos/pul-logo-new.svg"
+          />
         </a>
         <div class="menu-items">
           <ul>
@@ -80,9 +83,8 @@
     <!-- End of head--primary class -->
   </header>
 </template>
-<style>
-@import '../../assets/app.css';
 
+<style>
 /* start min-width: 675 */
 header {
   width: 100%;
