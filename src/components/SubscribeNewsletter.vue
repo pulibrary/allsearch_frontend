@@ -42,3 +42,22 @@
     </div>
   </form>
 </template>
+
+<style>
+.subscribe-newsletter {
+  input {
+    height: 2rem;
+    width: 12rem;
+  }
+  button {
+    color: inherit;
+    background-color: inherit;
+    border-color: inherit;
+    min-height: 2rem;
+    min-width: 8rem;
+  }
+  button:hover {
+    background-color: var(--orange-50);
+  }
+}
+</style>
