@@ -1,28 +1,26 @@
 <template>
-  <search role="search">
-    <form action="/" :class="props.position" @submit="validateForm">
-      <WarningAlert
-        :should-display-alert="showValidationError"
-        alert-text="Please input a search"
-      ></WarningAlert>
-      <div class="searchbar">
-        <div class="align-searchbar">
-          <input
-            id="search"
-            v-model="query"
-            type="text"
-            name="q"
-            aria-required="true"
-            aria-label="Search"
-          />
-          <button type="submit">
-            <span class="visually-hidden" style="margin: auto">Search</span>
-            <span class="icon icon-search"></span>
-          </button>
-        </div>
+  <form action="/" :class="props.position" @submit="validateForm" role="search">
+    <WarningAlert
+      :should-display-alert="showValidationError"
+      alert-text="Please input a search"
+    ></WarningAlert>
+    <div class="searchbar">
+      <div class="align-searchbar">
+        <input
+          id="search"
+          v-model="query"
+          type="text"
+          name="q"
+          aria-required="true"
+          aria-label="Search"
+        />
+        <button type="submit">
+          <span class="visually-hidden" style="margin: auto">Search</span>
+          <span class="icon icon-search"></span>
+        </button>
       </div>
-    </form>
-  </search>
+    </div>
+  </form>
 </template>
 <script setup lang="ts">
 import { SearchTermService } from '../services/SearchTermService';
