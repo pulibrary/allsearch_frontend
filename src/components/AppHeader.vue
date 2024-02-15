@@ -84,10 +84,6 @@
   </header>
 </template>
 
-<script>
-import '../../assets/app.css';
-</script>
-
 <style>
 /* start min-width: 675 */
 header {

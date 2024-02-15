@@ -146,7 +146,6 @@
 
 <script lang="ts" setup>
 import SubscribeNewsletter from './SubscribeNewsletter.vue';
-import '../../assets/app.css';
 </script>
 
 <style>
