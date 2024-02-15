@@ -11,7 +11,7 @@
             <a href="https://library.princeton.edu">
               <img
                 alt="Princeton University Library Logo"
-                src="/assets/pul-logo-new.svg"
+                src="/assets/logos/pul-logo-new.svg"
               />
             </a>
           </div>
@@ -39,7 +39,7 @@
         <div class="social-icons">
           <div class="logo-x" itemprop="logo" src="http://example.com/logo.svg">
             <a href="http://www.facebook.com/PULibrary">
-              <img alt="X Logo" src="/assets/logo-x.svg" />
+              <img alt="X Logo" src="/assets/logos/logo-x.svg" />
             </a>
           </div>
           <div
@@ -48,7 +48,7 @@
             src="http://example.com/logo.svg"
           >
             <a href="http://www.facebook.com/PULibrary">
-              <img alt="Facebook Logo" src="/assets/logo-facebook.svg" />
+              <img alt="Facebook Logo" src="/assets/logos/logo-facebook.svg" />
             </a>
           </div>
           <div
@@ -59,7 +59,7 @@
             <a href="https://www.instagram.com/PULibrary">
               <img
                 alt="Instagram Logo"
-                src="/assets/logo-instagram.svg"
+                src="/assets/logos/logo-instagram.svg"
                 style="filter: invert(1)"
               />
             </a>
@@ -70,7 +70,10 @@
             src="http://example.com/logo.svg"
           >
             <a href="http://libguides.princeton.edu/govdocs">
-              <img alt="Depository Logo" src="/assets/logo-depository.png" />
+              <img
+                alt="Depository Logo"
+                src="/assets/logos/logo-depository.png"
+              />
             </a>
           </div>
           <div
@@ -79,7 +82,10 @@
             src="http://example.com/logo.svg"
           >
             <a href="http://library.princeton.edu/about/friends">
-              <img alt="Friends of PUL Logo" src="/assets/logo-friends.svg" />
+              <img
+                alt="Friends of PUL Logo"
+                src="/assets/logos/logo-friends.svg"
+              />
             </a>
           </div>
         </div>
@@ -130,7 +136,7 @@
             width="150px"
             height="50px"
             alt="Princeton University Logo"
-            src="/assets/logo-white.svg"
+            src="/assets/logos/logo-white.svg"
           />
         </a>
       </div>
@@ -155,7 +161,6 @@ footer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* gap: 4%; */
   justify-content: space-between;
   padding: 3rem 0rem 1rem 0rem;
 }
@@ -164,7 +169,6 @@ footer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* gap: 4%; */
   justify-content: space-between;
   padding: 1rem 0rem;
 }
