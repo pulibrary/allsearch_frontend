@@ -250,8 +250,8 @@ nav {
   align-self: flex-start;
   flex-flow: column wrap;
 }
-
-@media (min-width: 440px) and (max-width: 820px) {
+/* Update CSS to support styling less than 496px  */
+@media (max-width: 820px) {
   footer {
     display: flex;
     padding: 1rem;

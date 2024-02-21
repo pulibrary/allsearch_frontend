@@ -85,19 +85,17 @@
 </template>
 
 <style>
-/* start min-width: 675 */
 header {
   width: 100%;
   padding: 1rem;
   height: 8rem;
-  margin-bottom: 1em;
+  margin: 0em 0em 1em 0em;
   background-color: var(--gray-100);
   border-bottom: solid var(--orange-50) 3px;
 }
 
 .header--primary {
   align-content: center;
-  align-items: flex-start;
   display: flex;
   flex-flow: row wrap;
 }
@@ -184,18 +182,28 @@ header {
 .for-you {
   /* TODO: improve this style. Revisit 'Help' and 'For You'*/
   margin-left: 1rem;
-  margin-right: 1rem;
 }
 
 .navbar {
   display: flex;
+  flex-flow: row wrap;
   flex-grow: 1;
   justify-content: space-between;
   ul {
     display: flex;
   }
 }
-/* end min-width: 675 */
-/* Add media query with rules less than 675px */
-/* test tablet size and mobile size */
+
+/* TODO: handle styling for screens less than 421px; */
+@media (max-width: 645px) {
+  header {
+    height: 10rem;
+  }
+
+  .navbar {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+  }
+}
 </style>

@@ -16,7 +16,11 @@
     "sourceType": "module"
   },
   "rules": {
-    "vue/require-default-prop": "off"
+    "vue/require-default-prop": "off",
+    "vuejs-accessibility/label-has-for": ["error", {
+      "required": {
+        "some": ["nesting", "id"]
+      }}]
   },
   "plugins": ["@typescript-eslint"],
   "root": true
