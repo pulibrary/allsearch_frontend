@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import HoneybadgerVue from '@honeybadger-io/vue';
 import config from './config';
+import { createHead } from '@unhead/vue';
 
 const app = createApp(App);
 
@@ -11,5 +12,8 @@ const honeybadgerConfig = {
 };
 
 app.use(HoneybadgerVue, honeybadgerConfig);
+
+const head = createHead();
+app.use(head);
 
 app.mount('#app');

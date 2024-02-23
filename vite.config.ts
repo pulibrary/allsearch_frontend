@@ -5,6 +5,9 @@ import vue from '@vitejs/plugin-vue';
 export default defineConfig({
   plugins: [vue()],
   server: {
-    cors: false
+    cors: {
+      origin: 'https://www.stackmapintegration.com',
+      methods: 'GET'
+    }
   }
 });
