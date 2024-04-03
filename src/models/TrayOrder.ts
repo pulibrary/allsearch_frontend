@@ -15,7 +15,6 @@ export class TrayOrder {
       [SearchScope.Articles, SearchScope.Dpul, SearchScope.ArtMuseum],
       // Column 3
       [
-        SearchScope.BestBets,
         SearchScope.LibraryDatabases,
         SearchScope.Website,
         SearchScope.LibGuides,
@@ -55,8 +54,5 @@ export class TrayOrder {
       const rowB = this.order[columnContainingA].indexOf(b);
       return rowA < rowB ? -1 : 1;
     }
-  }
-  removeBestBets() {
-    this.order[2] = this.order[2].filter(row => row !== SearchScope.BestBets);
   }
 }

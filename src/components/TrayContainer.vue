@@ -9,14 +9,13 @@
     <div class="tray-grid">
       <div v-for="row in rows" :key="row[0]" class="row">
         <template v-for="scope in row" :key="scope">
-          <component
-            :is="trayComponent(scope)"
+          <SearchTray
             v-if="scope"
             :scope="scope"
             :results-promise="searchService.results(scope, query)"
             @search-data-loaded="handleDataLoaded"
           >
-          </component>
+          </SearchTray>
           <div v-else class="placeholder">
             <!-- no tray is configured for this cell -->
           </div>
@@ -34,11 +33,10 @@ import { SearchScope } from '../enums/SearchScope';
 import { SearchService } from '../services/SearchService';
 import { SearchTermService } from '../services/SearchTermService';
 import SearchTray from './SearchTray.vue';
-import BestBetsTray from './BestBetsTray.vue';
 import SearchBar from './SearchBar.vue';
 import InitialSearch from './InitialSearch.vue';
 import { SearchDataLoadSummary } from '../interfaces/SearchDataLoadSummary';
-import { type Component, Ref, ref } from 'vue';
+import { Ref, ref } from 'vue';
 import { TrayOrder } from '../models/TrayOrder';
 import JumpToSection from './JumpToSection.vue';
 
@@ -56,18 +54,7 @@ function markTrayAsCompleted(summary: SearchDataLoadSummary) {
   });
 }
 function handleDataLoaded(summary: SearchDataLoadSummary) {
-  if (summary.scope === SearchScope.BestBets && summary.results === 0) {
-    trayOrder.removeBestBets();
-
-    // Reload the rows property, now that best bets has been removed
-    rows.value = trayOrder.asRows;
-  } else {
-    markTrayAsCompleted(summary);
-  }
-}
-
-function trayComponent(scope: SearchScope): Component {
-  return scope === SearchScope.BestBets ? BestBetsTray : SearchTray;
+  markTrayAsCompleted(summary);
 }
 </script>
 

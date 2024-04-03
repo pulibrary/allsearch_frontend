@@ -14,7 +14,7 @@
             <a :href="results.records[0].url">{{ results.records[0].title }}</a>
           </h3>
           <SearchMetadata
-            :basic-field-list="ScopeFieldsMap['best-bet']"
+            :basic-field-list="['description']"
             default-icon="best-bet"
             :document="results.records[0]"
           ></SearchMetadata>
@@ -38,26 +38,23 @@ import SearchMetadata from './metadata/SearchMetadata.vue';
 import TrayLayout from './TrayLayout.vue';
 import TrayTitle from './TrayTitle.vue';
 import MoreResults from './MoreResults.vue';
-import { SearchDataLoadSummary } from '../interfaces/SearchDataLoadSummary';
-import { SearchScope } from '../enums/SearchScope';
-import ScopeFieldsMap from '../config/ScopeFieldsMap';
 
 const props = defineProps({
   resultsPromise: Promise<SearchResults>
 });
 
-const emit = defineEmits<{
-  (e: 'searchDataLoaded', payload: SearchDataLoadSummary): void;
-}>();
+// const emit = defineEmits<{
+//   (e: 'searchDataLoaded', payload: SearchDataLoadSummary): void;
+// }>();
 
 const results: Ref<SearchResults | undefined> = ref(undefined);
 
 async function populateResults(): Promise<void> {
   results.value = await props.resultsPromise;
-  emit('searchDataLoaded', {
-    scope: SearchScope.BestBets,
-    results: results.value?.records.length
-  });
+  // emit('searchDataLoaded', {
+  //   scope: SearchScope.BestBets,
+  //   results: results.value?.records.length
+  // });
 }
 
 populateResults();
