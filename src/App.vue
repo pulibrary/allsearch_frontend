@@ -16,9 +16,7 @@ if (query) {
     <AppHeader></AppHeader>
     <main id="main-content" class="main" tabindex="-1">
       <div v-if="query">
-        <div class="row">
-          <TrayContainer></TrayContainer>
-        </div>
+        <TrayContainer></TrayContainer>
       </div>
       <div v-else>
         <InitialSearch></InitialSearch>

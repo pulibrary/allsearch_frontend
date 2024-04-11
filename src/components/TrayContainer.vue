@@ -77,6 +77,7 @@ function trayComponent(scope: SearchScope): Component {
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .row {
   margin-top: 30px;
   display: flex;
@@ -96,13 +97,14 @@ function trayComponent(scope: SearchScope): Component {
 }
 
 nav.search-tools {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 30px;
-  flex-wrap: wrap;
-  min-height: 9em;
+  align-items: center;
+  flex-flow: row wrap;
 }
+
 .header__secondary {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
   position: relative;
   background-color: whitesmoke;
   padding: 15px;
