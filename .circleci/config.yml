@@ -20,6 +20,20 @@ jobs:
       - run:
           name: Check types
           command: yarn exec vue-tsc
+  lint:
+    working_directory: ~/project
+    docker:
+      - image: cimg/node:20.11.0
+    steps:
+      - checkout
+      - node/install:
+          install-yarn: true
+          node-version: '20.11.1'
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Lint
+          command: yarn lint
   semgrep:
     docker:
       - image: returntocorp/semgrep
@@ -77,6 +91,7 @@ workflows:
   test_my_app:
     jobs:
       - build-and-test
+      - lint
       - semgrep
       - integration-tests
       - dastardly

@@ -49,10 +49,6 @@
                 v-if="props.scope == SearchScope.LibraryStaff"
                 :document="document"
               ></LibraryStaffMetadata>
-              <WebsiteMetadata
-                v-if="props.scope == SearchScope.Website"
-                :document="document"
-              ></WebsiteMetadata>
             </template>
           </SearchMetadata>
         </li>
@@ -96,7 +92,6 @@ import CatalogMetadata from './metadata/CatalogMetadata.vue';
 import FindingaidsMetadata from './metadata/FindingaidsMetadata.vue';
 import LibraryStaffMetadata from './metadata/LibraryStaffMetadata.vue';
 import DpulMetadata from './metadata/DpulMetadata.vue';
-import WebsiteMetadata from './metadata/WebsiteMetadata.vue';
 import ScopeFieldsMap from '../config/ScopeFieldsMap';
 import { RecordHoldingsMap } from '../models/RecordHoldingsMap';
 
