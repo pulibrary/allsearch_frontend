@@ -8,8 +8,8 @@
    For most fields, this gives only a very basic display. If you need something more complex,
    don't add it here.
 1. If you need a more complex display of a metadata field, create a new component and
-   corresponding test in src/components/metadata. Then reference your new component in the
-   switch/case statement in src/components/metadata/SearchMetadata.vue.
+   corresponding test in src/components/metadata. Then reference your new component
+   with a `v-if` in src/components/SearchTray.vue.
 1. Add the tray to the appropriate location in src/models/TrayOrder.ts.
     * If you want to do this in a test-driven way, you can:
         1. Add a new fixture to src/fixtures
@@ -20,4 +20,3 @@
 1. Configure the tray's icon in src/config/ScopeIconMap.ts.  If the icon isn't in
 assets/app.css, add it there. You can find the appropriate value in
 [orangelight](https://github.com/pulibrary/orangelight/blob/main/app/assets/stylesheets/icons/variables.scss).
-1. Add the tray in the correct location in src/models/TrayOrder.ts.

@@ -6,6 +6,7 @@ export enum SearchScope {
   Catalog = 'catalog',
   Dpul = 'dpul',
   FindingAids = 'findingaids',
+  Journals = 'journals',
   LibAnswers = 'libanswers',
   LibGuides = 'libguides',
   LibraryDatabases = 'database',
