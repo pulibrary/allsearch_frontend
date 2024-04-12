@@ -1,5 +1,5 @@
 <template>
-  <form action="/" :class="props.position" @submit="validateForm" role="search">
+  <form action="/" :class="props.position" role="search" @submit="validateForm">
     <WarningAlert
       :should-display-alert="showValidationError"
       alert-text="Please input a search"

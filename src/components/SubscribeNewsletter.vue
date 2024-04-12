@@ -1,8 +1,8 @@
 <template>
   <form
+    id="mc-embedded-subscribe-form"
     action="https://princeton.us4.list-manage.com/subscribe/post?u=f1159e2c2a8bc35d62147f282&amp;id=6c19fe9a37"
     method="post"
-    id="mc-embedded-subscribe-form"
     name="mc-embedded-subscribe-form"
     class="validate"
     target="_blank"
@@ -18,15 +18,15 @@
           aria-label="Subscribed"
         />
         <button
+          id="mc-embedded-subscribe"
           type="submit"
           name="subscribe"
-          id="mc-embedded-subscribe"
           class="button"
           aria-describedby="describe-mailchimp-form"
         >
           Subscribe
         </button>
-        <div class="visually-hidden" id="describe-mailchimp-form">
+        <div id="describe-mailchimp-form" class="visually-hidden">
           Opens the form in a new tab
         </div>
         <!-- The following input is only to catch bots. User will not see the field -->

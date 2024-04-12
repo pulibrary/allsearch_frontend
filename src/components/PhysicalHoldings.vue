@@ -1,5 +1,5 @@
 <template>
-  <li v-for="holding of props.holdings" v-bind:key="holding.call_number">
+  <li v-for="holding of props.holdings" :key="holding.call_number">
     <InlineBadge v-if="holding.status" :color="holding.statusColor()">{{
       holding.status
     }}</InlineBadge>
