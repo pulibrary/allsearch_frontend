@@ -1,6 +1,5 @@
 <template>
   <div id="jump-to-section">
-    <div class="skip-to-section">Skip to section</div>
     <ul>
       <div v-for="column of [0, 1, 2]" :key="column" class="column">
         <template v-for="scope of trayOrder.order[column]" :key="scope">
@@ -39,10 +38,6 @@ function shouldDisplay(scope: SearchScope): boolean {
 const trayOrder = new TrayOrder();
 </script>
 <style scoped>
-#jump-to-section {
-  padding: 2px 15px;
-  min-width: 50%;
-}
 ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -59,15 +54,5 @@ li {
   a:visited {
     color: var(--black);
   }
-}
-
-.skip-to-section {
-  font-weight: bold;
-  margin: -0.5em -0.5em 0;
-  padding: 0.5em;
-}
-
-.skip-to-section {
-  padding: 0.5em;
 }
 </style>

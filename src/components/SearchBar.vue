@@ -45,23 +45,13 @@ const searchIsEmpty = () => {
 };
 </script>
 <style scoped>
-form {
-  display: grid;
-}
-.searchbar {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-}
-form.centered {
-  justify-content: center;
-}
 input {
   border: 2px solid var(--black);
   font-size: 1rem;
-  width: 25vw;
-  min-width: 180px;
+  min-width: 20rem;
+  flex: 1;
 }
+
 button {
   border: 2px solid var(--black);
   border-left: 0px;
@@ -75,5 +65,9 @@ button {
 .align-searchbar {
   display: flex;
   height: 60px;
+}
+
+form {
+  flex: 1 1 100%;
 }
 </style>
