@@ -66,8 +66,4 @@ button {
   display: flex;
   height: 60px;
 }
-
-form {
-  flex: 1 1 100%;
-}
 </style>

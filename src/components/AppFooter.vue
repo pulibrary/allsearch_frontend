@@ -247,7 +247,6 @@ footer {
 
 nav {
   display: flex;
-  align-self: flex-start;
   flex-flow: column wrap;
 }
 /* Update CSS to support styling less than 496px  */
