@@ -8,6 +8,7 @@ const map: { [key in SearchScope]: string[] } = {
   database: ['description'],
   dpul: ['format', 'creator'],
   findingaids: ['format'],
+  journals: ['format', 'creator', 'publisher'],
   libanswers: ['creator'],
   libguides: ['description'],
   pulmap: ['format', 'creator', 'publisher'],

@@ -32,7 +32,7 @@
                 :document="document"
               ></ArtMuseumMetadata>
               <CatalogMetadata
-                v-if="props.scope == SearchScope.Catalog && holdings"
+                v-if="isCatalogTray && holdings"
                 :url="document.other_fields?.resource_url"
                 :url-label="document.other_fields?.resource_url_label"
                 :holdings="holdings.getHoldingsByDocumentId(document.id)"
@@ -111,6 +111,9 @@ const results: Ref<SearchResults | undefined> = ref(undefined);
 const holdings: Ref<RecordHoldingsMap | undefined> = ref(undefined);
 let loaded = false;
 
+const isCatalogTray =
+  props.scope == SearchScope.Catalog || props.scope == SearchScope.Journals;
+
 async function populateResults(): Promise<void> {
   results.value = await props.resultsPromise;
   loaded = true;
@@ -118,7 +121,7 @@ async function populateResults(): Promise<void> {
     scope: props.scope,
     results: results.value?.records.length
   });
-  if (props.scope === SearchScope.Catalog) {
+  if (isCatalogTray) {
     holdings.value = new RecordHoldingsMap(results.value as SearchResults);
     await holdings.value.updateScsbAvailability();
   }

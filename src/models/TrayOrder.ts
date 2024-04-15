@@ -5,7 +5,12 @@ export class TrayOrder {
   constructor() {
     this.order = [
       // Column 1
-      [SearchScope.Catalog, SearchScope.FindingAids, SearchScope.PulMap],
+      [
+        SearchScope.Catalog,
+        SearchScope.FindingAids,
+        SearchScope.PulMap,
+        SearchScope.Journals
+      ],
       // Column 2
       [SearchScope.Articles, SearchScope.Dpul, SearchScope.ArtMuseum],
       // Column 3
