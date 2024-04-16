@@ -3,7 +3,6 @@ import { VueWrapper, flushPromises, mount } from '@vue/test-utils';
 import { SearchService } from '../services/SearchService';
 import { SearchResults } from '../models/SearchResults';
 import BestBetsTray from './BestBetsTray.vue';
-import { SearchScope } from '../enums/SearchScope';
 import BestBetResultsFixture from '../fixtures/BestBetResultsFixture';
 
 let mock: SpyInstance;
@@ -21,7 +20,7 @@ describe('BestBetsTray component', () => {
       wrapper = mount(BestBetsTray, {
         props: {
           resultsPromise: new SearchService().results(
-            SearchScope.BestBets,
+            'best-bet',
             'new york times'
           )
         }
