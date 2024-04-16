@@ -56,7 +56,7 @@ describe('BestBetsTray component', () => {
       wrapper = mount(BestBetsTray, {
         props: {
           resultsPromise: new SearchService().results(
-            SearchScope.BestBets,
+            'best-bet',
             'no best bets here'
           )
         }
@@ -68,13 +68,8 @@ describe('BestBetsTray component', () => {
     });
     test('it emits an event with 0 results and the dom ID', async () => {
       await flushPromises();
-      expect(wrapper.emitted().searchDataLoaded.length).toBe(1);
-      expect(wrapper.emitted().searchDataLoaded[0]).toEqual([
-        {
-          results: 0,
-          scope: SearchScope.BestBets
-        }
-      ]);
+      expect(wrapper.emitted().bestBetDataLoaded.length).toBe(1);
+      expect(wrapper.emitted().bestBetDataLoaded[0]).toEqual([0]);
     });
   });
 });
