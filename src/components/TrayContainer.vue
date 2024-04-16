@@ -96,15 +96,11 @@ function trayComponent(scope: SearchScope): Component {
   flex-grow: 1;
 }
 
-nav.search-tools {
-  align-items: center;
-  flex-flow: row wrap;
+.search-tools {
+  flex: 1;
 }
 
 .header__secondary {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
   position: relative;
   background-color: whitesmoke;
   padding: 15px;
