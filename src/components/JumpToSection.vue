@@ -1,13 +1,11 @@
 <template>
   <div id="jump-to-section">
     <ul>
-      <div v-for="column of [0, 1, 2]" :key="column" class="column">
-        <template v-for="scope of trayOrder.order[column]" :key="scope">
-          <li v-if="shouldDisplay(scope)">
-            <a :href="getHref(scope)">{{ ScopeTitleMap[scope] }}</a>
-          </li>
-        </template>
-      </div>
+      <template v-for="scope in trayArray()" :key="scope">
+        <li v-if="shouldDisplay(scope)">
+          <a :href="getHref(scope)">{{ ScopeTitleMap[scope] }}</a>
+        </li>
+      </template>
     </ul>
   </div>
 </template>
@@ -24,6 +22,9 @@ const props = defineProps({
     required: true
   }
 });
+function trayArray(): Array<SearchScope> {
+  return trayOrder.order.flat();
+}
 function getHref(scope: SearchScope): string {
   return '#' + IdService.createDomId(ScopeTitleMap[scope]);
 }
