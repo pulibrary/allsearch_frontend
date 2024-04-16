@@ -96,13 +96,8 @@ function trayComponent(scope: SearchScope): Component {
   flex-grow: 1;
 }
 
-.search-tools {
-  flex: 1;
-}
-
 .header__secondary {
   position: relative;
-  background-color: whitesmoke;
   padding: 15px;
 }
 </style>

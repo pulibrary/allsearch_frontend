@@ -2,7 +2,7 @@
   <div id="jump-to-section">
     <ul>
       <template v-for="scope in trayArray()" :key="scope">
-        <li v-if="shouldDisplay(scope)">
+        <li v-if="shouldDisplay(scope)" class="ul-border">
           <a :href="getHref(scope)">{{ ScopeTitleMap[scope] }}</a>
         </li>
       </template>
@@ -39,14 +39,43 @@ function shouldDisplay(scope: SearchScope): boolean {
 const trayOrder = new TrayOrder();
 </script>
 <style scoped>
-ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+#jump-to-section {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  gap: 10px;
 }
-li {
-  width: 80%;
+.ul-border {
+  border: #f5f4f1;
+}
+
+ul {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+  padding: 10px;
+}
+
+#jump-to-section > ul > li {
   list-style: none;
-  padding-bottom: 8px;
+  padding: 8px;
+  background-color: #f5f4f1;
+
+  @media (min-width: 1281px) {
+    flex: 1 0 15%;
+  }
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    flex: 1 0 15%;
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    flex: 1 0 20%;
+  }
+  @media (min-width: 481px) and (max-width: 767px) {
+    flex: 1 0 100%;
+  }
+  @media (min-width: 320px) and (max-width: 480px) {
+    flex: 1 0 100%;
+  }
 
   a:link {
     color: var(--black);
