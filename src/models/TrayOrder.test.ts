@@ -33,15 +33,6 @@ describe('TrayOrder', () => {
       expect(new TrayOrder().asRows[0]).toEqual([
         SearchScope.Catalog,
         SearchScope.Articles,
-        SearchScope.BestBets
-      ]);
-    });
-    test('reflects removal of the BestBets from third column', () => {
-      const trayOrder = new TrayOrder();
-      trayOrder.removeBestBets();
-      expect(trayOrder.asRows[0]).toEqual([
-        SearchScope.Catalog,
-        SearchScope.Articles,
         SearchScope.LibraryDatabases
       ]);
     });
