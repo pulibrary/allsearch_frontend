@@ -2,7 +2,6 @@
 export enum SearchScope {
   ArtMuseum = 'artmuseum',
   Articles = 'article',
-  BestBets = 'best-bet',
   Catalog = 'catalog',
   Dpul = 'dpul',
   FindingAids = 'findingaids',
