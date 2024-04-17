@@ -60,6 +60,18 @@ ul {
   list-style: none;
   padding: 8px;
   background-color: #f5f4f1;
+  a:link {
+    color: var(--black);
+  }
+
+  a:visited {
+    color: var(--black);
+  }
+
+  a:hover {
+    color: var(--orange-50, 10%);
+    text-decoration: underline;
+  }
 
   @media (min-width: 1281px) {
     flex: 1 0 15%;
@@ -75,14 +87,6 @@ ul {
   }
   @media (min-width: 320px) and (max-width: 480px) {
     flex: 1 0 100%;
-  }
-
-  a:link {
-    color: var(--black);
-  }
-
-  a:visited {
-    color: var(--black);
   }
 }
 </style>
