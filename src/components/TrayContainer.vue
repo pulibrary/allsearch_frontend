@@ -6,6 +6,10 @@
         <JumpToSection :trays-to-link="completedTrays"></JumpToSection>
       </nav>
     </div>
+    <div class="best-bets">
+      <BestBetsTray :results-promise="searchService.results('best-bet', query)">
+      </BestBetsTray>
+    </div>
     <div class="tray-grid">
       <div v-for="row in rows" :key="row[0]" class="row">
         <template v-for="scope in row" :key="scope">
@@ -39,6 +43,7 @@ import { SearchDataLoadSummary } from '../interfaces/SearchDataLoadSummary';
 import { Ref, ref } from 'vue';
 import { TrayOrder } from '../models/TrayOrder';
 import JumpToSection from './JumpToSection.vue';
+import BestBetsTray from './BestBetsTray.vue';
 
 const query = SearchTermService.term();
 const searchService = new SearchService();
@@ -63,6 +68,11 @@ function handleDataLoaded(summary: SearchDataLoadSummary) {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.best-bets {
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .row {

@@ -43,19 +43,22 @@ const props = defineProps({
   resultsPromise: Promise<SearchResults>
 });
 
-// const emit = defineEmits<{
-//   (e: 'searchDataLoaded', payload: SearchDataLoadSummary): void;
-// }>();
+const emit = defineEmits<{
+  (e: 'bestBetDataLoaded', payload: number | undefined): void;
+}>();
 
 const results: Ref<SearchResults | undefined> = ref(undefined);
 
 async function populateResults(): Promise<void> {
   results.value = await props.resultsPromise;
-  // emit('searchDataLoaded', {
-  //   scope: SearchScope.BestBets,
-  //   results: results.value?.records.length
-  // });
+  emit('bestBetDataLoaded', results.value?.records.length);
 }
 
 populateResults();
 </script>
+
+<style>
+.document {
+  list-style-type: none;
+}
+</style>
