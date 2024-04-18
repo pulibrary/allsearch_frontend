@@ -151,10 +151,14 @@ header {
           display: flex;
           list-style: none;
           background-color: var(--white);
-
           a {
             color: var(--gray-100);
             padding: 4px;
+
+            &:hover {
+              color: var(--orange-50, 10%);
+              text-decoration: underline;
+            }
           }
         }
       }
