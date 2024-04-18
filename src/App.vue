@@ -38,4 +38,9 @@ if (query) {
   flex-grow: 1;
   padding-bottom: 10em;
 }
+
+a:hover {
+  color: var(--orange-50, 10%);
+  text-decoration: underline;
+}
 </style>
