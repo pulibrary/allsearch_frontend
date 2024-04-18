@@ -20,12 +20,6 @@ export default [
   // prettier,
   js.configs.recommended,
   {
-    // files: ['**/*.js'],
-    // languageOptions: {
-    //   globals: {
-    //     node: true
-    //   }
-    // },
     ...compat.extends('@vue/eslint-config-typescript'),
     languageOptions: {
       parser: tsParser
