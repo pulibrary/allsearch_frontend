@@ -58,15 +58,22 @@ ul {
 
 #jump-to-section > ul > li {
   list-style: none;
-  padding: 8px;
+  display: inline-flex;
+  justify-content: center;
+  padding: 7px 16px;
+  flex: 0;
   background-color: #f5f4f1;
+
   &:hover {
     color: var(--black);
     background-color: var(--orange-50);
+    cursor: pointer;
+  }
+  a {
+    text-decoration: none;
   }
   a:link {
     color: var(--black);
-    text-decoration: none;
   }
 
   a:visited {
