@@ -23,7 +23,7 @@ const props = defineProps({
 <style>
 .more-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 a.more-link {
@@ -33,16 +33,17 @@ a.more-link {
   margin: 12px 7px auto;
   border: 2px var(--black) solid;
   border-radius: 5px;
-  max-width: 50%;
-  text-align: right;
+  max-width: 100%;
 }
 
 a.more-link:focus,
 a.more-link:hover {
-  box-shadow: 3px 3px 0 0 var(--orange-50);
+  text-decoration: none;
+  color: var(--black);
+  background-color: var(--orange-50);
 }
 
-a.more-link .underline {
+a.more-link {
   text-decoration: underline;
 }
 
