@@ -61,7 +61,6 @@ ul {
   display: inline-flex;
   justify-content: center;
   padding: 7px 16px;
-  flex: 0;
   background-color: #f5f4f1;
 
   &:hover {
@@ -71,6 +70,8 @@ ul {
   }
   a {
     text-decoration: none;
+    flex: 1 0 content;
+    padding: 0.5rem 3rem 0.5rem 3rem;
   }
   a:link {
     color: var(--black);
