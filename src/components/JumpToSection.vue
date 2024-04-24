@@ -60,8 +60,13 @@ ul {
   list-style: none;
   padding: 8px;
   background-color: #f5f4f1;
+  &:hover {
+    color: var(--black);
+    background-color: var(--orange-50);
+  }
   a:link {
     color: var(--black);
+    text-decoration: none;
   }
 
   a:visited {
@@ -69,8 +74,7 @@ ul {
   }
 
   a:hover {
-    color: var(--orange-50, 10%);
-    text-decoration: underline;
+    color: var(--gray-90);
   }
 
   @media (min-width: 1281px) {
