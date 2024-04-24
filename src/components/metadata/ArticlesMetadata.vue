@@ -1,4 +1,13 @@
 <template>
+  <LuxDisclosure
+    v-if="document.other_fields?.abstract"
+    contentId="123"
+    showLabel="Show abstract"
+    hideLabel="Hide abstract"
+    width="100%"
+    fontSize="1.125rem"
+    >{{ document.other_fields?.abstract }}</LuxDisclosure
+  >
   <li v-if="document.other_fields?.fulltext_available">
     <InlineBadge color="blue">Full-text available</InlineBadge>
   </li>
@@ -11,6 +20,7 @@ import { SearchResult } from '../../models/SearchResult';
 
 import ArticleCitation from '../ArticleCitation.vue';
 import InlineBadge from '../InlineBadge.vue';
+import { LuxDisclosure } from 'lux-design-system';
 
 defineProps({
   document: {
