@@ -57,6 +57,7 @@
     min-width: 8rem;
   }
   button:hover {
+    color: var(--black);
     background-color: var(--orange-50);
   }
 }
