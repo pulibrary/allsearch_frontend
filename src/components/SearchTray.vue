@@ -4,7 +4,7 @@
       <TrayTitle
         :heading="getScopeTitle()"
         :icon="getScopeIcon()"
-        description="Lorem ipsum"
+        :description="getScopeDescription()"
       ></TrayTitle>
     </template>
     <template v-if="results" #metadata>
@@ -76,6 +76,7 @@
 <script setup lang="ts">
 import { PropType, Ref, ref } from 'vue';
 import { SearchResults } from '../models/SearchResults';
+import scopeDescriptionMap from '../config/ScopeDescriptionMap';
 import scopeTitleMap from '../config/ScopeTitleMap';
 import scopeUrlMap from '../config/ScopeUrlMap';
 import scopeIconMap from '../config/ScopeIconMap';
@@ -146,6 +147,14 @@ function getScopeUrl(): string {
 function getScopeIcon(): string {
   if (props.scope) {
     return scopeIconMap[props.scope as keyof typeof scopeIconMap];
+  } else {
+    return '';
+  }
+}
+
+function getScopeDescription(): string {
+  if (props.scope) {
+    return scopeDescriptionMap[props.scope as keyof typeof scopeDescriptionMap];
   } else {
     return '';
   }

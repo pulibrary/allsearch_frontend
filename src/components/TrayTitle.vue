@@ -3,7 +3,9 @@
     <span v-if="props.icon" :class="iconClass" aria-hidden="true"></span>
     {{ props.heading }}
   </h2>
-  <div class="description">{{ props.description }}</div>
+  <div v-if="props.description" class="description">
+    {{ props.description }}
+  </div>
 </template>
 <script setup lang="ts">
 import { IdService } from '../services/IdService';
