@@ -70,8 +70,9 @@ ul {
   }
   a {
     text-decoration: none;
-    flex: 1 0 content;
-    padding: 0.5rem 3rem 0.5rem 3rem;
+    flex: 1 0 auto;
+    text-align: center;
+    padding: 0.5rem;
   }
   a:link {
     color: var(--black);
