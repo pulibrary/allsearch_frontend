@@ -43,4 +43,9 @@ a:hover {
   color: var(--orange-50, 10%);
   text-decoration: underline;
 }
+
+a:focus {
+  outline: none;
+  border: 3px solid orange;
+}
 </style>

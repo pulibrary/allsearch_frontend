@@ -166,7 +166,7 @@ li.document h3 a {
 }
 
 li.document h3 a:focus {
-  outline: none !important;
+  outline: none;
   border: 3px solid orange;
   text-decoration: underline;
 }
