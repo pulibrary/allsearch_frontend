@@ -12,6 +12,13 @@ if (query) {
 </script>
 
 <template>
+  <ul class="skip-to-content-links">
+    <li>
+      <a href="#main-content" ref="skipLink" class="skip-to-content-link"
+        >Skip to main content</a
+      >
+    </li>
+  </ul>
   <div class="page-wrap">
     <AppHeader></AppHeader>
     <main id="main-content" class="main" tabindex="-1">
@@ -47,5 +54,27 @@ a:hover {
 a:focus {
   outline: none;
   border: 3px solid orange;
+}
+
+.skip-to-content-link {
+  white-space: nowrap;
+  margin: 1em auto;
+  top: 0;
+  position: fixed;
+  left: 50%;
+  margin-left: -72px;
+  opacity: 0;
+}
+
+.skip-to-content-link:focus {
+  opacity: 1;
+  background: var(--orange-20);
+  color: var(--black);
+  padding: 0.5em;
+  border: 1px solid black;
+}
+
+.skip-to-content-links {
+  list-style-type: none;
 }
 </style>
