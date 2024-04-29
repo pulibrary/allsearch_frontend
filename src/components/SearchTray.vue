@@ -15,11 +15,13 @@
           class="document"
         >
           <h3 :data-id="document.id">
-            <a :href="document.url">{{ document.title }}</a>
+            <div class="heading-container">
+              <span :class="getIconClass(document)" aria-hidden="true"></span>
+              <a :href="document.url">{{ document.title }}</a>
+            </div>
           </h3>
           <SearchMetadata
             :basic-field-list="ScopeFieldsMap[props.scope as SearchScope]"
-            :default-icon="getScopeIcon()"
             :document="document"
           >
             <template #extra-metadata>
@@ -76,6 +78,7 @@
 <script setup lang="ts">
 import { PropType, Ref, ref } from 'vue';
 import { SearchResults } from '../models/SearchResults';
+import itemTypeMap from '../config/ItemTypeMap';
 import scopeDescriptionMap from '../config/ScopeDescriptionMap';
 import scopeTitleMap from '../config/ScopeTitleMap';
 import scopeUrlMap from '../config/ScopeUrlMap';
@@ -95,6 +98,7 @@ import LibraryStaffMetadata from './metadata/LibraryStaffMetadata.vue';
 import DpulMetadata from './metadata/DpulMetadata.vue';
 import ScopeFieldsMap from '../config/ScopeFieldsMap';
 import { RecordHoldingsMap } from '../models/RecordHoldingsMap';
+import { SearchResult } from '../models/SearchResult';
 
 const props = defineProps({
   scope: {
@@ -111,6 +115,13 @@ const emit = defineEmits<{
 const results: Ref<SearchResults | undefined> = ref(undefined);
 const holdings: Ref<RecordHoldingsMap | undefined> = ref(undefined);
 let loaded = false;
+
+function getIconClass(document: SearchResult): string {
+  const itemType =
+    itemTypeMap[document.type?.toLowerCase() as keyof typeof itemTypeMap];
+  const itemTypeString = itemType || getScopeIcon();
+  return 'large-left-icon icon icon-' + itemTypeString;
+}
 
 const isCatalogTray =
   props.scope == SearchScope.Catalog || props.scope == SearchScope.Journals;
@@ -215,5 +226,16 @@ ol li.document::marker {
 
 .no-results {
   margin-top: 12px;
+}
+
+.large-left-icon {
+  left: -1.9em;
+  top: -0.1em;
+  position: absolute;
+  font-size: 1.1em;
+}
+
+.heading-container {
+  position: relative;
 }
 </style>

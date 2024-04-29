@@ -43,4 +43,12 @@ describe('SearchTray component', () => {
       'Articles, eBooks, and other online sources that the Library licenses'
     );
   });
+  test('it shows the format icon', async () => {
+    expect(
+      wrapper
+        .find('.heading-container')
+        .find('span.icon.icon-text[aria-hidden="true"]')
+        .exists()
+    ).toBe(true);
+  });
 });
