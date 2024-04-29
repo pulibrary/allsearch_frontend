@@ -1,7 +1,6 @@
 <template>
   <header>
     <div class="header--primary">
-      <a class="skip-link" href="#main-content">Skip to main content</a>
       <nav class="navbar">
         <a class="logo" href="https://library.princeton.edu">
           <img
@@ -98,16 +97,6 @@ header {
   align-content: center;
   display: flex;
   flex-flow: row wrap;
-}
-
-.header--primary .skip-link {
-  z-index: 25;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  background: var(--orange-20);
-  color: var(--black);
-  align-self: flex-start;
 }
 
 .logo {
