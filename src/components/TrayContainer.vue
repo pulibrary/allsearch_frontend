@@ -3,7 +3,7 @@
     <div class="header__secondary">
       <nav aria-label="search tools" class="search-tools">
         <SearchBar></SearchBar>
-        <JumpToSection :trays-to-link="completedTrays"></JumpToSection>
+        <JumpToSection :trays-to-link="traysToLink"></JumpToSection>
       </nav>
     </div>
     <div class="best-bets">
@@ -17,7 +17,6 @@
             v-if="scope"
             :scope="scope"
             :results-promise="searchService.results(scope, query)"
-            @search-data-loaded="handleDataLoaded"
           >
           </SearchTray>
           <div v-else class="placeholder">
@@ -39,7 +38,6 @@ import { SearchTermService } from '../services/SearchTermService';
 import SearchTray from './SearchTray.vue';
 import SearchBar from './SearchBar.vue';
 import InitialSearch from './InitialSearch.vue';
-import { SearchDataLoadSummary } from '../interfaces/SearchDataLoadSummary';
 import { Ref, ref } from 'vue';
 import { TrayOrder } from '../models/TrayOrder';
 import JumpToSection from './JumpToSection.vue';
@@ -47,20 +45,10 @@ import BestBetsTray from './BestBetsTray.vue';
 
 const query = SearchTermService.term();
 const searchService = new SearchService();
-const completedTrays: Ref<SearchDataLoadSummary[]> = ref([]);
+const traysToLink = new TrayOrder().asFlatArray();
 
 const trayOrder = new TrayOrder();
 const rows: Ref<SearchScope[][]> = ref(trayOrder.asRows);
-
-function markTrayAsCompleted(summary: SearchDataLoadSummary) {
-  completedTrays.value.push(summary);
-  completedTrays.value.sort((a, b) => {
-    return trayOrder.compareLeftToRight(a.scope, b.scope);
-  });
-}
-function handleDataLoaded(summary: SearchDataLoadSummary) {
-  markTrayAsCompleted(summary);
-}
 </script>
 
 <style>

@@ -8,9 +8,9 @@ describe('JumpToSection component', () => {
     const wrapper = mount(JumpToSectionComponent, {
       props: {
         traysToLink: [
-          { scope: SearchScope.Catalog, results: 3 },
-          { scope: SearchScope.Articles, results: 3 },
-          { scope: SearchScope.FindingAids, results: 1 }
+          SearchScope.Catalog,
+          SearchScope.Articles,
+          SearchScope.FindingAids
         ]
       }
     });
@@ -18,30 +18,9 @@ describe('JumpToSection component', () => {
     expect(links.length).toEqual(3);
     expect(links[0].text()).toEqual('Catalog');
     expect(links[0].attributes('href')).toEqual('#catalog');
-    expect(links[1].text()).toEqual('Library Archives');
-    expect(links[1].attributes('href')).toEqual('#library-archives');
-    expect(links[2].text()).toEqual('Articles+');
-    expect(links[2].attributes('href')).toEqual('#articles');
-  });
-  it('puts the links in the correct order', () => {
-    const wrapper = mount(JumpToSectionComponent, {
-      props: {
-        traysToLink: [
-          { scope: SearchScope.Articles, results: 3 },
-          { scope: SearchScope.Catalog, results: 3 },
-          { scope: SearchScope.Dpul, results: 1 },
-          { scope: SearchScope.FindingAids, results: 1 }
-        ]
-      }
-    });
-    const links = wrapper.findAll('a');
-    expect(links[0].text()).toEqual('Catalog');
-    expect(links[0].attributes('href')).toEqual('#catalog');
-    expect(links[1].text()).toEqual('Library Archives');
-    expect(links[1].attributes('href')).toEqual('#library-archives');
-    expect(links[2].text()).toEqual('Articles+');
-    expect(links[2].attributes('href')).toEqual('#articles');
-    expect(links[3].text()).toEqual('Digital PUL');
-    expect(links[3].attributes('href')).toEqual('#digital-pul');
+    expect(links[1].text()).toEqual('Articles+');
+    expect(links[1].attributes('href')).toEqual('#articles');
+    expect(links[2].text()).toEqual('Library Archives');
+    expect(links[2].attributes('href')).toEqual('#library-archives');
   });
 });

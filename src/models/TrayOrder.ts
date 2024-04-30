@@ -45,14 +45,18 @@ export class TrayOrder {
     const columnContainingB = this.order.findIndex(
       column => column.indexOf(b) > -1
     );
-    if (columnContainingA < columnContainingB) {
+    const rowA = this.order[columnContainingA].indexOf(a);
+    const rowB = this.order[columnContainingB].indexOf(b);
+
+    if (rowA < rowB) {
       return -1;
-    } else if (columnContainingA > columnContainingB) {
+    } else if (rowA > rowB) {
       return 1;
     } else {
-      const rowA = this.order[columnContainingA].indexOf(a);
-      const rowB = this.order[columnContainingA].indexOf(b);
-      return rowA < rowB ? -1 : 1;
+      return columnContainingA < columnContainingB ? -1 : 1;
     }
+  }
+  asFlatArray() {
+    return this.order.flat().sort((a, b) => this.compareLeftToRight(a, b));
   }
 }
