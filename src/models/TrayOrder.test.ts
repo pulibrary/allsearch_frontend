@@ -27,6 +27,20 @@ describe('TrayOrder', () => {
         )
       ).toEqual(1);
     });
+    test('Articles comes before FindingAids', () => {
+      expect(
+        trayOrder.compareLeftToRight(
+          SearchScope.Articles,
+          SearchScope.FindingAids
+        )
+      ).toEqual(-1);
+      expect(
+        trayOrder.compareLeftToRight(
+          SearchScope.FindingAids,
+          SearchScope.Articles
+        )
+      ).toEqual(1);
+    });
   });
   describe('asRows getter', () => {
     test('gets the first row correct', () => {
@@ -34,6 +48,24 @@ describe('TrayOrder', () => {
         SearchScope.Catalog,
         SearchScope.Articles,
         SearchScope.LibraryDatabases
+      ]);
+    });
+  });
+  describe('asFlatArray getter', () => {
+    test('it includes all trays in order from left-to-right then top-to-bottom', () => {
+      expect(new TrayOrder().asFlatArray()).toEqual([
+        SearchScope.Catalog,
+        SearchScope.Articles,
+        SearchScope.LibraryDatabases,
+        SearchScope.FindingAids,
+        SearchScope.Dpul,
+        SearchScope.Website,
+        SearchScope.PulMap,
+        SearchScope.ArtMuseum,
+        SearchScope.LibGuides,
+        SearchScope.Journals,
+        SearchScope.LibraryStaff,
+        SearchScope.LibAnswers
       ]);
     });
   });

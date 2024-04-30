@@ -1,8 +1,8 @@
 <template>
   <div id="jump-to-section">
     <ul>
-      <template v-for="scope in trayArray()" :key="scope">
-        <li v-if="shouldDisplay(scope)" class="ul-border">
+      <template v-for="scope in props.traysToLink" :key="scope">
+        <li class="ul-border">
           <a :href="getHref(scope)">{{ ScopeTitleMap[scope] }}</a>
         </li>
       </template>
@@ -11,32 +11,18 @@
 </template>
 <script setup lang="ts">
 import { PropType } from 'vue';
-import { SearchDataLoadSummary } from '../interfaces/SearchDataLoadSummary';
 import ScopeTitleMap from '../config/ScopeTitleMap';
 import { SearchScope } from '../enums/SearchScope';
 import { IdService } from '../services/IdService';
-import { TrayOrder } from '../models/TrayOrder';
 const props = defineProps({
   traysToLink: {
-    type: Array as PropType<SearchDataLoadSummary[]>,
+    type: Array as PropType<SearchScope[]>,
     required: true
   }
 });
-function trayArray(): Array<SearchScope> {
-  return trayOrder.order.flat();
-}
 function getHref(scope: SearchScope): string {
   return '#' + IdService.createDomId(ScopeTitleMap[scope]);
 }
-function shouldDisplay(scope: SearchScope): boolean {
-  for (const tray of props.traysToLink.values()) {
-    if (tray.scope === scope) {
-      return true;
-    }
-  }
-  return false;
-}
-const trayOrder = new TrayOrder();
 </script>
 <style scoped>
 #jump-to-section {
