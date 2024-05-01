@@ -7,9 +7,11 @@
   </li>
 </template>
 <script setup lang="ts">
+/* eslint-disable vue/require-default-prop */
 const props = defineProps({
   fields: Object
 });
+/* eslint-enable vue/require-default-prop */
 const chronology: string[] = [];
 if (props.fields) {
   if (props.fields.volume) {

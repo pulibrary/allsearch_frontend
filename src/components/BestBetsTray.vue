@@ -39,9 +39,11 @@ import TrayLayout from './TrayLayout.vue';
 import TrayTitle from './TrayTitle.vue';
 import MoreResults from './MoreResults.vue';
 
+/* eslint-disable vue/require-default-prop */
 const props = defineProps({
   resultsPromise: Promise<SearchResults>
 });
+/* eslint-enable vue/require-default-prop */
 
 const emit = defineEmits<{
   (e: 'bestBetDataLoaded', payload: number | undefined): void;

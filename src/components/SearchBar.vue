@@ -28,9 +28,12 @@ import { ref } from 'vue';
 import WarningAlert from './WarningAlert.vue';
 const query = ref(SearchTermService.term() as string);
 const showValidationError = ref(false);
+
+/* eslint-disable vue/require-default-prop */
 const props = defineProps({
   position: String
 });
+/* eslint-enable vue/require-default-prop */
 const validateForm = (event: Event) => {
   if (searchIsEmpty()) {
     event.preventDefault();

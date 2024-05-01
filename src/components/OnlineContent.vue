@@ -6,10 +6,13 @@
 </template>
 <script setup lang="ts">
 import InlineBadge from './InlineBadge.vue';
+
+/* eslint-disable vue/require-default-prop */
 const props = defineProps({
   url: String,
   urlLabel: String
 });
+/* eslint-enable vue/require-default-prop */
 const uniqueId = Math.floor(Math.random() * 1_000_000);
 const descriptionId = 'online-content-link-description-' + uniqueId;
 const linkText = props.urlLabel || 'Online content';

@@ -13,6 +13,7 @@ import PhysicalHoldings from '../PhysicalHoldings.vue';
 import { PhysicalHolding } from '../../models/PhysicalHolding';
 import { PropType } from 'vue';
 
+/* eslint-disable vue/require-default-prop */
 defineProps({
   url: String,
   urlLabel: String,
@@ -21,4 +22,5 @@ defineProps({
     required: true
   }
 });
+/* eslint-enable vue/require-default-prop */
 </script>

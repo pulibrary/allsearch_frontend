@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { describe, test, expect, vi, afterEach, beforeEach } from 'vitest';
 import { VueWrapper, flushPromises, mount } from '@vue/test-utils';
 import { SearchService } from '../services/SearchService';
