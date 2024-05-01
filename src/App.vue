@@ -14,7 +14,7 @@ if (query) {
 <template>
   <ul class="skip-to-content-links">
     <li>
-      <a href="#main-content" ref="skipLink" class="skip-to-content-link"
+      <a ref="skipLink" href="#main-content" class="skip-to-content-link"
         >Skip to main content</a
       >
     </li>

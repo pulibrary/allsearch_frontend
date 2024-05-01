@@ -1,11 +1,11 @@
 <template>
   <LuxDisclosure
     v-if="document.other_fields?.abstract"
-    contentId="123"
-    showLabel="Show abstract"
-    hideLabel="Hide abstract"
+    content-id="123"
+    show-label="Show abstract"
+    hide-label="Hide abstract"
     width="100%"
-    fontSize="1.125rem"
+    font-size="1.125rem"
     >{{ document.other_fields?.abstract }}</LuxDisclosure
   >
   <li v-if="document.other_fields?.fulltext_available">

@@ -9,6 +9,8 @@
 </template>
 <script setup lang="ts">
 import { IdService } from '../services/IdService';
+
+/* eslint-disable vue/require-default-prop */
 const props = defineProps({
   icon: String,
   heading: {
@@ -17,6 +19,7 @@ const props = defineProps({
   },
   description: String
 });
+/* eslint-enable vue/require-default-prop */
 const iconClass = 'icon icon-' + props.icon;
 const headingId = IdService.createDomId(props.heading);
 </script>

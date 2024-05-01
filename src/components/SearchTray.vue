@@ -100,6 +100,7 @@ import ScopeFieldsMap from '../config/ScopeFieldsMap';
 import { RecordHoldingsMap } from '../models/RecordHoldingsMap';
 import { SearchResult } from '../models/SearchResult';
 
+/* eslint-disable vue/require-default-prop */
 const props = defineProps({
   scope: {
     type: String as PropType<SearchScope>,
@@ -107,6 +108,7 @@ const props = defineProps({
   },
   resultsPromise: Promise<SearchResults>
 });
+/* eslint-enable vue/require-default-prop */
 
 const emit = defineEmits<{
   (e: 'searchDataLoaded', payload: SearchDataLoadSummary): void;
