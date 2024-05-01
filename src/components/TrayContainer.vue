@@ -6,6 +6,7 @@
         <JumpToSection :trays-to-link="traysToLink"></JumpToSection>
       </nav>
     </div>
+    <h1 class="visually-hidden">Search results</h1>
     <div class="best-bets">
       <BestBetsTray :results-promise="searchService.results('best-bet', query)">
       </BestBetsTray>
