@@ -29,6 +29,6 @@ h3 a {
 }
 .description {
   padding: 3px 0 8px;
-  border-bottom: solid 2px var(--gray-50);
+  border-bottom: solid 3px var(--orange-50);
 }
 </style>
