@@ -12,19 +12,17 @@
       </BestBetsTray>
     </div>
     <div class="tray-grid">
-      <div v-for="row in rows" :key="row[0]" class="row">
-        <template v-for="scope in row" :key="scope">
-          <SearchTray
-            v-if="scope"
-            :scope="scope"
-            :results-promise="searchService.results(scope, query)"
-          >
-          </SearchTray>
-          <div v-else class="placeholder">
-            <!-- no tray is configured for this cell -->
-          </div>
-        </template>
-      </div>
+      <template v-for="scope in traysToLink" :key="scope">
+        <SearchTray
+          v-if="scope"
+          :scope="scope"
+          :results-promise="searchService.results(scope, query)"
+        >
+        </SearchTray>
+        <div v-else class="placeholder">
+          <!-- no tray is configured for this cell -->
+        </div>
+      </template>
     </div>
   </div>
   <div v-else>
@@ -33,13 +31,11 @@
 </template>
 
 <script setup lang="ts">
-import { SearchScope } from '../enums/SearchScope';
 import { SearchService } from '../services/SearchService';
 import { SearchTermService } from '../services/SearchTermService';
 import SearchTray from './SearchTray.vue';
 import SearchBar from './SearchBar.vue';
 import InitialSearch from './InitialSearch.vue';
-import { Ref, ref } from 'vue';
 import { TrayOrder } from '../models/TrayOrder';
 import JumpToSection from './JumpToSection.vue';
 import BestBetsTray from './BestBetsTray.vue';
@@ -47,16 +43,15 @@ import BestBetsTray from './BestBetsTray.vue';
 const query = SearchTermService.term();
 const searchService = new SearchService();
 const traysToLink = new TrayOrder().asFlatArray();
-
-const trayOrder = new TrayOrder();
-const rows: Ref<SearchScope[][]> = ref(trayOrder.asRows);
 </script>
 
 <style>
 .tray-grid {
+  padding: 10px;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  gap: 2rem;
 }
 
 .best-bets {
@@ -64,22 +59,21 @@ const rows: Ref<SearchScope[][]> = ref(trayOrder.asRows);
   margin-right: 15px;
 }
 
-.row {
-  margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  min-height: 300px;
-  width: 96vw;
-  gap: 2vw;
-}
+@media (min-width: 1281px) and (max-width: 2089px) {
+  .tray-grid section:nth-child(-n + 2) {
+    flex: 1 0 48%;
+  }
 
-.row > section,
-.row > div.placeholder {
-  width: max(calc(30vw - 30px), 360px);
-  overflow-wrap: anywhere;
-  flex-grow: 1;
+  .tray-grid section:not(:nth-child(-n + 2)):not(:nth-last-child(-n + 6)) {
+    background-color: #efefef;
+    border: none;
+    flex: 1 0 45%;
+    max-width: 45rem;
+  }
+
+  .tray-grid section:nth-last-child(-n + 6) {
+    flex: 1 0 30%;
+  }
 }
 
 .header__secondary {

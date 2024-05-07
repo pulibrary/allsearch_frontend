@@ -179,23 +179,28 @@ populateResults();
 <style>
 li.document h3 {
   display: inline;
-  text-underline-offset: 5px;
 }
 
 li.document h3 a {
+  line-height: 2rem;
   text-decoration-thickness: 1px;
-  text-decoration-color: var(--gray-50);
+  text-decoration-color: var(--gray-90);
+  text-underline-offset: 5px;
 }
 
 li.document h3 a:focus {
   outline: none;
-  border: 3px solid orange;
+  border: 3px solid var(--orange-50);
   text-decoration: underline;
+  line-height: 2rem;
+  text-underline-offset: 4px;
 }
 
 li.document h3 a:hover {
   color: var(--orange-50, 10%);
   text-decoration: underline;
+  line-height: 2rem;
+  text-underline-offset: 4px;
 }
 
 li.document {
@@ -205,7 +210,7 @@ li.document {
 
 li.document:not(:last-child) {
   padding-bottom: 20px;
-  border-bottom: 3px var(--orange-50) solid;
+  border-bottom: solid 3px var(--gray-50);
 }
 
 .metadata {

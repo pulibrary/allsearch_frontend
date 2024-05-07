@@ -28,23 +28,19 @@ const props = defineProps({
 
 a.more-link {
   color: var(--black);
-  text-decoration: none;
+  font-weight: bold;
   padding: 14px 24px;
   margin: 12px 7px auto;
-  border: 2px var(--black) solid;
-  border-radius: 5px;
   max-width: 100%;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-align: right;
 }
 
 a.more-link:focus,
 a.more-link:hover {
-  text-decoration: none;
-  color: var(--black);
-  background-color: var(--orange-50);
-}
-
-a.more-link {
-  text-decoration: underline;
+  color: var(--orange-50);
+  text-underline-offset: 4px;
 }
 
 a.more-link .icon-right {

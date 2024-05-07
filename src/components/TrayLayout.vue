@@ -16,12 +16,11 @@ const props = defineProps({
 });
 </script>
 <style>
-section {
+.tray-grid section {
   background-color: var(--white);
   padding: 2px 15px 18px;
   border: 2px var(--gray-90) solid;
   margin-top: 10px;
   min-height: 300px;
-  box-shadow: 3px 3px 0 0 var(--gray-90);
 }
 </style>
