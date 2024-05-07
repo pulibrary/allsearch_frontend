@@ -47,6 +47,7 @@ const traysToLink = new TrayOrder().asFlatArray();
 
 <style>
 .tray-grid {
+  padding: 10px;
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
@@ -59,18 +60,18 @@ const traysToLink = new TrayOrder().asFlatArray();
 }
 
 @media (min-width: 1281px) and (max-width: 2089px) {
-  section:nth-child(-n + 2) {
+  .tray-grid section:nth-child(-n + 2) {
     flex: 1 0 48%;
   }
 
-  section:not(:nth-child(-n + 2)):not(:nth-last-child(-n + 6)) {
+  .tray-grid section:not(:nth-child(-n + 2)):not(:nth-last-child(-n + 6)) {
     background-color: #efefef;
     border: none;
     flex: 1 0 45%;
     max-width: 45rem;
   }
 
-  section:nth-last-child(-n + 6) {
+  .tray-grid section:nth-last-child(-n + 6) {
     flex: 1 0 30%;
   }
 }

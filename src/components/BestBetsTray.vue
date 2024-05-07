@@ -63,4 +63,9 @@ populateResults();
 .document {
   list-style-type: none;
 }
+
+.best-bets > section {
+  padding: 10px;
+  background-color: #efefef;
+}
 </style>
