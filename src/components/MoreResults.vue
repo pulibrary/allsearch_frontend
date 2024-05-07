@@ -23,7 +23,7 @@ const props = defineProps({
 <style>
 .more-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: right;
 }
 
 a.more-link {
