@@ -3,7 +3,7 @@
     <span v-if="props.icon" :class="iconClass" aria-hidden="true"></span>
     {{ props.heading }}
   </h2>
-  <div v-if="props.description" class="description">
+  <div class="description">
     {{ props.description }}
   </div>
 </template>
