@@ -8,7 +8,7 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "test": "vitest --environment happy-dom",
-    "lint": "eslint --fix",
+    "lint": "eslint -c eslint.config.js",
     "format": "prettier . --write",
     "prepare": "simple-git-hooks"
   },
