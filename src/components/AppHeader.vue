@@ -15,7 +15,7 @@
   </header>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { LuxMenuBar } from 'lux-design-system';
 const menu_items = [
   {
