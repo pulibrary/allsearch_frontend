@@ -8,80 +8,67 @@
             src="/assets/logos/pul-logo-new.svg"
           />
         </a>
-        <div class="menu-items">
-          <ul>
-            <li class="menu-item">
-              <a
-                class="main-menu"
-                href="https://library.psb-prod.princeton.edu/accounts"
-                >Accounts</a
-              >
-            </li>
-            <li class="menu-item">
-              <a
-                class="main-menu"
-                href="https://library.psb-prod.princeton.edu/hours"
-                >Hours</a
-              >
-            </li>
-            <li class="menu-item">
-              <div class="list-wrapper">
-                <ul>
-                  <a
-                    class="main-menu"
-                    href="https://library.psb-prod.princeton.edu/help"
-                    >Help</a
-                  >
-                  <li>
-                    <a
-                      href="https://library.psb-prod.princeton.edu/help/schedule-consultation"
-                      >Schedule a Consultation</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="menu-item">
-              <div class="list-wrapper for-you">
-                <ul>
-                  <a
-                    class="main-menu"
-                    href="https://library.psb-prod.princeton.edu/you"
-                    >For You</a
-                  >
-                  <li>
-                    <a href="https://library.psb-prod.princeton.edu/you/faculty"
-                      >Faculty</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://library.psb-prod.princeton.edu/you/graduate-students"
-                      >Graduate Students</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://library.psb-prod.princeton.edu/you/undergraduate-students"
-                      >Undergraduate Students</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://library.psb-prod.princeton.edu/you/visitors"
-                      >Visitors</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
+        <lux-menu-bar type="main-menu" theme="dark" :menu-items="menu_items" />
       </nav>
     </div>
     <!-- End of head--primary class -->
   </header>
 </template>
+
+<script setup>
+import { LuxMenuBar } from 'lux-design-system';
+const menu_items = [
+  {
+    name: 'Accounts',
+    component: 'Accounts',
+    href: 'https://library.psb-prod.princeton.edu/accounts'
+  },
+  {
+    name: 'Hours',
+    component: 'Hours',
+    href: 'https://library.psb-prod.princeton.edu/hours'
+  },
+  {
+    name: 'Help',
+    component: 'Help',
+    href: 'https://library.psb-prod.princeton.edu/help',
+    children: [
+      {
+        name: 'Schedule a Consultation',
+        component: 'Schedule a Consultation',
+        href: 'https://library.psb-prod.princeton.edu/help/schedule-consultation'
+      }
+    ]
+  },
+  {
+    name: 'For You',
+    component: 'For You',
+    href: 'https://library.psb-prod.princeton.edu/you',
+    children: [
+      {
+        name: 'Faculty',
+        component: 'Faculty',
+        href: 'https://library.psb-prod.princeton.edu/you/faculty'
+      },
+      {
+        name: 'Graduate Students',
+        component: 'Graduate Students',
+        href: 'https://library.psb-prod.princeton.edu/you/graduate-students'
+      },
+      {
+        name: 'Undergraduate Students',
+        component: 'Undergraduate Students',
+        href: 'https://library.psb-prod.princeton.edu/you/undergraduate-students'
+      },
+      {
+        name: 'Visitors',
+        component: 'Undergraduate Students',
+        href: 'https://library.psb-prod.princeton.edu/you/visitors'
+      }
+    ]
+  }
+];
+</script>
 
 <style>
 header {
@@ -105,86 +92,16 @@ header {
   width: 240px;
 }
 
-.menu-items {
-  display: flex;
-  z-index: 50;
-  justify-content: space-between;
-  padding-right: 3rem;
-
-  .menu-item {
-    display: flex;
-    margin: 16px;
-    a {
-      font-family: franklin-gothic-urw, 'Helvetica Neue', Arial, sans-serif;
-      color: var(--white);
-      font-size: 16px;
-      font-weight: 500;
-      text-decoration: none;
-    }
-
-    .main-menu:hover {
-      border-bottom: 1px solid var(--orange-50);
-    }
-
-    ul {
-      display: flex;
-      flex-grow: 1;
-      padding: 0px;
-      color: var(--white);
-      white-space: nowrap;
-      li:hover {
-        border-bottom: 1px solid var(--orange-50);
-      }
-      &:hover {
-        li {
-          display: flex;
-          list-style: none;
-          background-color: var(--white);
-          a {
-            color: var(--gray-100);
-            padding: 4px;
-
-            &:hover {
-              color: var(--orange-50, 10%);
-              text-decoration: underline;
-            }
-          }
-        }
-      }
-
-      li {
-        display: none;
-        white-space: wrap;
-      }
-    }
-  }
-}
-
-.list-wrapper {
-  position: relative;
-  display: flex;
-
-  ul {
-    display: flex;
-    flex-flow: column wrap;
-    position: absolute;
-    left: 0px;
-  }
-}
-
-.for-you {
-  /* TODO: improve this style. Revisit 'Help' and 'For You'*/
-  margin-left: 1rem;
-}
-
 .navbar {
   display: flex;
   flex-flow: row wrap;
   flex-grow: 1;
   justify-content: space-between;
-  ul {
-    display: flex;
-  }
+}
+
+header nav.lux-main-menu {
+  /* TODO: Remove this rule and move it to lux */
+  width: auto !important;
 }
 
 /* TODO: handle styling for screens less than 421px; */
