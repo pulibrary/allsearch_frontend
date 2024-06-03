@@ -1,13 +1,15 @@
 <template>
-  <LuxDisclosure
-    v-if="document.other_fields?.abstract"
-    content-id="123"
-    show-label="Show abstract"
-    hide-label="Hide abstract"
-    width="100%"
-    font-size="1.125rem"
-    >{{ document.other_fields?.abstract }}</LuxDisclosure
-  >
+  <li>
+    <LuxDisclosure
+      v-if="document.other_fields?.abstract"
+      content-id="123"
+      show-label="Show abstract"
+      hide-label="Hide abstract"
+      width="100%"
+      font-size="1.125rem"
+      >{{ document.other_fields?.abstract }}</LuxDisclosure
+    >
+  </li>
   <li v-if="document.other_fields?.fulltext_available">
     <InlineBadge color="blue">Full-text available</InlineBadge>
   </li>

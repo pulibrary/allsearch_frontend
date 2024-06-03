@@ -231,6 +231,11 @@ ol li.document::marker {
   font-size: 1.5em;
 }
 
+.access-info ul {
+  list-style: none;
+  padding-inline-start: 0px;
+}
+
 .no-results {
   margin-top: 12px;
 }
