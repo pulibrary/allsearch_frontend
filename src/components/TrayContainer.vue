@@ -59,7 +59,7 @@ const traysToLink = new TrayOrder().asFlatArray();
   margin-right: 15px;
 }
 
-@media (min-width: 1281px) and (max-width: 2089px) {
+@media (min-width: 1024px) and (max-width: 2089px) {
   .tray-grid section:nth-child(-n + 2) {
     flex: 1 0 48%;
   }
