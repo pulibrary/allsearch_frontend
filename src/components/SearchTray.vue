@@ -67,7 +67,17 @@
       </div>
     </template>
     <template v-if="results?.records?.length && results.more" #further_actions>
+      <!-- Our API uses a different search algorithm for Library Databases than
+        what SpringShare uses in their interface.  This provides the potential for
+        users to get confused clicking on the MoreResults link (e.g. if ours says
+        there are 80 results, but then they click the link and Springshare says there
+        are only 40).  Therefore, we don't include the result count for LibraryDatabases -->
       <MoreResults
+        v-if="props.scope === SearchScope.LibraryDatabases"
+        :url="results.more"
+      ></MoreResults>
+      <MoreResults
+        v-else
         :url="results.more"
         :result-count="results.number"
       ></MoreResults>

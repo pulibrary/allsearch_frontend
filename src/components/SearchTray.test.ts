@@ -5,6 +5,7 @@ import { SearchResults } from '../models/SearchResults';
 import ArticleResultsFixture from '../fixtures/ArticleResultsFixtures';
 import SearchTray from './SearchTray.vue';
 import { SearchScope } from '../enums/SearchScope';
+import { nextTick } from 'vue';
 
 let wrapper: VueWrapper;
 
@@ -50,5 +51,16 @@ describe('SearchTray component', () => {
         .find('span.icon.icon-text[aria-hidden="true"]')
         .exists()
     ).toBe(true);
+  });
+
+  describe('when the scope is LibraryDatabases', () => {
+    test('it includes the text "View and refine results", regardless of the number of results', async () => {
+      wrapper.setProps({ scope: SearchScope.LibraryDatabases });
+      await nextTick();
+
+      expect(wrapper.find('a.more-link').text()).toEqual(
+        'View and refine results'
+      );
+    });
   });
 });

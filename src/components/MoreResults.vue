@@ -1,9 +1,7 @@
 <template>
   <div class="more-container">
     <a :href="props.url" class="more-link"
-      ><span class="underline"
-        >View and refine {{ props.resultCount.toLocaleString() }} results</span
-      >
+      ><span class="underline">{{ linkText }}</span>
       <span class="icon icon-right"></span
     ></a>
   </div>
@@ -15,10 +13,15 @@ const props = defineProps({
     required: true
   },
   resultCount: {
-    type: Number,
-    required: true
+    type: Number
   }
 });
+let linkText: string;
+if (props.resultCount) {
+  linkText = `View and refine ${props.resultCount.toLocaleString()} results`;
+} else {
+  linkText = 'View and refine results';
+}
 </script>
 <style>
 .more-container {
