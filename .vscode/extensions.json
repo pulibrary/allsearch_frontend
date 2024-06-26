@@ -1,7 +1,5 @@
 {
   "recommendations": [
-    "vue.volar",
-    "vue.vscode-typescript-vue-plugin",
-    "zixuanchen.vitest-explorer"
+    "vue.volar"
   ]
 }
