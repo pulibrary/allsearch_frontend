@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline' https://use.typekit.net https://p.typekit.net; script-src 'self' 'unsafe-eval'; connect-src 'self' localhost:* https://allsearch-api.princeton.edu https://allsearch-api-staging.princeton.edu https://bibdata.princeton.edu https://bibdata-staging.princeton.edu https://api.honeybadger.io; font-src 'self' https://use.typekit.net; base-uri 'none';img-src 'self' data:">
+    <meta 
+      http-equiv="Content-Security-Policy" 
+      content="
+        default-src 'none'; 
+        style-src 'self' 'unsafe-inline' https://use.typekit.net https://p.typekit.net; 
+        script-src 'self' 'unsafe-eval'; 
+        connect-src 'self' localhost:* https://allsearch-api.princeton.edu https://allsearch-api-staging.princeton.edu https://bibdata.princeton.edu https://bibdata-staging.princeton.edu https://api.honeybadger.io; 
+        font-src 'self' https://use.typekit.net; 
+        base-uri 'none';
+        img-src 'self' data:" />
     <title>Princeton University Library</title>
     <link rel="preconnect" href="https://allsearch-api.princeton.edu/" crossorigin="anonymous">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-90G7R5LX2F"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-90G7R5LX2F');
-    </script>
   </head>
   <body>
     <div id="app"></div>
