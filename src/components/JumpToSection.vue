@@ -56,7 +56,7 @@ ul {
   }
   a {
     text-decoration: none;
-    flex: 1 0 auto;
+    flex: 1 1 auto;
     text-align: center;
     padding: 0.5rem;
   }
