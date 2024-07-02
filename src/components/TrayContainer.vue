@@ -47,7 +47,6 @@ const traysToLink = new TrayOrder().asFlatArray();
 
 <style>
 .tray-grid {
-  padding: 10px;
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
@@ -78,6 +77,5 @@ const traysToLink = new TrayOrder().asFlatArray();
 
 .header__secondary {
   position: relative;
-  padding: 15px;
 }
 </style>
