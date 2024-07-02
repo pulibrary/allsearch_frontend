@@ -53,6 +53,9 @@ input {
   font-size: 1rem;
   min-width: 20rem;
   flex: 1;
+  @media (prefers-color-scheme: dark) {
+    border: 2px solid var(--color-white);
+  }
 }
 
 button {
@@ -63,6 +66,10 @@ button {
   margin-top: 0;
   margin-left: 0;
   width: 51px;
+  @media (prefers-color-scheme: dark) {
+    border: 2px solid var(--color-white);
+    border-left-width: 0;
+  }
 }
 
 .align-searchbar {
