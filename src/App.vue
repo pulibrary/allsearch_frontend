@@ -45,7 +45,6 @@ if (query) {
 
 .main {
   flex-grow: 1;
-  padding-bottom: 10em;
   max-width: 1440px;
 }
 
