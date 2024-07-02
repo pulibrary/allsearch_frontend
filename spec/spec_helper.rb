@@ -15,7 +15,7 @@ RSpec.configure do |config|
   Capybara.default_driver = :selenium
 
   config.before(:suite) do
-    $vite_pid = spawn("yarn dev --port 5678")
+    $vite_pid = spawn("yarn dev --port 5678 --force")
     Process.detach($vite_pid)
     sleep 2 # wait for vite to compile everything
   end

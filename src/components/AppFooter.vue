@@ -1,5 +1,5 @@
 <template>
-  <LuxLibraryFooter></LuxLibraryFooter>
+  <LuxLibraryFooter type="footer"></LuxLibraryFooter>
 </template>
 
 <script lang="ts" setup>
