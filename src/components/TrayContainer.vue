@@ -58,20 +58,22 @@ const traysToLink = new TrayOrder().asFlatArray();
   margin-right: 15px;
 }
 
-@media (min-width: 1024px) and (max-width: 2089px) {
+@media (min-width: 900px) {
   .tray-grid section:nth-child(-n + 2) {
-    flex: 1 0 48%;
+    flex: 1 0 45%;
   }
 
   .tray-grid section:not(:nth-child(-n + 2)):not(:nth-last-child(-n + 6)) {
     background-color: #efefef;
     border: none;
     flex: 1 0 45%;
-    max-width: 45rem;
   }
 
   .tray-grid section:nth-last-child(-n + 6) {
     flex: 1 0 30%;
+    @media (max-width: 1199px) {
+      flex: 1 0 45%;
+    }
   }
 }
 
