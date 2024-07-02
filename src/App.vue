@@ -19,8 +19,9 @@ if (query) {
       >
     </li>
   </ul>
+
+  <AppHeader></AppHeader>
   <div class="page-wrap">
-    <AppHeader></AppHeader>
     <main id="main-content" class="main" tabindex="-1">
       <div v-if="query">
         <TrayContainer></TrayContainer>
@@ -29,8 +30,8 @@ if (query) {
         <InitialSearch></InitialSearch>
       </div>
     </main>
-    <AppFooter></AppFooter>
   </div>
+  <AppFooter></AppFooter>
 </template>
 <style>
 @import '../assets/app.css';
@@ -39,11 +40,13 @@ if (query) {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  align-items: center;
 }
 
 .main {
   flex-grow: 1;
   padding-bottom: 10em;
+  max-width: 1440px;
 }
 
 a:hover {
