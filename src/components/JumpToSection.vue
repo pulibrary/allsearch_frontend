@@ -26,27 +26,22 @@ function getHref(scope: SearchScope): string {
 </script>
 <style scoped>
 #jump-to-section {
-  display: flex;
-  justify-content: center;
-  flex-flow: row wrap;
-  gap: 10px;
-}
-.ul-border {
-  border: #f5f4f1;
-}
+  .ul-border {
+    border: #f5f4f1;
+  }
 
-ul {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 10px;
-  padding: 10px;
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+    padding: 0;
+  }
 }
 
 #jump-to-section > ul > li {
   list-style: none;
   display: inline-flex;
   justify-content: center;
-  padding: 7px 16px;
   background-color: #f5f4f1;
 
   &:hover {
