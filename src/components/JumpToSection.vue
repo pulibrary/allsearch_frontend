@@ -67,19 +67,16 @@ function getHref(scope: SearchScope): string {
     color: var(--gray-90);
   }
 
-  @media (min-width: 1281px) {
+  @media (min-width: 1200px) {
     flex: 1 0 15%;
   }
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    flex: 1 0 15%;
-  }
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media (min-width: 1000px) and (max-width: 1199px) {
     flex: 1 0 20%;
   }
-  @media (min-width: 481px) and (max-width: 767px) {
-    flex: 1 0 100%;
-  }
-  @media (min-width: 320px) and (max-width: 480px) {
+
+  @media (max-width: 999px) {
+    /* in this media query ideally we want to collapse
+     the skip to section under one div */
     flex: 1 0 100%;
   }
 }
