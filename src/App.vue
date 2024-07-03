@@ -45,7 +45,15 @@ if (query) {
 
 .main {
   flex-grow: 1;
-  max-width: 1440px;
+  @media (min-width: 900px) {
+    max-width: 1440px;
+  }
+  @media (max-width: 899px) {
+    max-width: 1440px;
+  }
+  @media (max-width: 599px) {
+    max-width: 540px;
+  }
 }
 
 a:hover {
