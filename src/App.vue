@@ -41,6 +41,8 @@ if (query) {
   flex-direction: column;
   min-height: 100vh;
   align-items: center;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 .main {
