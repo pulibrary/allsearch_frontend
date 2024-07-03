@@ -86,5 +86,6 @@ a:focus {
 
 .skip-to-content-links {
   list-style-type: none;
+  margin: 0;
 }
 </style>
