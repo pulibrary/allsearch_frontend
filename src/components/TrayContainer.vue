@@ -58,22 +58,32 @@ const traysToLink = new TrayOrder().asFlatArray();
   margin-right: 15px;
 }
 
-@media (min-width: 900px) {
-  .tray-grid section:nth-child(-n + 2) {
+.tray-grid > section {
+  @media (max-width: 899px) {
+    flex: 1 0 100%;
+  }
+}
+
+.tray-grid section:nth-child(-n + 2) {
+  @media (min-width: 900px) {
     flex: 1 0 45%;
   }
+}
 
-  .tray-grid section:not(:nth-child(-n + 2)):not(:nth-last-child(-n + 6)) {
-    background-color: #efefef;
-    border: none;
+.tray-grid section:not(:nth-child(-n + 2)):not(:nth-last-child(-n + 6)) {
+  background-color: #efefef;
+  border: none;
+  @media (min-width: 900px) {
     flex: 1 0 45%;
   }
+}
 
-  .tray-grid section:nth-last-child(-n + 6) {
+.tray-grid section:nth-last-child(-n + 6) {
+  @media (min-width: 900px) and (max-width: 1199px) {
+    flex: 1 0 45%;
+  }
+  @media (min-width: 1200px) {
     flex: 1 0 30%;
-    @media (max-width: 1199px) {
-      flex: 1 0 45%;
-    }
   }
 }
 
