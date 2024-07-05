@@ -17,10 +17,22 @@ const props = defineProps({
 </script>
 <style>
 .tray-grid section {
-  background-color: var(--white);
   padding: 2px 15px 18px;
-  border: 2px var(--gray-90) solid;
   margin-top: 10px;
   min-height: 300px;
+}
+
+@media (prefers-color-scheme: light) {
+  .tray-grid section {
+    background-color: var(--white);
+    border: 2px var(--gray-90) solid;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .tray-grid section {
+    background-color: var(--black);
+    border: 2px var(--gray-10) solid;
+  }
 }
 </style>
