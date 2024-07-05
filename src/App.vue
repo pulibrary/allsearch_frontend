@@ -71,12 +71,13 @@ a:focus {
 
 .skip-to-content-link {
   white-space: nowrap;
-  margin: 1em auto;
+  margin: 1px auto;
   top: 0;
   position: fixed;
   left: 50%;
   margin-left: -72px;
   opacity: 0;
+  z-index: 1000;
 }
 
 .skip-to-content-link:focus {
