@@ -46,6 +46,7 @@ if (query) {
 }
 
 .main {
+  margin-top: 1rem;
   flex-grow: 1;
   @media (min-width: 900px) {
     max-width: 1440px;
