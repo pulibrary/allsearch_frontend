@@ -29,8 +29,29 @@ if (props.resultCount) {
   justify-content: right;
 }
 
+@media (prefers-color-scheme: light) {
+  a.more-link {
+    color: var(--black);
+  }
+
+  a.more-link:focus,
+  a.more-link:hover {
+    text-decoration-color: var(--color-princeton-orange-on-white);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  a.more-link {
+    color: var(--white);
+  }
+
+  a.more-link:focus,
+  a.more-link:hover {
+    text-decoration-color: var(--color-princeton-orange-on-black);
+  }
+}
+
 a.more-link {
-  color: var(--black);
   font-weight: bold;
   padding: 14px 24px;
   margin: 12px 7px auto;
@@ -42,7 +63,6 @@ a.more-link {
 
 a.more-link:focus,
 a.more-link:hover {
-  color: var(--orange-50);
   text-underline-offset: 4px;
 }
 
