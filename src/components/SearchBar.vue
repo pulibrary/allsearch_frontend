@@ -51,7 +51,6 @@ const searchIsEmpty = () => {
 input {
   border: 2px solid var(--black);
   font-size: 1rem;
-  min-width: 20rem;
   flex: 1;
   @media (prefers-color-scheme: dark) {
     border: 2px solid var(--color-white);
