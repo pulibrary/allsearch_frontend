@@ -42,7 +42,7 @@ import BestBetsTray from './BestBetsTray.vue';
 
 const query = SearchTermService.term();
 const searchService = new SearchService();
-const traysToLink = new TrayOrder().asFlatArray();
+const traysToLink = new TrayOrder().resultCompareArray();
 </script>
 
 <style>

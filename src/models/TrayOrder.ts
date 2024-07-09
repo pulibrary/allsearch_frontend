@@ -4,59 +4,49 @@ export class TrayOrder {
   order: SearchScope[][];
   constructor() {
     this.order = [
-      // Column 1
       [
         SearchScope.Catalog,
-        SearchScope.FindingAids,
-        SearchScope.PulMap,
-        SearchScope.Journals
-      ],
-      // Column 2
-      [SearchScope.Articles, SearchScope.Dpul, SearchScope.ArtMuseum],
-      // Column 3
-      [
+        SearchScope.Articles,
         SearchScope.LibraryDatabases,
-        SearchScope.Website,
-        SearchScope.LibGuides,
+        SearchScope.Journals,
         SearchScope.LibraryStaff,
-        SearchScope.LibAnswers
+        SearchScope.LibGuides,
+        SearchScope.PulMap,
+        SearchScope.ArtMuseum,
+        SearchScope.Dpul,
+        SearchScope.FindingAids,
+        SearchScope.LibAnswers,
+        SearchScope.Website
       ]
     ];
   }
-  get asRows() {
-    const asRows = [];
-    const numberOfRows = Math.max(
-      this.order[0].length,
-      this.order[1].length,
-      this.order[2].length
-    );
-    for (let row = 0; row < numberOfRows; row++) {
-      asRows.push([this.order[0][row], this.order[1][row], this.order[2][row]]);
-    }
-    return asRows;
+  get asRow() {
+    const asRow = [];
+    asRow.push(this.order[0]);
+    return asRow;
   }
   compareLeftToRight(a: SearchScope, b: SearchScope) {
     if (a === b) {
       return 0;
     }
-    const columnContainingA = this.order.findIndex(
-      column => column.indexOf(a) > -1
+    const TrayInRowContainingA = this.order.findIndex(
+      trayInRow => trayInRow.indexOf(a) > -1
     );
-    const columnContainingB = this.order.findIndex(
-      column => column.indexOf(b) > -1
+    const TrayInRowContainingB = this.order.findIndex(
+      trayInRow => trayInRow.indexOf(b) > -1
     );
-    const rowA = this.order[columnContainingA].indexOf(a);
-    const rowB = this.order[columnContainingB].indexOf(b);
+    const TrayInSearchA = this.order[TrayInRowContainingA].indexOf(a);
+    const TrayInSearchB = this.order[TrayInRowContainingB].indexOf(b);
 
-    if (rowA < rowB) {
+    if (TrayInSearchA < TrayInSearchB) {
       return -1;
-    } else if (rowA > rowB) {
+    } else if (TrayInSearchA > TrayInSearchB) {
       return 1;
     } else {
-      return columnContainingA < columnContainingB ? -1 : 1;
+      return TrayInRowContainingA < TrayInRowContainingB ? -1 : 1;
     }
   }
-  asFlatArray() {
+  resultCompareArray() {
     return this.order.flat().sort((a, b) => this.compareLeftToRight(a, b));
   }
 }
