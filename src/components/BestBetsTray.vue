@@ -1,11 +1,7 @@
 <template>
   <TrayLayout v-if="results?.records?.length" label="Best Bets">
     <template #title>
-      <TrayTitle
-        heading="Best Bets"
-        icon="best-bet"
-        description="Lorem ipsum"
-      ></TrayTitle>
+      <TrayTitle heading="Best Bets" icon="best-bet" description=""></TrayTitle>
     </template>
     <template #metadata>
       <ol v-if="results.records.length">
