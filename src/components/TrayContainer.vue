@@ -66,7 +66,14 @@ const traysToLink = new TrayOrder().resultCompareArray();
 }
 
 .tray-grid section:not(:nth-child(-n + 2)):not(:nth-last-child(-n + 6)) {
-  background-color: #efefef;
+  @media (prefers-color-scheme: light) {
+    background-color: #efefef;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--color-grayscale-darker);
+  }
+
   border: none;
   @media (min-width: 900px) {
     flex: 1 0 45%;

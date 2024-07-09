@@ -59,9 +59,18 @@ if (query) {
   }
 }
 
-a:hover {
-  color: var(--orange-50, 10%);
-  text-decoration: underline;
+@media (prefers-color-scheme: light) {
+  a:hover {
+    text-decoration-color: var(--color-princeton-orange-on-white);
+    text-decoration: underline;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  a:hover {
+    text-decoration-color: var(--color-princeton-orange-on-black);
+    text-decoration: underline;
+  }
 }
 
 a:focus {
