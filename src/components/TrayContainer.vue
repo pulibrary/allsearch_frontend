@@ -53,11 +53,6 @@ const traysToLink = new TrayOrder().asFlatArray();
   gap: 2rem;
 }
 
-.best-bets {
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
 .tray-grid > section {
   @media (max-width: 899px) {
     flex: 1 0 100%;
