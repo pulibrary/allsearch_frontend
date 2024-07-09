@@ -59,7 +59,7 @@ if (query) {
   }
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   a:hover {
     text-decoration-color: var(--color-princeton-orange-on-white);
     text-decoration: underline;
