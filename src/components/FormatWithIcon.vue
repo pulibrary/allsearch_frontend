@@ -13,17 +13,14 @@ const props = defineProps({
   icon: String
 });
 const formatIcon = props.icon || props.format?.toLowerCase();
-const classes = 'large-left-icon icon icon-' + formatIcon;
+const classes = 'format-icon icon icon-' + formatIcon;
 const displayFormat = props.format[0].toUpperCase() + props.format?.slice(1);
 </script>
 <style>
 .format-container {
   position: relative;
 }
-.large-left-icon {
-  left: -2.3em;
-  top: -0.1em;
-  position: absolute;
-  font-size: 1.75em;
+.icon.format-icon {
+  margin: 3px 3px 3px 0;
 }
 </style>

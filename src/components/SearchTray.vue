@@ -203,7 +203,7 @@ li.document h3 a:hover {
 }
 
 li.document {
-  padding-left: 2em;
+  padding-left: 1em;
   padding-top: 34px;
 }
 
