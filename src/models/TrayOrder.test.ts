@@ -42,30 +42,39 @@ describe('TrayOrder', () => {
       ).toEqual(1);
     });
   });
-  describe('asRows getter', () => {
-    test('gets the first row correct', () => {
-      expect(new TrayOrder().asRows[0]).toEqual([
-        SearchScope.Catalog,
-        SearchScope.Articles,
-        SearchScope.LibraryDatabases
-      ]);
-    });
-  });
-  describe('asFlatArray getter', () => {
-    test('it includes all trays in order from left-to-right then top-to-bottom', () => {
-      expect(new TrayOrder().asFlatArray()).toEqual([
+  describe('asRow getter', () => {
+    test('gets all the trays in order in one row', () => {
+      expect(new TrayOrder().asRow[0]).toEqual([
         SearchScope.Catalog,
         SearchScope.Articles,
         SearchScope.LibraryDatabases,
-        SearchScope.FindingAids,
-        SearchScope.Dpul,
-        SearchScope.Website,
-        SearchScope.PulMap,
-        SearchScope.ArtMuseum,
-        SearchScope.LibGuides,
         SearchScope.Journals,
         SearchScope.LibraryStaff,
-        SearchScope.LibAnswers
+        SearchScope.LibGuides,
+        SearchScope.PulMap,
+        SearchScope.ArtMuseum,
+        SearchScope.Dpul,
+        SearchScope.FindingAids,
+        SearchScope.LibAnswers,
+        SearchScope.Website
+      ]);
+    });
+  });
+  describe('resultCompareArray getter', () => {
+    test('it includes all trays in order from left-to-right', () => {
+      expect(new TrayOrder().resultCompareArray()).toEqual([
+        SearchScope.Catalog,
+        SearchScope.Articles,
+        SearchScope.LibraryDatabases,
+        SearchScope.Journals,
+        SearchScope.LibraryStaff,
+        SearchScope.LibGuides,
+        SearchScope.PulMap,
+        SearchScope.ArtMuseum,
+        SearchScope.Dpul,
+        SearchScope.FindingAids,
+        SearchScope.LibAnswers,
+        SearchScope.Website
       ]);
     });
   });
