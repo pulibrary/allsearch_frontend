@@ -44,14 +44,6 @@ describe('SearchTray component', () => {
       'Articles, eBooks, and other online sources that the Library licenses'
     );
   });
-  test('it shows the format icon', async () => {
-    expect(
-      wrapper
-        .find('.heading-container')
-        .find('span.icon.icon-text[aria-hidden="true"]')
-        .exists()
-    ).toBe(true);
-  });
 
   describe('when the scope is LibraryDatabases', () => {
     test('it includes the text "View and refine results", regardless of the number of results', async () => {

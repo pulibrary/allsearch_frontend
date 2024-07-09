@@ -60,7 +60,7 @@ populateResults();
 </script>
 
 <style>
-.document {
+.best-bets section ol li.document {
   list-style-type: none;
 }
 
