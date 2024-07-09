@@ -158,6 +158,13 @@ h3 {
   font-size: 1.625rem;
 }
 
+/* Dark mode rules */
+@media (prefers-color-scheme: dark) {
+  a {
+    color: var(--color-bleu-de-france-lighter);
+  }
+}
+
 /* Mobile rules */
 @media screen and (max-width: 768px) {
   h2 {
