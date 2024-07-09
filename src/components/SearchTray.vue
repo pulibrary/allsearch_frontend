@@ -61,9 +61,12 @@
     </template>
     <template v-if="loaded && !results?.records?.length" #no_results>
       <div class="no-results">
-        No results found. Search the
-        <a :href="getScopeUrl()">{{ getScopeTitle() }}</a
-        >.
+        <p>No results matched your search.</p>
+        <p>
+          Try changing your search terms or searching the
+          <a :href="getScopeUrl()">{{ getScopeTitle() }}</a
+          >.
+        </p>
       </div>
     </template>
     <template v-if="results?.records?.length && results.more" #further_actions>
