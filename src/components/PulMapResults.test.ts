@@ -108,8 +108,9 @@ describe('PulmapResults component', () => {
     test('it shows helpful text', async () => {
       await flushPromises();
       expect(wrapper.findAll('li').length).toEqual(0);
+      expect(wrapper.text()).toContain('No results matched your search.');
       expect(wrapper.text()).toContain(
-        'No results found. Search the Maps and Geographic Data'
+        'Try changing your search terms or searching the Maps and Geographic Data.'
       );
     });
   });

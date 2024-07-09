@@ -110,8 +110,9 @@ describe('SearchTray component with Findingaids flavor', () => {
     test('it shows helpful text', async () => {
       await flushPromises();
       expect(wrapper.findAll('li').length).toEqual(0);
+      expect(wrapper.text()).toContain('No results matched your search.');
       expect(wrapper.text()).toContain(
-        'No results found. Search the Library Archives'
+        'Try changing your search terms or searching the Library Archives.'
       );
       expect(
         wrapper.find('a[href="https://findingaids.princeton.edu"]').text()
