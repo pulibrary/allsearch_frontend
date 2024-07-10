@@ -1,11 +1,13 @@
 <template>
   <lux-input-button
     type="button"
-    variation="text"
+    @button-clicked="toggleButton"
+    variation="solid"
     aria-label="Toggle skip to section"
+    class="lux-expanded"
     >Skip to Section</lux-input-button
   >
-  <div id="jump-to-section">
+  <div id="jump-to-section" class="display-none" tabindex="-1">
     <ul>
       <template v-for="scope in props.traysToLink" :key="scope">
         <li class="ul-border">
@@ -30,6 +32,11 @@ const props = defineProps({
 function getHref(scope: SearchScope): string {
   return '#' + IdService.createDomId(ScopeTitleMap[scope]);
 }
+function toggleButton() {
+  let skipLinks = document.querySelector('#jump-to-section');
+  skipLinks?.classList.toggle('display-none');
+  skipLinks?.focus();
+}
 </script>
 <style scoped>
 #jump-to-section {
@@ -45,9 +52,21 @@ function getHref(scope: SearchScope): string {
   }
 }
 
+#main-content > div > div > div.header__secondary > nav .lux-button {
+  margin: 1rem 0rem 1rem 0rem;
+  background-color: var(--black);
+  border: 1px solid var(--white);
+}
 @media (min-width: 1000px) {
   #main-content > div > div > div.header__secondary > nav .lux-button {
     display: none;
+  }
+}
+@media (max-width: 999px) {
+  #jump-to-section {
+    &.display-none {
+      display: none;
+    }
   }
 }
 
