@@ -1,4 +1,10 @@
 <template>
+  <lux-input-button
+    type="button"
+    variation="text"
+    aria-label="Toggle skip to section"
+    >Skip to Section</lux-input-button
+  >
   <div id="jump-to-section">
     <ul>
       <template v-for="scope in props.traysToLink" :key="scope">
@@ -14,6 +20,7 @@ import { PropType } from 'vue';
 import ScopeTitleMap from '../config/ScopeTitleMap';
 import { SearchScope } from '../enums/SearchScope';
 import { IdService } from '../services/IdService';
+import { LuxInputButton } from 'lux-design-system';
 const props = defineProps({
   traysToLink: {
     type: Array as PropType<SearchScope[]>,
@@ -35,6 +42,12 @@ function getHref(scope: SearchScope): string {
     flex-flow: row wrap;
     gap: 10px;
     padding: 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  #main-content > div > div > div.header__secondary > nav .lux-button {
+    display: none;
   }
 }
 
