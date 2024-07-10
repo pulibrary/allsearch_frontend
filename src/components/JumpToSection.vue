@@ -35,7 +35,7 @@ function getHref(scope: SearchScope): string {
 function toggleButton() {
   let skipLinks = document.querySelector('#jump-to-section');
   skipLinks?.classList.toggle('display-none');
-  skipLinks?.focus();
+  (skipLinks as HTMLElement)?.focus();
 }
 </script>
 <style scoped>
