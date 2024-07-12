@@ -47,6 +47,29 @@ describe('BestBetsTray component', () => {
       );
     });
   });
+  describe('when there is a very long description', () => {
+    beforeEach(() => {
+      testResults = new SearchResults(1, 'https://example.com', [
+        BestBetResultsFixture.testResult2
+      ]);
+      mock.mockResolvedValue(testResults);
+      wrapper = mount(BestBetsTray, {
+        props: {
+          resultsPromise: new SearchService().results(
+            'best-bet',
+            'new york times'
+          )
+        }
+      });
+    });
+    test('it does not truncate the description', async () => {
+      await flushPromises();
+      const results = wrapper.findAll('li.document');
+      expect(results[0].text()).toContain(
+        'This program pairs every Princeton undergraduate with a friendly library expert. Your Personal Librarian will help you navigate the library system, get started with research, point you to subject experts, and answer any questions you might have.'
+      );
+    });
+  });
   describe('when there are no results', () => {
     beforeEach(() => {
       mock = vi.spyOn(SearchService.prototype, 'results');
