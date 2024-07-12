@@ -9,11 +9,9 @@
           <h3 :data-id="results.records[0].id">
             <a :href="results.records[0].url">{{ results.records[0].title }}</a>
           </h3>
-          <SearchMetadata
-            :basic-field-list="['description']"
-            default-icon="best-bet"
-            :document="results.records[0]"
-          ></SearchMetadata>
+          <ul class="metadata" v-if="results.records[0]['description']">
+            <li>{{ results.records[0]['description'] }}</li>
+          </ul>
         </li>
       </ol>
     </template>
@@ -30,7 +28,6 @@
 <script setup lang="ts">
 import { Ref, ref } from 'vue';
 import { SearchResults } from '../models/SearchResults';
-import SearchMetadata from './metadata/SearchMetadata.vue';
 import TrayLayout from './TrayLayout.vue';
 import TrayTitle from './TrayTitle.vue';
 import MoreResults from './MoreResults.vue';
