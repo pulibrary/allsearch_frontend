@@ -9,6 +9,6 @@ export default {
   libanswers: 'Library FAQ',
   libguides: 'Library Guides',
   pulmap: 'Maps and Geographic Data',
-  staff: 'Library Staff',
+  staff: 'Staff Directory',
   website: 'Library Website'
 };
