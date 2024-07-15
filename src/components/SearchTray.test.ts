@@ -55,4 +55,12 @@ describe('SearchTray component', () => {
       );
     });
   });
+
+  describe('the aria-label for the section', () => {
+    test('it includes an aria-label for the section to allow navigation by landmark', () => {
+      expect(wrapper.find('section').attributes('aria-label')).toEqual(
+        'Articles+ results'
+      );
+    });
+  });
 });
