@@ -1,5 +1,5 @@
 <template>
-  <TrayLayout label="">
+  <TrayLayout :label="sectionLabel">
     <template #title>
       <TrayTitle
         :heading="getScopeTitle()"
@@ -122,6 +122,7 @@ const props = defineProps({
 const emit = defineEmits<{
   (e: 'searchDataLoaded', payload: SearchDataLoadSummary): void;
 }>();
+const sectionLabel = `${getScopeTitle()} results`;
 
 const results: Ref<SearchResults | undefined> = ref(undefined);
 const holdings: Ref<RecordHoldingsMap | undefined> = ref(undefined);
