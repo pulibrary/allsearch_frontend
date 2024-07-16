@@ -1,5 +1,5 @@
 <template>
-  <LuxLibraryHeader type="header" appName="AllSearch">
+  <LuxLibraryHeader type="header" appName="All Search">
     <LuxMenuBar type="main-menu" theme="dark" :menu-items="menu_items" />
   </LuxLibraryHeader>
 </template>
