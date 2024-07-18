@@ -1,8 +1,8 @@
 import { createApp } from 'vue';
+import 'lux-design-system/dist/style.css';
 import App from './App.vue';
 import HoneybadgerVue from '@honeybadger-io/vue';
 import config from './config';
-import 'lux-design-system/dist/style.css';
 
 const app = createApp(App);
 
