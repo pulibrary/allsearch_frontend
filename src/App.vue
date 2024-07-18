@@ -101,4 +101,15 @@ a:focus {
   list-style-type: none;
   margin: 0;
 }
+/** Support Dark system mode for the disclosure icon */
+/** The Light system mode is supported by the default values in lux */
+@media (prefers-color-scheme: dark) {
+  .lux-disclosure .lux-icon svg path {
+    stroke-width: 3;
+    stroke: var(--white);
+  }
+  .lux-disclosure button .lux-icon {
+    border: 2px solid white;
+  }
+}
 </style>
