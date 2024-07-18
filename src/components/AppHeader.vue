@@ -10,7 +10,7 @@ const menu_items = [
   {
     name: 'Accounts',
     component: 'Accounts',
-    href: 'https://library.psb-prod.princeton.edu/accounts'
+    href: 'https://library.psb-prod.princeton.edu/services/accounts'
   },
   {
     name: 'Hours',
@@ -20,39 +20,41 @@ const menu_items = [
   {
     name: 'Help',
     component: 'Help',
-    href: 'https://library.psb-prod.princeton.edu/help',
-    children: [
-      {
-        name: 'Schedule a Consultation',
-        component: 'Schedule a Consultation',
-        href: 'https://library.psb-prod.princeton.edu/help/schedule-consultation'
-      }
-    ]
+    href: 'https://library.psb-prod.princeton.edu/services/research-support/askus-chat-and-email'
   },
   {
-    name: 'For You',
-    component: 'For You',
-    href: 'https://library.psb-prod.princeton.edu/you',
+    name: 'Search Tools',
+    component: 'Search Tools',
     children: [
       {
-        name: 'Faculty',
-        component: 'Faculty',
-        href: 'https://library.psb-prod.princeton.edu/you/faculty'
+        name: 'Library Catalog',
+        component: 'Library Catalog',
+        href: 'https://catalog.princeton.edu/'
       },
       {
-        name: 'Graduate Students',
-        component: 'Graduate Students',
-        href: 'https://library.psb-prod.princeton.edu/you/graduate-students'
+        name: 'Articles+',
+        component: 'Articles+',
+        href: 'https://princeton.summon.serialssolutions.com/'
       },
       {
-        name: 'Undergraduate Students',
-        component: 'Undergraduate Students',
-        href: 'https://library.psb-prod.princeton.edu/you/undergraduate-students'
+        name: 'Databases',
+        component: 'Databases',
+        href: 'https://libguides.princeton.edu/az/databases'
       },
       {
-        name: 'Visitors',
-        component: 'Undergraduate Students',
-        href: 'https://library.psb-prod.princeton.edu/you/visitors'
+        name: 'Finding Aids',
+        component: 'Finding Aids',
+        href: 'https://findingaids.princeton.edu/'
+      },
+      {
+        name: 'Digital Library (DPUL)',
+        component: 'Digital Library (DPUL)',
+        href: 'https://dpul.princeton.edu/'
+      },
+      {
+        name: 'All Search Tools',
+        component: 'All Search Tools',
+        href: 'https://library.psb-prod.princeton.edu/services?type=1551'
       }
     ]
   }
