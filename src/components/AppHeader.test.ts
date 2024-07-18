@@ -7,7 +7,7 @@ const wrapper = mount(AppHeader);
 describe('AppHeader component', () => {
   test('it has a link to Accounts', () => {
     const accountsLink = wrapper.get(
-      'a[href="https://library.psb-prod.princeton.edu/accounts"]'
+      'a[href="https://library.psb-prod.princeton.edu/services/accounts"]'
     );
     expect(accountsLink.text()).toEqual('Accounts');
   });
@@ -17,41 +17,46 @@ describe('AppHeader component', () => {
     );
     expect(hoursLink.text()).toEqual('Hours');
   });
-  test('it has a Schedule a Consultation link under Help', () => {
-    const helpButton = wrapper
-      .findAll('button')
-      .find(button => button.text() === 'Help');
-    helpButton?.trigger('click');
-
-    const consultationLink = wrapper.get(
-      'a[href="https://library.psb-prod.princeton.edu/help/schedule-consultation"]'
+  test('it has a link to Hours', () => {
+    const helpLink = wrapper.get(
+      'a[href="https://library.psb-prod.princeton.edu/hours"]'
     );
-    expect(consultationLink.text()).toEqual('Schedule a Consultation');
+    expect(helpLink.text()).toEqual('Hours');
   });
-  test('it has several links under For You', () => {
-    const forYouButton = wrapper
+  test('it has several links under Search Tools', () => {
+    const searchToolsButton = wrapper
       .findAll('button')
-      .find(button => button.text() === 'Help');
-    forYouButton?.trigger('click');
+      .find(button => button.text() === 'Search Tools');
+    searchToolsButton?.trigger('click');
 
-    const facultyLink = wrapper.get(
-      'a[href="https://library.psb-prod.princeton.edu/you/faculty"]'
+    const libraryCatalogLink = wrapper.get(
+      'a[href="https://catalog.princeton.edu/"]'
     );
-    expect(facultyLink.text()).toEqual('Faculty');
+    expect(libraryCatalogLink.text()).toEqual('Library Catalog');
 
-    const gradLink = wrapper.get(
-      'a[href="https://library.psb-prod.princeton.edu/you/graduate-students"]'
+    const articlesLink = wrapper.get(
+      'a[href="https://princeton.summon.serialssolutions.com/"]'
     );
-    expect(gradLink.text()).toEqual('Graduate Students');
+    expect(articlesLink.text()).toEqual('Articles+');
 
-    const undergradLink = wrapper.get(
-      'a[href="https://library.psb-prod.princeton.edu/you/undergraduate-students"]'
+    const databasesLink = wrapper.get(
+      'a[href="https://libguides.princeton.edu/az/databases"]'
     );
-    expect(undergradLink.text()).toEqual('Undergraduate Students');
+    expect(databasesLink.text()).toEqual('Databases');
 
-    const visitLink = wrapper.get(
-      'a[href="https://library.psb-prod.princeton.edu/you/visitors"]'
+    const findingAidsLink = wrapper.get(
+      'a[href="https://findingaids.princeton.edu/"]'
     );
-    expect(visitLink.text()).toEqual('Visitors');
+    expect(findingAidsLink.text()).toEqual('Finding Aids');
+
+    const digitalLibraryLink = wrapper.get(
+      'a[href="https://dpul.princeton.edu/"]'
+    );
+    expect(digitalLibraryLink.text()).toEqual('Digital Library (DPUL)');
+
+    const allSearchToolsLink = wrapper.get(
+      'a[href="https://library.psb-prod.princeton.edu/services?type=1551"]'
+    );
+    expect(allSearchToolsLink.text()).toEqual('All Search Tools');
   });
 });
