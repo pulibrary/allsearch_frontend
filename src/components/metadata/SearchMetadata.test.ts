@@ -4,6 +4,7 @@ import SearchMetadata from './SearchMetadata.vue';
 import ArtmuseumResultsFixtures from '../../fixtures/ArtmuseumResultsFixtures';
 import LibguidesResultsFixtures from '../../fixtures/LibguidesResultsFixtures';
 import LibraryDatabasesResultsFixtures from '../../fixtures/LibraryDatabasesResultsFixtures';
+import LibraryWebsiteResultsFixtures from '../../fixtures/LibraryWebsiteResultsFixtures';
 import ScopeFieldsMap from '../../config/ScopeFieldsMap';
 
 describe('SearchMetadata', () => {
@@ -58,6 +59,26 @@ describe('SearchMetadata', () => {
       expect(wrapper.text()).toContain(
         'Also known as Beida fabao, or pkulaw.cn.  Chinese laws, regulations and cases in Chinese (Chinalawinfo) and English/Chinese (Lawinfochina). One concurrent…'
       );
+    });
+  });
+
+  describe('Library website scope', () => {
+    beforeEach(() => {
+      wrapper = mount(SearchMetadata, {
+        props: {
+          document: LibraryWebsiteResultsFixtures.testResult1,
+          defaultIcon: 'windows',
+          basicFieldList: ScopeFieldsMap.website
+        }
+      });
+    });
+    it('displays html from the results, rather than converting it into entities', () => {
+      expect(wrapper.text()).toContain(
+        'This series gives readers an inside look into the scholarly articles that grace the pages of the Princeton University Library Chronicle.'
+      );
+      expect(wrapper.text()).not.toContain('<em>');
+      expect(wrapper.text()).not.toContain('<strong>');
+      expect(wrapper.findAll('em').length).toEqual(2);
     });
   });
 });

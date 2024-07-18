@@ -43,5 +43,17 @@ export default {
       issue: '6',
       isxn: '1936-0851'
     }
+  }),
+  testResult3: SearchResult.fromObject({
+    title: 'Example title',
+    creator: 'Example creator',
+    publisher: 'Example publisher',
+    id: '123',
+    type: 'Journal Article',
+    description: 'This abstract <i>contains</i> <strong>HTML</strong>',
+    url: 'http://example.com',
+    other_fields: {
+      abstract: 'This abstract <i>contains</i> <strong>HTML</strong>'
+    }
   })
 };

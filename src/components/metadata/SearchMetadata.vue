@@ -8,9 +8,14 @@
     </li>
     <li v-for="field in basicFieldsWithDataList" :key="field">
       <span class="visually-hidden">{{ field }}: </span
-      >{{
-        StringService.truncate(document[field as keyof SearchResult] as string)
-      }}
+      ><!-- nosemgrep javascript.vue.security.audit.xss.templates.avoid-v-html.avoid-v-html -->
+      <span
+        v-html="
+          StringService.truncate(
+            document[field as keyof SearchResult] as string
+          )
+        "
+      ></span>
     </li>
     <slot name="extra-metadata"></slot>
   </ul>

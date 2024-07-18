@@ -7,8 +7,9 @@
       hide-label="Hide abstract"
       width="100%"
       font-size="1.125rem"
-      >{{ document.other_fields?.abstract }}</LuxDisclosure
-    >
+      ><!-- nosemgrep javascript.vue.security.audit.xss.templates.avoid-v-html.avoid-v-html -->
+      <span v-html="document.other_fields.abstract"></span
+    ></LuxDisclosure>
   </li>
   <li v-if="document.other_fields?.fulltext_available">
     <InlineBadge color="blue">Full-text available</InlineBadge>
