@@ -1,12 +1,13 @@
 <template>
-  <!-- nosemgrep javascript.vue.security.audit.xss.templates.avoid-v-html.avoid-v-html -->
   <lux-alert
     v-if="result?.display_banner"
     :status="result.alert_status"
     :autoclear="result.autoclear"
     :dismissible="result.dismissible"
-    ><span v-html="result.text"></span
-  ></lux-alert>
+  >
+    <!-- nosemgrep javascript.vue.security.audit.xss.templates.avoid-v-html.avoid-v-html -->
+    <span v-html="result.text"></span>
+  </lux-alert>
 </template>
 <script setup lang="ts">
 import { Ref, ref } from 'vue';
