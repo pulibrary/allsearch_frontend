@@ -4,6 +4,7 @@ import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
 import { SearchTermService } from './services/SearchTermService';
 import TrayContainer from './components/TrayContainer.vue';
+import BannerAlert from './components/BannerAlert.vue';
 
 const query = SearchTermService.term();
 if (query) {
@@ -23,6 +24,9 @@ if (query) {
   <AppHeader></AppHeader>
   <div class="page-wrap">
     <main id="main-content" class="main" tabindex="-1">
+      <div class="banner-wrapper">
+        <BannerAlert></BannerAlert>
+      </div>
       <div v-if="query">
         <TrayContainer></TrayContainer>
       </div>
@@ -111,5 +115,9 @@ a:focus {
   .lux-disclosure button .lux-icon {
     border: 2px solid white;
   }
+}
+
+.banner-wrapper {
+  min-height: 30px;
 }
 </style>
