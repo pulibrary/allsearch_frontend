@@ -1,11 +1,13 @@
 <template>
+  <!-- eslint-disable vue/no-v-text-v-html-on-component -->
   <lux-alert
     v-if="result?.display_banner"
     :status="result.alert_status"
     :autoclear="result.autoclear"
     :dismissible="result.dismissible"
-    >{{ result.text }}</lux-alert
-  >
+    v-html="result.text"
+  ></lux-alert>
+  <!-- eslint-enable -->
 </template>
 <script setup lang="ts">
 import { Ref, ref } from 'vue';
