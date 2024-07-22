@@ -1,13 +1,12 @@
 <template>
-  <!-- eslint-disable vue/no-v-text-v-html-on-component -->
+  <!-- nosemgrep javascript.vue.security.audit.xss.templates.avoid-v-html.avoid-v-html -->
   <lux-alert
     v-if="result?.display_banner"
     :status="result.alert_status"
     :autoclear="result.autoclear"
     :dismissible="result.dismissible"
-    v-html="result.text"
+    ><span v-html="result.text"></span
   ></lux-alert>
-  <!-- eslint-enable -->
 </template>
 <script setup lang="ts">
 import { Ref, ref } from 'vue';
