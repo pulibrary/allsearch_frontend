@@ -1,7 +1,6 @@
 <template>
   <div v-if="query">
     <div class="header__secondary">
-      <BannerAlert></BannerAlert>
       <nav aria-label="search tools" class="search-tools">
         <SearchBar></SearchBar>
         <JumpToSection :trays-to-link="traysToLink"></JumpToSection>
@@ -40,7 +39,6 @@ import InitialSearch from './InitialSearch.vue';
 import { TrayOrder } from '../models/TrayOrder';
 import JumpToSection from './JumpToSection.vue';
 import BestBetsTray from './BestBetsTray.vue';
-import BannerAlert from './BannerAlert.vue';
 
 const query = SearchTermService.term();
 const searchService = new SearchService();

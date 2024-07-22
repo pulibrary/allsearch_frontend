@@ -4,6 +4,7 @@ import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
 import { SearchTermService } from './services/SearchTermService';
 import TrayContainer from './components/TrayContainer.vue';
+import BannerAlert from './components/BannerAlert.vue';
 
 const query = SearchTermService.term();
 if (query) {
@@ -23,6 +24,7 @@ if (query) {
   <AppHeader></AppHeader>
   <div class="page-wrap">
     <main id="main-content" class="main" tabindex="-1">
+      <BannerAlert></BannerAlert>
       <div v-if="query">
         <TrayContainer></TrayContainer>
       </div>
