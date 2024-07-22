@@ -24,7 +24,9 @@ if (query) {
   <AppHeader></AppHeader>
   <div class="page-wrap">
     <main id="main-content" class="main" tabindex="-1">
-      <BannerAlert></BannerAlert>
+      <div class="banner-wrapper">
+        <BannerAlert></BannerAlert>
+      </div>
       <div v-if="query">
         <TrayContainer></TrayContainer>
       </div>
@@ -113,5 +115,9 @@ a:focus {
   .lux-disclosure button .lux-icon {
     border: 2px solid white;
   }
+}
+
+.banner-wrapper {
+  min-height: 30px;
 }
 </style>
