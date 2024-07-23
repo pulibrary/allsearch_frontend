@@ -203,8 +203,6 @@ li.document h3 a {
 }
 
 li.document h3 a:focus {
-  outline: none;
-  border: 3px solid var(--orange-50);
   text-decoration: underline;
   line-height: 2rem;
   text-underline-offset: 4px;

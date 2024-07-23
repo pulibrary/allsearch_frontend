@@ -68,6 +68,11 @@ if (query) {
     text-decoration-color: var(--color-princeton-orange-on-white);
     text-decoration: underline;
   }
+  a:focus {
+    outline: var(--color-princeton-orange-on-white) solid 0.25rem;
+    outline-offset: none;
+    box-shadow: none;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -75,11 +80,11 @@ if (query) {
     text-decoration-color: var(--color-princeton-orange-on-black);
     text-decoration: underline;
   }
-}
-
-a:focus {
-  outline: none;
-  border: 3px solid orange;
+  a:focus {
+    outline: var(--color-princeton-orange-on-black) solid 0.25rem;
+    outline-offset: none;
+    box-shadow: none;
+  }
 }
 
 .skip-to-content-link {
