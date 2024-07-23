@@ -1,11 +1,11 @@
-import { describe, test, expect, beforeEach, vi, SpyInstance } from 'vitest';
+import { describe, test, expect, beforeEach, vi, MockInstance } from 'vitest';
 import { VueWrapper, flushPromises, mount } from '@vue/test-utils';
 import { SearchService } from '../services/SearchService';
 import { SearchResults } from '../models/SearchResults';
 import BestBetsTray from './BestBetsTray.vue';
 import BestBetResultsFixture from '../fixtures/BestBetResultsFixture';
 
-let mock: SpyInstance;
+let mock: MockInstance;
 let wrapper: VueWrapper;
 let testResults: SearchResults;
 

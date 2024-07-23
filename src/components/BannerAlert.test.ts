@@ -5,14 +5,14 @@ import {
   describe,
   expect,
   it,
-  SpyInstance,
+  MockInstance,
   vi
 } from 'vitest';
 import { BannerResult } from '../models/BannerResult';
 import { BannerService } from '../services/BannerService';
 import BannerAlert from './BannerAlert.vue';
 
-let mock: SpyInstance;
+let mock: MockInstance;
 let wrapper: VueWrapper;
 let testResult: BannerResult;
 
