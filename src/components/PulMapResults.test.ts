@@ -38,7 +38,7 @@ describe('PulmapResults component', () => {
   });
 
   test('it has a heading', () => {
-    expect(wrapper.find('h2').text()).toEqual('Maps and Geographic Data');
+    expect(wrapper.find('h2').text()).toEqual('Maps and GIS');
   });
   test('heading has a map icon', () => {
     expect(wrapper.find('h2 span.icon.icon-map').exists()).toBe(true);
@@ -110,7 +110,7 @@ describe('PulmapResults component', () => {
       expect(wrapper.findAll('li').length).toEqual(0);
       expect(wrapper.text()).toContain('No results matched your search.');
       expect(wrapper.text()).toContain(
-        'Try changing your search terms or searching the Maps and Geographic Data.'
+        'Try changing your search terms or searching the Maps and GIS.'
       );
     });
   });

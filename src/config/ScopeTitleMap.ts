@@ -8,7 +8,7 @@ export default {
   journals: 'Journals',
   libanswers: 'Library FAQ',
   libguides: 'Library Guides',
-  pulmap: 'Maps and Geographic Data',
+  pulmap: 'Maps and GIS',
   staff: 'Staff Directory',
   website: 'Library Website'
 };

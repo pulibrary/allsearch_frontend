@@ -13,7 +13,7 @@ const map: { [key in SearchScope]: string } = {
   libanswers: '',
   libguides:
     'Collections of resources created by library staff to assist you in your research',
-  pulmap: 'Digital maps and geospatial data',
+  pulmap: 'Maps and GIS',
   staff: '',
   website: ''
 };
