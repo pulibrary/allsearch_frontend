@@ -1,8 +1,7 @@
 <template>
   <div class="more-container">
     <a :href="props.url" class="more-link"
-      ><span class="underline">{{ linkText }}</span>
-      <span class="icon icon-right"></span
+      >{{ linkText }}<span class="icon icon-right"></span
     ></a>
   </div>
 </template>
@@ -56,7 +55,6 @@ a.more-link {
   padding: 14px 24px;
   margin: 12px 7px auto;
   max-width: 100%;
-  text-decoration: underline;
   text-underline-offset: 4px;
   text-align: right;
 }
