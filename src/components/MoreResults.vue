@@ -35,7 +35,8 @@ if (props.resultCount) {
 
   a.more-link:focus,
   a.more-link:hover {
-    text-decoration-color: var(--color-princeton-orange-on-white);
+    text-decoration: none;
+    border-bottom: 2px var(--color-princeton-orange-on-white) solid;
   }
 }
 
@@ -46,7 +47,8 @@ if (props.resultCount) {
 
   a.more-link:focus,
   a.more-link:hover {
-    text-decoration-color: var(--color-princeton-orange-on-black);
+    text-decoration: none;
+    border-bottom: 2px var(--color-princeton-orange-on-black) solid;
   }
 }
 
@@ -56,6 +58,9 @@ a.more-link {
   margin: 12px 7px auto;
   max-width: 100%;
   text-underline-offset: 4px;
+  text-decoration: none;
+  border-bottom: 2px var(--black) solid;
+  padding: 1px;
   text-align: right;
 }
 
