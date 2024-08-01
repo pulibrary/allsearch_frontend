@@ -47,6 +47,7 @@ if (query) {
   align-items: center;
   margin-left: 1rem;
   margin-right: 1rem;
+  padding-bottom: 3rem;
 }
 
 .main {
