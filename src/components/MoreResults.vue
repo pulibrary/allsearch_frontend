@@ -31,6 +31,7 @@ if (props.resultCount) {
 @media (prefers-color-scheme: light) {
   a.more-link {
     color: var(--black);
+    border-bottom: 2px var(--black) solid;
   }
 
   a.more-link:focus,
@@ -43,6 +44,7 @@ if (props.resultCount) {
 @media (prefers-color-scheme: dark) {
   a.more-link {
     color: var(--white);
+    border-bottom: 2px var(--white) solid;
   }
 
   a.more-link:focus,
@@ -59,7 +61,6 @@ a.more-link {
   max-width: 100%;
   text-underline-offset: 4px;
   text-decoration: none;
-  border-bottom: 2px var(--black) solid;
   padding: 1px;
   text-align: right;
 }
