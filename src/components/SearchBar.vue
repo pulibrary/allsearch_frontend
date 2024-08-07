@@ -71,6 +71,9 @@ button {
   }
 }
 
+#search {
+  padding: 0.375rem 0.75rem;
+}
 .align-searchbar {
   display: flex;
   height: 60px;
