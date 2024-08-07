@@ -39,10 +39,16 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 - If you want to run the tests and have them immediate exit, run `yarn test --run`
 - If you want to run the tests in ['watch' mode](https://vitest.dev/guide/features.html#watch-mode) (automatically runs tests again when related files are changed), run `yarn test` or `yarn test --watch`
 
-## Integration/e2e tests
+### Integration/e2e tests
 To run the rspec integration tests: 
 1. `bundle install`
 2. `bundle exec rspec`
+
+### Using the Vitest VSCode Plugin
+
+1. Click on the flask icon ('Testing') in the left panel
+1. Click the 'play' button in the left panel to run the tests
+1. Alternately, go to the file of the test you want to run and click the icon to the left of the test to re-run it. If you have not run the test previously, it will be an arrow, if you have run it, it will be a green check if it passed and a red x if it failed on the previous run.
 
 ## Semgrep
 
@@ -57,12 +63,6 @@ brew install semgrep
 semgrep --config auto . # run rules from the semgrep community
 ```
 
-### Using the Vitest VSCode Plugin
-
-1. Click on the flask icon ('Testing') in the left panel
-1. Click the 'play' button in the left panel to run the tests
-1. Alternately, go to the file of the test you want to run and click the icon to the left of the test to re-run it. If you have not run the test previously, it will be an arrow, if you have run it, it will be a green check if it passed and a red x if it failed on the previous run.
-
 ## Format files
 
 `yarn lint`
@@ -71,9 +71,20 @@ semgrep --config auto . # run rules from the semgrep community
 
 To fix linting errors: `yarn lint --fix`
 
-### Git Hook
+## Git Hook
 
-If changes need to happen in 'simple-git-hooks'
+Changes need to be made in 'simple-git-hooks':
 
 1. Make the change in [package.json](https://github.com/pulibrary/allsearch_frontend/blob/main/package.json)
-2. Then run `yarn simple-git-hooks` to reconfigure the settings.
+```
+"simple-git-hooks": {
+    "pre-commit": "yarn lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint"
+    ]
+  }
+  ```
+2. Run `yarn simple-git-hooks` to reconfigure the settings.
