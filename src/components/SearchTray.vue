@@ -216,19 +216,18 @@ li.document h3 a:hover {
 }
 
 li.document {
-  padding-left: 1em;
-  padding-top: 34px;
+  padding: 0.8rem 0rem 0rem 0.5rem;
 }
 
 li.document:not(:last-child) {
-  padding-bottom: 20px;
-  border-bottom: solid 3px var(--gray-50);
+  padding-bottom: 0.7rem;
+  border-bottom: solid 1px var(--gray-50);
 }
 
 .metadata {
   list-style-type: none;
   padding: 0;
-  margin: 10px 0;
+  margin: 0.65rem 0 0 0;
 }
 
 .metadata li {
