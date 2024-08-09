@@ -88,3 +88,17 @@ Changes need to be made in 'simple-git-hooks':
   }
   ```
 2. Run `yarn simple-git-hooks` to reconfigure the settings.
+
+## Run lighthouse from the command line
+
+```
+npm install -g @lhci/cli@0.14.x
+lhci autorun
+```
+
+You can safely ignore the message "GitHub token is not set" --
+this is for an integration that we don't currently use. 
+
+It will tell you if you've passed the assertion(s) specified
+in `lighthouserc.js`.  It will also give you a URL where you
+can see the complete lighthouse results.
