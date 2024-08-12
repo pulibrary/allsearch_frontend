@@ -7,19 +7,19 @@ const wrapper = mount(AppHeader);
 describe('AppHeader component', () => {
   test('it has a link to Accounts', () => {
     const accountsLink = wrapper.get(
-      'a[href="https://library.psb-prod.princeton.edu/services/accounts"]'
+      'a[href="https://library.princeton.edu/services/accounts"]'
     );
     expect(accountsLink.text()).toEqual('Accounts');
   });
   test('it has a link to Hours', () => {
     const hoursLink = wrapper.get(
-      'a[href="https://library.psb-prod.princeton.edu/hours"]'
+      'a[href="https://library.princeton.edu/hours"]'
     );
     expect(hoursLink.text()).toEqual('Hours');
   });
   test('it has a link to Hours', () => {
     const helpLink = wrapper.get(
-      'a[href="https://library.psb-prod.princeton.edu/hours"]'
+      'a[href="https://library.princeton.edu/hours"]'
     );
     expect(helpLink.text()).toEqual('Hours');
   });
@@ -55,7 +55,7 @@ describe('AppHeader component', () => {
     expect(digitalLibraryLink.text()).toEqual('Digital Library (DPUL)');
 
     const allSearchToolsLink = wrapper.get(
-      'a[href="https://library.psb-prod.princeton.edu/services?type=1551"]'
+      'a[href="https://library.princeton.edu/services?type=1551"]'
     );
     expect(allSearchToolsLink.text()).toEqual('All Search Tools');
   });

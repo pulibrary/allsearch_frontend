@@ -10,17 +10,17 @@ const menu_items = [
   {
     name: 'Accounts',
     component: 'Accounts',
-    href: 'https://library.psb-prod.princeton.edu/services/accounts'
+    href: 'https://library.princeton.edu/services/accounts'
   },
   {
     name: 'Hours',
     component: 'Hours',
-    href: 'https://library.psb-prod.princeton.edu/hours'
+    href: 'https://library.princeton.edu/hours'
   },
   {
     name: 'Help',
     component: 'Help',
-    href: 'https://library.psb-prod.princeton.edu/services/research-support/askus-chat-and-email'
+    href: 'https://library.princeton.edu/services/research-support/askus-chat-and-email'
   },
   {
     name: 'Search Tools',
@@ -54,7 +54,7 @@ const menu_items = [
       {
         name: 'All Search Tools',
         component: 'All Search Tools',
-        href: 'https://library.psb-prod.princeton.edu/services?type=1551'
+        href: 'https://library.princeton.edu/services?type=1551'
       }
     ]
   }
