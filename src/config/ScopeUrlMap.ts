@@ -10,5 +10,5 @@ export default {
   libguides: 'https://libguides.princeton.edu',
   pulmap: 'https://maps.princeton.edu',
   staff: 'https://library.princeton.edu/staff/directory',
-  website: 'https://library.psb-prod.princeton.edu/search'
+  website: 'https://library.princeton.edu/search'
 };
