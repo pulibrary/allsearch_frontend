@@ -9,6 +9,6 @@ export default {
   libanswers: 'https://faq.library.princeton.edu/search',
   libguides: 'https://libguides.princeton.edu',
   pulmap: 'https://maps.princeton.edu',
-  staff: 'https://library.princeton.edu/staff/directory',
+  staff: 'https://library.princeton.edu/about/staff-directory',
   website: 'https://library.princeton.edu/search'
 };
