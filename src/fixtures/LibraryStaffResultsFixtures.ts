@@ -18,5 +18,23 @@ export default {
       phone: '(555) 111-1111',
       netid: 'nimbuskt'
     }
+  }),
+  testResult2: SearchResult.fromObject({
+    title: 'Staff, Test',
+    id: 9,
+    type: 'Library Staff',
+    url: 'https://library.princeton.edu/about/staff-directory/test-staff',
+    other_fields: {
+      pronouns: 'he/they'
+    }
+  }),
+  testResult3: SearchResult.fromObject({
+    title: 'World, Hello',
+    id: 10,
+    type: 'Library Staff',
+    url: 'https://library.princeton.edu/about/staff-directory/hello-world',
+    other_fields: {
+      pronouns: '(she/her/ella)'
+    }
   })
 };
