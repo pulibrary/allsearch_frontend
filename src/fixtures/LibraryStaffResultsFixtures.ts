@@ -5,7 +5,7 @@ export default {
     title: 'Trout, Nimbus',
     id: 2,
     type: 'Library Staff',
-    url: 'https://library.princeton.edu/staff/nimbuskt',
+    url: 'https://library.princeton.edu/about/staff-directory/nimbuskt',
     other_fields: {
       building: 'Firestone Library',
       department: 'Library - Office of the Deputy University Librarian',
