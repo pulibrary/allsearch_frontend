@@ -51,10 +51,10 @@ describe('TrayOrder', () => {
         SearchScope.Journals,
         SearchScope.LibraryStaff,
         SearchScope.LibGuides,
-        SearchScope.PulMap,
+        SearchScope.FindingAids,
         SearchScope.ArtMuseum,
         SearchScope.Dpul,
-        SearchScope.FindingAids,
+        SearchScope.PulMap,
         SearchScope.LibAnswers,
         SearchScope.Website
       ]);
@@ -69,10 +69,10 @@ describe('TrayOrder', () => {
         SearchScope.Journals,
         SearchScope.LibraryStaff,
         SearchScope.LibGuides,
-        SearchScope.PulMap,
+        SearchScope.FindingAids,
         SearchScope.ArtMuseum,
         SearchScope.Dpul,
-        SearchScope.FindingAids,
+        SearchScope.PulMap,
         SearchScope.LibAnswers,
         SearchScope.Website
       ]);
