@@ -49,11 +49,12 @@ const searchIsEmpty = () => {
 </script>
 <style scoped>
 input {
-  border: 2px solid var(--black);
+  border: 2px solid var(--gray-100);
   font-size: 1rem;
   flex: 1;
   @media (prefers-color-scheme: dark) {
-    border: 2px solid var(--color-white);
+    background-color: var(--color-grayscale-darker);
+    color: var(--color-grayscale-lighter);
   }
 }
 
@@ -66,8 +67,9 @@ button {
   margin-left: 0;
   width: 51px;
   @media (prefers-color-scheme: dark) {
-    border: 2px solid var(--color-white);
-    border-left-width: 0;
+    border-left: 2px var(--gray-90) solid;
+    background-color: var(--color-grayscale-darker);
+    /* border-left-width: 0; */
   }
 }
 
