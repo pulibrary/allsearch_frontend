@@ -166,6 +166,9 @@ h3 {
   a {
     color: var(--gray-10)
   }
+  .lux-alert-info a {
+    color: var(--color-bleu-de-france-darker);
+  }
 }
 
 /* Mobile rules */

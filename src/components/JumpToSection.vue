@@ -76,27 +76,42 @@ function toggleButton() {
   justify-content: center;
   background-color: var(--color-grayscale-lighter);
 
-  &:hover {
-    color: var(--black);
-    background-color: var(--orange-50);
-    cursor: pointer;
-  }
   a {
     text-decoration: none;
     flex: 1 1 auto;
     text-align: center;
     padding: 0.5rem;
   }
-  a:link {
-    color: var(--black);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--color-grayscale);
+    a:link {
+      color: var(--color-grayscale-lighter);
+    }
+
+    a:visited {
+      color: var(--color-grayscale-lighter);
+    }
   }
 
-  a:visited {
-    color: var(--black);
+  &:hover {
+    /* color: var(--black); */
+    background-color: var(--orange-50);
+    cursor: pointer;
   }
 
-  a:hover {
-    color: var(--gray-90);
+  @media (prefers-color-scheme: light) {
+    a:link {
+      color: var(--black);
+    }
+
+    a:visited {
+      color: var(--black);
+    }
+
+    a:hover {
+      color: var(--gray-90);
+    }
   }
 
   @media (min-width: 1200px) {
@@ -105,10 +120,7 @@ function toggleButton() {
   @media (min-width: 1000px) and (max-width: 1199px) {
     flex: 1 0 20%;
   }
-
   @media (max-width: 999px) {
-    /* in this media query ideally we want to collapse
-     the skip to section under one div */
     flex: 1 0 100%;
   }
 }
