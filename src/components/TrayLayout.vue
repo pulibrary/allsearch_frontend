@@ -31,8 +31,8 @@ const props = defineProps({
 
 @media (prefers-color-scheme: dark) {
   .tray-grid section {
-    background-color: var(--black);
-    border: 2px var(--gray-10) solid;
+    background-color: var(--color-grayscale-dark);
+    /* border: 2px var(--gray-10) solid; */
   }
 }
 </style>

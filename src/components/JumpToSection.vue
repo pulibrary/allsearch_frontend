@@ -74,7 +74,7 @@ function toggleButton() {
   list-style: none;
   display: inline-flex;
   justify-content: center;
-  background-color: #f5f4f1;
+  background-color: var(--color-grayscale-lighter);
 
   &:hover {
     color: var(--black);

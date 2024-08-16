@@ -32,7 +32,7 @@ const headingId = IdService.createDomId(props.heading);
 
 @media (prefers-color-scheme: dark) {
   h3 a {
-    color: var(--white);
+    color: var(--gray-10);
   }
 }
 

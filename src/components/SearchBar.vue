@@ -53,7 +53,8 @@ input {
   font-size: 1rem;
   flex: 1;
   @media (prefers-color-scheme: dark) {
-    border: 2px solid var(--color-white);
+    background-color: var(--color-grayscale-lighter);
+    color: var(--color-gray-100);
   }
 }
 

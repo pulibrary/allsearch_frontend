@@ -63,7 +63,7 @@ populateResults();
 }
 @media (prefers-color-scheme: dark) {
   .best-bets > section {
-    background-color: var(--color-grayscale-darker);
+    background-color: var(--color-gray-100);
   }
 }
 </style>
