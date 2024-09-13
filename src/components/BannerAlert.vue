@@ -25,7 +25,7 @@ async function populateResult(): Promise<void> {
 }
 
 function handleDismissed() {
-  window.localStorage.setItem(
+  window.localStorage?.setItem(
     'allsearch-banner-dismissed',
     JSON.stringify({
       date: new Date().toISOString().split('T')[0],
@@ -38,7 +38,7 @@ function shouldDisplayBanner(): boolean {
   if (!result.value) {
     return false;
   }
-  const lastDismissed = window.localStorage.getItem(
+  const lastDismissed = window.localStorage?.getItem(
     'allsearch-banner-dismissed'
   );
   if (lastDismissed) {
