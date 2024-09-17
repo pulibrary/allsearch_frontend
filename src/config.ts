@@ -3,7 +3,8 @@ export default {
     import.meta.env.VITE_ALLSEARCH_API_URL ||
     'https://allsearch-api-staging.princeton.edu',
   bibdataUrl:
-    import.meta.env.VITE_BIBDATA_URL || 'https://bibdata-staging.princeton.edu',
+    import.meta.env.VITE_BIBDATA_URL ||
+    'https://bibdata-staging.lib.princeton.edu',
   honeybadgerApiKey: import.meta.env.VITE_HONEYBADGER_API_KEY,
   honeybadgerEnvironment: import.meta.env.VITE_HONEYBADGER_ENV
 };
