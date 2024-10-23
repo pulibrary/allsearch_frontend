@@ -1771,7 +1771,7 @@ lru-cache@^10.2.0:
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-10.4.3.tgz#410fc8a17b70e598013df257c2446b7f3383f119"
   integrity sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==
 
-lux-design-system@^5.7.1:
+lux-design-system@^5.8.1:
   version "5.8.1"
   resolved "https://registry.yarnpkg.com/lux-design-system/-/lux-design-system-5.8.1.tgz#11b49102a015a1c01e20e9901076afc648d6c16c"
   integrity sha512-/CSxhmdu3tWuREMRMXWwnJTAdZxJT1UNqPUdaNq9N7Fv9fQjNUyEknq/Rxo5fFrhx2ognBNffz00hPOcZzBt+A==
