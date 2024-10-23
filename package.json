@@ -18,7 +18,7 @@
     "@honeybadger-io/vue": "^6.1.7",
     "axios": "^1.7.4",
     "class-transformer": "^0.5.1",
-    "lux-design-system": "^5.7.1",
+    "lux-design-system": "^5.8.1",
     "typescript-eslint": "^7.8.0",
     "vue": "^3.3.4"
   },
