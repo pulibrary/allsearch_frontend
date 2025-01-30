@@ -74,7 +74,10 @@ function toggleButton() {
   list-style: none;
   display: inline-flex;
   justify-content: center;
-  background-color: var(--color-grayscale-lighter);
+  background-color: light-dark(
+    var(--color-grayscale-lighter),
+    var(--color-grayscale)
+  );
 
   a {
     text-decoration: none;
@@ -83,35 +86,21 @@ function toggleButton() {
     padding: 0.5rem;
   }
 
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--color-grayscale);
-    a:link {
-      color: var(--color-grayscale-lighter);
-    }
+  a:link {
+    color: light-dark(var(--black), var(--color-grayscale-lighter));
+  }
 
-    a:visited {
-      color: var(--color-grayscale-lighter);
-    }
+  a:visited {
+    color: light-dark(var(--black), var(--color-grayscale-lighter));
+  }
+
+  a:hover {
+    color: light-dark(var(--gray-10), var(--color-grayscale-lighter));
   }
 
   &:hover {
-    /* color: var(--black); */
     background-color: var(--orange-50);
     cursor: pointer;
-  }
-
-  @media (prefers-color-scheme: light) {
-    a:link {
-      color: var(--black);
-    }
-
-    a:visited {
-      color: var(--black);
-    }
-
-    a:hover {
-      color: var(--gray-90);
-    }
   }
 
   @media (min-width: 1200px) {

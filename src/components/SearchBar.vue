@@ -52,24 +52,20 @@ input {
   border: 2px solid var(--gray-100);
   font-size: 1rem;
   flex: 1;
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--color-grayscale-darker);
-    color: var(--color-grayscale-lighter);
-  }
+  background-color: light-dark(var(--white), var(--color-grayscale-darker));
+  color: light-dark(var(--black), var(--color-grayscale-lighter));
 }
 
 button {
   border: 2px solid var(--black);
   border-left: 0px;
-  background-color: var(--orange-50);
+  background-color: light-dark(var(--orange-50), var(--color-grayscale-darker));
   font-size: 1rem;
   margin-top: 0;
   margin-left: 0;
   width: 51px;
   @media (prefers-color-scheme: dark) {
     border-left: 2px var(--gray-90) solid;
-    background-color: var(--color-grayscale-darker);
-    /* border-left-width: 0; */
   }
 }
 

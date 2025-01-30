@@ -24,16 +24,8 @@ const iconClass = 'icon icon-' + props.icon;
 const headingId = IdService.createDomId(props.heading);
 </script>
 <style>
-@media (prefers-color-scheme: light) {
-  h3 a {
-    color: var(--black);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  h3 a {
-    color: var(--gray-10);
-  }
+h3 a {
+  color: light-dark(var(--black), var(--gray-10));
 }
 
 .description {
