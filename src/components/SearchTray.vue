@@ -180,24 +180,13 @@ populateResults();
 </script>
 
 <style>
-@media (prefers-color-scheme: light) {
-  li.document h3 a {
-    text-decoration-color: var(--gray-90);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  li.document h3 a {
-    text-decoration-color: var(--gray-10);
-  }
-}
-
 li.document h3 {
   display: inline;
 }
 
 li.document h3 a {
   line-height: 2rem;
+  text-decoration-color: light-dark(var(--gray-90), var(--gray-10));
   text-decoration-thickness: 1px;
   text-underline-offset: 5px;
 }

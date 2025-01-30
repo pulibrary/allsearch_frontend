@@ -20,18 +20,12 @@ const props = defineProps({
   padding: 2px 15px 18px;
   margin-top: 10px;
   min-height: 300px;
+  background-color: light-dark(var(--white), var(--color-grayscale-darker));
 }
 
 @media (prefers-color-scheme: light) {
   .tray-grid section {
-    background-color: var(--white);
     border: 2px var(--gray-90) solid;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .tray-grid section {
-    background-color: var(--color-grayscale-darker);
   }
 }
 </style>

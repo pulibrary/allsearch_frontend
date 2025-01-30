@@ -64,28 +64,21 @@ if (query) {
   }
 }
 
-@media (prefers-color-scheme: light) {
-  a:hover {
-    text-decoration-color: var(--color-princeton-orange-on-white);
-    text-decoration: underline;
-  }
-  a:focus {
-    outline: var(--color-princeton-orange-on-white) solid 0.25rem;
-    outline-offset: none;
-    box-shadow: none;
-  }
+a:hover {
+  text-decoration-color: light-dark(
+    var(--color-princeton-orange-on-white),
+    var(--color-princeton-orange-on-black)
+  );
+  text-decoration: underline;
 }
-
-@media (prefers-color-scheme: dark) {
-  a:hover {
-    text-decoration-color: var(--color-princeton-orange-on-black);
-    text-decoration: underline;
-  }
-  a:focus {
-    outline: var(--color-princeton-orange-on-black) solid 0.25rem;
-    outline-offset: none;
-    box-shadow: none;
-  }
+a:focus {
+  outline-color: light-dark(
+    var(--color-princeton-orange-on-white),
+    var(--color-princeton-orange-on-black)
+  );
+  outline: solid 0.25rem;
+  outline-offset: none;
+  box-shadow: none;
 }
 
 .skip-to-content-link {
@@ -116,11 +109,14 @@ if (query) {
 @media (prefers-color-scheme: dark) {
   .lux-disclosure .lux-icon svg path {
     stroke-width: 3;
-    stroke: var(--white);
   }
-  .lux-disclosure button .lux-icon {
-    border: 2px solid white;
-  }
+}
+.lux-disclosure .lux-icon svg path {
+  stroke: light-dark(var(--black), var(--white));
+}
+
+.lux-disclosure button .lux-icon {
+  border: 2px solid light-dark(var(--black), var(--white));
 }
 
 .banner-wrapper {

@@ -28,30 +28,20 @@ if (props.resultCount) {
   justify-content: right;
 }
 
-@media (prefers-color-scheme: light) {
-  a.more-link {
-    color: var(--black);
-    border-bottom: 2px var(--black) solid;
-  }
-
-  a.more-link:focus,
-  a.more-link:hover {
-    text-decoration: none;
-    border-bottom: 2px var(--color-princeton-orange-on-white) solid;
-  }
+a.more-link {
+  color: light-dark(var(--black), var(--white));
+  border-bottom: 2px light-dark(var(--black), var(--white)) solid;
 }
 
-@media (prefers-color-scheme: dark) {
-  a.more-link {
-    color: var(--white);
-    border-bottom: 2px var(--white) solid;
-  }
-
-  a.more-link:focus,
-  a.more-link:hover {
-    text-decoration: none;
-    border-bottom: 2px var(--color-princeton-orange-on-black) solid;
-  }
+a.more-link:focus,
+a.more-link:hover {
+  text-decoration: none;
+  border-bottom: 2px
+    light-dark(
+      var(--color-princeton-orange-on-white),
+      var(--color-princeton-orange-on-black)
+    )
+    solid;
 }
 
 a.more-link {

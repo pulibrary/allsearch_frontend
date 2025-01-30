@@ -59,11 +59,6 @@ populateResults();
 
 .best-bets > section {
   padding: 10px;
-  background-color: #efefef;
-}
-@media (prefers-color-scheme: dark) {
-  .best-bets > section {
-    background-color: var(--color-grayscale-darker);
-  }
+  background-color: light-dark(#efefef, var(--color-grayscale-darker));
 }
 </style>
