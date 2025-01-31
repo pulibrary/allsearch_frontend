@@ -6,6 +6,11 @@ import { SearchTermService } from './services/SearchTermService';
 import TrayContainer from './components/TrayContainer.vue';
 import BannerAlert from './components/BannerAlert.vue';
 
+const colorMode = localStorage.getItem('mode') || 'dark light';
+document
+  .querySelector('meta[name="color-scheme"]')
+  ?.setAttribute('content', colorMode);
+
 const query = SearchTermService.term();
 if (query) {
   document.title = query + ' search results | Princeton University Library';
