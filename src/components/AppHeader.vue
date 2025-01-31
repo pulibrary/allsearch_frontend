@@ -1,11 +1,25 @@
 <template>
   <LuxLibraryHeader type="header" appName="All Search" abbrName="All Search">
+    <LuxInputSelect
+      v-if="currentMode"
+      @change="switchMode($event)"
+      :value="currentMode"
+      :options="[
+        { label: 'Auto', value: 'dark light' },
+        { label: 'Dark', value: 'dark' },
+        { label: 'Light', value: 'light' }
+      ]"
+    ></LuxInputSelect>
     <LuxMenuBar type="main-menu" theme="dark" :menu-items="menu_items" />
   </LuxLibraryHeader>
 </template>
 
 <script setup lang="ts">
-import { LuxLibraryHeader, LuxMenuBar } from 'lux-design-system';
+import {
+  LuxLibraryHeader,
+  LuxMenuBar,
+  LuxInputSelect
+} from 'lux-design-system';
 const menu_items = [
   {
     name: 'Accounts',
@@ -59,4 +73,12 @@ const menu_items = [
     ]
   }
 ];
+
+let currentMode = window.localStorage.getItem('mode') || 'dark light';
+
+function switchMode(value: string) {
+  window.localStorage.setItem('mode', value);
+  const colorScheme = document.querySelector('meta[name="color-scheme"]');
+  colorScheme?.setAttribute('content', value);
+}
 </script>
