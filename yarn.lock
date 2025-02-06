@@ -232,9 +232,9 @@
     "@types/express" "^4.17.13"
 
 "@honeybadger-io/vue@^6.1.7":
-  version "6.1.26"
-  resolved "https://registry.yarnpkg.com/@honeybadger-io/vue/-/vue-6.1.26.tgz#81cceb24dffcd56850eeb445a539d54a225df0df"
-  integrity sha512-r/wCHak7MrQh9AzivuwnRqQ224qweRTAeATA3ED8vANNmuPP0Zf9RnXH//9g7l68CqjgNtPGjXMCd8k9mEElBQ==
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/@honeybadger-io/vue/-/vue-6.2.0.tgz#b94257d39baab2ad4f61111a5db2e0c662605a88"
+  integrity sha512-AGWxQYCdgQw4IKCelNBo8G7h0WHrxvI6a/GrRcqJuJaGeSg7cRqnxtysrK3w1bWTFrHoJa99cOKxj7uIFnlbhg==
 
 "@humanfs/core@^0.19.0":
   version "0.19.0"
