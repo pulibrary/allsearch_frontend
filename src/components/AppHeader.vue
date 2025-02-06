@@ -1,25 +1,16 @@
 <template>
   <LuxLibraryHeader type="header" appName="All Search" abbrName="All Search">
-    <LuxInputSelect
-      v-if="currentMode"
-      @change="switchMode($event)"
-      :value="currentMode"
-      :options="[
-        { label: 'Auto', value: 'dark light' },
-        { label: 'Dark', value: 'dark' },
-        { label: 'Light', value: 'light' }
-      ]"
-    ></LuxInputSelect>
-    <LuxMenuBar type="main-menu" theme="dark" :menu-items="menu_items" />
+    <LuxMenuBar
+      type="main-menu"
+      theme="dark"
+      :menu-items="menu_items"
+      @menu-item-clicked="handleMenuItemClicked"
+    />
   </LuxLibraryHeader>
 </template>
 
 <script setup lang="ts">
-import {
-  LuxLibraryHeader,
-  LuxMenuBar,
-  LuxInputSelect
-} from 'lux-design-system';
+import { LuxLibraryHeader, LuxMenuBar } from 'lux-design-system';
 const menu_items = [
   {
     name: 'Accounts',
@@ -71,14 +62,41 @@ const menu_items = [
         href: 'https://library.princeton.edu/services?type=1551'
       }
     ]
+  },
+  {
+    name: 'Appearance',
+    component: 'Appearance',
+    children: [
+      {
+        name: 'System default colors',
+        component: 'default_colors'
+      },
+      {
+        name: 'Dark mode',
+        component: 'dark_colors'
+      },
+      {
+        name: 'Light mode',
+        component: 'light_colors'
+      }
+    ]
   }
 ];
 
-let currentMode = window.localStorage.getItem('mode') || 'dark light';
+const colorModes = {
+  default_colors: 'dark light',
+  dark_colors: 'dark',
+  light_colors: 'light'
+};
 
 function switchMode(value: string) {
   window.localStorage.setItem('mode', value);
-  const colorScheme = document.querySelector('meta[name="color-scheme"]');
-  colorScheme?.setAttribute('content', value);
+  const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
+  colorSchemeMeta?.setAttribute('content', value);
+}
+function handleMenuItemClicked(event: { component: keyof typeof colorModes }) {
+  if (colorModes[event.component]) {
+    switchMode(colorModes[event.component]);
+  }
 }
 </script>
