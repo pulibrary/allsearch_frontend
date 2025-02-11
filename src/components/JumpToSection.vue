@@ -87,7 +87,7 @@ function toggleButton() {
   }
 
   a:link {
-    color: light-dark(var(--black), var(--color-grayscale-lighter));
+    color: var(--black);
   }
 
   a:visited {
