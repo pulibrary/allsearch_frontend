@@ -1,4 +1,4 @@
-import { describe, test, expect } from 'vitest';
+import { describe, test, expect, vi } from 'vitest';
 import { mount } from '@vue/test-utils';
 import AppHeader from './AppHeader.vue';
 
@@ -58,5 +58,21 @@ describe('AppHeader component', () => {
       'a[href="https://library.princeton.edu/services?type=1551"]'
     );
     expect(allSearchToolsLink.text()).toEqual('All Search Tools');
+  });
+  describe('Appearance menu', () => {
+    test('it saves the selected color mode in local storage', () => {
+      const setItem = vi.spyOn(window.localStorage, 'setItem');
+
+      const appearanceButton = wrapper
+        .findAll('button')
+        .find(button => button.text() === 'Appearance');
+      appearanceButton?.trigger('click');
+      const libraryCatalogLink = wrapper
+        .findAll('button')
+        .find(button => button.text() === 'Dark mode');
+      libraryCatalogLink?.trigger('click');
+
+      expect(setItem).toHaveBeenCalledWith('mode', 'dark');
+    });
   });
 });
