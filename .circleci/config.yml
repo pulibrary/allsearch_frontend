@@ -6,12 +6,12 @@ jobs:
   build-and-test:
     working_directory: ~/project
     docker:
-      - image: cimg/node:20.11.0
+      - image: cimg/node:23.11.0
     steps:
       - checkout
       - node/install:
           install-yarn: true
-          node-version: '20.11.1'
+          node-version: '23.11.0'
       - node/install-packages:
           pkg-manager: yarn
       - run:
@@ -23,12 +23,12 @@ jobs:
   lint:
     working_directory: ~/project
     docker:
-      - image: cimg/node:20.11.0
+      - image: cimg/node:23.11.0
     steps:
       - checkout
       - node/install:
           install-yarn: true
-          node-version: '20.11.1'
+          node-version: '23.11.0'
       - node/install-packages:
           pkg-manager: yarn
       - run:
@@ -51,7 +51,7 @@ jobs:
       - ruby/install-deps
       - node/install:
           install-yarn: true
-          node-version: '20.11.1'
+          node-version: '23.11.0'
       - node/install-packages:
           pkg-manager: yarn
       - ruby/rspec-test
@@ -63,7 +63,7 @@ jobs:
       - checkout
       - node/install:
           install-yarn: true
-          node-version: '20.11.1'
+          node-version: '23.11.0'
       - node/install-packages:
           pkg-manager: yarn
       - run:
