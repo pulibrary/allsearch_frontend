@@ -3,6 +3,9 @@
 Front end for the Library's all search bento-style application. Client of
 https://github.com/pulibrary/allsearch_api.
 
+## Integration with LUX
+The allsearch frontend depends on the [Library UX](https://github.com/pulibrary/lux-design-system) (LUX) design system. See the project's package json for the current version used.  
+
 ## Dev environment
 
 1. `asdf plugin-add nodejs`
