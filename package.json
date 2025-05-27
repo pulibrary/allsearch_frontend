@@ -23,6 +23,7 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@honeybadger-io/rollup-plugin": "^5.10.1",
     "@rushstack/eslint-patch": "^1.5.1",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
     "@typescript-eslint/parser": "^7.0.1",
