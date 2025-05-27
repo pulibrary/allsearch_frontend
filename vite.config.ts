@@ -6,5 +6,8 @@ export default defineConfig({
   plugins: [vue()],
   server: {
     cors: false
+  },
+  build: {
+    sourcemap: true
   }
 });
