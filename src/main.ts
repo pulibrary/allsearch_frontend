@@ -3,6 +3,7 @@ import 'lux-design-system/dist/style.css';
 import App from './App.vue';
 import HoneybadgerVue from '@honeybadger-io/vue';
 import config from './config';
+import { processException } from './config/HoneybadgerNotice';
 
 const app = createApp(App);
 
@@ -12,5 +13,6 @@ const honeybadgerConfig = {
 };
 
 app.use(HoneybadgerVue, honeybadgerConfig);
+app.$honeybadger.beforeNotify(exception => processException(exception));
 
 app.mount('#app');
