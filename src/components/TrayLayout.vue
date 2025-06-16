@@ -37,10 +37,4 @@ const props = defineProps({
   line-height: 1.5rem;
   letter-spacing: 0.011rem;
 }
-
-@media (prefers-color-scheme: light) {
-  .tray-grid section {
-    border: 2px var(--gray-90) solid;
-  }
-}
 </style>
