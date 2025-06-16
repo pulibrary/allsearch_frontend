@@ -227,8 +227,12 @@ li.document:not(:last-child) {
   margin-top: 12px;
 }
 
-ol li.document::marker {
+li.document::marker {
   font-size: 1.5em;
+}
+
+.tray-grid ol li.document {
+  list-style-type: none;
 }
 
 .access-info ul {
