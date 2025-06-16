@@ -185,10 +185,7 @@ li.document h3 {
 }
 
 li.document h3 a {
-  line-height: 2rem;
-  text-decoration-color: light-dark(var(--gray-90), var(--gray-10));
-  text-decoration-thickness: 1px;
-  text-underline-offset: 5px;
+  line-height: 3rem;
 }
 
 li.document h3 a:focus {
