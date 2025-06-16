@@ -61,9 +61,8 @@ This repository uses [semgrep](https://semgrep.dev/) to:
 
 To run semgrep locally:
 
-```
-brew install semgrep
-semgrep --config auto . # run rules from the semgrep community
+`brew install semgrep`
+`semgrep --config auto . # run rules from the semgrep community`
 ```
 
 ## Format files
