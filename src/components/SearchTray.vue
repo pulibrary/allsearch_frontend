@@ -188,7 +188,6 @@ li.document h3 a {
   line-height: 1.875rem;
   font-size: 1.25rem;
   font-style: normal;
-  font-weight: 600;
   letter-spacing: 0.01375rem;
 }
 
