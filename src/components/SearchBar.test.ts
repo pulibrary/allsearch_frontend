@@ -25,7 +25,8 @@ describe('Searchbar component', () => {
           value: new URL('https://allsearch.princeton.edu?q=' + payload)
         });
         const wrapper = mount(SearchBar);
-        expect(wrapper.find('.align-searchbar').exists()).toBe(true);
+        // Make sure that the next element in the DOM exists
+        expect(wrapper.find('button.lux-button').exists()).toBe(true);
       }
     );
   });
