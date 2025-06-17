@@ -50,9 +50,9 @@ if (query) {
   flex-direction: column;
   min-height: 100vh;
   align-items: center;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  padding-bottom: 3rem;
+  margin-left: var(--space-x-large);
+  margin-right: var(--space-x-large);
+  padding-bottom: var(--space-x-larger);
 }
 
 .main {
