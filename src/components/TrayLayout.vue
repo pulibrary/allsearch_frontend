@@ -17,9 +17,7 @@ const props = defineProps({
 </script>
 <style>
 .tray-grid section {
-  padding: 2px 15px 18px;
-  margin-top: 10px;
-  min-height: 300px;
+  padding: var(--space-base);
   background-color: light-dark(var(--white), var(--color-grayscale-darker));
 }
 
