@@ -205,7 +205,6 @@ li.document h3 a:hover {
 }
 
 li.document:not(:last-child) {
-  padding-bottom: 0.7rem;
   border-bottom: solid 1px var(--gray-50);
 }
 
@@ -229,6 +228,7 @@ li.document::marker {
 
 .tray-grid ol li.document {
   list-style-type: none;
+  padding-bottom: 23px;
 }
 
 .access-info ul {
