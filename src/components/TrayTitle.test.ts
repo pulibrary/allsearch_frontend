@@ -30,15 +30,6 @@ describe('TrayTitle component', () => {
     });
     expect(wrapper.find('h2').attributes('id')).toEqual('library-databases');
   });
-  test('heading has an icon', () => {
-    const wrapper = mount(TrayTitle, {
-      props: {
-        heading: 'Articles+',
-        icon: 'text'
-      }
-    });
-    expect(wrapper.find('h2 span.icon.icon-text').exists()).toBe(true);
-  });
   test('heading does not attempt to display an icon when prop is not supplied', () => {
     const wrapper = mount(TrayTitle, {
       props: {

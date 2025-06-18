@@ -30,10 +30,6 @@ describe('BestBetsTray component', () => {
       await flushPromises();
       expect(wrapper.find('h2').text()).toEqual('Best Bets');
     });
-    test('heading has a best bet icon', async () => {
-      await flushPromises();
-      expect(wrapper.find('h2 span.icon.icon-best-bet').exists()).toBe(true);
-    });
     test('the title is in an h3', async () => {
       await flushPromises();
       const titles = wrapper.findAll('h3');

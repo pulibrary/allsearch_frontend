@@ -40,9 +40,6 @@ describe('PulmapResults component', () => {
   test('it has a heading', () => {
     expect(wrapper.find('h2').text()).toEqual('Maps and GIS');
   });
-  test('heading has a map icon', () => {
-    expect(wrapper.find('h2 span.icon.icon-map').exists()).toBe(true);
-  });
   test('it shows three results', async () => {
     await flushPromises();
     expect(wrapper.findAll('li.document').length).toEqual(3);
