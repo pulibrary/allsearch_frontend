@@ -16,8 +16,15 @@ const props = defineProps({
 });
 </script>
 <style>
+section {
+  display: flex;
+}
 .tray-grid section {
-  padding: var(--space-base);
+  flex-direction: column;
+  align-items: flex-end;
+  align-self: stretch;
+  padding: 24px;
+  gap: 23px;
   background-color: light-dark(var(--white), var(--color-grayscale-darker));
 }
 
