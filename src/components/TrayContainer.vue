@@ -55,7 +55,7 @@ const traysToJumpTo = new JumpToSectionOrder().order;
   gap: 2rem;
 }
 
-tray-grid section:nth-child(n) ol {
+.tray-grid section:nth-child(n) ol {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
