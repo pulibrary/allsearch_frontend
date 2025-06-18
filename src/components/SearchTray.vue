@@ -204,10 +204,6 @@ li.document h3 a:hover {
   text-underline-offset: 4px;
 }
 
-li.document {
-  padding: 0.8rem 0rem 0rem 0.5rem;
-}
-
 li.document:not(:last-child) {
   padding-bottom: 0.7rem;
   border-bottom: solid 1px var(--gray-50);
