@@ -41,7 +41,7 @@ describe('SearchTray component', () => {
   });
   test('it displays the appropriate description from the config', async () => {
     expect(wrapper.find('div[class="description"]').text()).toEqual(
-      'Articles, eBooks, and other online sources that the Library licenses'
+      'Articles, eBooks, and other online sources'
     );
   });
 
