@@ -3,7 +3,7 @@
     <div class="header__secondary">
       <nav aria-label="search tools" class="search-tools">
         <SearchBar></SearchBar>
-        <JumpToSection :trays-to-link="traysToLink"></JumpToSection>
+        <JumpToSection :trays-to-jump-to="traysToJumpTo"></JumpToSection>
       </nav>
     </div>
     <h1 class="visually-hidden">Search results</h1>
@@ -37,12 +37,14 @@ import SearchTray from './SearchTray.vue';
 import SearchBar from './SearchBar.vue';
 import InitialSearch from './InitialSearch.vue';
 import { TrayOrder } from '../models/TrayOrder';
+import { JumpToSectionOrder } from '../models/JumpToSectionOrder';
 import JumpToSection from './JumpToSection.vue';
 import BestBetsTray from './BestBetsTray.vue';
 
 const query = SearchTermService.term();
 const searchService = new SearchService();
 const traysToLink = new TrayOrder().resultCompareArray();
+const traysToJumpTo = new JumpToSectionOrder().order;
 </script>
 
 <style>
