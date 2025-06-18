@@ -9,7 +9,7 @@
   >
   <div id="jump-to-section" class="display-none" tabindex="-1">
     <ul>
-      <template v-for="scope in props.traysToLink" :key="scope">
+      <template v-for="scope in props.traysToJumpTo" :key="scope">
         <li class="ul-border">
           <a :href="getHref(scope)">{{ ScopeTitleMap[scope] }}</a>
         </li>
@@ -24,7 +24,7 @@ import { SearchScope } from '../enums/SearchScope';
 import { IdService } from '../services/IdService';
 import { LuxInputButton } from 'lux-design-system';
 const props = defineProps({
-  traysToLink: {
+  traysToJumpTo: {
     type: Array as PropType<SearchScope[]>,
     required: true
   }
