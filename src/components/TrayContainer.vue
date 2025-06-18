@@ -60,6 +60,9 @@ const traysToJumpTo = new JumpToSectionOrder().order;
   flex-direction: column;
   align-items: flex-start;
   padding-left: 0;
+  padding-top: 0;
+  margin: 0;
+  gap: 23px;
 }
 
 .tray-grid > section {
