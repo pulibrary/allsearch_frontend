@@ -21,8 +21,7 @@ section {
 }
 .tray-grid section {
   flex-direction: column;
-  align-items: flex-end;
-  align-self: stretch;
+  align-items: flex-start;
   padding: 24px;
   gap: 23px;
   background-color: light-dark(var(--white), var(--color-grayscale-darker));
