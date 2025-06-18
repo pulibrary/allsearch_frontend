@@ -7,7 +7,7 @@ describe('JumpToSection component', () => {
   it('prints a link for each trayToLink', () => {
     const wrapper = mount(JumpToSectionComponent, {
       props: {
-        traysToLink: [
+        traysToJumpTo: [
           SearchScope.Catalog,
           SearchScope.Articles,
           SearchScope.FindingAids
