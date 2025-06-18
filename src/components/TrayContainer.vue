@@ -55,6 +55,13 @@ const traysToJumpTo = new JumpToSectionOrder().order;
   gap: 2rem;
 }
 
+tray-grid section:nth-child(n) ol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 0;
+}
+
 .tray-grid > section {
   @media (max-width: 899px) {
     flex: 1 0 100%;
