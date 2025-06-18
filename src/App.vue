@@ -46,13 +46,13 @@ if (query) {
 @import '../assets/app.css';
 
 .page-wrap {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  align-items: center;
-  margin-left: var(--space-x-large);
-  margin-right: var(--space-x-large);
-  padding-bottom: var(--space-x-larger);
+  align-items: flex-start;
+  gap: var(--space-base);
+  padding: var(--space-base) var(--space-x-large) var(--space-x-larger)
+    var(--space-x-large);
 }
 
 .main {
