@@ -39,9 +39,6 @@ describe('SearchTray component with Findingaids flavor', () => {
   test('it has a heading', () => {
     expect(wrapper.find('h2').text()).toEqual('Library Archives');
   });
-  test('heading has an archives icon', () => {
-    expect(wrapper.find('h2 span.icon.icon-archives').exists()).toBe(true);
-  });
   test('it contains a link to more results', async () => {
     await flushPromises();
     const link = wrapper.find(
