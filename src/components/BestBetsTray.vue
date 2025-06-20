@@ -52,14 +52,15 @@ populateResults();
 
 .best-bet-tray {
   border-radius: 12px;
-  border: 1px solid var(--Primary-Princeton-Orange, #e77500);
-  background: linear-gradient(
+  border: 1px solid var(--orange-50);
+  background:
+    linear-gradient(
       0deg,
       rgba(231, 117, 0, 0.15) 0%,
       rgba(231, 117, 0, 0.15) 100%
     ),
-    var(--Neutral-White, #fff);
-  margin-bottom: 24px;
+    var(--white);
+  margin-bottom: var(--space-base);
   display: flex;
   padding: 24px 32px;
   align-items: center;
@@ -76,20 +77,16 @@ populateResults();
 
 .best-bet-header {
   color: var(--gray-100);
-
-  /* Headings/Heading 3 */
   margin: 14px 0px 14px 0px;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 450;
-  line-height: 32px; /* 114.286% */
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 32px;
 }
 
 .best-bet-icon {
-  width: 24px;
-  height: 24px;
-  aspect-ratio: 1/1;
-  margin-right: 24px;
+  width: var(--space-base);
+  height: var(--space-base);
+  margin-right: var(--space-base);
 }
 
 .best-bets-item-container {
@@ -104,15 +101,11 @@ populateResults();
   color: var(--gray-100);
   font-size: 20px;
   font-style: normal;
-  font-weight: 450;
-  line-height: 150%; /* 30px */
+  font-weight: 600;
+  line-height: 150%;
   letter-spacing: -0.22px;
   text-decoration-line: underline;
   text-decoration-style: solid;
-  text-decoration-skip-ink: auto;
-  text-decoration-thickness: auto;
-  text-underline-offset: auto;
-  text-underline-position: from-font;
   margin: 0;
 
   a {
@@ -122,10 +115,10 @@ populateResults();
 
 .best-bets-description {
   color: var(--gray-100);
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 24px */
+  line-height: 150%;
   letter-spacing: -0.176px;
   margin: 0;
 }
