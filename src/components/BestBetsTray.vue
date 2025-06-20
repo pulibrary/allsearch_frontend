@@ -2,11 +2,7 @@
   <div v-if="results?.records?.length" class="best-bet-tray">
     <div class="best-bet-header-container">
       <h2 class="best-bet-header">Best Bets</h2>
-      <img
-        alt=""
-        src="/public/assets/fonts/icons/info.svg"
-        class="best-bet-icon"
-      />
+      <img alt="" src="/src/assets/icons/info.svg" class="best-bet-icon" />
     </div>
     <div class="best-bets-item-container">
       <h3 class="best-bets-title">
