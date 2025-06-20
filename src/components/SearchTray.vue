@@ -185,10 +185,10 @@ li.document h3 {
 }
 
 li.document h3 a {
-  line-height: 2rem;
-  text-decoration-color: light-dark(var(--gray-90), var(--gray-10));
-  text-decoration-thickness: 1px;
-  text-underline-offset: 5px;
+  line-height: 1.875rem;
+  font-size: 1.25rem;
+  font-style: normal;
+  letter-spacing: 0.01375rem;
 }
 
 li.document h3 a:focus {
@@ -204,31 +204,34 @@ li.document h3 a:hover {
   text-underline-offset: 4px;
 }
 
-li.document {
-  padding: 0.8rem 0rem 0rem 0.5rem;
-}
-
 li.document:not(:last-child) {
-  padding-bottom: 0.7rem;
   border-bottom: solid 1px var(--gray-50);
 }
 
 .metadata {
   list-style-type: none;
   padding: 0;
-  margin: 0.65rem 0 0 0;
 }
 
 .metadata li {
-  padding: 3px 0;
+  padding-bottom: 12px;
 }
 
-.access-info {
-  margin-top: 12px;
-}
-
-ol li.document::marker {
+li.document::marker {
   font-size: 1.5em;
+}
+
+.tray-grid ol li.document {
+  list-style-type: none;
+  padding-bottom: 23px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  h3 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
 }
 
 .access-info ul {

@@ -10,6 +10,7 @@
       <span class="visually-hidden">{{ field }}: </span
       ><!-- nosemgrep javascript.vue.security.audit.xss.templates.avoid-v-html.avoid-v-html -->
       <span
+        :class="{ [field]: true }"
         v-html="
           StringService.truncate(
             document[field as keyof SearchResult] as string

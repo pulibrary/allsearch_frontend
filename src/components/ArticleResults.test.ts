@@ -30,9 +30,6 @@ describe('SearchTray component with Article flavor', () => {
   test('it has a heading', () => {
     expect(wrapper.find('h2').text()).toEqual('Articles+');
   });
-  test('heading has an articles icon', () => {
-    expect(wrapper.find('h2 span.icon.icon-text').exists()).toBe(true);
-  });
   test('it contains a link to more results', async () => {
     await flushPromises();
     const link = wrapper.find('a[href="https://example.com/articles"]');

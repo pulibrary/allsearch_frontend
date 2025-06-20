@@ -9,7 +9,7 @@
   >
   <div id="jump-to-section" class="display-none" tabindex="-1">
     <ul>
-      <template v-for="scope in props.traysToLink" :key="scope">
+      <template v-for="scope in props.traysToJumpTo" :key="scope">
         <li class="ul-border">
           <a :href="getHref(scope)">{{ ScopeTitleMap[scope] }}</a>
         </li>
@@ -24,7 +24,7 @@ import { SearchScope } from '../enums/SearchScope';
 import { IdService } from '../services/IdService';
 import { LuxInputButton } from 'lux-design-system';
 const props = defineProps({
-  traysToLink: {
+  traysToJumpTo: {
     type: Array as PropType<SearchScope[]>,
     required: true
   }
@@ -47,7 +47,7 @@ function toggleButton() {
   ul {
     display: flex;
     flex-flow: row wrap;
-    gap: 10px;
+    gap: 24px;
     padding: 0;
   }
 }
@@ -72,8 +72,8 @@ function toggleButton() {
 
 #jump-to-section > ul > li {
   list-style: none;
-  display: inline-flex;
-  justify-content: center;
+  display: flex;
+  justify-content: flex-start;
   background-color: light-dark(
     var(--color-grayscale-lighter),
     var(--color-grayscale)
@@ -103,13 +103,7 @@ function toggleButton() {
     cursor: pointer;
   }
 
-  @media (min-width: 1200px) {
-    flex: 1 0 15%;
-  }
-  @media (min-width: 1000px) and (max-width: 1199px) {
-    flex: 1 0 20%;
-  }
-  @media (max-width: 999px) {
+  @media (max-width: 833px) {
     flex: 1 0 100%;
   }
 }
