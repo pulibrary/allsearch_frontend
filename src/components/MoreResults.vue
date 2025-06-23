@@ -1,8 +1,6 @@
 <template>
   <div class="more-container">
-    <a :href="props.url" class="more-link"
-      >{{ linkText }}<span class="icon icon-right"></span
-    ></a>
+    <a :href="props.url" class="more-link">{{ linkText }} </a>
   </div>
 </template>
 <script setup lang="ts">
@@ -25,17 +23,18 @@ if (props.resultCount) {
 <style>
 .more-container {
   display: flex;
-  justify-content: right;
+  width: 100%;
+  justify-content: center;
 }
 
 a.more-link {
-  color: light-dark(var(--black), var(--white));
-  border-bottom: 2px light-dark(var(--black), var(--white)) solid;
+  color: inherit;
 }
 
 a.more-link:focus,
 a.more-link:hover {
   text-decoration: none;
+  background-color: var(--orange-50);
   border-bottom: 2px
     light-dark(
       var(--color-princeton-orange-on-white),
@@ -45,22 +44,23 @@ a.more-link:hover {
 }
 
 a.more-link {
+  font-size: 1rem;
   font-weight: bold;
-  padding: 14px 24px;
-  margin: 12px 7px auto;
-  max-width: 100%;
-  text-underline-offset: 4px;
   text-decoration: none;
-  padding: 1px;
-  text-align: right;
+  text-align: center;
+  margin: 12px 7px auto;
+  padding: 14px 24px;
+  width: 100%;
+  border-radius: 48px;
+  border: 1px solid var(--gray-50);
+  background-color: light-dark(var(--white), var(--color-grayscale-darker));
+  color: light-dark(var(--black), var(--white));
 }
 
 a.more-link:focus,
 a.more-link:hover {
   text-underline-offset: 4px;
-}
-
-a.more-link .icon-right {
-  padding-left: 3px;
+  background-color: var(--orange-50);
+  color: var(--white);
 }
 </style>
