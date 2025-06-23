@@ -29,7 +29,9 @@ describe('PulmapResults component', () => {
         resultsPromise: new SearchService().results(
           SearchScope.PulMap,
           'searching for robots'
-        )
+        ),
+        basicFieldList: ['title', 'format'],
+        defaultIcon: 'map'
       }
     });
   });
@@ -55,10 +57,10 @@ describe('PulmapResults component', () => {
       'Mushrooms, Harvested Area (Hectares), 2000'
     );
   });
-  test('it shows the formats and their icons', async () => {
+  test('it shows the formats and their titles', async () => {
     await flushPromises();
     const results = wrapper.findAll('li.document');
-    expect(results[0].text()).toContain('GeoTIFF');
+    expect(results[0].text()).toContain('Mushrooms, Average Yield, 2000');
     expect(
       results[0].find('span.icon.icon-map[aria-hidden="true"]').exists()
     ).toBe(true);
@@ -98,7 +100,9 @@ describe('PulmapResults component', () => {
           resultsPromise: new SearchService().results(
             SearchScope.PulMap,
             'searching for robots'
-          )
+          ),
+          basicFieldList: ['title', 'format'],
+          defaultIcon: 'map'
         }
       });
     });

@@ -25,7 +25,8 @@ describe('SearchTray component', () => {
           SearchScope.Articles,
           'robots'
         ),
-        defaultIcon: 'text'
+        defaultIcon: 'text',
+        basicFieldList: ['format', 'title', 'author']
       }
     });
   });

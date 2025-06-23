@@ -17,7 +17,6 @@
           <FormatWithIcon
             v-if="document.type && props.basicFieldList.includes('format')"
             :format="document.type"
-            :default-icon="getScopeIcon()"
             :icon="getIconType(document.type)"
           ></FormatWithIcon>
           <h3 :data-id="document.id">
