@@ -16,7 +16,7 @@
         <SearchTray
           v-if="scope"
           :scope="scope"
-          :default-icon="scope"
+          :default-icon="ScopeIconMap[scope]"
           :basic-field-list="ScopeFieldsMap[scope]"
           :results-promise="searchService.results(scope, query)"
         >
@@ -43,6 +43,7 @@ import { JumpToSectionOrder } from '../models/JumpToSectionOrder';
 import JumpToSection from './JumpToSection.vue';
 import BestBetsTray from './BestBetsTray.vue';
 import ScopeFieldsMap from '../config/ScopeFieldsMap';
+import ScopeIconMap from '../config/ScopeIconMap';
 
 const query = SearchTermService.term();
 const searchService = new SearchService();
