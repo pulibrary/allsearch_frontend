@@ -52,13 +52,13 @@ function toggleButton() {
   }
 }
 
-#main-content > div > div > div.header__secondary > nav .lux-button {
+#main-content div.header__secondary > nav .lux-button {
   margin: 1rem 0rem 1rem 0rem;
   background-color: var(--black);
   border: 1px solid var(--white);
 }
 @media (min-width: 1000px) {
-  #main-content > div > div > div.header__secondary > nav .lux-button {
+  #main-content div.header__secondary > nav .lux-button {
     display: none;
   }
 }

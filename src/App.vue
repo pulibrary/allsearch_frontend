@@ -29,19 +29,15 @@ if (query) {
   </nav>
 
   <AppHeader></AppHeader>
-  <div class="page-wrap">
+  <div class="page-wrap" v-if="query">
     <main id="main-content" class="main" tabindex="-1">
       <div class="banner-wrapper">
         <BannerAlert></BannerAlert>
       </div>
-      <div v-if="query">
-        <TrayContainer></TrayContainer>
-      </div>
-      <div v-else>
-        <InitialSearch></InitialSearch>
-      </div>
+      <TrayContainer></TrayContainer>
     </main>
   </div>
+  <main v-else tabindex="-1"><InitialSearch></InitialSearch></main>
   <AppFooter></AppFooter>
 </template>
 <style>
@@ -128,5 +124,15 @@ a:focus {
 
 .banner-wrapper {
   min-height: 30px;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 </style>
