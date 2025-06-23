@@ -31,7 +31,9 @@ describe('SearchTray component with Findingaids flavor', () => {
         resultsPromise: new SearchService().results(
           SearchScope.FindingAids,
           'my search'
-        )
+        ),
+        basicFieldList: ['format', 'title', 'author'],
+        defaultIcon: 'collection'
       }
     });
   });
@@ -100,7 +102,9 @@ describe('SearchTray component with Findingaids flavor', () => {
           resultsPromise: new SearchService().results(
             SearchScope.FindingAids,
             'my search'
-          )
+          ),
+          basicFieldList: ['format', 'title', 'author'],
+          defaultIcon: 'collection'
         }
       });
     });
