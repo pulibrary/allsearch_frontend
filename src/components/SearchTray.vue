@@ -14,12 +14,17 @@
           :key="document.id"
           class="document"
         >
+          <FormatWithIcon
+            v-if="document.type && props.basicFieldList.includes('format')"
+            :format="document.type"
+            :default-icon="getScopeIcon()"
+            :icon="getIconType(document.type)"
+          ></FormatWithIcon>
           <h3 :data-id="document.id">
             <a :href="document.url">{{ document.title }}</a>
           </h3>
           <SearchMetadata
-            :basic-field-list="ScopeFieldsMap[props.scope as SearchScope]"
-            :default-icon="getScopeIcon()"
+            :basic-field-list="props.basicFieldList"
             :document="document"
           >
             <template #extra-metadata>
@@ -109,10 +114,11 @@ import InlineBadge from './InlineBadge.vue';
 import ArticlesMetadata from './metadata/ArticlesMetadata.vue';
 import ArtMuseumMetadata from './metadata/ArtMuseumMetadata.vue';
 import CatalogMetadata from './metadata/CatalogMetadata.vue';
+import FormatWithIcon from './FormatWithIcon.vue';
 import FindingaidsMetadata from './metadata/FindingaidsMetadata.vue';
+import itemTypeMap from '../config/ItemTypeMap';
 import LibraryStaffMetadata from './metadata/LibraryStaffMetadata.vue';
 import DpulMetadata from './metadata/DpulMetadata.vue';
-import ScopeFieldsMap from '../config/ScopeFieldsMap';
 import { RecordHoldingsMap } from '../models/RecordHoldingsMap';
 import { informationTypeMap } from '../config/ScopeInformationTypeMap';
 
@@ -120,6 +126,14 @@ import { informationTypeMap } from '../config/ScopeInformationTypeMap';
 const props = defineProps({
   scope: {
     type: String as PropType<SearchScope>,
+    required: true
+  },
+  defaultIcon: {
+    type: String,
+    required: true
+  },
+  basicFieldList: {
+    type: Array,
     required: true
   },
   resultsPromise: Promise<SearchResults>
@@ -181,6 +195,11 @@ function getScopeDescription(): string {
   } else {
     return '';
   }
+}
+
+function getIconType(type: string): string {
+  const itemType = itemTypeMap[type.toLowerCase() as keyof typeof itemTypeMap];
+  return itemType || props.defaultIcon;
 }
 
 populateResults();
