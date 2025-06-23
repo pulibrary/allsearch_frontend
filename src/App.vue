@@ -18,13 +18,15 @@ if (query) {
 </script>
 
 <template>
-  <ul class="skip-to-content-links">
-    <li>
-      <a ref="skipLink" href="#main-content" class="skip-to-content-link"
-        >Skip to main content</a
-      >
-    </li>
-  </ul>
+  <nav aria-label="Skip to content">
+    <ul class="skip-to-content-links">
+      <li>
+        <a ref="skipLink" href="#main-content" class="skip-to-content-link"
+          >Skip to main content</a
+        >
+      </li>
+    </ul>
+  </nav>
 
   <AppHeader></AppHeader>
   <div class="page-wrap">
