@@ -78,10 +78,15 @@
         :url="results.more"
       ></MoreResults>
       <MoreResults
-        v-else
+        v-else-if="informationTypeMap[props.scope] === 'materials'"
         :url="results.more"
         :result-count="results.number"
       ></MoreResults>
+      <MoreHelpResults
+        v-else
+        :url="results.more"
+        :result-count="results.number"
+      ></MoreHelpResults>
     </template>
   </TrayLayout>
 </template>
@@ -97,6 +102,7 @@ import SearchMetadata from './metadata/SearchMetadata.vue';
 import TrayLayout from './TrayLayout.vue';
 import TrayTitle from './TrayTitle.vue';
 import MoreResults from './MoreResults.vue';
+import MoreHelpResults from './MoreHelpResults.vue';
 import { SearchDataLoadSummary } from '../interfaces/SearchDataLoadSummary';
 import { SearchScope } from '../enums/SearchScope';
 import InlineBadge from './InlineBadge.vue';
@@ -108,6 +114,7 @@ import LibraryStaffMetadata from './metadata/LibraryStaffMetadata.vue';
 import DpulMetadata from './metadata/DpulMetadata.vue';
 import ScopeFieldsMap from '../config/ScopeFieldsMap';
 import { RecordHoldingsMap } from '../models/RecordHoldingsMap';
+import { informationTypeMap } from '../config/ScopeInformationTypeMap';
 
 /* eslint-disable vue/require-default-prop */
 const props = defineProps({
