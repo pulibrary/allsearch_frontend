@@ -1,11 +1,5 @@
 <template>
   <div v-if="query">
-    <div class="header__secondary">
-      <nav aria-label="search tools" class="search-tools">
-        <SearchBar></SearchBar>
-        <JumpToSection :trays-to-jump-to="traysToJumpTo"></JumpToSection>
-      </nav>
-    </div>
     <h1 class="visually-hidden">Search results</h1>
     <div class="best-bets">
       <BestBetsTray :results-promise="searchService.results('best-bet', query)">
@@ -27,20 +21,13 @@
       </template>
     </div>
   </div>
-  <div v-else>
-    <InitialSearch></InitialSearch>
-  </div>
 </template>
 
 <script setup lang="ts">
 import { SearchService } from '../services/SearchService';
 import { SearchTermService } from '../services/SearchTermService';
 import SearchTray from './SearchTray.vue';
-import SearchBar from './SearchBar.vue';
-import InitialSearch from './InitialSearch.vue';
 import { TrayOrder } from '../models/TrayOrder';
-import { JumpToSectionOrder } from '../models/JumpToSectionOrder';
-import JumpToSection from './JumpToSection.vue';
 import BestBetsTray from './BestBetsTray.vue';
 import ScopeFieldsMap from '../config/ScopeFieldsMap';
 import ScopeIconMap from '../config/ScopeIconMap';
@@ -48,7 +35,6 @@ import ScopeIconMap from '../config/ScopeIconMap';
 const query = SearchTermService.term();
 const searchService = new SearchService();
 const traysToLink = new TrayOrder().resultCompareArray();
-const traysToJumpTo = new JumpToSectionOrder().order;
 </script>
 
 <style>

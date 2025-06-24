@@ -5,6 +5,7 @@
     variation="solid"
     aria-label="Toggle skip to section"
     class="lux-expanded"
+    id="jump-to-section-expand"
     >Skip to Section</lux-input-button
   >
   <div id="jump-to-section" class="display-none" tabindex="-1">
@@ -52,13 +53,13 @@ function toggleButton() {
   }
 }
 
-#main-content div.header__secondary > nav .lux-button {
+#jump-to-section-expand {
   margin: 1rem 0rem 1rem 0rem;
   background-color: var(--black);
   border: 1px solid var(--white);
 }
 @media (min-width: 1000px) {
-  #main-content div.header__secondary > nav .lux-button {
+  #jump-to-section-expand {
     display: none;
   }
 }
