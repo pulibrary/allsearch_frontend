@@ -5,6 +5,10 @@ import AppFooter from './components/AppFooter.vue';
 import { SearchTermService } from './services/SearchTermService';
 import TrayContainer from './components/TrayContainer.vue';
 import BannerAlert from './components/BannerAlert.vue';
+import SearchTools from './components/SearchTools.vue';
+import SearchBar from './components/SearchBar.vue';
+import JumpToSection from './components/JumpToSection.vue';
+import { JumpToSectionOrder } from './models/JumpToSectionOrder';
 
 const colorMode = localStorage.getItem('mode') || 'dark light';
 document
@@ -15,6 +19,7 @@ const query = SearchTermService.term();
 if (query) {
   document.title = query + ' search results | Princeton University Library';
 }
+const traysToJumpTo = new JumpToSectionOrder().order;
 </script>
 
 <template>
@@ -29,13 +34,19 @@ if (query) {
   </nav>
 
   <AppHeader></AppHeader>
-  <div class="page-wrap" v-if="query">
-    <main id="main-content" class="main" tabindex="-1">
-      <div class="banner-wrapper">
-        <BannerAlert></BannerAlert>
-      </div>
-      <TrayContainer></TrayContainer>
-    </main>
+  <div v-if="query">
+    <SearchTools>
+      <SearchBar></SearchBar>
+      <JumpToSection :trays-to-jump-to="traysToJumpTo"></JumpToSection>
+    </SearchTools>
+    <div class="page-wrap">
+      <main id="main-content" tabindex="-1">
+        <div class="banner-wrapper">
+          <BannerAlert></BannerAlert>
+        </div>
+        <TrayContainer></TrayContainer>
+      </main>
+    </div>
   </div>
   <main v-else tabindex="-1"><InitialSearch></InitialSearch></main>
   <AppFooter></AppFooter>
