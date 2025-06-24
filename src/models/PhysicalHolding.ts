@@ -23,17 +23,23 @@ export class PhysicalHolding {
     }
   }
   statusLabel() {
-    if (this.status === 'Available') {
-      return 'AVAILABLE AT';
-    } else {
-      return 'REQUEST';
+    switch (this.status) {
+      case 'Available':
+        return 'AVAILABLE AT';
+      case 'Loading...':
+        return 'Loading...';
+      default:
+        return 'REQUEST';
     }
   }
   statusColor(): string {
-    if (this.status === 'Available') {
-      return 'green';
-    } else {
-      return 'yellow';
+    switch (this.status) {
+      case 'Available':
+        return 'green';
+      case 'Loading...':
+        return 'gray';
+      default:
+        return 'yellow';
     }
   }
 }

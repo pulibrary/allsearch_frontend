@@ -40,6 +40,10 @@
                 :url="document.other_fields?.resource_url"
                 :url-label="document.other_fields?.resource_url_label"
                 :holdings="holdings.getHoldingsByDocumentId(document.id)"
+                :electronic-access-count="
+                  Number(document.other_fields?.electronic_access_count)
+                "
+                :record-url="document.url"
               ></CatalogMetadata>
               <DpulMetadata
                 v-if="props.scope == SearchScope.Dpul"
