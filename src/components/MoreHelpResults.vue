@@ -7,6 +7,7 @@
         height="14"
         circleColor="var(--gray-100)"
         iconColor="white"
+        iconHide="true"
       >
         <LuxIconArrowRight></LuxIconArrowRight> </LuxIconBase
     ></LuxHyperlink>
@@ -46,6 +47,12 @@ if (props.resultCount) {
 }
 .more-container a.lux-link,
 .more-container a.lux-link:visited {
-  color: var(--gray-100);
+  color: light-dark(var(--gray-100), var(--white));
+}
+.more-container .lux-icon svg circle {
+  fill: light-dark(var(--gray-100), var(--white));
+}
+.more-container .lux-icon svg path {
+  stroke: light-dark(var(--white), var(--gray-100));
 }
 </style>
