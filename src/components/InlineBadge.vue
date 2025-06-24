@@ -13,22 +13,23 @@ const badge_class = computed(() => `badge badge-${props.color}`);
 </script>
 <style>
 .badge {
-  padding: 4px;
+  height: 23px;
+  font-size: 0.625rem;
+  padding: 0px 8px;
   letter-spacing: 0.32px;
   margin: 0.25rem 0.25rem 0.25rem 0;
-  border-radius: 3px;
-  border: 1px solid var(--gray-50);
+  border-radius: 24px;
   display: inline-block;
 }
 
 .badge-blue {
-  background: var(--dark-blue);
-  color: var(--white);
+  background: var(--light-blue);
+  color: var(--very-dark-blue);
 }
 
 .badge-green {
-  background: var(--green);
-  color: var(--white);
+  background: var(--light-green);
+  color: var(--dark-green);
 }
 
 .badge-red {
@@ -39,5 +40,10 @@ const badge_class = computed(() => `badge badge-${props.color}`);
 .badge-gray {
   background: var(--gray-10);
   color: var(--gray-90);
+}
+
+.badge-yellow {
+  background: var(--yellow);
+  color: var(--dark-yellow);
 }
 </style>

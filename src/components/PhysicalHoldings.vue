@@ -2,7 +2,7 @@
   <ul>
     <li v-for="holding of props.holdings" :key="holding.call_number">
       <InlineBadge v-if="holding.status" :color="holding.statusColor()">{{
-        holding.status
+        holding.statusLabel()
       }}</InlineBadge>
       <span class="visually-hidden">Location: </span>
       {{ holding.label() }}

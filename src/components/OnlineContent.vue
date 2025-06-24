@@ -1,5 +1,5 @@
 <template>
-  <InlineBadge color="blue">Online</InlineBadge>
+  <InlineBadge color="blue">ONLINE</InlineBadge>
   <a :href="props.url" :aria-describedby="descriptionId">{{ linkText }}</a>
   <span aria-hidden="true" class="icon icon-newtab"></span>
   <span :id="descriptionId" class="visually-hidden">Opens in new tab</span>
@@ -20,5 +20,7 @@ const linkText = props.urlLabel || 'Online content';
 <style>
 .icon {
   margin: 3px;
+  color: var(--link-blue);
+  vertical-align: middle;
 }
 </style>
