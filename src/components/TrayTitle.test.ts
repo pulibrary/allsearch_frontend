@@ -45,7 +45,7 @@ describe('TrayTitle component', () => {
         description: 'The best place to search'
       }
     });
-    expect(wrapper.find('div[class="description"]').text()).toEqual(
+    expect(wrapper.find('div[class="tray-description"]').text()).toEqual(
       'The best place to search'
     );
   });
