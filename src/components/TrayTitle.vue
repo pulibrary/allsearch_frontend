@@ -3,7 +3,7 @@
     <h2 :id="headingId">
       {{ props.heading }}
     </h2>
-    <div class="description">
+    <div class="tray-description">
       {{ props.description }}
     </div>
   </div>
@@ -35,7 +35,7 @@ h3 a {
   text-decoration: none;
 }
 
-.description {
+.tray-description {
   padding-bottom: 16px;
   border-bottom: solid 2px var(--orange-50);
 }
