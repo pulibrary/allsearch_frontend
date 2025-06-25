@@ -48,6 +48,7 @@ const traysToLink = new TrayOrder().resultCompareArray();
 .tray-grid section:nth-child(n) ol {
   display: flex;
   flex-direction: column;
+  flex-shrink: 1;
   align-items: flex-start;
   padding-left: 0;
   padding-top: 0;
@@ -61,26 +62,9 @@ const traysToLink = new TrayOrder().resultCompareArray();
   }
 }
 
-.tray-grid section:nth-child(-n + 2) {
+.tray-grid section:nth-child(3n) {
   @media (min-width: 900px) {
-    flex: 1 0 45%;
-  }
-}
-
-.tray-grid section:not(:nth-child(-n + 2)):not(:nth-last-child(-n + 6)) {
-  background-color: light-dark(#efefef, var(--color-grayscale-darker));
-  border: none;
-  @media (min-width: 900px) {
-    flex: 1 0 45%;
-  }
-}
-
-.tray-grid section:nth-last-child(-n + 6) {
-  @media (min-width: 900px) and (max-width: 1199px) {
-    flex: 1 0 45%;
-  }
-  @media (min-width: 1200px) {
-    flex: 1 0 30%;
+    flex: 1 1 20%;
   }
 }
 
