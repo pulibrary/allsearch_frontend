@@ -24,9 +24,12 @@ section {
   align-items: flex-start;
   padding: 24px;
   gap: 23px;
-  height: auto;
   flex: 1 1 30%;
-  background-color: light-dark(var(--white), var(--color-grayscale-darker));
+  border-radius: 12px;
+  background-color: light-dark(
+    var(--color-white),
+    var(--color-grayscale-darker)
+  );
 }
 
 .publisher {
