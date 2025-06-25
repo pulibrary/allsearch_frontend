@@ -34,49 +34,23 @@ const traysToJumpTo = new JumpToSectionOrder().order;
   </nav>
 
   <AppHeader></AppHeader>
-  <div v-if="query">
+  <template v-if="query">
     <SearchTools>
       <SearchBar></SearchBar>
       <JumpToSection :trays-to-jump-to="traysToJumpTo"></JumpToSection>
     </SearchTools>
-    <div class="page-wrap">
-      <main id="main-content" tabindex="-1">
-        <div class="banner-wrapper">
-          <BannerAlert></BannerAlert>
-        </div>
-        <TrayContainer></TrayContainer>
-      </main>
-    </div>
-  </div>
+    <main id="main-content" tabindex="-1">
+      <div class="banner-wrapper">
+        <BannerAlert></BannerAlert>
+      </div>
+      <TrayContainer></TrayContainer>
+    </main>
+  </template>
   <main v-else tabindex="-1"><InitialSearch></InitialSearch></main>
   <AppFooter></AppFooter>
 </template>
 <style>
 @import '../assets/app.css';
-
-.page-wrap {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-base);
-  padding: var(--space-base) var(--space-x-large) var(--space-x-larger)
-    var(--space-x-large);
-}
-
-.main {
-  margin-top: 1rem;
-  flex-grow: 1;
-  @media (min-width: 900px) {
-    max-width: 1440px;
-  }
-  @media (max-width: 899px) {
-    max-width: 1440px;
-  }
-  @media (max-width: 599px) {
-    max-width: 540px;
-  }
-}
 
 a:hover {
   text-decoration-color: light-dark(
@@ -145,5 +119,7 @@ a:focus {
 
 main {
   flex: 1;
+  padding: var(--space-base) var(--space-x-large) var(--space-x-larger)
+    var(--space-x-large);
 }
 </style>
