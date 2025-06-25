@@ -39,14 +39,17 @@ const traysToJumpTo = new JumpToSectionOrder().order;
       <SearchBar></SearchBar>
       <JumpToSection :trays-to-jump-to="traysToJumpTo"></JumpToSection>
     </SearchTools>
-    <main id="main-content" tabindex="-1">
+    <main id="main-content" class="search-results" tabindex="-1">
       <div class="banner-wrapper">
         <BannerAlert></BannerAlert>
       </div>
       <TrayContainer></TrayContainer>
     </main>
   </template>
-  <main v-else tabindex="-1"><InitialSearch></InitialSearch></main>
+  <main id="main-content" v-else tabindex="-1">
+    <InitialSearch></InitialSearch>
+  </main>
+
   <AppFooter></AppFooter>
 </template>
 <style>
@@ -119,7 +122,14 @@ a:focus {
 
 main {
   flex: 1;
-  padding: var(--space-base) var(--space-x-large) var(--space-x-larger)
-    var(--space-x-large);
+  &.search-results {
+    padding: var(--space-base) var(--space-x-large) var(--space-x-larger)
+      var(--space-x-large);
+  }
+  &#main-content:focus {
+    box-sizing: border-box;
+    outline: var(--color-princeton-orange-on-white) solid 0.25rem;
+    outline-offset: -0.25rem;
+  }
 }
 </style>
