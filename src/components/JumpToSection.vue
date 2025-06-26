@@ -11,6 +11,7 @@
         ><LuxIconArrowDown></LuxIconArrowDown></LuxIconBase
     ></lux-input-button>
     <div id="jump-to-section" class="display-none" tabindex="-1">
+      <span class="jump-to-description">Jump to</span>
       <ul>
         <template v-for="scope in props.traysToJumpTo" :key="scope">
           <li class="ul-border">
@@ -58,6 +59,8 @@ function toggleButton() {
   .ul-border {
     border: #f5f4f1;
   }
+  display: flex;
+  flex-flow: row wrap;
 
   ul {
     display: flex;
@@ -127,6 +130,14 @@ function toggleButton() {
       font-weight: 600;
       font-size: 14px;
     }
+  }
+}
+.jump-to-description {
+  padding: var(--space-base);
+  color: var(--gray-50);
+
+  @media (--media-query-medium-max) {
+    display: none;
   }
 }
 </style>
