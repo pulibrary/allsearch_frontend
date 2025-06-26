@@ -66,6 +66,13 @@ jobs:
       - checkout
       - run: curl -sfL https://raw.githubusercontent.com/Bearer/bearer/main/contrib/install.sh | sh -s -- -b /tmp
       - run: CURRENT_BRANCH=$CIRCLE_BRANCH SHA=$CIRCLE_SHA1 /tmp/bearer scan .
+  staging_deploy:
+    machine: true
+    resource_class: pulibrary/ruby-deploy
+    steps:
+      - checkout
+      - ruby/install-deps
+      - run: bundle exec cap staging deploy
 
 workflows:
   test_my_app:
@@ -75,3 +82,11 @@ workflows:
       - semgrep
       - integration-tests
       - bearer
+      - staging_deploy:
+          requires:
+            - build-and-test
+            - integration-tests
+          filters:
+            branches:
+              only:
+                - main
