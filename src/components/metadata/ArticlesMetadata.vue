@@ -1,15 +1,17 @@
 <template>
   <li>
-    <LuxDisclosure
+    <LuxShowMore
       v-if="document.other_fields?.abstract"
-      content-id="123"
+      content-id="abstract-{{document.id}}"
+      :description-id="document.id"
       show-label="Show abstract"
       hide-label="Hide abstract"
+      :character-limit="characterLimit"
       width="100%"
       font-size="1.125rem"
       ><!-- nosemgrep javascript.vue.security.audit.xss.templates.avoid-v-html.avoid-v-html -->
       <span v-html="document.other_fields.abstract"></span
-    ></LuxDisclosure>
+    ></LuxShowMore>
   </li>
   <li v-if="document.other_fields?.fulltext_available">
     <InlineBadge color="blue">Full-text available</InlineBadge>
@@ -23,7 +25,7 @@ import { SearchResult } from '../../models/SearchResult';
 
 import ArticleCitation from '../ArticleCitation.vue';
 import InlineBadge from '../InlineBadge.vue';
-import { LuxDisclosure } from 'lux-design-system';
+import { LuxShowMore } from 'lux-design-system';
 
 defineProps({
   document: {
@@ -31,4 +33,6 @@ defineProps({
     required: true
   }
 });
+
+const characterLimit = 100;
 </script>
