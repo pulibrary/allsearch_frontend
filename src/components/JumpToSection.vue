@@ -48,8 +48,8 @@ function toggleButton() {
 </script>
 <style scoped>
 #jump-to-section-container {
-  width: 95%;
   @media (max-width: 899px) {
+    width: 80%;
     border-radius: 12px;
     background-color: var(--gray-70);
   }
