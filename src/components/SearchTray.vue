@@ -210,7 +210,7 @@ li.document h3 {
 }
 
 li.document h3 a {
-  line-height: 1.875rem;
+  line-height: var(--result-title-line-height);
   font-size: 1.25rem;
   font-style: normal;
   letter-spacing: 0.01375rem;
@@ -218,14 +218,14 @@ li.document h3 a {
 
 li.document h3 a:focus {
   text-decoration: underline;
-  line-height: 2rem;
+  line-height: var(--result-title-line-height);
   text-underline-offset: 4px;
 }
 
 li.document h3 a:hover {
   color: var(--orange-50, 10%);
   text-decoration: underline;
-  line-height: 2rem;
+  line-height: var(--result-title-line-height);
   text-underline-offset: 4px;
 }
 
