@@ -1,21 +1,24 @@
 <template>
-  <lux-input-button
-    type="button"
-    @button-clicked="toggleButton"
-    variation="solid"
-    aria-label="Toggle skip to section"
-    class="lux-expanded"
-    id="jump-to-section-expand"
-    >Skip to Section</lux-input-button
-  >
-  <div id="jump-to-section" class="display-none" tabindex="-1">
-    <ul>
-      <template v-for="scope in props.traysToJumpTo" :key="scope">
-        <li class="ul-border">
-          <a :href="getHref(scope)">{{ ScopeTitleMap[scope] }}</a>
-        </li>
-      </template>
-    </ul>
+  <div id="jump-to-section-container">
+    <lux-input-button
+      type="button"
+      @button-clicked="toggleButton"
+      variation="solid"
+      aria-label="Toggle jump to results"
+      class="lux-expanded"
+      id="jump-to-section-expand"
+      >Jump to results<LuxIconBase width="12px" height="12px"
+        ><LuxIconArrowDown></LuxIconArrowDown></LuxIconBase
+    ></lux-input-button>
+    <div id="jump-to-section" class="display-none" tabindex="-1">
+      <ul>
+        <template v-for="scope in props.traysToJumpTo" :key="scope">
+          <li class="ul-border">
+            <a :href="getHref(scope)">{{ ScopeTitleMap[scope] }}</a>
+          </li>
+        </template>
+      </ul>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -23,7 +26,11 @@ import { PropType } from 'vue';
 import ScopeTitleMap from '../config/ScopeTitleMap';
 import { SearchScope } from '../enums/SearchScope';
 import { IdService } from '../services/IdService';
-import { LuxInputButton } from 'lux-design-system';
+import {
+  LuxInputButton,
+  LuxIconArrowDown,
+  LuxIconBase
+} from 'lux-design-system';
 const props = defineProps({
   traysToJumpTo: {
     type: Array as PropType<SearchScope[]>,
@@ -40,6 +47,13 @@ function toggleButton() {
 }
 </script>
 <style scoped>
+#jump-to-section-container {
+  width: 95%;
+  @media (max-width: 999px) {
+    border-radius: 12px;
+    background-color: var(--gray-70);
+  }
+}
 #jump-to-section {
   .ul-border {
     border: #f5f4f1;
@@ -48,16 +62,27 @@ function toggleButton() {
   ul {
     display: flex;
     flex-flow: row wrap;
-    gap: 24px;
     padding: 0;
+    @media (min-width: 1000px) {
+      gap: 24px;
+    }
   }
 }
 
 #jump-to-section-expand {
-  margin: 1rem 0rem 1rem 0rem;
-  background-color: var(--black);
-  border: 1px solid var(--white);
+  background-color: var(--gray-70);
+  text-align: left;
+  width: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px;
+  margin: 0px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
 @media (min-width: 1000px) {
   #jump-to-section-expand {
     display: none;
@@ -75,37 +100,33 @@ function toggleButton() {
   list-style: none;
   display: flex;
   justify-content: flex-start;
-  background-color: light-dark(
-    var(--color-grayscale-lighter),
-    var(--color-grayscale)
-  );
 
   a {
     text-decoration: none;
     flex: 1 1 auto;
-    text-align: center;
     padding: 0.5rem;
-  }
-
-  a:link {
-    color: var(--black);
-  }
-
-  a:visited {
-    color: light-dark(var(--black), var(--color-grayscale-lighter));
+    color: var(--white);
   }
 
   a:hover {
-    color: light-dark(var(--gray-10), var(--color-grayscale-lighter));
+    text-decoration: underline var(--orange-50) 0.125rem;
+    text-underline-offset: 0.2rem;
   }
 
-  &:hover {
-    background-color: var(--orange-50);
-    cursor: pointer;
+  @media (min-width: 1000px) {
+    background-color: var(--gray-100);
+    a {
+      text-align: center;
+    }
   }
 
-  @media (max-width: 833px) {
+  @media (max-width: 999px) {
+    background-color: var(--gray-70);
     flex: 1 0 100%;
+    a {
+      font-weight: 600;
+      font-size: 14px;
+    }
   }
 }
 </style>
