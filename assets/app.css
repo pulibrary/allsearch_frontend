@@ -206,4 +206,7 @@ a {
   --marquand: var(--red);
   --mudd: #F2A900;
   --stokes: #C24D01;
+
+
+  --result-title-line-height: 1.875rem;
 }
