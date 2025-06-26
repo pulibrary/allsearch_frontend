@@ -49,7 +49,7 @@ function toggleButton() {
 <style scoped>
 #jump-to-section-container {
   width: 95%;
-  @media (max-width: 999px) {
+  @media (max-width: 899px) {
     border-radius: 12px;
     background-color: var(--gray-70);
   }
@@ -63,7 +63,7 @@ function toggleButton() {
     display: flex;
     flex-flow: row wrap;
     padding: 0;
-    @media (min-width: 1000px) {
+    @media (min-width: 900px) {
       gap: 24px;
     }
   }
@@ -83,12 +83,12 @@ function toggleButton() {
   align-items: center;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 900px) {
   #jump-to-section-expand {
     display: none;
   }
 }
-@media (max-width: 999px) {
+@media (max-width: 899px) {
   #jump-to-section {
     &.display-none {
       display: none;
@@ -113,14 +113,14 @@ function toggleButton() {
     text-underline-offset: 0.2rem;
   }
 
-  @media (min-width: 1000px) {
+  @media (min-width: 900px) {
     background-color: var(--gray-100);
     a {
       text-align: center;
     }
   }
 
-  @media (max-width: 999px) {
+  @media (max-width: 899px) {
     background-color: var(--gray-70);
     flex: 1 0 100%;
     a {
