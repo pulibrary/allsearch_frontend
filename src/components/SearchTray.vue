@@ -20,7 +20,7 @@
             :icon="getIconType(document.type)"
           ></FormatWithIcon>
           <h3 :data-id="document.id">
-            <a :href="document.url">{{ document.title }}</a>
+            <a :href="document.url" :id="document.id">{{ document.title }}</a>
           </h3>
           <SearchMetadata
             :basic-field-list="props.basicFieldList"
