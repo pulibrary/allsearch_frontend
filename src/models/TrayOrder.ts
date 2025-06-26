@@ -6,16 +6,16 @@ export class TrayOrder {
     this.order = [
       [
         SearchScope.Catalog,
-        SearchScope.Articles,
-        SearchScope.LibGuides,
         SearchScope.LibraryDatabases,
-        SearchScope.Journals,
-        SearchScope.LibraryStaff,
         SearchScope.FindingAids,
-        SearchScope.ArtMuseum,
-        SearchScope.LibAnswers,
         SearchScope.PulMap,
+        SearchScope.Articles,
+        SearchScope.Journals,
+        SearchScope.ArtMuseum,
         SearchScope.Dpul,
+        SearchScope.LibGuides,
+        SearchScope.LibraryStaff,
+        SearchScope.LibAnswers,
         SearchScope.Website
       ]
     ];

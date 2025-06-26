@@ -39,32 +39,38 @@ const traysToLink = new TrayOrder().resultCompareArray();
 
 <style>
 .tray-grid {
-  display: flex;
-  justify-content: center;
-  flex-flow: row wrap;
-  gap: 2rem;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  column-count: 3;
+  column-gap: 2rem;
 }
 
 .tray-grid section:nth-child(n) ol {
   display: flex;
   flex-direction: column;
   flex-shrink: 1;
-  align-items: flex-start;
   padding-left: 0;
-  padding-top: 0;
+  padding-top: 23px;
   margin: 0;
   gap: 23px;
 }
 
+.tray-grid {
+  @media (max-width: 899px) {
+    column-count: 1;
+    padding: 0;
+  }
+}
 .tray-grid > section {
   @media (max-width: 899px) {
-    flex: 1 0 100%;
+    width: 100%;
   }
 }
 
-.tray-grid section:nth-child(3n) {
+.tray-grid > section:nth-last-child(-n + 4) {
   @media (min-width: 900px) {
-    flex: 1 1 20%;
+    width: 80%;
   }
 }
 
