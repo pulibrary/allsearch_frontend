@@ -36,3 +36,9 @@ defineProps({
 
 const characterLimit = 100;
 </script>
+<style>
+.lux-show-more button.lux-button {
+  color: light-dark(var(--grey-100), var(--color-white));
+  text-decoration-color: light-dark(var(--grey-100), var(--color-white));
+}
+</style>
