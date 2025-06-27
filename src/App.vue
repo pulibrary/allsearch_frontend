@@ -67,8 +67,9 @@ a:focus {
     var(--color-princeton-orange-on-white),
     var(--color-princeton-orange-on-black)
   );
-  outline: solid 0.25rem;
-  outline-offset: none;
+  outline-style: solid;
+  outline-width: 0.25rem;
+  outline-offset: unset;
   box-shadow: none;
 }
 
@@ -128,7 +129,9 @@ main {
   }
   &#main-content:focus {
     box-sizing: border-box;
-    outline: var(--color-princeton-orange-on-white) solid 0.25rem;
+    outline-color: var(--color-princeton-orange-on-white);
+    outline-style: solid;
+    outline-width: 0.25rem;
     outline-offset: -0.25rem;
   }
 }
