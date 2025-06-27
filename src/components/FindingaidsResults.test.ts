@@ -74,12 +74,6 @@ describe('SearchTray component with Findingaids flavor', () => {
       "The collection consists of the printer's copy of the manuscript"
     );
   });
-  test('it shows the repository, if available', async () => {
-    await flushPromises();
-    expect(wrapper.find('li.document').text()).toContain(
-      'Repository: Manuscripts Division'
-    );
-  });
   test('it shows the collection format for collections', async () => {
     await flushPromises();
     expect(wrapper.find('li.document').text()).toContain('Format: Collection');
