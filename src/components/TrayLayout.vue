@@ -40,7 +40,7 @@ section {
 }
 
 .creator {
-  font-weight: bold;
+  font-weight: 450;
   font-size: 16px;
   font-style: normal;
   line-height: 1.5rem;
