@@ -13,10 +13,13 @@
       <span v-html="document.other_fields.abstract"></span
     ></LuxShowMore>
   </li>
-  <li v-if="document.other_fields?.fulltext_available">
-    <InlineBadge color="blue">Full-text available</InlineBadge>
-  </li>
   <ArticleCitation :fields="document.other_fields"></ArticleCitation>
+  <li
+    v-if="document.other_fields?.fulltext_available"
+    class="full-text-available"
+  >
+    <LuxBadge color="blue">Full-text available</LuxBadge>
+  </li>
 </template>
 
 <script setup lang="ts">
@@ -24,8 +27,7 @@ import { PropType } from 'vue';
 import { SearchResult } from '../../models/SearchResult';
 
 import ArticleCitation from '../ArticleCitation.vue';
-import InlineBadge from '../InlineBadge.vue';
-import { LuxShowMore } from 'lux-design-system';
+import { LuxBadge, LuxShowMore } from 'lux-design-system';
 
 defineProps({
   document: {
@@ -40,5 +42,8 @@ const characterLimit = 100;
 .lux-show-more button.lux-button {
   color: light-dark(var(--grey-100), var(--color-white));
   text-decoration-color: light-dark(var(--grey-100), var(--color-white));
+}
+.full-text-available .lux-badge {
+  text-transform: uppercase;
 }
 </style>
