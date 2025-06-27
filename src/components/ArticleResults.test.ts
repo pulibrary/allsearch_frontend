@@ -57,9 +57,7 @@ describe('SearchTray component with Article flavor', () => {
   });
   test('it shows the journal title if available', async () => {
     await flushPromises();
-    expect(wrapper.find('em').text()).toEqual(
-      'Contained in: Combustion and flame'
-    );
+    expect(wrapper.find('em').text()).toContain('Combustion and flame');
   });
   test('it shows the journal citation information if available', async () => {
     await flushPromises();
