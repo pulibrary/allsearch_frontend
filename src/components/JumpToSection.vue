@@ -75,7 +75,7 @@ function toggleButton() {
 #jump-to-section-expand {
   background-color: var(--gray-70);
   text-align: left;
-  width: inherit;
+  width: 100%;
   font-weight: 600;
   font-size: 14px;
   padding: 8px;
@@ -103,12 +103,13 @@ function toggleButton() {
   list-style: none;
   display: flex;
   justify-content: flex-start;
-
+  padding: 0 0 8px 8px;
   a {
     text-decoration: none;
     flex: 1 1 auto;
     padding: 0.5rem;
     color: var(--white);
+    border-radius: 12px;
   }
 
   a:hover {
@@ -136,7 +137,7 @@ function toggleButton() {
   padding: var(--space-base);
   color: var(--gray-50);
 
-  @media (--media-query-medium-max) {
+  @media (max-width: 899px) {
     display: none;
   }
 }
