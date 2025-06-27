@@ -6,10 +6,6 @@
     <span class="visually-hidden">Description: </span
     >{{ StringService.truncate(document.description) }}
   </li>
-  <li v-if="document.other_fields?.repository">
-    <span class="visually-hidden">Repository: </span
-    >{{ document.other_fields.repository }}
-  </li>
 </template>
 
 <script setup lang="ts">
