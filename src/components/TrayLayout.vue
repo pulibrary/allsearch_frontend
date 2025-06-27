@@ -26,6 +26,7 @@ section {
   gap: 23px;
   flex: 1 1 30%;
   border-radius: 12px;
+  height: min-content;
   background-color: light-dark(
     var(--color-white),
     var(--color-grayscale-darker)
