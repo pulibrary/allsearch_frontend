@@ -16,7 +16,9 @@ describe('ArticlesMetadata', () => {
   it('displays html in the abstract, rather than converting it into entities', async () => {
     wrapper.get('button').trigger('click');
     await nextTick();
-    expect(wrapper.text()).toContain('This abstract contains HTML');
+    expect(wrapper.text()).toContain(
+      'This abstract is really quite long and it contains various HTML elements'
+    );
     expect(wrapper.text()).not.toContain('<i>');
     expect(wrapper.text()).not.toContain('<strong>');
     expect(wrapper.findAll('i').length).toEqual(1);

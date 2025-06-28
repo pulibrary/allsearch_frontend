@@ -25,7 +25,8 @@ describe('SearchTray component', () => {
           SearchScope.Articles,
           'robots'
         ),
-        defaultIcon: 'text'
+        defaultIcon: 'text',
+        basicFieldList: ['format', 'title', 'author']
       }
     });
   });
@@ -40,8 +41,8 @@ describe('SearchTray component', () => {
     ]);
   });
   test('it displays the appropriate description from the config', async () => {
-    expect(wrapper.find('div[class="description"]').text()).toEqual(
-      'Articles, eBooks, and other online sources that the Library licenses'
+    expect(wrapper.find('div[class="tray-description"]').text()).toEqual(
+      'Articles, eBooks, and other online sources'
     );
   });
 

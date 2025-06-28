@@ -53,7 +53,8 @@ export default {
     description: 'This abstract <i>contains</i> <strong>HTML</strong>',
     url: 'http://example.com',
     other_fields: {
-      abstract: 'This abstract <i>contains</i> <strong>HTML</strong>'
+      abstract:
+        'This abstract <u>is really quite</u> long and it <i>contains</i> <span>various</span> <strong>HTML</strong> elements throughout its lengthy, never-ending, excessive, totally boring text'
     }
   })
 };

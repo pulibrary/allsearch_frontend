@@ -7,15 +7,15 @@ export class TrayOrder {
       [
         SearchScope.Catalog,
         SearchScope.Articles,
+        SearchScope.LibGuides,
         SearchScope.LibraryDatabases,
         SearchScope.Journals,
         SearchScope.LibraryStaff,
-        SearchScope.LibGuides,
         SearchScope.FindingAids,
         SearchScope.ArtMuseum,
-        SearchScope.Dpul,
-        SearchScope.PulMap,
         SearchScope.LibAnswers,
+        SearchScope.PulMap,
+        SearchScope.Dpul,
         SearchScope.Website
       ]
     ];

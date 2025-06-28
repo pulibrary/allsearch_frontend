@@ -13,7 +13,7 @@ body {
   padding: 0;
   border: 0;
   margin: 0;
-  background-color: light-dark(var(--white), var(--color-gray-100));
+  background-color: #EDEDED;
 }
 
 .icon {
@@ -150,8 +150,10 @@ html {
 }
 
 h2 {
-  font-weight: 700;
-  font-size: 1.875rem;
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 h3 {
@@ -182,6 +184,7 @@ a {
   --black: #000;
   --gray-100: #121212;
   --gray-90: #212529;
+  --gray-70: #717171;
   --gray-50: #D0D0D0;
   --gray-20: #EEE;
   --gray-10: #F7F7F7;
@@ -203,4 +206,7 @@ a {
   --marquand: var(--red);
   --mudd: #F2A900;
   --stokes: #C24D01;
+
+
+  --result-title-line-height: 1.875rem;
 }

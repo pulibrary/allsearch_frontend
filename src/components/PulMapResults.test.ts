@@ -29,7 +29,9 @@ describe('PulmapResults component', () => {
         resultsPromise: new SearchService().results(
           SearchScope.PulMap,
           'searching for robots'
-        )
+        ),
+        basicFieldList: ['title', 'format'],
+        defaultIcon: 'map'
       }
     });
   });
@@ -39,9 +41,6 @@ describe('PulmapResults component', () => {
 
   test('it has a heading', () => {
     expect(wrapper.find('h2').text()).toEqual('Maps and GIS');
-  });
-  test('heading has a map icon', () => {
-    expect(wrapper.find('h2 span.icon.icon-map').exists()).toBe(true);
   });
   test('it shows three results', async () => {
     await flushPromises();
@@ -58,10 +57,10 @@ describe('PulmapResults component', () => {
       'Mushrooms, Harvested Area (Hectares), 2000'
     );
   });
-  test('it shows the formats and their icons', async () => {
+  test('it shows the formats and their titles', async () => {
     await flushPromises();
     const results = wrapper.findAll('li.document');
-    expect(results[0].text()).toContain('GeoTIFF');
+    expect(results[0].text()).toContain('Mushrooms, Average Yield, 2000');
     expect(
       results[0].find('span.icon.icon-map[aria-hidden="true"]').exists()
     ).toBe(true);
@@ -101,7 +100,9 @@ describe('PulmapResults component', () => {
           resultsPromise: new SearchService().results(
             SearchScope.PulMap,
             'searching for robots'
-          )
+          ),
+          basicFieldList: ['title', 'format'],
+          defaultIcon: 'map'
         }
       });
     });

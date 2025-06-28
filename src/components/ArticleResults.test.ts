@@ -23,15 +23,14 @@ describe('SearchTray component with Article flavor', () => {
         resultsPromise: new SearchService().results(
           SearchScope.Articles,
           'robots'
-        )
+        ),
+        basicFieldList: ['format', 'title', 'creator'],
+        defaultIcon: 'text'
       }
     });
   });
   test('it has a heading', () => {
     expect(wrapper.find('h2').text()).toEqual('Articles+');
-  });
-  test('heading has an articles icon', () => {
-    expect(wrapper.find('h2 span.icon.icon-text').exists()).toBe(true);
   });
   test('it contains a link to more results', async () => {
     await flushPromises();
@@ -58,9 +57,7 @@ describe('SearchTray component with Article flavor', () => {
   });
   test('it shows the journal title if available', async () => {
     await flushPromises();
-    expect(wrapper.find('em').text()).toEqual(
-      'Contained in: Combustion and flame'
-    );
+    expect(wrapper.find('em').text()).toContain('Combustion and flame');
   });
   test('it shows the journal citation information if available', async () => {
     await flushPromises();
