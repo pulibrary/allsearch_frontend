@@ -52,7 +52,7 @@ function toggleButton() {
   @media (max-width: 899px) {
     width: 80%;
     border-radius: 12px;
-    background-color: var(--gray-70);
+    background-color: var(--gray-20);
   }
 }
 #jump-to-section {
@@ -73,7 +73,7 @@ function toggleButton() {
 }
 
 #jump-to-section-expand {
-  background-color: var(--gray-70);
+  background-color: var(--gray-20);
   text-align: left;
   width: 100%;
   font-weight: 600;
@@ -84,6 +84,7 @@ function toggleButton() {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: var(--gray-100);
 }
 
 @media (min-width: 900px) {
@@ -108,7 +109,7 @@ function toggleButton() {
     text-decoration: none;
     flex: 1 1 auto;
     padding: 0.5rem;
-    color: var(--white);
+    color: var(--gray-100);
     border-radius: 12px;
   }
 
@@ -121,11 +122,12 @@ function toggleButton() {
     background-color: var(--gray-100);
     a {
       text-align: center;
+      color: var(--white);
     }
   }
 
   @media (max-width: 899px) {
-    background-color: var(--gray-70);
+    background-color: var(--gray-20);
     flex: 1 0 100%;
     a {
       font-weight: 600;
