@@ -9,7 +9,7 @@
     <OnlineContent
       :url="url"
       :url-label="urlLabel"
-      :electronic-access-count="electronicAccessCount"
+      :online-access-count="onlineAccessCount"
       :record-url="recordUrl"
     ></OnlineContent>
   </li>
@@ -29,7 +29,7 @@ defineProps({
     type: Array as PropType<PhysicalHolding[]>,
     required: true
   },
-  electronicAccessCount: {
+  onlineAccessCount: {
     type: Number,
     required: true
   },

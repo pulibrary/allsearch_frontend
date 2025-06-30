@@ -12,7 +12,7 @@ import { computed } from 'vue';
 const props = defineProps({
   url: String,
   urlLabel: String,
-  electronicAccessCount: {
+  onlineAccessCount: {
     type: Number,
     required: true
   },
@@ -23,14 +23,14 @@ const props = defineProps({
 });
 /* eslint-enable vue/require-default-prop */
 const linkText = computed(() => {
-  if (props.electronicAccessCount > 1) {
-    return `View ${props.electronicAccessCount} Options`;
+  if (props.onlineAccessCount > 1) {
+    return `View ${props.onlineAccessCount} Options`;
   } else {
     return props.urlLabel || 'Online content';
   }
 });
 const linkUrl = computed(() => {
-  if (props.electronicAccessCount > 1) {
+  if (props.onlineAccessCount > 1) {
     return props.recordUrl;
   } else {
     return props.url;
