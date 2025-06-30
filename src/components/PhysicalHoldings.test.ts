@@ -11,7 +11,8 @@ describe('PhysicalHoldings component', () => {
     beforeAll(() => {
       wrapper = mount(PhysicalHoldings, {
         props: {
-          holdings: [new PhysicalHolding('ReCAP', 'DU110 .G738 1947')]
+          holdings: [new PhysicalHolding('ReCAP', 'DU110 .G738 1947')],
+          recordUrl: 'https://catalog.princeton.edu'
         }
       });
     });
@@ -25,7 +26,8 @@ describe('PhysicalHoldings component', () => {
   test('it shows only the library if no call number is available', async () => {
     wrapper = mount(PhysicalHoldings, {
       props: {
-        holdings: [new PhysicalHolding('ReCAP')]
+        holdings: [new PhysicalHolding('ReCAP')],
+        recordUrl: 'https://catalog.princeton.edu'
       }
     });
     expect(wrapper.text()).toMatch(/Location:\s*ReCAP/);
@@ -33,7 +35,8 @@ describe('PhysicalHoldings component', () => {
   test('it shows nothing if no holdings are available', async () => {
     wrapper = mount(PhysicalHoldings, {
       props: {
-        holdings: []
+        holdings: [],
+        recordUrl: 'https://catalog.princeton.edu'
       }
     });
     expect(wrapper.text()).toEqual('');
@@ -44,31 +47,34 @@ describe('PhysicalHoldings component', () => {
         holdings: [
           new PhysicalHolding('ReCAP'),
           new PhysicalHolding('Firestone')
-        ]
+        ],
+        recordUrl: 'https://catalog.princeton.edu'
       }
     });
-    expect(wrapper.text()).toMatch(/Location:\s*ReCAP/);
-    expect(wrapper.text()).toMatch(/Location:\s*Firestone/);
+    expect(wrapper.text()).toMatch(/MULTIPLE LOCATIONS/);
+    expect(wrapper.text()).toMatch(/View All Options/);
   });
   test('it shows a green status badge if other_fields has a status to display', () => {
     wrapper = mount(PhysicalHoldings, {
       props: {
-        holdings: [new PhysicalHolding('Stokes', undefined, 'Available')]
+        holdings: [new PhysicalHolding('Stokes', undefined, 'Available')],
+        recordUrl: 'https://catalog.princeton.edu'
       }
     });
-    expect(wrapper.find('.badge-green').text()).toMatch(/Available/);
+    expect(wrapper.find('.badge-green').text()).toMatch(/AVAILABLE AT/);
   });
   test('it updates the color of the badge when the status changes', async () => {
     const holding = new PhysicalHolding('ReCaP', undefined, 'Loading...');
     wrapper = mount(PhysicalHoldings, {
       props: {
-        holdings: [holding]
+        holdings: [holding],
+        recordUrl: 'https://catalog.princeton.edu'
       }
     });
     expect(wrapper.find('.badge-gray').text()).toMatch(/Loading.../);
     holding.status = 'Available';
     wrapper.setProps({ holdings: [holding] });
     await nextTick();
-    expect(wrapper.find('.badge-green').text()).toMatch(/Available/);
+    expect(wrapper.find('.badge-green').text()).toMatch(/AVAILABLE AT/);
   });
 });

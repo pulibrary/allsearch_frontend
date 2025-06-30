@@ -194,11 +194,19 @@ a {
   --orange-20: #FAE3CC;
   --orange-10: #FCF1E5;
   --red: #D12A2F;
+  --light-green: #CBE6D0;
   --green: #1A8648;
+  --dark-green: #005010;
   --dark-blue: #3466a2; /* combination of --engineering and --gray-90 */
   --architecture: #C3D600;
   --engineering: #3B7CCA;
   --lewis: #915BAF;
+  --yellow: #FBE3BB;
+  --dark-yellow: #7C4405;
+  --light-blue: #CBDDE6;
+  --very-dark-blue: #002750;
+  --link-blue: #2c6daf;
+
   --mendel: #DA1884;
   --special-collections: #000;
   --east-asian: var(--green);
