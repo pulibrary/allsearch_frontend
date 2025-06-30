@@ -16,12 +16,12 @@ const props = defineProps({
 });
 </script>
 <style>
-section {
-  display: flex;
-}
 .tray-grid section {
+  display: inline-block;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  width: 100%;
   flex-direction: column;
-  align-items: flex-start;
   padding: 24px;
   gap: 23px;
   flex: 1 1 30%;

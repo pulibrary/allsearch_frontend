@@ -27,11 +27,11 @@ describe('TrayOrder', () => {
         )
       ).toEqual(1);
     });
-    test('Articles comes before FindingAids', () => {
+    test('FindingAids comes before Articles', () => {
       expect(
         trayOrder.compareLeftToRight(
-          SearchScope.Articles,
-          SearchScope.FindingAids
+          SearchScope.FindingAids,
+          SearchScope.Articles
         )
       ).toEqual(-1);
       expect(
@@ -39,23 +39,23 @@ describe('TrayOrder', () => {
           SearchScope.FindingAids,
           SearchScope.Articles
         )
-      ).toEqual(1);
+      ).toEqual(-1);
     });
   });
   describe('asRow getter', () => {
     test('gets all the trays in order in one row', () => {
       expect(new TrayOrder().asRow[0]).toEqual([
         SearchScope.Catalog,
-        SearchScope.Articles,
-        SearchScope.LibGuides,
         SearchScope.LibraryDatabases,
-        SearchScope.Journals,
-        SearchScope.LibraryStaff,
         SearchScope.FindingAids,
-        SearchScope.ArtMuseum,
-        SearchScope.LibAnswers,
         SearchScope.PulMap,
+        SearchScope.Articles,
+        SearchScope.Journals,
+        SearchScope.ArtMuseum,
         SearchScope.Dpul,
+        SearchScope.LibGuides,
+        SearchScope.LibraryStaff,
+        SearchScope.LibAnswers,
         SearchScope.Website
       ]);
     });
@@ -64,16 +64,16 @@ describe('TrayOrder', () => {
     test('it includes all trays in order from left-to-right', () => {
       expect(new TrayOrder().resultCompareArray()).toEqual([
         SearchScope.Catalog,
-        SearchScope.Articles,
-        SearchScope.LibGuides,
         SearchScope.LibraryDatabases,
-        SearchScope.Journals,
-        SearchScope.LibraryStaff,
         SearchScope.FindingAids,
-        SearchScope.ArtMuseum,
-        SearchScope.LibAnswers,
         SearchScope.PulMap,
+        SearchScope.Articles,
+        SearchScope.Journals,
+        SearchScope.ArtMuseum,
         SearchScope.Dpul,
+        SearchScope.LibGuides,
+        SearchScope.LibraryStaff,
+        SearchScope.LibAnswers,
         SearchScope.Website
       ]);
     });
