@@ -6,7 +6,9 @@ describe('OnlineContent component', () => {
   test('it has a link that opens in new tab', async () => {
     const wrapper = mount(OnlineContent, {
       props: {
-        url: 'https://na05.alma.exlibrisgroup.com/view/uresolver/01PRI_INST/openurl?u.ignore_date_coverage=true&portfolio_pid=53763462940006421&Force_direct=true'
+        url: 'https://na05.alma.exlibrisgroup.com/view/uresolver/01PRI_INST/openurl?u.ignore_date_coverage=true&portfolio_pid=53763462940006421&Force_direct=true',
+        onlineAccessCount: 1,
+        recordUrl: 'https://catalog.princeton.edu'
       }
     });
     const link = wrapper.find('a');
@@ -22,7 +24,9 @@ describe('OnlineContent component', () => {
     const wrapper = mount(OnlineContent, {
       props: {
         url: 'https://na05.alma.exlibrisgroup.com/view/uresolver/01PRI_INST/openurl?u.ignore_date_coverage=true&portfolio_pid=53763462940006421&Force_direct=true',
-        urlLabel: 'Proquest'
+        urlLabel: 'Proquest',
+        onlineAccessCount: 1,
+        recordUrl: 'https://catalog.princeton.edu'
       }
     });
     const link = wrapper.find('a');

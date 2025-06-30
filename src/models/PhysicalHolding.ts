@@ -22,14 +22,24 @@ export class PhysicalHolding {
       return this.library;
     }
   }
+  statusLabel() {
+    switch (this.status) {
+      case 'Available':
+        return 'AVAILABLE AT';
+      case 'Loading...':
+        return 'Loading...';
+      default:
+        return 'REQUEST';
+    }
+  }
   statusColor(): string {
     switch (this.status) {
       case 'Available':
         return 'green';
-      case 'Unavailable':
-        return 'red';
-      default:
+      case 'Loading...':
         return 'gray';
+      default:
+        return 'yellow';
     }
   }
 }
