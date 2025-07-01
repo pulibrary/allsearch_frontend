@@ -41,11 +41,12 @@ const traysToLink = new TrayOrder().order;
 
 <style>
 .tray-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
-  column-count: 3;
-  column-gap: 2rem;
 }
 
 .tray-grid section:nth-child(n) ol {
@@ -60,7 +61,7 @@ const traysToLink = new TrayOrder().order;
 
 .tray-grid {
   @media (max-width: 899px) {
-    column-count: 1;
+    grid-template-columns: 1fr;
     padding: 0;
   }
 }
