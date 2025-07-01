@@ -52,7 +52,7 @@ function toggleButton() {
   @media (max-width: 899px) {
     width: 80%;
     border-radius: 12px;
-    background-color: var(--gray-20);
+    background-color: var(--white);
   }
 }
 #jump-to-section {
@@ -73,7 +73,7 @@ function toggleButton() {
 }
 
 #jump-to-section-expand {
-  background-color: var(--gray-20);
+  background-color: var(--white);
   text-align: left;
   width: 100%;
   font-weight: 600;
@@ -127,7 +127,7 @@ function toggleButton() {
   }
 
   @media (max-width: 899px) {
-    background-color: var(--gray-20);
+    background-color: var(--white);
     flex: 1 0 100%;
     a {
       font-weight: 600;
