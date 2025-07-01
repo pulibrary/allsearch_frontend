@@ -6,19 +6,21 @@
       </BestBetsTray>
     </div>
     <div class="tray-grid">
-      <template v-for="scope in traysToLink" :key="scope">
-        <SearchTray
-          v-if="scope"
-          :scope="scope"
-          :default-icon="ScopeIconMap[scope]"
-          :basic-field-list="ScopeFieldsMap[scope]"
-          :results-promise="searchService.results(scope, query)"
-        >
-        </SearchTray>
-        <div v-else class="placeholder">
-          <!-- no tray is configured for this cell -->
-        </div>
-      </template>
+      <div v-for="(column, colIdx) in traysToLink" :key="colIdx">
+        <template v-for="(scope, scopeIdx) in column" :key="scope || scopeIdx">
+          <SearchTray
+            v-if="scope"
+            :scope="scope"
+            :default-icon="ScopeIconMap[scope]"
+            :basic-field-list="ScopeFieldsMap[scope]"
+            :results-promise="searchService.results(scope, query)"
+          >
+          </SearchTray>
+          <div v-else class="placeholder">
+            <!-- no tray is configured for this cell -->
+          </div>
+        </template>
+      </div>
     </div>
   </div>
 </template>
@@ -34,7 +36,7 @@ import ScopeIconMap from '../config/ScopeIconMap';
 
 const query = SearchTermService.term();
 const searchService = new SearchService();
-const traysToLink = new TrayOrder().resultCompareArray();
+const traysToLink = new TrayOrder().order;
 </script>
 
 <style>
@@ -68,7 +70,7 @@ const traysToLink = new TrayOrder().resultCompareArray();
   }
 }
 
-.tray-grid > section:nth-last-child(-n + 4) {
+.tray-grid > div:nth-child(3) {
   @media (min-width: 900px) {
     width: 80%;
   }
