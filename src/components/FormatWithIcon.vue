@@ -22,5 +22,6 @@ const displayFormat = props.format[0].toUpperCase() + props.format?.slice(1);
 }
 .icon.format-icon {
   margin: 3px 3px 3px 0;
+  color: light-dark(var(--gray-100), var(--white));
 }
 </style>
