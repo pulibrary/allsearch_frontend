@@ -126,6 +126,8 @@ main {
   &.search-results {
     padding: var(--space-base) var(--space-x-large) var(--space-x-larger)
       var(--space-x-large);
+    display: flex;
+    justify-content: center;
   }
   &#main-content:focus {
     box-sizing: border-box;
