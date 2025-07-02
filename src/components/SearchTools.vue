@@ -11,6 +11,5 @@ nav.search-tools {
   background-color: var(--gray-100);
   width: 100%;
   padding-top: var(--space-large);
-  padding-bottom: var(--space-large);
 }
 </style>
