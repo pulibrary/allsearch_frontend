@@ -10,6 +10,10 @@ nav.search-tools {
   align-items: center;
   background-color: var(--gray-100);
   width: 100%;
-  padding-top: var(--space-large);
+  padding-top: var(--space-base);
+
+  @media (max-width: 899px) {
+    padding-bottom: var(--space-base);
+  }
 }
 </style>
