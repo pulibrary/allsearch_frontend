@@ -37,3 +37,17 @@ const basicFieldsWithDataList = props.basicFieldList.filter(field => {
   return props.document[field as keyof SearchResult];
 }) as string[];
 </script>
+
+<style>
+.creator {
+  font: 1rem;
+  font-weight: 600;
+}
+.publisher {
+  font: 1rem;
+  font-style: italic;
+}
+.description {
+  font: 1rem;
+}
+</style>
