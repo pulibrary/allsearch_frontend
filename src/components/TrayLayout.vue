@@ -33,17 +33,38 @@ const props = defineProps({
 }
 
 .publisher {
+  font-size: 1rem;
   font-style: italic;
-  font-size: 16px;
   line-height: 1.5rem;
   letter-spacing: 0.011rem;
 }
-
 .creator {
-  font-weight: 450;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 1rem;
   font-style: normal;
   line-height: 1.5rem;
   letter-spacing: 0.011rem;
+}
+.description {
+  font: 1rem;
+}
+
+.tray-grid > div:nth-child(3) {
+  h2 {
+    font-size: 1.25rem;
+  }
+  .tray-description {
+    font-size: 1rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  .more-container .lux-link {
+    font-size: 1rem;
+    font-weight: 600px;
+  }
+  .description {
+    font-size: 0.875rem;
+  }
 }
 </style>

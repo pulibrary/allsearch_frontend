@@ -45,5 +45,7 @@ const characterLimit = 100;
 }
 .full-text-available .lux-badge {
   text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.625rem;
 }
 </style>
