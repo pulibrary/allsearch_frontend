@@ -19,6 +19,7 @@ const displayFormat = props.format[0].toUpperCase() + props.format?.slice(1);
 <style>
 .format-container {
   position: relative;
+  font-size: 0.75rem;
 }
 .icon.format-icon {
   margin: 3px 3px 3px 0;
