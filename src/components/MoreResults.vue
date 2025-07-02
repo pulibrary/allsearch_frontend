@@ -29,6 +29,8 @@ if (props.resultCount) {
 
 a.more-link {
   color: inherit;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 a.more-link:focus,

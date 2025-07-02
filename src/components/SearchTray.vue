@@ -246,6 +246,10 @@ li.document:not(:last-child) {
   padding-bottom: 12px;
 }
 
+.metadata li.access-info a {
+  font-size: 0.9375rem;
+}
+
 li.document::marker {
   font-size: 1.5em;
 }
@@ -266,6 +270,9 @@ li.document::marker {
 .access-info ul {
   list-style: none;
   padding-inline-start: 0px;
+  li {
+    font-size: 0.875rem;
+  }
 }
 
 .no-results {
