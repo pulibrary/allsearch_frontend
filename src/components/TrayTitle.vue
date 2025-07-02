@@ -38,5 +38,6 @@ h3 a {
 .tray-description {
   padding-bottom: 16px;
   border-bottom: solid 2px var(--orange-50);
+  font: 1rem;
 }
 </style>
