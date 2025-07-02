@@ -78,7 +78,7 @@ function toggleButton() {
   width: 100%;
   font-weight: 600;
   font-size: 14px;
-  padding: 8px;
+  padding: var(--space-x-small) var(--space-small);
   margin: 0px;
   border-radius: 12px;
   display: flex;
@@ -111,6 +111,10 @@ function toggleButton() {
     padding: 0.5rem;
     color: var(--gray-100);
     border-radius: 12px;
+
+    @media (max-width: 899px) {
+      padding: 0 0 var(--space-x-small) var(--space-x-small);
+    }
   }
 
   a:hover {
