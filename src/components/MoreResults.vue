@@ -64,5 +64,6 @@ a.more-link:hover {
   text-underline-offset: 4px;
   background-color: var(--orange-50);
   color: var(--white);
+  border: none;
 }
 </style>
