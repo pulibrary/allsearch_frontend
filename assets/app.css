@@ -156,11 +156,6 @@ h2 {
   margin-top: 0;
 }
 
-h3 {
-  font-weight: 500;
-  font-size: 1.25rem;
-}
-
 a {
   color: light-dark(var(--color-bleu-de-france), var(--gray-10));
 }
