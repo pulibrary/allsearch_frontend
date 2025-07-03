@@ -56,7 +56,7 @@ const props = defineProps({
   .tray-description {
     font-size: 1rem;
   }
-  h3 {
+  li.document h3 a {
     font-size: 1rem;
   }
   .more-container .lux-link {
@@ -64,6 +64,13 @@ const props = defineProps({
     font-weight: 600px;
   }
   .description {
+    font-size: 0.875rem;
+  }
+  .email {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  .library-title {
     font-size: 0.875rem;
   }
 }
