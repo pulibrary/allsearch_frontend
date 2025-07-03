@@ -49,6 +49,8 @@ function toggleButton() {
 </script>
 <style scoped>
 #jump-to-section-container {
+  display: flex;
+  flex-flow: column wrap;
   @media (max-width: 899px) {
     width: 80%;
     border-radius: 12px;
@@ -61,11 +63,20 @@ function toggleButton() {
   }
   display: flex;
   flex-flow: row wrap;
+  @media (min-width: 900px) and (max-width: 1281px) {
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+  }
 
   ul {
     display: flex;
     flex-flow: row wrap;
     padding: 0;
+    @media (min-width: 900px) and (max-width: 1281px) {
+      justify-content: center;
+    }
     @media (min-width: 900px) {
       gap: 24px;
     }
@@ -142,7 +153,9 @@ function toggleButton() {
 .jump-to-description {
   padding: var(--space-base);
   color: var(--gray-50);
-
+  @media (min-width: 900px) and (max-width: 1281px) {
+    padding: 0;
+  }
   @media (max-width: 899px) {
     display: none;
   }
