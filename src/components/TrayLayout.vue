@@ -59,6 +59,11 @@ const props = defineProps({
   li.document h3 a {
     font-size: 1rem;
   }
+  .more-container {
+    @media screen and (min-width: 900px) {
+      justify-content: flex-end;
+    }
+  }
   .more-container .lux-link {
     font-size: 1rem;
     font-weight: 600px;
