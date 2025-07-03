@@ -1,7 +1,4 @@
 <template>
-  <li v-if="document.other_fields?.date">
-    Date: {{ document.other_fields.date }}
-  </li>
   <li v-if="document.description">
     <span class="visually-hidden">Description: </span
     ><LuxShowMore
