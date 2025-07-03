@@ -74,4 +74,10 @@ const props = defineProps({
     font-size: 0.875rem;
   }
 }
+
+.tray-grid > div:nth-child(-n + 2) {
+  li.document .metadata li .lux-show-more {
+    font-size: 0.875rem;
+  }
+}
 </style>
