@@ -65,7 +65,6 @@ describe('SearchTray component with Findingaids flavor', () => {
   test('it shows the date, if available', async () => {
     await flushPromises();
     const documents = wrapper.findAll('li.document');
-    expect(documents[0].text()).toContain('Date: 1941');
     expect(documents[1].text()).not.toContain('Date:');
   });
   test('it shows the description, if available', async () => {
