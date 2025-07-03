@@ -42,7 +42,7 @@ const descriptionId = 'online-content-link-description-' + uniqueId;
 <style>
 .icon {
   margin: 3px;
-  color: var(--link-blue);
+  color: light-dark(var(--link-blue), var(--color-white));
   vertical-align: middle;
 }
 </style>
