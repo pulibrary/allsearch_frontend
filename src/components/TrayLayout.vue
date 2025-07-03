@@ -61,7 +61,7 @@ const props = defineProps({
   }
   .more-container .lux-link {
     font-size: 1rem;
-    font-weight: 600px;
+    font-weight: 600;
   }
   .description {
     font-size: 0.875rem;
