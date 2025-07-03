@@ -1,9 +1,15 @@
 <template>
-  <li v-if="props.fields?.publication_title">
-    <em>Contained in: {{ props.fields.publication_title }}</em>
-  </li>
-  <li v-if="chronology.length">
-    {{ chronology.join(', ') }}
+  <li v-if="props.fields?.publication_title || chronology.length">
+    <em
+      ><template v-if="props.fields?.publication_title">{{
+        props.fields.publication_title
+      }}</template
+      ><template v-if="props.fields?.publication_title && chronology.length"
+        >, </template
+      ><template v-if="chronology.length">{{
+        chronology.join(', ')
+      }}</template></em
+    >
   </li>
 </template>
 <script setup lang="ts">

@@ -1,9 +1,17 @@
 <template>
   <li v-if="holdings.length" class="access-info">
-    <PhysicalHoldings :holdings="holdings"></PhysicalHoldings>
+    <PhysicalHoldings
+      :holdings="holdings"
+      :record-url="recordUrl"
+    ></PhysicalHoldings>
   </li>
   <li v-if="url" class="access-info">
-    <OnlineContent :url="url" :url-label="urlLabel"></OnlineContent>
+    <OnlineContent
+      :url="url"
+      :url-label="urlLabel"
+      :online-access-count="onlineAccessCount"
+      :record-url="recordUrl"
+    ></OnlineContent>
   </li>
 </template>
 
@@ -19,6 +27,14 @@ defineProps({
   urlLabel: String,
   holdings: {
     type: Array as PropType<PhysicalHolding[]>,
+    required: true
+  },
+  onlineAccessCount: {
+    type: Number,
+    required: true
+  },
+  recordUrl: {
+    type: String,
     required: true
   }
 });

@@ -7,13 +7,13 @@ describe('PhysicalHolding', () => {
       const holding = new PhysicalHolding('Marquand', 'ABC 123', 'Available');
       expect(holding.statusColor()).toEqual('green');
     });
-    it('returns red when unavailable', () => {
+    it('returns yellow when unavailable', () => {
       const holding = new PhysicalHolding('Marquand', 'ABC 123', 'Unavailable');
-      expect(holding.statusColor()).toEqual('red');
+      expect(holding.statusColor()).toEqual('yellow');
     });
-    it('returns gray when there is no status', () => {
+    it('returns yellow when there is no status', () => {
       const holding = new PhysicalHolding('Marquand');
-      expect(holding.statusColor()).toEqual('gray');
+      expect(holding.statusColor()).toEqual('yellow');
     });
   });
   describe('barcode property', () => {

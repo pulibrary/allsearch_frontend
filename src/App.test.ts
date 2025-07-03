@@ -15,4 +15,12 @@ describe('App component', () => {
     );
     expect(focusable[0].text()).toEqual('Skip to main content');
   });
+  describe('when there is no search query', () => {
+    test('it has a heading', () => {
+      const wrapper = mount(App);
+      expect(wrapper.find('h1').text()).toEqual(
+        'Search Princeton University Library Resources'
+      );
+    });
+  });
 });
