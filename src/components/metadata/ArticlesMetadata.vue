@@ -8,7 +8,6 @@
       hide-label="Hide abstract"
       :character-limit="characterLimit"
       width="100%"
-      font-size="1.125rem"
       ><!-- nosemgrep javascript.vue.security.audit.xss.templates.avoid-v-html.avoid-v-html -->
       <span v-html="document.other_fields.abstract"></span
     ></LuxShowMore>
