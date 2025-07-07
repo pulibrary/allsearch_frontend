@@ -46,7 +46,7 @@ const props = defineProps({
   letter-spacing: 0.011rem;
 }
 .description {
-  font: 1rem;
+  font-size: 1rem;
 }
 
 .tray-grid > div:nth-child(3) {
