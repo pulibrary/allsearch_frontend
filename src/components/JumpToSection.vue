@@ -74,11 +74,10 @@ function toggleButton() {
     display: flex;
     flex-flow: row wrap;
     padding: 0;
+    gap: 24px;
     @media (min-width: 900px) and (max-width: 1281px) {
       justify-content: center;
-    }
-    @media (min-width: 900px) {
-      gap: 24px;
+      gap: 0.3rem;
     }
   }
 }
