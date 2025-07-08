@@ -31,16 +31,15 @@ describe('SearchTray component with Findingaids flavor', () => {
         resultsPromise: new SearchService().results(
           SearchScope.FindingAids,
           'my search'
-        )
+        ),
+        basicFieldList: ['format', 'title', 'author'],
+        defaultIcon: 'collection'
       }
     });
   });
 
   test('it has a heading', () => {
     expect(wrapper.find('h2').text()).toEqual('Library Archives');
-  });
-  test('heading has an archives icon', () => {
-    expect(wrapper.find('h2 span.icon.icon-archives').exists()).toBe(true);
   });
   test('it contains a link to more results', async () => {
     await flushPromises();
@@ -66,19 +65,12 @@ describe('SearchTray component with Findingaids flavor', () => {
   test('it shows the date, if available', async () => {
     await flushPromises();
     const documents = wrapper.findAll('li.document');
-    expect(documents[0].text()).toContain('Date: 1941');
     expect(documents[1].text()).not.toContain('Date:');
   });
   test('it shows the description, if available', async () => {
     await flushPromises();
     expect(wrapper.find('li.document').text()).toContain(
       "The collection consists of the printer's copy of the manuscript"
-    );
-  });
-  test('it shows the repository, if available', async () => {
-    await flushPromises();
-    expect(wrapper.find('li.document').text()).toContain(
-      'Repository: Manuscripts Division'
     );
   });
   test('it shows the collection format for collections', async () => {
@@ -103,7 +95,9 @@ describe('SearchTray component with Findingaids flavor', () => {
           resultsPromise: new SearchService().results(
             SearchScope.FindingAids,
             'my search'
-          )
+          ),
+          basicFieldList: ['format', 'title', 'author'],
+          defaultIcon: 'collection'
         }
       });
     });

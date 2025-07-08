@@ -1,14 +1,15 @@
 <template>
   <li v-if="document?.other_fields?.library_title">
-    <span class="visually-hidden">Library Title: </span
-    >{{ document.other_fields.library_title }}
+    <span class="visually-hidden">Library Title: </span>
+    <span class="library-title">{{ document.other_fields.library_title }}</span>
   </li>
   <li v-if="pronouns">
-    <span class="visually-hidden">Pronouns: </span>{{ pronouns }}
+    <span class="visually-hidden">Pronouns: </span>
+    <span class="pronouns">{{ pronouns }}</span>
   </li>
   <li v-if="document?.other_fields?.email">
-    <span class="visually-hidden">Email: </span
-    >{{ document.other_fields.email }}
+    <span class="visually-hidden">Email: </span>
+    <span class="email">{{ document.other_fields.email }}</span>
   </li>
 </template>
 
