@@ -50,9 +50,13 @@ if (query) {
   flex-direction: column;
   min-height: 100vh;
   align-items: center;
+  padding-bottom: 3rem;
+  background-color: light-dark(white, #3a4c59);
+}
+
+.page-wrap > * {
   margin-left: 1rem;
   margin-right: 1rem;
-  padding-bottom: 3rem;
 }
 
 .main {
