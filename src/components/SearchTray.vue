@@ -15,7 +15,9 @@
           class="document"
         >
           <h3 :data-id="document.id">
-            <a :href="document.url">{{ document.title }}</a>
+            <a class="document-title" :href="document.url">{{
+              document.title
+            }}</a>
           </h3>
           <SearchMetadata
             :basic-field-list="ScopeFieldsMap[props.scope as SearchScope]"
@@ -238,5 +240,9 @@ ol li.document::marker {
 
 .no-results {
   margin-top: 12px;
+}
+
+.document-title {
+  color: light-dark(var(--black), var(--orange-50));
 }
 </style>
