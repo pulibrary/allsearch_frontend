@@ -20,7 +20,9 @@
             :icon="getIconType(document.type)"
           ></FormatWithIcon>
           <h3 :data-id="document.id">
-            <a :href="document.url" :id="document.id">{{ document.title }}</a>
+            <a class="document-title" :href="document.url" :id="document.id">{{
+              document.title
+            }}</a>
           </h3>
           <SearchMetadata
             :basic-field-list="props.basicFieldList"
@@ -277,5 +279,9 @@ li.document::marker {
 
 .no-results {
   margin-top: 12px;
+}
+
+.document-title {
+  color: light-dark(var(--black), var(--orange-50));
 }
 </style>

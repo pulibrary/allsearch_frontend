@@ -36,13 +36,16 @@ a.more-link {
 a.more-link:focus,
 a.more-link:hover {
   text-decoration: none;
-  background-color: var(--orange-50);
+  background-color: light-dark(var(--orange-50), var(--white));
   border-bottom: 2px
     light-dark(
       var(--color-princeton-orange-on-white),
       var(--color-princeton-orange-on-black)
     )
     solid;
+  text-underline-offset: 4px;
+  color: light-dark(var(--white), var(--black));
+  border: none;
 }
 
 a.more-link {
@@ -57,13 +60,5 @@ a.more-link {
   border: 1px solid var(--gray-50);
   background-color: light-dark(var(--white), var(--color-grayscale-darker));
   color: light-dark(var(--black), var(--white));
-}
-
-a.more-link:focus,
-a.more-link:hover {
-  text-underline-offset: 4px;
-  background-color: var(--orange-50);
-  color: var(--white);
-  border: none;
 }
 </style>
