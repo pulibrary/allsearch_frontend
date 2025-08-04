@@ -241,11 +241,7 @@ li.document:not(:last-child) {
 
 .metadata {
   list-style-type: none;
-  padding: 0;
-}
-
-.metadata li {
-  padding-bottom: 12px;
+  padding: 0 0 24px 0;
 }
 
 .metadata li.access-info a {
@@ -258,7 +254,6 @@ li.document::marker {
 
 .tray-grid ol li.document {
   list-style-type: none;
-  padding-bottom: 23px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

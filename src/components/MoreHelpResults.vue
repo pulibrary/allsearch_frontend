@@ -55,4 +55,7 @@ if (props.resultCount) {
 .more-container .lux-icon svg path {
   stroke: light-dark(var(--white), var(--gray-100));
 }
+.more-container a {
+  margin-top: 0;
+}
 </style>
