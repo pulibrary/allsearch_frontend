@@ -47,4 +47,7 @@ const characterLimit = 100;
   font-weight: 600;
   font-size: 0.625rem;
 }
+em {
+  font-size: 1rem;
+}
 </style>
