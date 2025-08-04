@@ -40,4 +40,8 @@ h3 a {
   border-bottom: solid 2px var(--orange-50);
   font-size: 1rem;
 }
+
+.tray-description:empty {
+  padding-bottom: 0;
+}
 </style>
