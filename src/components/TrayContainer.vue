@@ -65,7 +65,8 @@ const traysToLink = new TrayOrder().order;
     padding: 0;
   }
 }
-.tray-grid > section {
+.tray-grid section {
+  background-color: light-dark(#efefef, var(--Primary-Cool-Gray, #091f30));
   @media (max-width: 899px) {
     width: 100%;
   }

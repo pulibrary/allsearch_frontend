@@ -128,6 +128,7 @@ main {
       var(--space-x-large);
     display: flex;
     justify-content: center;
+    background-color: light-dark(white, #3a4c59);
   }
   &#main-content:focus {
     box-sizing: border-box;
