@@ -6,7 +6,7 @@
     </div>
     <div class="best-bets-item-container">
       <h3 class="best-bets-title">
-        <a href="results.records[0].url">{{ results.records[0].title }}</a>
+        <a :href="results.records[0].url">{{ results.records[0].title }}</a>
       </h3>
       <p class="best-bets-description">
         {{ results.records[0]['description'] }}
