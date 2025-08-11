@@ -1,10 +1,11 @@
 <template>
-  <h2 :id="headingId">
-    <span v-if="props.icon" :class="iconClass" aria-hidden="true"></span>
-    {{ props.heading }}
-  </h2>
-  <div class="description">
-    {{ props.description }}
+  <div class="tray-header">
+    <h2 :id="headingId">
+      {{ props.heading }}
+    </h2>
+    <div class="tray-description">
+      {{ props.description }}
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -20,16 +21,27 @@ const props = defineProps({
   description: String
 });
 /* eslint-enable vue/require-default-prop */
-const iconClass = 'icon icon-' + props.icon;
 const headingId = IdService.createDomId(props.heading);
 </script>
 <style>
-h3 a {
-  color: light-dark(var(--black), var(--gray-10));
+.tray-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.description {
-  padding: 3px 0 8px;
+h3 a {
+  color: light-dark(var(--color-cold-blue), var(--gray-10));
+  text-decoration: none;
+}
+
+.tray-description {
+  padding-bottom: 16px;
   border-bottom: solid 2px var(--orange-50);
+  font-size: 1rem;
+}
+
+.tray-description:empty {
+  padding-bottom: 0;
 }
 </style>

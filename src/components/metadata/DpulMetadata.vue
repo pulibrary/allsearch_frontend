@@ -1,7 +1,7 @@
 <template>
   <li v-if="document?.other_fields?.collection">
-    <span class="visually-hidden">Collection: </span
-    >{{ document.other_fields.collection }}
+    <span class="visually-hidden">Collection: </span>
+    <span class="collection">{{ document.other_fields.collection }}</span>
   </li>
 </template>
 
@@ -16,3 +16,8 @@ defineProps({
   }
 });
 </script>
+<style>
+.collection {
+  font-size: 1rem;
+}
+</style>

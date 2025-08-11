@@ -13,9 +13,8 @@ describe('FindingaidsMetadata', () => {
     });
   });
   it('truncates long descriptions', () => {
-    console.log(wrapper.text());
     expect(wrapper.text()).toContain(
-      "Description: The collection consists of the printer's copy of the manuscript for The Intent of the Artist , edited by Centeno and published by the Princeton University…"
+      "The collection consists of the printer's copy of the manuscript for The Intent of the Artist , edited by Centeno and published by the Princeton…"
     );
   });
 });

@@ -5,6 +5,10 @@ import AppFooter from './components/AppFooter.vue';
 import { SearchTermService } from './services/SearchTermService';
 import TrayContainer from './components/TrayContainer.vue';
 import BannerAlert from './components/BannerAlert.vue';
+import SearchTools from './components/SearchTools.vue';
+import SearchBar from './components/SearchBar.vue';
+import JumpToSection from './components/JumpToSection.vue';
+import { JumpToSectionOrder } from './models/JumpToSectionOrder';
 
 const colorMode = localStorage.getItem('mode') || 'dark light';
 document
@@ -15,59 +19,41 @@ const query = SearchTermService.term();
 if (query) {
   document.title = query + ' search results | Princeton University Library';
 }
+const traysToJumpTo = new JumpToSectionOrder().order;
 </script>
 
 <template>
-  <ul class="skip-to-content-links">
-    <li>
-      <a ref="skipLink" href="#main-content" class="skip-to-content-link"
-        >Skip to main content</a
-      >
-    </li>
-  </ul>
+  <nav aria-label="Skip to content">
+    <ul class="skip-to-content-links">
+      <li>
+        <a ref="skipLink" href="#main-content" class="skip-to-content-link"
+          >Skip to main content</a
+        >
+      </li>
+    </ul>
+  </nav>
 
   <AppHeader></AppHeader>
-  <div class="page-wrap">
-    <main id="main-content" class="main" tabindex="-1">
+  <template v-if="query">
+    <SearchTools>
+      <SearchBar></SearchBar>
+      <JumpToSection :trays-to-jump-to="traysToJumpTo"></JumpToSection>
+    </SearchTools>
+    <main id="main-content" class="search-results" tabindex="-1">
       <div class="banner-wrapper">
         <BannerAlert></BannerAlert>
       </div>
-      <div v-if="query">
-        <TrayContainer></TrayContainer>
-      </div>
-      <div v-else>
-        <InitialSearch></InitialSearch>
-      </div>
+      <TrayContainer></TrayContainer>
     </main>
-  </div>
+  </template>
+  <main id="main-content" v-else tabindex="-1">
+    <InitialSearch></InitialSearch>
+  </main>
+
   <AppFooter></AppFooter>
 </template>
 <style>
 @import '../assets/app.css';
-
-.page-wrap {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  align-items: center;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  padding-bottom: 3rem;
-}
-
-.main {
-  margin-top: 1rem;
-  flex-grow: 1;
-  @media (min-width: 900px) {
-    max-width: 1440px;
-  }
-  @media (max-width: 899px) {
-    max-width: 1440px;
-  }
-  @media (max-width: 599px) {
-    max-width: 540px;
-  }
-}
 
 a:hover {
   text-decoration-color: light-dark(
@@ -81,8 +67,9 @@ a:focus {
     var(--color-princeton-orange-on-white),
     var(--color-princeton-orange-on-black)
   );
-  outline: solid 0.25rem;
-  outline-offset: none;
+  outline-style: solid;
+  outline-width: 0.25rem;
+  outline-offset: unset;
   box-shadow: none;
 }
 
@@ -126,5 +113,28 @@ a:focus {
 
 .banner-wrapper {
   min-height: 30px;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  &.search-results {
+    padding: var(--space-base) var(--space-x-large) var(--space-x-larger)
+      var(--space-x-large);
+    display: flex;
+    justify-content: center;
+  }
+  &#main-content:focus {
+    box-sizing: border-box;
+    outline-color: var(--color-princeton-orange-on-white);
+    outline-style: solid;
+    outline-width: 0.25rem;
+    outline-offset: -0.25rem;
+  }
 }
 </style>

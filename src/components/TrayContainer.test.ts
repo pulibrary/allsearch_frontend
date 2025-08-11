@@ -3,15 +3,6 @@ import TrayContainer from './TrayContainer.vue';
 import { mount } from '@vue/test-utils';
 
 describe('TrayContainer component', () => {
-  describe('when there is no search query', () => {
-    test('it has a visible heading', () => {
-      const wrapper = mount(TrayContainer);
-      expect(wrapper.find('h1').text()).toEqual(
-        'Search Princeton University Library Resources'
-      );
-      expect(wrapper.find('h1').classes()).not.toContain('visually-hidden');
-    });
-  });
   describe('when there is a search query', () => {
     test('it has a visually hidden heading', () => {
       Object.defineProperty(window, 'location', {

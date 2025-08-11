@@ -1,20 +1,24 @@
 <template>
   <li>
-    <LuxDisclosure
+    <LuxShowMore
       v-if="document.other_fields?.abstract"
-      content-id="123"
+      content-id="abstract-{{document.id}}"
+      :description-id="document.id"
       show-label="Show abstract"
       hide-label="Hide abstract"
+      :character-limit="characterLimit"
       width="100%"
-      font-size="1.125rem"
       ><!-- nosemgrep javascript.vue.security.audit.xss.templates.avoid-v-html.avoid-v-html -->
       <span v-html="document.other_fields.abstract"></span
-    ></LuxDisclosure>
-  </li>
-  <li v-if="document.other_fields?.fulltext_available">
-    <InlineBadge color="blue">Full-text available</InlineBadge>
+    ></LuxShowMore>
   </li>
   <ArticleCitation :fields="document.other_fields"></ArticleCitation>
+  <li
+    v-if="document.other_fields?.fulltext_available"
+    class="full-text-available"
+  >
+    <LuxBadge color="blue">Full-text available</LuxBadge>
+  </li>
 </template>
 
 <script setup lang="ts">
@@ -22,8 +26,7 @@ import { PropType } from 'vue';
 import { SearchResult } from '../../models/SearchResult';
 
 import ArticleCitation from '../ArticleCitation.vue';
-import InlineBadge from '../InlineBadge.vue';
-import { LuxDisclosure } from 'lux-design-system';
+import { LuxBadge, LuxShowMore } from 'lux-design-system';
 
 defineProps({
   document: {
@@ -31,4 +34,20 @@ defineProps({
     required: true
   }
 });
+
+const characterLimit = 100;
 </script>
+<style>
+.lux-show-more button.lux-button {
+  color: light-dark(var(--grey-100), var(--color-white));
+  text-decoration-color: light-dark(var(--grey-100), var(--color-white));
+}
+.full-text-available .lux-badge {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.625rem;
+}
+em {
+  font-size: 1rem;
+}
+</style>

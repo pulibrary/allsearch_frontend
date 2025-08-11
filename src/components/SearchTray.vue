@@ -14,12 +14,18 @@
           :key="document.id"
           class="document"
         >
+          <FormatWithIcon
+            v-if="document.type && props.basicFieldList.includes('format')"
+            :format="document.type"
+            :icon="getIconType(document.type)"
+          ></FormatWithIcon>
           <h3 :data-id="document.id">
-            <a :href="document.url">{{ document.title }}</a>
+            <a class="document-title" :href="document.url" :id="document.id">{{
+              document.title
+            }}</a>
           </h3>
           <SearchMetadata
-            :basic-field-list="ScopeFieldsMap[props.scope as SearchScope]"
-            :default-icon="getScopeIcon()"
+            :basic-field-list="props.basicFieldList"
             :document="document"
           >
             <template #extra-metadata>
@@ -36,6 +42,10 @@
                 :url="document.other_fields?.resource_url"
                 :url-label="document.other_fields?.resource_url_label"
                 :holdings="holdings.getHoldingsByDocumentId(document.id)"
+                :online-access-count="
+                  Number(document.other_fields?.online_access_count)
+                "
+                :record-url="document.url"
               ></CatalogMetadata>
               <DpulMetadata
                 v-if="props.scope == SearchScope.Dpul"
@@ -78,10 +88,15 @@
         :url="results.more"
       ></MoreResults>
       <MoreResults
-        v-else
+        v-else-if="informationTypeMap[props.scope] === 'materials'"
         :url="results.more"
         :result-count="results.number"
       ></MoreResults>
+      <MoreHelpResults
+        v-else
+        :url="results.more"
+        :result-count="results.number"
+      ></MoreHelpResults>
     </template>
   </TrayLayout>
 </template>
@@ -97,22 +112,33 @@ import SearchMetadata from './metadata/SearchMetadata.vue';
 import TrayLayout from './TrayLayout.vue';
 import TrayTitle from './TrayTitle.vue';
 import MoreResults from './MoreResults.vue';
+import MoreHelpResults from './MoreHelpResults.vue';
 import { SearchDataLoadSummary } from '../interfaces/SearchDataLoadSummary';
 import { SearchScope } from '../enums/SearchScope';
 import InlineBadge from './InlineBadge.vue';
 import ArticlesMetadata from './metadata/ArticlesMetadata.vue';
 import ArtMuseumMetadata from './metadata/ArtMuseumMetadata.vue';
 import CatalogMetadata from './metadata/CatalogMetadata.vue';
+import FormatWithIcon from './FormatWithIcon.vue';
 import FindingaidsMetadata from './metadata/FindingaidsMetadata.vue';
+import itemTypeMap from '../config/ItemTypeMap';
 import LibraryStaffMetadata from './metadata/LibraryStaffMetadata.vue';
 import DpulMetadata from './metadata/DpulMetadata.vue';
-import ScopeFieldsMap from '../config/ScopeFieldsMap';
 import { RecordHoldingsMap } from '../models/RecordHoldingsMap';
+import { informationTypeMap } from '../config/ScopeInformationTypeMap';
 
 /* eslint-disable vue/require-default-prop */
 const props = defineProps({
   scope: {
     type: String as PropType<SearchScope>,
+    required: true
+  },
+  defaultIcon: {
+    type: String,
+    required: true
+  },
+  basicFieldList: {
+    type: Array,
     required: true
   },
   resultsPromise: Promise<SearchResults>
@@ -176,6 +202,11 @@ function getScopeDescription(): string {
   }
 }
 
+function getIconType(type: string): string {
+  const itemType = itemTypeMap[type.toLowerCase() as keyof typeof itemTypeMap];
+  return itemType || props.defaultIcon;
+}
+
 populateResults();
 </script>
 
@@ -185,58 +216,67 @@ li.document h3 {
 }
 
 li.document h3 a {
-  line-height: 2rem;
-  text-decoration-color: light-dark(var(--gray-90), var(--gray-10));
-  text-decoration-thickness: 1px;
-  text-underline-offset: 5px;
+  line-height: var(--result-title-line-height);
+  font-size: 1.25rem;
+  font-style: normal;
+  letter-spacing: 0.01375rem;
 }
 
 li.document h3 a:focus {
   text-decoration: underline;
-  line-height: 2rem;
+  line-height: var(--result-title-line-height);
   text-underline-offset: 4px;
 }
 
 li.document h3 a:hover {
   color: var(--orange-50, 10%);
   text-decoration: underline;
-  line-height: 2rem;
+  line-height: var(--result-title-line-height);
   text-underline-offset: 4px;
 }
 
-li.document {
-  padding: 0.8rem 0rem 0rem 0.5rem;
-}
-
 li.document:not(:last-child) {
-  padding-bottom: 0.7rem;
   border-bottom: solid 1px var(--gray-50);
 }
 
 .metadata {
   list-style-type: none;
-  padding: 0;
-  margin: 0.65rem 0 0 0;
+  padding: 0 0 24px 0;
 }
 
-.metadata li {
-  padding: 3px 0;
+.metadata li.access-info a {
+  font-size: 0.9375rem;
 }
 
-.access-info {
-  margin-top: 12px;
-}
-
-ol li.document::marker {
+li.document::marker {
   font-size: 1.5em;
+}
+
+.tray-grid ol li.document {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  h3 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
 }
 
 .access-info ul {
   list-style: none;
   padding-inline-start: 0px;
+  li {
+    font-size: 0.875rem;
+  }
 }
 
 .no-results {
   margin-top: 12px;
+}
+
+.document-title {
+  color: light-dark(var(--black), var(--orange-50));
 }
 </style>

@@ -1,10 +1,18 @@
 <template>
-  <form action="/" :class="props.position" role="search" @submit="validateForm">
+  <form
+    action="/"
+    :class="props.position"
+    role="search"
+    @submit="validateForm"
+    class="search-form"
+  >
     <WarningAlert
       :should-display-alert="showValidationError"
       alert-text="Please input a search"
     ></WarningAlert>
-    <LuxSearchBox v-model="query" name="q"></LuxSearchBox>
+    <div class="search-container">
+      <LuxSearchBox v-model="query" name="q"></LuxSearchBox>
+    </div>
   </form>
 </template>
 <script setup lang="ts">
@@ -33,3 +41,15 @@ const searchIsEmpty = () => {
   return true;
 };
 </script>
+<style>
+.search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.search-container {
+  width: min(750px, 80%);
+}
+</style>

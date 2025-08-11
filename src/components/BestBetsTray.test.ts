@@ -32,7 +32,9 @@ describe('BestBetsTray component', () => {
     });
     test('heading has a best bet icon', async () => {
       await flushPromises();
-      expect(wrapper.find('h2 span.icon.icon-best-bet').exists()).toBe(true);
+      expect(
+        wrapper.find('.best-bet-header-container img.best-bet-icon').exists()
+      ).toBe(true);
     });
     test('the title is in an h3', async () => {
       await flushPromises();
@@ -41,8 +43,8 @@ describe('BestBetsTray component', () => {
     });
     test('it shows the description if it exists', async () => {
       await flushPromises();
-      const results = wrapper.findAll('li.document');
-      expect(results[0].text()).toContain(
+      const result = wrapper.find('p.best-bets-description');
+      expect(result.text()).toContain(
         'Guide with links to the best sources for current and historical full text online of the NYT.'
       );
     });
@@ -64,8 +66,8 @@ describe('BestBetsTray component', () => {
     });
     test('it does not truncate the description', async () => {
       await flushPromises();
-      const results = wrapper.findAll('li.document');
-      expect(results[0].text()).toContain(
+      const result = wrapper.find('p.best-bets-description');
+      expect(result.text()).toContain(
         'This program pairs every Princeton undergraduate with a friendly library expert. Your Personal Librarian will help you navigate the library system, get started with research, point you to subject experts, and answer any questions you might have.'
       );
     });
