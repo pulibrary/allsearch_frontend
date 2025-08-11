@@ -30,6 +30,14 @@ describe('BestBetsTray component', () => {
       await flushPromises();
       expect(wrapper.find('h2').text()).toEqual('Best Bets');
     });
+    test('it has a link', async () => {
+      await flushPromises();
+      const link = wrapper.find('a');
+      expect(link.text()).toEqual('The New York Times');
+      expect(link.attributes('href')).toEqual(
+        'http://libguides.princeton.edu/newspapers/usacurrent#nyt'
+      );
+    });
     test('heading has a best bet icon', async () => {
       await flushPromises();
       expect(
