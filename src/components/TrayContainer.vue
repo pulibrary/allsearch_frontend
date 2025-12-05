@@ -1,5 +1,5 @@
 <template>
-  <div v-if="query">
+  <div v-if="query" class="tray-container">
     <h1 class="visually-hidden">Search results</h1>
     <div class="best-bets">
       <BestBetsTray :results-promise="searchService.results('best-bet', query)">
@@ -79,5 +79,12 @@ const traysToLink = new TrayOrder().order;
 
 .header__secondary {
   position: relative;
+}
+
+.tray-container {
+  padding: var(--space-base) var(--space-x-large) var(--space-x-larger)
+    var(--space-x-large);
+  display: flex;
+  justify-content: center;
 }
 </style>

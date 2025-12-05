@@ -14,7 +14,13 @@ The allsearch frontend depends on the [Library UX](https://github.com/pulibrary/
 1. `asdf install`
 1. `yarn install`
 1. `yarn dev`
-1. Note: In order to see search results you must be on the library VPN.
+
+By default, this shows production data.
+
+* If you want to see staging data instead, connect to the VPN and
+  run `VITE_ALLSEARCH_API_URL=https://allsearch-api-staging.princeton.edu yarn dev`
+* If you want to see data from the API running locally on port 3000,
+  run `VITE_ALLSEARCH_API_URL=http://localhost:3000 yarn dev`
 
 ## Vue 3 + TypeScript + Vite
 
