@@ -160,7 +160,7 @@ a {
   color: light-dark(var(--color-bleu-de-france), var(--gray-10));
 }
 
-.lux-alert-info a {
+.lux-alert a {
   color: light-dark(var(--color-cerulean-blue), var(--color-bleu-de-france-darker));
 }
 
