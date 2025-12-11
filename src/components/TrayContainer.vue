@@ -85,6 +85,7 @@ const traysToLink = new TrayOrder().order;
   padding: var(--space-base) var(--space-x-large) var(--space-x-larger)
     var(--space-x-large);
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 </style>
