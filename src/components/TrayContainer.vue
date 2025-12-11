@@ -40,7 +40,15 @@ const traysToLink = new TrayOrder().order;
 </script>
 
 <style>
+.best-bets {
+  flex: 0 0 auto;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .tray-grid {
+  flex: 1 1 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
