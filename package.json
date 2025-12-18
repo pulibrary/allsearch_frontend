@@ -16,8 +16,6 @@
     "@eslint/js": "^9.1.1",
     "@honeybadger-io/js": "^6.5.1",
     "@honeybadger-io/vue": "^6.1.7",
-    "axios": "^1.12.0",
-    "class-transformer": "^0.5.1",
     "lux-design-system": "^7.3.1",
     "typescript-eslint": "^7.8.0",
     "vue": "^3.3.4"

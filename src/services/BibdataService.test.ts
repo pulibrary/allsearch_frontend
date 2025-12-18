@@ -1,14 +1,15 @@
-import { Axios } from 'axios';
 import { describe, test, expect, vi, beforeEach } from 'vitest';
 import { BibdataService } from './BibdataService';
 import ScsbServiceFixtures from '../fixtures/ScsbServiceFixtures';
+import config from '../config';
 
 describe('BibdataService', () => {
   describe('scsbAvailability()', () => {
     beforeEach(() => {
-      const mock = vi.spyOn(Axios.prototype, 'get');
-      mock.mockResolvedValue({
-        data: ScsbServiceFixtures.response
+      global.fetch = vi.fn(_url => {
+        return Promise.resolve(
+          new Response(JSON.stringify(ScsbServiceFixtures.response))
+        );
       });
     });
 
@@ -24,6 +25,9 @@ describe('BibdataService', () => {
       expect(results['HN2X2Y'].color).toEqual('green');
       expect(results['HN9E7L'].status).toEqual('Unavailable');
       expect(results['HN9E7L'].color).toEqual('red');
+      expect(fetch).toHaveBeenCalledWith(
+        `${config.bibdataUrl}/availability?barcodes[]=HN2X2Y&barcodes[]=33333219778236&barcodes[]=HN9E7L&barcodes[]=CU50370782`
+      );
     });
   });
 });

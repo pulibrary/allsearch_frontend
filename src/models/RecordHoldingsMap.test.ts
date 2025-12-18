@@ -1,10 +1,7 @@
-import { describe, it, expect, vi, beforeEach, MockInstance } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { RecordHoldingsMap } from './RecordHoldingsMap';
 import { SearchResults } from './SearchResults';
-import { Axios } from 'axios';
 import ScsbServiceFixtures from '../fixtures/ScsbServiceFixtures';
-
-let mockAxios: MockInstance;
 
 describe('RecordHoldingsMap', () => {
   it('can extract a holding', () => {
@@ -86,9 +83,10 @@ describe('RecordHoldingsMap', () => {
   });
   describe('updateScsbAvailability()', () => {
     beforeEach(() => {
-      mockAxios = vi.spyOn(Axios.prototype, 'get');
-      mockAxios.mockResolvedValue({
-        data: ScsbServiceFixtures.response
+      global.fetch = vi.fn(_url => {
+        return Promise.resolve(
+          new Response(JSON.stringify(ScsbServiceFixtures.response))
+        );
       });
     });
     it('updates the status from the results of our API call', async () => {
@@ -179,7 +177,7 @@ describe('RecordHoldingsMap', () => {
 
       await holdingsMap.updateScsbAvailability();
 
-      expect(mockAxios).not.toHaveBeenCalled();
+      expect(global.fetch).not.toHaveBeenCalled();
       expect(
         holdingsMap.getHoldingsByDocumentId('991230421')[0].status
       ).toEqual('Available');

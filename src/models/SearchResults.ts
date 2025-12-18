@@ -11,4 +11,13 @@ export class SearchResults implements Results {
     this.more = more;
     this.records = records;
   }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  static fromObject(object: Results): SearchResults {
+    return new SearchResults(
+      object.number,
+      object.more,
+      object.records.map(record => SearchResult.fromObject(record))
+    );
+  }
 }
