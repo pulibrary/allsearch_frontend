@@ -20,4 +20,14 @@ export class BannerResult implements Banner {
     this.dismissible = dismissible;
     this.autoclear = autoclear;
   }
+
+  static fromObject(object: Banner) {
+    return new BannerResult(
+      object.text,
+      object.display_banner,
+      object.alert_status,
+      object.dismissible,
+      object.autoclear
+    );
+  }
 }

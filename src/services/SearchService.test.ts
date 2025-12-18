@@ -1,17 +1,15 @@
-import { Axios } from 'axios';
-import { describe, test, expect, vi, beforeEach, MockInstance } from 'vitest';
+import { describe, test, expect, vi, beforeEach } from 'vitest';
 import { SearchService } from './SearchService';
 import { SearchScope } from '../enums/SearchScope';
 import SearchServiceFixtures from '../fixtures/SearchServiceFixtures';
 
-let mock: MockInstance;
-
 describe('SearchService', () => {
   describe('catalogResults()', () => {
     beforeEach(() => {
-      mock = vi.spyOn(Axios.prototype, 'get');
-      mock.mockResolvedValue({
-        data: SearchServiceFixtures.results
+      global.fetch = vi.fn(_url => {
+        return Promise.resolve(
+          new Response(JSON.stringify(SearchServiceFixtures.results))
+        );
       });
     });
 
@@ -32,7 +30,11 @@ describe('SearchService', () => {
     });
     describe('when the HTTP request promise is rejected', () => {
       beforeEach(() => {
-        mock.mockRejectedValue(new Error('Axios error'));
+        global.fetch = vi.fn(_url => {
+          return Promise.resolve(
+            new Response('{"error": "There was a problem"}', { status: 500 })
+          );
+        });
       });
       test('it has zero results', async () => {
         const service = new SearchService();
