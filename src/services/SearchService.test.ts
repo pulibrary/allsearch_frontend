@@ -32,7 +32,7 @@ describe('SearchService', () => {
       beforeEach(() => {
         global.fetch = vi.fn(_url => {
           return Promise.resolve(
-            new Response('there was a problem', { status: 500 })
+            new Response('{"error": "There was a problem"}', { status: 500 })
           );
         });
       });

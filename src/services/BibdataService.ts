@@ -10,7 +10,13 @@ export class BibdataService {
     return fetch(
       `${config.bibdataUrl}/availability?${this.queryParams(barcodes)}`
     )
-      .then(response => response.json())
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(`Response status: ${response.status}`);
+        }
+      })
       .then(parsed => {
         const keyValuePairs = Object.keys(parsed).map((key: string) => {
           const status =
