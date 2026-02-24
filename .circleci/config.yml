@@ -44,7 +44,7 @@ jobs:
           command: semgrep ci --config auto
   integration-tests:
     docker:
-      - image: cimg/ruby:3.2.2-browsers
+      - image: cimg/ruby:4.0.1-browsers
     parallelism: 1
     steps:
       - checkout
@@ -58,7 +58,7 @@ jobs:
 
   bearer:
     docker:
-      - image: cimg/ruby:3.2
+      - image: cimg/base:current
     environment:
       # Set to default branch of your repo
       DEFAULT_BRANCH: main

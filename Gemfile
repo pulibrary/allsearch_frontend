@@ -6,6 +6,7 @@ group :development do
   gem "capistrano", require: false
 
   gem 'axe-core-rspec'
+  gem 'bigdecimal'
   gem 'rspec'
   gem 'rspec_junit_formatter'
   gem 'capybara'
