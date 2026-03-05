@@ -37,7 +37,7 @@
     "lint-staged": "^16.2.7",
     "prettier": "^3.8.1",
     "simple-git-hooks": "^2.13.1",
-    "typescript": "^5.0.2",
+    "typescript": "^5.9.3",
     "vite": "^5.4.21",
     "vitest": "^4.0.16",
     "vue-eslint-parser": "^9.4.2",
