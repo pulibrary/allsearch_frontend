@@ -387,10 +387,10 @@
     node-fetch "^2.6.9"
     picomatch "^2.3.1"
 
-"@honeybadger-io/vue@^6.1.7":
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/@honeybadger-io/vue/-/vue-6.2.2.tgz#d3398405740c90632bce13c855642b26e153db29"
-  integrity sha512-NPUkfm653K6BLyqQ+k7nQhjRcCTLSXW8cg3UvCvICN5MAstzCqS8uuZGLNhsHmIZaM2XtINm4rETaR27Unn04A==
+"@honeybadger-io/vue@^6.2.9":
+  version "6.2.9"
+  resolved "https://registry.yarnpkg.com/@honeybadger-io/vue/-/vue-6.2.9.tgz#9a98bd44625cdc1ab78ba2b55673ff6f65543123"
+  integrity sha512-H2gKuvqKNvPmovqMkYWq69AR/jQO2E/P8Lnj6/+1mvsOFmwNXfd1zeVoHmxGpyVFf5mwTNJjvEduRznkVpuI+A==
 
 "@humanfs/core@^0.19.1":
   version "0.19.1"
