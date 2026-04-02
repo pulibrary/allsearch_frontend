@@ -350,22 +350,22 @@
     "@eslint/core" "^0.15.0"
     levn "^0.4.1"
 
-"@honeybadger-io/core@^6.7.0":
-  version "6.7.0"
-  resolved "https://registry.yarnpkg.com/@honeybadger-io/core/-/core-6.7.0.tgz#1272c1150e4b783b30185631314d643ef1a1b6ae"
-  integrity sha512-bEXRe2UVbfr9q3434/2eO3AHguUT0froYEqrHfTPphR4Aw6+AlFac0YE8elqDZqUSgRQ6m1OXqxmq/HOF+W6LQ==
+"@honeybadger-io/core@^6.7.2":
+  version "6.7.2"
+  resolved "https://registry.yarnpkg.com/@honeybadger-io/core/-/core-6.7.2.tgz#fdc120206dbff0382b7d21bd26dd34d5051975fe"
+  integrity sha512-4+hyrFI0S/Eni2cBgO40Lqyft5hyNXjgnuh1EbeH457kty8g4YatJYuHBffmrjwLiZHgFbWXRGv7SlG+NehC5Q==
   dependencies:
     json-nd "^1.0.0"
     stacktrace-parser "^0.1.10"
 
-"@honeybadger-io/js@^6.5.1":
-  version "6.11.0"
-  resolved "https://registry.yarnpkg.com/@honeybadger-io/js/-/js-6.11.0.tgz#d34db159606b6caaf67fa06fc116479414698781"
-  integrity sha512-nSibKUr9ccrs6Jb3Ql7uO/4MdEEv3ONGP1CrD0w3zSMHUvQKHe43NPYfESA7btxjrf9PVeV+m6ETP/193BSILg==
+"@honeybadger-io/js@^6.12.3":
+  version "6.12.3"
+  resolved "https://registry.yarnpkg.com/@honeybadger-io/js/-/js-6.12.3.tgz#f72af388f2e278f9eb7cf1a314cd298e5922a5cd"
+  integrity sha512-CL+9A8tGpjawsJEKE74P94hmimHRsq+B90i5N/pXNgnJbgZG40bs9yZpfn2z3w0+3z9wtH12D2RqBjxsGm9DBg==
   dependencies:
-    "@honeybadger-io/core" "^6.7.0"
+    "@honeybadger-io/core" "^6.7.2"
     "@types/aws-lambda" "^8.10.89"
-    "@types/express" "^4.17.13"
+    "@types/express" "^5.0.3"
 
 "@honeybadger-io/plugin-core@^1.4.1":
   version "1.4.1"
@@ -656,25 +656,24 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-1.0.8.tgz#958b91c991b1867ced318bedea0e215ee050726e"
   integrity sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==
 
-"@types/express-serve-static-core@^4.17.33":
-  version "4.19.6"
-  resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.19.6.tgz#e01324c2a024ff367d92c66f48553ced0ab50267"
-  integrity sha512-N4LZ2xG7DatVqhCZzOGb1Yi5lMbXSZcmdLDe9EzSndPV2HpWYWzRbaerl2n27irrm94EPpprqa8KpskPT085+A==
+"@types/express-serve-static-core@^5.0.0":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-5.1.1.tgz#1a77faffee9572d39124933259be2523837d7eaa"
+  integrity sha512-v4zIMr/cX7/d2BpAEX3KNKL/JrT1s43s96lLvvdTmza1oEvDudCqK9aF/djc/SWgy8Yh0h30TZx5VpzqFCxk5A==
   dependencies:
     "@types/node" "*"
     "@types/qs" "*"
     "@types/range-parser" "*"
     "@types/send" "*"
 
-"@types/express@^4.17.13":
-  version "4.17.23"
-  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.23.tgz#35af3193c640bfd4d7fe77191cd0ed411a433bef"
-  integrity sha512-Crp6WY9aTYP3qPi2wGDo9iUe/rceX01UMhnF1jmwDcKCFM6cx7YhGP/Mpr3y9AASpfHixIG0E6azCcL5OcDHsQ==
+"@types/express@^5.0.3":
+  version "5.0.6"
+  resolved "https://registry.yarnpkg.com/@types/express/-/express-5.0.6.tgz#2d724b2c990dcb8c8444063f3580a903f6d500cc"
+  integrity sha512-sKYVuV7Sv9fbPIt/442koC7+IIwK5olP1KWeD88e/idgoJqDm3JV/YUiPwkoKK92ylff2MGxSz1CSjsXelx0YA==
   dependencies:
     "@types/body-parser" "*"
-    "@types/express-serve-static-core" "^4.17.33"
-    "@types/qs" "*"
-    "@types/serve-static" "*"
+    "@types/express-serve-static-core" "^5.0.0"
+    "@types/serve-static" "^2"
 
 "@types/http-errors@*":
   version "2.0.5"
@@ -726,14 +725,13 @@
     "@types/mime" "^1"
     "@types/node" "*"
 
-"@types/serve-static@*":
-  version "1.15.8"
-  resolved "https://registry.yarnpkg.com/@types/serve-static/-/serve-static-1.15.8.tgz#8180c3fbe4a70e8f00b9f70b9ba7f08f35987877"
-  integrity sha512-roei0UY3LhpOJvjbIP6ZZFngyLKl5dskOtDhxY5THRSpO+ZI+nzJ+m5yUMzGrp89YRa7lvknKkMYjqQFGwA7Sg==
+"@types/serve-static@^2":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@types/serve-static/-/serve-static-2.2.0.tgz#d4a447503ead0d1671132d1ab6bd58b805d8de6a"
+  integrity sha512-8mam4H1NHLtu7nmtalF7eyBH14QyOASmcxHhSfEoRyr0nP/YdoesEtU+uSRvMe96TW/HPTtkoKqQLl53N7UXMQ==
   dependencies:
     "@types/http-errors" "*"
     "@types/node" "*"
-    "@types/send" "*"
 
 "@types/whatwg-mimetype@^3.0.2":
   version "3.0.2"
