@@ -16,7 +16,7 @@
     "@eslint/js": "^9.1.1",
     "@honeybadger-io/js": "^6.12.3",
     "@honeybadger-io/vue": "^6.2.9",
-    "lux-design-system": "^7.3.1",
+    "lux-design-system": "^7.6.2",
     "typescript-eslint": "^7.8.0",
     "vue": "^3.5.28"
   },
