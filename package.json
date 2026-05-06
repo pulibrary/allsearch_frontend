@@ -23,6 +23,7 @@
   "devDependencies": {
     "@honeybadger-io/rollup-plugin": "^5.10.1",
     "@rushstack/eslint-patch": "^1.16.1",
+    "@types/node": "^25.6.0",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
     "@typescript-eslint/parser": "^7.0.1",
     "@vitejs/plugin-vue": "^6.0.4",
