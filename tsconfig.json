@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
+    "types": ["node", "vitest"],
     "target": "ES2022",
     "useDefineForClassFields": true,
     "module": "ESNext",
     "lib": ["ES2021", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
     "moduleResolution": "node",
+    "ignoreDeprecations": "6.0",
     // "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
