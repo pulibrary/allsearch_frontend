@@ -3,8 +3,8 @@
     action="/"
     :class="props.position"
     role="search"
-    @submit="validateForm"
     class="search-form"
+    @submit="validateForm"
   >
     <WarningAlert
       :should-display-alert="showValidationError"

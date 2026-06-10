@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable vue/no-v-html -->
   <lux-alert
     v-if="shouldDisplayBanner()"
     :status="result?.alert_status"
@@ -52,8 +53,8 @@ function shouldDisplayBanner(): boolean {
 }
 
 function isRecent(date: Date): boolean {
-  var cutoffDate = new Date();
-  var sevenDaysAgo = cutoffDate.getDate() - 7;
+  const cutoffDate = new Date();
+  const sevenDaysAgo = cutoffDate.getDate() - 7;
   cutoffDate.setDate(sevenDaysAgo);
   return date > cutoffDate;
 }

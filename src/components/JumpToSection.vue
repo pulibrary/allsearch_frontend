@@ -1,12 +1,12 @@
 <template>
   <div id="jump-to-section-container">
     <lux-input-button
+      id="jump-to-section-expand"
       type="button"
-      @button-clicked="toggleButton"
       variation="solid"
       aria-label="Toggle jump to results"
       class="lux-expanded"
-      id="jump-to-section-expand"
+      @button-clicked="toggleButton"
       >Jump to results<LuxIconBase width="12px" height="12px"
         ><LuxIconArrowDown></LuxIconArrowDown></LuxIconBase
     ></lux-input-button>
@@ -42,7 +42,7 @@ function getHref(scope: SearchScope): string {
   return '#' + IdService.createDomId(ScopeTitleMap[scope]);
 }
 function toggleButton() {
-  let skipLinks = document.querySelector('#jump-to-section');
+  const skipLinks = document.querySelector('#jump-to-section');
   skipLinks?.classList.toggle('display-none');
   (skipLinks as HTMLElement)?.focus();
 }

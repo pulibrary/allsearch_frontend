@@ -5,9 +5,9 @@
       }}<LuxIconBase
         width="14"
         height="14"
-        circleColor="var(--gray-100)"
-        iconColor="white"
-        iconHide="true"
+        circle-color="var(--gray-100)"
+        icon-color="white"
+        icon-hide="true"
       >
         <LuxIconArrowRight></LuxIconArrowRight> </LuxIconBase
     ></LuxHyperlink>
@@ -25,7 +25,8 @@ const props = defineProps({
     required: true
   },
   resultCount: {
-    type: Number
+    type: Number,
+    default: null
   }
 });
 let linkText: string;
