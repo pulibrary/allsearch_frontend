@@ -6,7 +6,7 @@ import config from '../config';
 describe('BibdataService', () => {
   describe('scsbAvailability()', () => {
     beforeEach(() => {
-      global.fetch = vi.fn(_url => {
+      global.fetch = vi.fn(() => {
         return Promise.resolve(
           new Response(JSON.stringify(ScsbServiceFixtures.response))
         );

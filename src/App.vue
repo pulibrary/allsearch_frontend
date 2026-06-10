@@ -49,7 +49,7 @@ const traysToJumpTo = new JumpToSectionOrder().order;
       </div>
     </main>
   </template>
-  <main id="main-content" v-else tabindex="-1">
+  <main v-else id="main-content" tabindex="-1">
     <InitialSearch></InitialSearch>
     <div class="banner-wrapper">
       <BannerAlert></BannerAlert>

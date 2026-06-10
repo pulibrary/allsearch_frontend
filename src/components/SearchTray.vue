@@ -20,7 +20,7 @@
             :icon="getIconType(document.type)"
           ></FormatWithIcon>
           <h3 :data-id="document.id">
-            <a class="document-title" :href="document.url" :id="document.id">{{
+            <a :id="document.id" class="document-title" :href="document.url">{{
               document.title
             }}</a>
           </h3>

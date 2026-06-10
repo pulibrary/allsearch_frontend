@@ -10,7 +10,8 @@ const props = defineProps({
     required: true
   },
   resultCount: {
-    type: Number
+    type: Number,
+    default: null
   }
 });
 let linkText: string;

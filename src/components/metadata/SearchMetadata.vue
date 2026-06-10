@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable vue/no-v-html -->
   <ul class="metadata">
     <li v-for="field in basicFieldsWithDataList" :key="field">
       <span class="visually-hidden">{{ field }}: </span

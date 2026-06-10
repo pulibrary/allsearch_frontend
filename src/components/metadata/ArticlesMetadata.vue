@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable vue/no-v-html -->
   <li>
     <LuxShowMore
       v-if="document.other_fields?.abstract"

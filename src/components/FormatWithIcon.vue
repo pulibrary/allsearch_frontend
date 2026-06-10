@@ -10,7 +10,10 @@ const props = defineProps({
     type: String,
     required: true
   },
-  icon: String
+  icon: {
+    type: String,
+    default: null
+  }
 });
 const formatIcon = props.icon || props.format?.toLowerCase();
 const classes = 'format-icon icon icon-' + formatIcon;

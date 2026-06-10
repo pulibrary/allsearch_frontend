@@ -12,7 +12,6 @@ export class SearchResults implements Results {
     this.records = records;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   static fromObject(object: Results): SearchResults {
     return new SearchResults(
       object.number,

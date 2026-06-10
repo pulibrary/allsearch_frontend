@@ -10,7 +10,7 @@
         >Opens in new tab</span
       >
     </template>
-    <li v-for="holding of props.holdings" :key="holding.call_number" v-else>
+    <li v-for="holding of props.holdings" v-else :key="holding.call_number">
       <InlineBadge v-if="holding.status" :color="holding.statusColor()">{{
         holding.statusLabel()
       }}</InlineBadge>

@@ -83,7 +83,7 @@ describe('RecordHoldingsMap', () => {
   });
   describe('updateScsbAvailability()', () => {
     beforeEach(() => {
-      global.fetch = vi.fn(_url => {
+      global.fetch = vi.fn(() => {
         return Promise.resolve(
           new Response(JSON.stringify(ScsbServiceFixtures.response))
         );

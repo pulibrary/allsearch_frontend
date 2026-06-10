@@ -7,7 +7,7 @@ import config from '../config';
 describe('SearchService', () => {
   describe('catalogResults()', () => {
     beforeEach(() => {
-      global.fetch = vi.fn(_url => {
+      global.fetch = vi.fn(() => {
         return Promise.resolve(
           new Response(JSON.stringify(SearchServiceFixtures.results))
         );
@@ -44,7 +44,7 @@ describe('SearchService', () => {
     });
     describe('when the HTTP request promise is rejected', () => {
       beforeEach(() => {
-        global.fetch = vi.fn(_url => {
+        global.fetch = vi.fn(() => {
           return Promise.resolve(
             new Response('{"error": "There was a problem"}', { status: 500 })
           );
