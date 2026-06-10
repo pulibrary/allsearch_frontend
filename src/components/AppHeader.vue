@@ -93,6 +93,7 @@ function switchMode(value: string) {
   window.localStorage.setItem('mode', value);
   const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
   colorSchemeMeta?.setAttribute('content', value);
+  document.body.dataset.theme = value;
 }
 function handleMenuItemClicked(event: { component: keyof typeof colorModes }) {
   if (colorModes[event.component]) {

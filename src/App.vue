@@ -14,6 +14,7 @@ const colorMode = localStorage.getItem('mode') || 'dark light';
 document
   .querySelector('meta[name="color-scheme"]')
   ?.setAttribute('content', colorMode);
+document.body.dataset.theme = colorMode;
 
 const query = SearchTermService.term();
 if (query) {
