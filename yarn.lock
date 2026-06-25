@@ -131,23 +131,23 @@
     "@types/aws-lambda" "^8.10.89"
     "@types/express" "^5.0.3"
 
-"@honeybadger-io/plugin-core@^1.4.1":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@honeybadger-io/plugin-core/-/plugin-core-1.4.1.tgz#6781fb02b3a96ef961d25bf9803517e1dd41af38"
-  integrity sha512-p4fNPwAm7G2z24lx4gBBWjCrD4YfAgGqRMNI9es4WYe94bbukuIzr2d+x0qv09QkIWh/RyhejnIqe0pegj2LSw==
+"@honeybadger-io/plugin-core@^1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@honeybadger-io/plugin-core/-/plugin-core-1.4.2.tgz#be6f19ccac9729f86f14ac6e90d125ae772bca95"
+  integrity sha512-BE+GajV7n1CV179CTUAA03F8UO8xMWwS8zEE/+m/S+s2nCy/0D4laiVX0mtfMEK7gP/LMDLq4dOzHncILbJeLg==
   dependencies:
     fetch-retry "^5.0.3"
-    form-data "^4.0.0"
+    form-data "^4.0.6"
     node-fetch "^2.6.9"
 
-"@honeybadger-io/rollup-plugin@^5.10.1":
-  version "5.10.1"
-  resolved "https://registry.yarnpkg.com/@honeybadger-io/rollup-plugin/-/rollup-plugin-5.10.1.tgz#cf6c77aea07a39becbf89ab40982b957071044fd"
-  integrity sha512-BgYGkRlFmef5KD5ZEARDKiiYHAgP7CTs6Wi2XRek60OoR/nD+9u3nrWLpmRFiSSw/sczvtDRZ13FqeK33pIelg==
+"@honeybadger-io/rollup-plugin@^5.10.2":
+  version "5.10.2"
+  resolved "https://registry.yarnpkg.com/@honeybadger-io/rollup-plugin/-/rollup-plugin-5.10.2.tgz#373e9224c5df5e8d06ba2079230754fb54168038"
+  integrity sha512-H6IlRF61tEY7abrdyBah2H9FJbUhToYLoG0QW7wT4b6oSXnHWOITNnGQVRhvzfZB+/4zm49YgzNFFX/VXzgTIg==
   dependencies:
-    "@honeybadger-io/plugin-core" "^1.4.1"
+    "@honeybadger-io/plugin-core" "^1.4.2"
     fetch-retry "^5.0.3"
-    form-data "^4.0.0"
+    form-data "^4.0.6"
     node-fetch "^2.6.9"
     picomatch "^2.3.1"
 
@@ -1331,7 +1331,7 @@ foreground-child@^3.1.0:
     cross-spawn "^7.0.6"
     signal-exit "^4.0.1"
 
-form-data@^4.0.0:
+form-data@^4.0.6:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/form-data/-/form-data-4.0.6.tgz#28e864e1b786dbebb68db1f452f9635278665827"
   integrity sha512-vKatAh4SlVfgbv+YtmhiRjhEMJsYpsG1Y2rMQtR+SVSbytsSD1YGzDIcrAJmdFec88u/+VoGmxnl+80gL1tRCQ==

@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10",
-    "@honeybadger-io/rollup-plugin": "^5.10.1",
+    "@honeybadger-io/rollup-plugin": "^5.10.2",
     "@rushstack/eslint-patch": "^1.16.1",
     "@types/node": "^25.9.2",
     "@typescript-eslint/eslint-plugin": "^8",
