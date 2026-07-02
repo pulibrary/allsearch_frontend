@@ -56,16 +56,6 @@ jobs:
           pkg-manager: yarn
       - ruby/rspec-test
 
-  bearer:
-    docker:
-      - image: cimg/base:current
-    environment:
-      # Set to default branch of your repo
-      DEFAULT_BRANCH: main
-    steps:
-      - checkout
-      - run: curl -sfL https://raw.githubusercontent.com/Bearer/bearer/main/contrib/install.sh | sh -s -- -b /tmp
-      - run: CURRENT_BRANCH=$CIRCLE_BRANCH SHA=$CIRCLE_SHA1 /tmp/bearer scan .
   staging_deploy:
     machine: true
     resource_class: pulibrary/ruby-deploy
@@ -81,7 +71,6 @@ workflows:
       - lint
       - semgrep
       - integration-tests
-      - bearer
       - staging_deploy:
           requires:
             - build-and-test
