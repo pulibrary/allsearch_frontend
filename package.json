@@ -22,7 +22,7 @@
     "@eslint/js": "^10",
     "@honeybadger-io/rollup-plugin": "^5.10.2",
     "@rushstack/eslint-patch": "^1.16.1",
-    "@types/node": "^26.1.0",
+    "@types/node": "^26.1.1",
     "@typescript-eslint/eslint-plugin": "^8",
     "@typescript-eslint/parser": "^8",
     "@vitejs/plugin-vue": "^6.0.7",
