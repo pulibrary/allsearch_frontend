@@ -5,10 +5,10 @@ GEM
       public_suffix (>= 2.0.2, < 8.0)
     airbrussh (1.6.1)
       sshkit (>= 1.6.1, != 1.7.0)
-    axe-core-api (4.12.0)
+    axe-core-api (4.13.0)
       dumb_delegator
-    axe-core-rspec (4.12.0)
-      axe-core-api (= 4.12.0)
+    axe-core-rspec (4.13.0)
+      axe-core-api (= 4.13.0)
     base64 (0.3.0)
     bcrypt_pbkdf (1.1.2)
     bigdecimal (4.1.2)
