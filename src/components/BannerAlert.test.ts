@@ -84,13 +84,15 @@ describe('Banner', () => {
       Object.defineProperty(window, 'localStorage', {
         configurable: true,
         value: {
-          getItem: vi.fn(),
+          getItem: vi.fn().mockReturnValue(null),
           setItem: vi.fn()
         }
       });
       vi.useFakeTimers();
     });
     afterEach(() => {
+      wrapper.unmount();
+      vi.restoreAllMocks();
       vi.useRealTimers();
     });
     it('sets the dismissible property', async () => {
@@ -111,20 +113,21 @@ describe('Banner', () => {
         }
       });
       await flushPromises();
-      const setItem = vi.spyOn(window.localStorage, 'setItem');
       vi.setSystemTime(new Date(2030, 0, 1)); // January 1, 2030
       wrapper.get('button.lux-close').trigger('click');
 
-      expect(setItem).toHaveBeenCalledWith(
+      expect(window.localStorage.setItem).toHaveBeenCalledWith(
         'allsearch-banner-dismissed',
         '{"date":"2030-01-01","text":"This is an error"}'
       );
     });
 
     it('does not display the banner if it has been dismissed in the past week', async () => {
-      const getItem = vi.spyOn(window.localStorage, 'getItem');
-      getItem.mockReturnValue(
-        '{"date":"2030-01-01","text":"This is an error"}'
+      vi.mocked(window.localStorage.getItem).mockReturnValue(
+        JSON.stringify({
+          date: '2030-01-01',
+          text: 'This is an error'
+        })
       );
       vi.setSystemTime(new Date(2030, 0, 5)); // January 5, 2030
 
@@ -139,9 +142,11 @@ describe('Banner', () => {
     });
 
     it('does display the banner if it was been dismissed a long time ago', async () => {
-      const getItem = vi.spyOn(window.localStorage, 'getItem');
-      getItem.mockReturnValue(
-        '{"date":"2030-01-01","text":"This is an error"}'
+      vi.mocked(window.localStorage.getItem).mockReturnValue(
+        JSON.stringify({
+          date: '2030-01-01',
+          text: 'This is an error'
+        })
       );
       vi.setSystemTime(new Date(2035, 6, 20)); // July 20, 2035
 
@@ -156,10 +161,13 @@ describe('Banner', () => {
     });
 
     it('does display the banner if the text is different than what was previously dismissed', async () => {
-      const getItem = vi.spyOn(window.localStorage, 'getItem');
-      getItem.mockReturnValue(
-        '{"date":"2030-01-01","text":"This text is outdated"}'
+      vi.mocked(window.localStorage.getItem).mockReturnValue(
+        JSON.stringify({
+          date: '2030-01-01',
+          text: 'This text is outdated'
+        })
       );
+
       vi.setSystemTime(new Date(2030, 0, 5)); // January 5, 2030
 
       wrapper = mount(BannerAlert, {
