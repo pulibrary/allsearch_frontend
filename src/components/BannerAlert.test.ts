@@ -81,6 +81,13 @@ describe('Banner', () => {
         true
       );
       mock.mockResolvedValue(testResult);
+      Object.defineProperty(window, 'localStorage', {
+        configurable: true,
+        value: {
+          getItem: vi.fn(),
+          setItem: vi.fn()
+        }
+      });
       vi.useFakeTimers();
     });
     afterEach(() => {

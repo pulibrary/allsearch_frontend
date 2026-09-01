@@ -1,6 +1,16 @@
-import { describe, test, expect, vi } from 'vitest';
+import { describe, test, expect, vi, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import AppHeader from './AppHeader.vue';
+
+beforeEach(() => {
+  Object.defineProperty(window, 'localStorage', {
+    configurable: true,
+    value: {
+      getItem: vi.fn(),
+      setItem: vi.fn()
+    }
+  });
+});
 
 const wrapper = mount(AppHeader);
 
