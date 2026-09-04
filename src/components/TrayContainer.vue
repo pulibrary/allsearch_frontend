@@ -2,8 +2,7 @@
   <div v-if="query" class="tray-container">
     <h1 class="visually-hidden">Search results</h1>
     <div class="best-bets">
-      <BestBetsTray :results-promise="searchService.results('best-bet', query)">
-      </BestBetsTray>
+      <BestBetsTray :results-promise="bestBets"> </BestBetsTray>
     </div>
     <div class="tray-grid">
       <div v-for="(column, colIdx) in traysToLink" :key="colIdx">
@@ -14,6 +13,7 @@
             :default-icon="ScopeIconMap[scope]"
             :basic-field-list="ScopeFieldsMap[scope]"
             :results-promise="searchService.results(scope, query)"
+            @searchDataLoaded="handleSearchResults"
           >
           </SearchTray>
           <div v-else class="placeholder">
@@ -33,10 +33,61 @@ import { TrayOrder } from '../models/TrayOrder';
 import BestBetsTray from './BestBetsTray.vue';
 import ScopeFieldsMap from '../config/ScopeFieldsMap';
 import ScopeIconMap from '../config/ScopeIconMap';
+import { ref } from 'vue';
+import { SearchResult } from '../models/SearchResult';
+import { SearchDataLoadSummary } from '../interfaces/SearchDataLoadSummary';
+import { BestBetService } from '../services/BestBetService';
+import { SearchResults } from '../models/SearchResults';
 
 const query = SearchTermService.term();
 const searchService = new SearchService();
 const traysToLink = new TrayOrder().order;
+const bestBets = ref<Promise<SearchResults>>();
+
+let searchResultPromises = ref<Promise<SearchDataLoadSummary>[]>([]);
+
+const handleSearchResults = (searchPromise: Promise<SearchDataLoadSummary>) => {
+  searchResultPromises.value.push(searchPromise);
+
+  if (searchResultPromises.value.length === traysToLink.flat().length - 3) {
+    resolveBestBet();
+  }
+};
+
+const resolveBestBet = async () => {
+  const searchResults = Promise.all(searchResultPromises.value);
+  const bestBetDatabaseResultPromise = searchService.results(
+    'best-bet',
+    query ?? ''
+  );
+  const bestBet = await Promise.all([
+    searchResults,
+    bestBetDatabaseResultPromise
+  ]);
+  if (bestBet[1].number > 0) {
+    bestBets.value = new Promise<SearchResults>(resolve => {
+      resolve(new SearchResults(1, '', bestBet[1].records ?? []));
+    });
+  } else {
+    const bestBetService = new BestBetService();
+    const records = bestBet[0].map(summary => summary.records).flat();
+    bestBetService
+      .rerank(
+        query,
+        records.map(record => record.title)
+      )
+      .then(rerank => {
+        bestBets.value = new Promise(resolve => {
+          resolve(
+            new SearchResults(1, '', [
+              records[rerank[0].index] ??
+                new SearchResult('', '', '', '', '', '', '', {})
+            ])
+          );
+        });
+      });
+  }
+};
 </script>
 
 <style>

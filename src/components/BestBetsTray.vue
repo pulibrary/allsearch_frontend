@@ -17,8 +17,10 @@
 </template>
 
 <script setup lang="ts">
-import { Ref, ref } from 'vue';
+import { Ref, ref, watch } from 'vue';
 import { SearchResults } from '../models/SearchResults';
+import { SearchResult } from '../models/SearchResult';
+import { BestBetDataLoadSummary } from '../interfaces/BestBetDataLoadSummary';
 
 /* eslint-disable vue/require-default-prop */
 const props = defineProps({
@@ -27,15 +29,33 @@ const props = defineProps({
 /* eslint-enable vue/require-default-prop */
 
 const emit = defineEmits<{
-  (e: 'bestBetDataLoaded', payload: number | undefined): void;
+  (e: 'bestBetDataLoaded', payload: Promise<BestBetDataLoadSummary>): void;
+  (e: 'update:resultsPromise', value: Promise<SearchResult>): void;
 }>();
 
 const results: Ref<SearchResults | undefined> = ref(undefined);
 
 async function populateResults(): Promise<void> {
   results.value = await props.resultsPromise;
-  emit('bestBetDataLoaded', results.value?.records.length);
+  console.log(results.value);
+  const loadSummary = {
+    results: results.value?.records.length,
+    records: results.value?.records
+  };
+  emit(
+    'bestBetDataLoaded',
+    new Promise<BestBetDataLoadSummary>(resolve => {
+      resolve(loadSummary);
+    })
+  );
 }
+
+watch(
+  () => props.resultsPromise,
+  (_newValue, _oldValue) => {
+    populateResults();
+  }
+);
 
 populateResults();
 </script>
