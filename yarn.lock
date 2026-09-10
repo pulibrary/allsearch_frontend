@@ -124,10 +124,10 @@
     picomatch "^2.3.1"
     tslib "^2.5.0"
 
-"@honeybadger-io/vue@^6.2.11":
-  version "6.2.11"
-  resolved "https://registry.yarnpkg.com/@honeybadger-io/vue/-/vue-6.2.11.tgz#9127ab28fd22cd2bb6be8e11867adc1ea1287893"
-  integrity sha512-kcptJLbXKrAGr+sDs+/TBItlYnmQq30lgVTs01AG5SRlAQEJJ7sog1hBhYFfHwiF5rnhD1Y5I515rAXhaJtRKw==
+"@honeybadger-io/vue@^6.2.18":
+  version "6.2.18"
+  resolved "https://registry.yarnpkg.com/@honeybadger-io/vue/-/vue-6.2.18.tgz#c748b241c919d9b71330208b6378015529ae90fe"
+  integrity sha512-YzCff2/I0i7Vr84tOjQ7NV7YWUJX+1hTC3UpopOSRUgXgSvbiUGzuFinIASDJoEQlxIe4du9oeUPq3jIAiDSSA==
 
 "@humanfs/core@^0.19.2":
   version "0.19.2"
