@@ -146,7 +146,7 @@ const props = defineProps({
 /* eslint-enable vue/require-default-prop */
 
 const emit = defineEmits<{
-  (e: 'searchDataLoaded', payload: SearchDataLoadSummary): void;
+  (e: 'searchDataLoaded', payload: Promise<SearchDataLoadSummary>): void;
 }>();
 const sectionLabel = `${getScopeTitle()} results`;
 
@@ -160,10 +160,14 @@ const isCatalogTray =
 async function populateResults(): Promise<void> {
   results.value = await props.resultsPromise;
   loaded = true;
-  emit('searchDataLoaded', {
-    scope: props.scope,
-    results: results.value?.records.length
+  const searchPromise = new Promise<SearchDataLoadSummary>(resolve => {
+    resolve({
+      scope: props.scope,
+      results: results.value?.records.length,
+      records: results.value?.records ?? []
+    });
   });
+  emit('searchDataLoaded', searchPromise);
   if (isCatalogTray) {
     holdings.value = new RecordHoldingsMap(results.value as SearchResults);
     await holdings.value.updateScsbAvailability();
