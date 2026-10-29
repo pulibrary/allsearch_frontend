@@ -147,10 +147,10 @@
     picomatch "^2.3.1"
     tslib "^2.5.0"
 
-"@honeybadger-io/vue@^6.2.22":
-  version "6.2.22"
-  resolved "https://registry.yarnpkg.com/@honeybadger-io/vue/-/vue-6.2.22.tgz#eda81ad86144c20cf07e7ee817ce0be5fdb0c20e"
-  integrity sha512-PkOeTQo8Ba9CYOOZ3XaS/yzoyIT/nC3SIlPaL/fFUg7w2W9E4U099YCpMn4PMsK6JVAkVlX+vbVCqeTrO5cztg==
+"@honeybadger-io/vue@^6.2.24":
+  version "6.2.24"
+  resolved "https://registry.yarnpkg.com/@honeybadger-io/vue/-/vue-6.2.24.tgz#4a5c7f005a0b45ac9caa0d1f8690bb6c68ccdae1"
+  integrity sha512-6F5OXnKPFRPYVtHxEdlviPw8ma29ZF72WP9LxjgVu+FmoXxT2C+cl1vc7gzPlYnIU+u1JDXfGq9tbWLOQfiuAA==
 
 "@humanfs/core@^0.19.2":
   version "0.19.2"
