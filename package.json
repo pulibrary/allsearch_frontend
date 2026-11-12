@@ -36,7 +36,7 @@
     "globals": "^17.13.0",
     "happy-dom": "^21.0.4",
     "lint-staged": "^17.6.0",
-    "prettier": "^3.9.9",
+    "prettier": "^3.9.10",
     "simple-git-hooks": "^2.13.1",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8",
