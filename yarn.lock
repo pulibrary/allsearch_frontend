@@ -1553,10 +1553,10 @@ lru-cache@^11.0.0:
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-11.5.3.tgz#a7767b4034e35269562d2b9da2b185b5df70c421"
   integrity sha512-U4N8FgzmWxc8k1VH8Kr6lQg18U7Fjvby6wXHVRX/ZZ7IwWbRMgrRbP0Wrb5q5NVinryp4SQampHKdvtecItxUg==
 
-lux-design-system@^7.14.1:
-  version "7.14.1"
-  resolved "https://registry.yarnpkg.com/lux-design-system/-/lux-design-system-7.14.1.tgz#c82d9cf8cb5b5e30622eadeed963c62a4342fccb"
-  integrity sha512-MSRWs4VN5pw15/s5Cfzmf9BVhKy/wua3eIFq/rvqFAmD4eu5Pb+D2b7sCxufZ4uDPP2KGyzGaDyfkz6FZ87OVw==
+lux-design-system@^7.15.2:
+  version "7.15.2"
+  resolved "https://registry.yarnpkg.com/lux-design-system/-/lux-design-system-7.15.2.tgz#ed2227a3ee98cac5711535d48668e0db4070346c"
+  integrity sha512-ih/cgFOyHGn2t9BdsH2XOCT8WSoXArDE2xKFQ55CUj/aV5gL7IZNmBFbwjbx0JSOZnZLFnnnrf48qlCV3vSZRA==
   dependencies:
     core-js "^3.8.3"
     register-service-worker "^1.7.2"
@@ -1637,11 +1637,6 @@ muggle-string@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/muggle-string/-/muggle-string-0.4.1.tgz#3b366bd43b32f809dc20659534dd30e7c8a0d328"
   integrity sha512-VNTrAak/KhO2i8dqqnqnAHOa3cYBwXEZe9h+D5h/1ZqFSTEFHdM65lR7RoIqq3tBBYavsOXV84NoHXZ0AkPyqQ==
-
-nanoid@^3.3.20:
-  version "3.3.20"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.20.tgz#dfd4444d85aa10111ef66ba85ed72e08ba0855d8"
-  integrity sha512-uKdg2G3GNCKQn9byYOpxbGqrT2fGO5KRt5J/8b3pok8rT6qxGWF6hxMyJiEYtAf+FVyYuD9hRaDqX5uPFYJ4ZQ==
 
 nanoid@^3.3.20:
   version "3.3.20"
@@ -1751,16 +1746,7 @@ postcss-selector-parser@^7.1.4:
     cssesc "^3.0.0"
     util-deprecate "^1.0.2"
 
-postcss@^8.5.28, postcss@^8.5.30:
-  version "8.5.32"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.5.32.tgz#fbccef8388a0c77508c713bfd37728d646595803"
-  integrity sha512-LJlKCCAUFKOuZxipUdYw1NzIITEsPcgyOG9LkvRJvuKj/bRzbuRY0ARXvL0pWGpsZvn8jku+LMep2eU0seHp8g==
-  dependencies:
-    nanoid "^3.3.20"
-    picocolors "^1.1.1"
-    source-map-js "^1.2.2"
-
-postcss@^8.5.29:
+postcss@^8.5.29, postcss@^8.5.30:
   version "8.5.32"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.5.32.tgz#fbccef8388a0c77508c713bfd37728d646595803"
   integrity sha512-LJlKCCAUFKOuZxipUdYw1NzIITEsPcgyOG9LkvRJvuKj/bRzbuRY0ARXvL0pWGpsZvn8jku+LMep2eU0seHp8g==
@@ -1872,7 +1858,7 @@ simple-git-hooks@^2.13.1:
   resolved "https://registry.yarnpkg.com/simple-git-hooks/-/simple-git-hooks-2.14.0.tgz#7ad36fadbd322f373caacd399664b85305a08ca8"
   integrity sha512-kkTORPAuxQz2g1QUuN0J8yGWT28tjGBfPOdJ4xT7Vbeu30veKUZQIoID2qGgCDAakaQn59UeZJJ4cFGB8PVP2A==
 
-source-map-js@^1.2.1, source-map-js@^1.2.2:
+source-map-js@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.2.2.tgz#79fb88d97535a21cb27162cb05d211b67acea4ab"
   integrity sha512-KGj/8Y43x35aZVDtt+J4mK1hoLGHULMYfSkODJNQjNDC3oW1PqPoxMwo0pLUsWM/UEGzON/NxeHywEfNXNP3Vw==
